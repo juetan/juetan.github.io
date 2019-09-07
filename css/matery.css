@@ -502,17 +502,17 @@ header .go-back i {
     margin-top: -30px;
 }
 
-.dream {
+/* .dream {
     margin-top: 20px;
     margin-bottom: 40px;
-}
+} */
 
 .dream .title,
 .music-player .title,
 .video-player .title {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .dream .text {
