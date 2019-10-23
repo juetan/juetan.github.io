@@ -1,0 +1,573 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="jsonp跨域, 绝弹博客">
+    <meta name="description" content="jsonp获取数据为保证应用里的音乐数据是实时的，可以通过抓取QQ音乐的数据达到同步的目的。但是，因为同源策略的限制，不可以直接ajax请求QQ音乐的数据，一个委婉点的方法是通过jsonp获取数据。
+
+在cmd命令行输入以下命令安装json">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>jsonp跨域 | 绝弹博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">绝弹博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">绝弹博客</div>
+        <div class="logo-desc">
+            
+            选择路途的方向，却未决定路途的终点
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        jsonp跨域
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+
+<main class="container content">
+    
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <!-- <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/music/" target="_blank">
+                                <span class="chip bg-color">music</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                music
+                            </a>
+                        
+                    </div>
+                    
+                </div> -->
+                jsonp跨域
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-23
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <!-- <hr class="clearfix"> -->
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="jsonp获取数据"><a href="#jsonp获取数据" class="headerlink" title="jsonp获取数据"></a>jsonp获取数据</h2><p>为保证应用里的音乐数据是实时的，可以通过抓取QQ音乐的数据达到同步的目的。但是，因为同源策略的限制，不可以直接ajax请求QQ音乐的数据，一个委婉点的方法是通过jsonp获取数据。</p>
+<ol>
+<li><p>在cmd命令行输入以下命令安装jsonp</p>
+<pre><code> npm install jsonp --save-dev</code></pre></li>
+<li><p>在src/common/js文件夹里，创建jsonp.js文件，敲写如下代码</p>
+<pre><code> //jsonp.js   ps:直接使用jsonp也是可以的，在这里只是对jsonp做进一步的封装，以适应项目的需要
+
+ //导入刚才安装好的jsonp
+ import Ojsonp from &#39;jsonp&#39;
+ //导出下面封装好的jsonp
+ export default function(url,data,option) {
+     //替换之前直接拼接好参数的url，改为由url+参数再拼接成url
+     url += (url.indexOf(&#39;?&#39;) &lt; 0 ? &#39;?&#39; : &#39;&amp;&#39;) + encoded(data)
+     //返回promise，便于调用
+     return new Promise((resolve,reject)=&gt;{
+         Ojsonp(url,option,(err,data)=&gt;{
+             if(!err) {
+                 resolve(data)
+             } else {
+                 reject(err)
+             }
+         })
+     })
+ }
+ //把查询参数编码为url
+ function encoded(data) {
+     var url = &#39;&#39;
+     for(let key in data) {
+         let value = data[key] !== &#39;undefine&#39; ? data[key] : &#39;&#39;
+         url += `&amp;${key} = ${encodeURIComponent(value)}`
+     }
+     return url
+ }</code></pre></li>
+<li><p>再src/api文件夹里，创建recommend.js及config.js文件，敲写如下代码</p>
+<pre><code> //1. recommend.js
+
+ //导入封装好的jsonp
+ import jsonp from &#39;../common/js/jsonp&#39;
+ //导入配置文件(把可复用参数写成配置，放在config.js里，方便以后修改及调用)
+ import {commonParam,options} from &#39;./config&#39;
+ //导出获取推荐数据的函数
+ export function getRecommend () {
+     //获取数据的地址
+     const url = &#39;https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg&#39;
+     //整合参数
+     const data = Object.assign({},commonParam,{
+         platform: &#39;h5&#39;,
+         uin: 0,
+         neddNewCode: 1
+     })
+     //返回promise
+     return jsonp(url,data,options)
+ }
+
+ //2. config.js
+
+ //公共查询参数
+ export const commonParam = {
+     g_tk: 5381,
+     format: &#39;jsonp&#39;,
+     inCharset: &#39;utf-8&#39;,
+     outCharset: &#39;utf-8&#39;,
+     notice: 0,
+ }
+ //公共配置选项
+ export const option = {
+     param: &#39;jsonpCallback&#39;
+ }
+ //数据成功返回状态码
+ export const ERR_OK = 0</code></pre></li>
+<li><p>在scr/components/recommend/index.vue里，调用函数获取数据，敲写如下代码</p>
+<pre><code> //index.vue
+ &lt;template&gt;
+     ...
+ &lt;template&gt;
+ &lt;script&gt;
+     //导入函数
+     import {getRecommend} from &#39;api/recommend&#39;
+     //导入配置
+     import {ERR_OK} from &#39;api/config&#39;
+     export default {
+         //在Vue创建完毕后的钩子里调用，获取数据
+         created() {
+             //生命周期钩子里尽量只写过程，把实现放到methods里，便于清晰理解
+             this._getRecommend()
+         }，
+         methods: {
+             //在这里编写的函数会被挂载到实例里，在这里处理请求之类的问题很方便
+             _getRecommend() {
+                 //promise处理比回调处理看起来更清晰
+                 getRecommend().then((res)=&gt;{
+                     //配置里的ERR_OK在这里派上了用场，表示数据成功返回
+                     if(res.code == ERR_OK) {
+                         //这里只打印数据，下节对数据进行处理
+                         console.log(res.data)
+                     }
+                 })
+             }
+         }
+     }
+ &lt;/script&gt;
+ &lt;style&gt;
+     ...
+ &lt;/style&gt;</code></pre></li>
+</ol>
+
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/music-5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="轮播图的使用">
+                        
+                        <span class="card-title">轮播图的使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            既然上节已经获取到数据，那么本节将使用轮播图展示这些数据，轮播图属于常用组件，可以独立成一个公共组件。
+
+打开cmd命令行安装better-scroll(借助轮播图实现轮播图，后面也会用到)  npm install better-scro
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/music/" target="_blank">
+                        <span class="chip bg-color">music</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/music-3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="页面分解">
+                        
+                        <span class="card-title">页面分解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/music/" target="_blank">
+                        <span class="chip bg-color">music</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        Copyright &copy; 2019 绝弹博客 版权所有
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="歌手页面(页面展示+滚动效果), 绝弹博客">
+    <meta name="description" content="上节获取并处理了数据，本节展示数据，展示数据的组件可以抽象出来单独做成一个组件
+
+打开src/base/listview/index.vue(没有的话创建一个)，敲写如下代码
+ // listview/index.vue
+ &amp;lt;temp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>歌手页面(页面展示+滚动效果) | 绝弹博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">绝弹博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">绝弹博客</div>
+        <div class="logo-desc">
+            
+            选择路途的方向，却未决定路途的终点
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        歌手页面(页面展示+滚动效果)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+
+<main class="container content">
+    
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <!-- <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/music/" target="_blank">
+                                <span class="chip bg-color">music</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                music
+                            </a>
+                        
+                    </div>
+                    
+                </div> -->
+                歌手页面(页面展示+滚动效果)
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-23
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <!-- <hr class="clearfix"> -->
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>上节获取并处理了数据，本节展示数据，展示数据的组件可以抽象出来单独做成一个组件</p>
+<ol>
+<li><p>打开src/base/listview/index.vue(没有的话创建一个)，敲写如下代码</p>
+<pre><code> // listview/index.vue
+ &lt;template&gt;
+     //[3] 使用组件
+     &lt;m-scroll&gt;
+         &lt;ul&gt;
+             //遍历第一层
+             &lt;li class=&quot;list-group&quot; v-for=&quot;(group,key) in data&quot; :key=&quot;key&quot; ref=&quot;listgroup&quot;&gt;
+                 //分组标题
+                 &lt;h2 class=&quot;list-group-title&quot;&gt;{{group.title}}&lt;/h2&gt;
+                 &lt;ul&gt;
+                     //遍历第二层
+                     &lt;li class=&quot;list-group-item&quot; 
+                     v-for=&quot;(item,index) in group.data&quot; :key=&quot;index&quot;&gt;
+                         //歌手头像
+                         &lt;img class=&quot;avatar&quot; v-lazy=&quot;item.avatar&quot; alt=&quot;&quot;&gt;
+                         //歌手名字
+                         &lt;span class=&quot;name&quot;&gt;{{item.name}}&lt;/span&gt;
+                     &lt;/li&gt;
+                 &lt;/ul&gt;
+             &lt;/li&gt;
+         &lt;/ul&gt;
+         //右侧浮动(字母索引)
+         &lt;div class=&quot;list-shortcut&quot; &gt;
+             &lt;ul&gt;
+                 //遍历并输出title的第一个字，如‘热门’输出‘热’
+                 &lt;li class=&quot;item&quot;  v-for=&quot;(item,index) in menu&quot; :key=&quot;index&quot;&gt;
+                     {{item}}
+                 &lt;/li&gt;
+             &lt;/ul&gt;
+         &lt;/div&gt;
+     &lt;/m-scroll&gt;
+ &lt;/template&gt;
+ &lt;script&gt;
+     //[1] 导入组件
+     import scroll from &#39;base/scroll&#39;
+     export default {
+         data() {
+             return {
+                 //歌手数据
+                 data: null
+             }
+         },
+         computed: {
+             //歌手索引
+             menu() {
+                 return this.data.map((group)=&gt;{
+                     return group.title.substr(0,1)
+                 })
+             },
+         }
+         //[2] 注册组件
+         components: {
+             &#39;m-scroll&#39;: scroll
+         }
+     }
+ &lt;/script&gt;
+ &lt;style lang=&quot;stylus&quot; scoped&gt;
+   @import &quot;~common/stylus/variable&quot;
+
+   .listview
+     position: relative
+     width: 100%
+     height: 90vh
+     overflow: hidden
+     background: $color-background
+     //[1] 歌手列表
+     .list-group
+       padding-bottom: 30px
+       .list-group-title
+         height: 30px
+         line-height: 30px
+         padding-left: 20px
+         font-size: $font-size-small
+         //color: $color-text-l
+         color: #fff
+         background: $color-highlight-background
+       .list-group-item
+         display: flex
+         align-items: center
+         padding: 20px 0 0 30px
+         .avatar
+           width: 50px
+           height: 50px
+           border-radius: 50%
+         .name
+           margin-left: 20px
+           color: $color-text-l
+           font-size: $font-size-medium
+     //[2]歌手索引
+     .list-shortcut
+       position: absolute
+       z-index: 30
+       right: 0
+       top: 50%
+       transform: translateY(-50%)
+       width: 20px
+       padding: 20px 0
+       border-radius: 10px
+       text-align: center
+       background: $color-background-d
+       font-family: Helvetica
+       .item
+         padding: 3px
+         line-height: 1
+         color: $color-text-l
+         font-size: $font-size-small
+         &amp;.current
+           color: $color-theme
+     //[3] 固定字栏
+     .list-fixed
+       position: absolute
+       top: 0
+       left: 0
+       width: 100%
+       .fixed-title
+         height: 30px
+         line-height: 30px
+         padding-left: 20px
+         font-size: $font-size-small
+         //color: $color-text-l
+         color: #fff
+         background: $color-highlight-background
+     //[4]加载动画 ps:暂时用不到
+     .loading-container
+       position: absolute
+       width: 100%
+       top: 50%
+       transform: translateY(-50%)
+ &lt;/style&gt;
+</code></pre></li>
+</ol>
+
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/music-10/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="歌手页面(点击跳转+滑动联动)">
+                        
+                        <span class="card-title">歌手页面(点击跳转+滑动联动)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            上一节完成了页面的展示及滚动效果，接下来实现歌手列表和歌手索引的联动效果，点击右侧的字母，中间跳转到相应的歌手位置，滑动歌手页面时，右侧的字母列表也随之改变。
+
+打开src/base/listview/index.vue(没有则创建),实现
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/music/" target="_blank">
+                        <span class="chip bg-color">music</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/music-8/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="歌手页面(数据获取+数据处理)">
+                        
+                        <span class="card-title">歌手页面(数据获取+数据处理)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            歌手页面主要展示歌手列表，外加滚动效果，照例第一步还是要获取到数据。
+
+打开src/api/singer.js文件(没有的话创建该文件)，敲写以下代码
+ //singer.js 
+ //引入必要的文件
+ import jsonp from 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/music/" target="_blank">
+                        <span class="chip bg-color">music</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        Copyright &copy; 2019 绝弹博客 版权所有
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

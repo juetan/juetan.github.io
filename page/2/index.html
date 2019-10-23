@@ -194,55 +194,9 @@
 </header>
 
 
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color:rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <!-- <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -262,98 +216,13 @@
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
 $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-</script>
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/juetan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fa fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:19952425@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fa fa-envelope-open"></i>
-    </a>
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=19952425" class="tooltipped" data-tooltip="QQ联系我: 19952425" data-position="top" data-delay="50">
-        <i class="fa fa-qq"></i>
-    </a>
-
-
-</div>
-        </div>
+</script> -->
     </div>
-
-    
 </div>
-
-<script>
-$(function () {
-    let coverSlider = $('.carousel');
-    coverSlider.carousel({
-        duration: Number('120'),
-        fullWidth: true,
-        indicators: 'false' === 'true'
-    });
-
-    let carouselIntervalId;
-    
-
-    let restartPlay = function () {
-        
-    };
-
-    
-});
-</script>
-
 
 
 <main class="content">
 
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;我的梦想
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            
-        </div>
-    </div>
-</div>
-                    
-
-                    
-
-                    
-
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     
 
     
@@ -364,375 +233,22 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/html-8/">
+                    <a href="/music-7/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="脚本标签">
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="歌单列表展示">
                             
-                            <span class="card-title">脚本标签</span>
+                            <span class="card-title">歌单列表展示</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                &lt;!-- 表格标签(6)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
+                                上节获取到歌单信息，本节遍历数据展示歌单列表，展示没有什么好写的不过是几行css样式的问题，为好的用户体验，添加上一些内容：滚动效果，懒加载及加载loading效果。
 
-&lt;!-- 分类一 --&gt;
-&lt;iframe&gt;文档框架&lt;/iframe&gt;
-&lt;c
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/html/" class="post-category" target="_blank">
-                                    html
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/html/" target="_blank">
-                            <span class="chip bg-color">html</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/html-7/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="媒体标签">
-                            
-                            <span class="card-title">媒体标签</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                &lt;!-- 表格标签(7)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
-
-&lt;!-- 图像标签 --&gt;
-&lt;img src=&quot;pic.jpg&quot;&gt;
-&l
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/html/" class="post-category" target="_blank">
-                                    html
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/html/" target="_blank">
-                            <span class="chip bg-color">html</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/html-6/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="表单标签">
-                            
-                            <span class="card-title">表单标签</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                &lt;!-- 表格标签(14)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
-
-&lt;!-- 表单容器 --&gt;
-&lt;form&gt;表单容器&lt;/form&gt;
-&lt;fie
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/html/" class="post-category" target="_blank">
-                                    html
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/html/" target="_blank">
-                            <span class="chip bg-color">html</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/html-5/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="表格标签">
-                            
-                            <span class="card-title">表格标签</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                &lt;!-- 表格标签(10)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
-
-&lt;!-- 表格信息 --&gt;
-&lt;table&gt;表格容器&lt;/table&gt;
-&lt;c
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/html/" class="post-category" target="_blank">
-                                    html
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/html/" target="_blank">
-                            <span class="chip bg-color">html</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/html-4/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="块级标签">
-                            
-                            <span class="card-title">块级标签</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                &lt;!-- 块级标签(21)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
-
-&lt;!-- 独立块级 --&gt;
-&lt;div&gt;典型块级&lt;/div&gt;
-&lt;p&gt;
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/html/" class="post-category" target="_blank">
-                                    html
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/html/" target="_blank">
-                            <span class="chip bg-color">html</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/html-3/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="行内标签">
-                            
-                            <span class="card-title">行内标签</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                &lt;!-- 文字格式 (34个) ，以下标签分类，仅方便个人记忆，并非官方给出，暂时先列出标签，以后再慢慢补上 - --&gt;
-
-&lt;!-- 换行通用 - --&gt;
-&lt;hr&gt;  &lt;!-- 5属性 --&gt;
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/html/" class="post-category" target="_blank">
-                                    html
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/html/" target="_blank">
-                            <span class="chip bg-color">html</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/html-2/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="head">
-                            
-                            <span class="card-title">head</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                前言文档没有head里面的内容，也不会影响页面的布局。但head提供的内容对于整个文档来说，有着举足轻重的影响。例如有在head里正确声明文档的字符编码，可以确保页面不会乱码；声明样式，可以渲染绚丽的页面；声明脚本，可以让页面产生交互等。
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/html/" class="post-category" target="_blank">
-                                    html
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/html/" target="_blank">
-                            <span class="chip bg-color">html</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/music-10/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="歌手页面(点击跳转+滑动联动)">
-                            
-                            <span class="card-title">歌手页面(点击跳转+滑动联动)</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                上一节完成了页面的展示及滚动效果，接下来实现歌手列表和歌手索引的联动效果，点击右侧的字母，中间跳转到相应的歌手位置，滑动歌手页面时，右侧的字母列表也随之改变。
-
-打开src/base/listview/index.vue(没有则创建),实现
+打开src/componnents/recommend/index.v
                             
                         </div>
                         <div class="publish-info">
@@ -766,24 +282,20 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/music-9/">
+                    <a href="/music-6/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="歌手页面(页面展示+滚动效果)">
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="服务器代理跨域">
                             
-                            <span class="card-title">歌手页面(页面展示+滚动效果)</span>
+                            <span class="card-title">服务器代理跨域</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                上节获取并处理了数据，本节展示数据，展示数据的组件可以抽象出来单独做成一个组件
-
-打开src/base/listview/index.vue(没有的话创建一个)，敲写如下代码
- // listview/index.vue
- &lt;temp
+                                获取轮播图数据使用jsonp没有什么什么，然而获取歌单列表时，需要带上请求头部信息，此时用jsonp是无法做到的，需要使用node提供的服务器代理来间接获取数据，而axios不仅支持ajax请求，也支持服务器代理请求，接下来完成一次代理请求
                             
                         </div>
                         <div class="publish-info">
@@ -817,25 +329,22 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/music-8/">
+                    <a href="/music-5/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="歌手页面(数据获取+数据处理)">
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="轮播图的使用">
                             
-                            <span class="card-title">歌手页面(数据获取+数据处理)</span>
+                            <span class="card-title">轮播图的使用</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                歌手页面主要展示歌手列表，外加滚动效果，照例第一步还是要获取到数据。
+                                既然上节已经获取到数据，那么本节将使用轮播图展示这些数据，轮播图属于常用组件，可以独立成一个公共组件。
 
-打开src/api/singer.js文件(没有的话创建该文件)，敲写以下代码
- //singer.js 
- //引入必要的文件
- import jsonp from 
+打开cmd命令行安装better-scroll(借助轮播图实现轮播图，后面也会用到)  npm install better-scro
                             
                         </div>
                         <div class="publish-info">
@@ -863,6 +372,291 @@ $(function () {
                         </a>
                         
                     </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/music-4/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="jsonp跨域">
+                            
+                            <span class="card-title">jsonp跨域</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                jsonp获取数据为保证应用里的音乐数据是实时的，可以通过抓取QQ音乐的数据达到同步的目的。但是，因为同源策略的限制，不可以直接ajax请求QQ音乐的数据，一个委婉点的方法是通过jsonp获取数据。
+
+在cmd命令行输入以下命令安装json
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/music/" target="_blank">
+                            <span class="chip bg-color">music</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/music-3/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="页面分解">
+                            
+                            <span class="card-title">页面分解</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/music/" target="_blank">
+                            <span class="chip bg-color">music</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/music-2/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="准备工作">
+                            
+                            <span class="card-title">准备工作</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1.重构src目录&nbsp; &nbsp; 尽管官方提供的目录结构可以满足一定的开发需求，但不同的项目可能需要不同的目录结构使得便于管理和开发。以下是重构后的目录：
+\\src目录
+api --网络接口
+common --基础文件库，包括
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/music/" target="_blank">
+                            <span class="chip bg-color">music</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/music-1/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="环境搭建">
+                            
+                            <span class="card-title">环境搭建</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1.Node安装
+登录官网，下载最新版本并安装；  
+在我的电脑内，执行以下操作：右键-&gt;属性-&gt;高级-&gt;环境变量-&gt;系统变量-&gt;path 查看是否有node的安装路径，没有的话添加上node的安装路径；  
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/music/" target="_blank">
+                            <span class="chip bg-color">music</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/html-1/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="html">
+                            
+                            <span class="card-title">html</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                简介&nbsp;&nbsp;html,即超文本标记语言(Hytype Text Markup Language),一门描述文档内容结构的标记语言。区别于JavaScript，Java，C语言等语言，html并不是一门编程语言，而是一门标记语
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/html/" target="_blank">
+                            <span class="chip bg-color">html</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/Get-Started-With-Hexo/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="博客框架Hexo简明教程">
+                            
+                            <span class="card-title">博客框架Hexo简明教程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                [1]简介Hexo是一款静态博客框架，在无需数据库及后端语言的情况下，可通过Markdown格式生成静态页面。
+[2]安装Hexo依赖NodeJS(Javascript运行环境)及GIT(版本控制系统)，安装该两项后才可安装Hexo。
+
+N
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
                     
                 </div>
             </div>
@@ -877,18 +671,18 @@ $(function () {
     <div class="row">
         <div class="col s6 m4 l4">
             
-            <a class="left btn-floating btn-large disabled">
+            <a href="/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fa fa-angle-left"></i>
             </a>
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 2</div>
+            <div class="center-align b-text-gray">2 / 2</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
+            <a class="right btn-floating btn-large disabled">
                 <i class="fa fa-angle-right"></i>
             </a>
             

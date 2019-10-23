@@ -1,0 +1,484 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="博客框架Hexo简明教程, 绝弹博客">
+    <meta name="description" content="[1]简介Hexo是一款静态博客框架，在无需数据库及后端语言的情况下，可通过Markdown格式生成静态页面。
+[2]安装Hexo依赖NodeJS(Javascript运行环境)及GIT(版本控制系统)，安装该两项后才可安装Hexo。
+
+N">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>博客框架Hexo简明教程 | 绝弹博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">绝弹博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">绝弹博客</div>
+        <div class="logo-desc">
+            
+            选择路途的方向，却未决定路途的终点
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        博客框架Hexo简明教程
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+
+<main class="container content">
+    
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <!-- <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                html
+                            </a>
+                        
+                    </div>
+                    
+                </div> -->
+                博客框架Hexo简明教程
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-07
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <!-- <hr class="clearfix"> -->
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="[1]简介"></a>[1]简介</h1><p>Hexo是一款静态博客框架，在无需数据库及后端语言的情况下，可通过Markdown格式生成静态页面。</p>
+<h1 id="2-安装"><a href="#2-安装" class="headerlink" title="[2]安装"></a>[2]安装</h1><p>Hexo依赖NodeJS(Javascript运行环境)及GIT(版本控制系统)，安装该两项后才可安装Hexo。</p>
+<ol>
+<li>NodeJs的安装: 打开<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a>，下载并安装，输入<code>node -v</code>,如正确输出版本号即代表安装成功。</li>
+<li>GIT的安装: 打开<a href="https://git-scm.com" target="_blank" rel="noopener">官网</a>，同样下载并安装，输入<code>git --version</code>,如正确输出版本号即代表安装成功。</li>
+<li>Hexo的安装: 安装以上软件后，输入<code>npm install hexo-cli -g</code>，再输入<code>hexo -v</code>，如有输出版本号即代表安装成功。</li>
+</ol>
+<h1 id="3-使用"><a href="#3-使用" class="headerlink" title="[3]使用"></a>[3]使用</h1><p>Hexo的使用相对简单，初始化一个仓库，创建博客文章，然后再生成静态文件，通过启动本地服务即可在浏览器端看到博客内容。接下来，以本人博客为例，介绍从无到有的博客生成过程。</p>
+<ol>
+<li><p>初始化博客仓库<br> 在你想放置博客仓库的文件夹内，输入以下命令，会在当前文件夹内生成名为jonten的文件夹。</p>
+<pre class=" language-bash"><code class="language-bash"> hexo init jonten  //格式： hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span> 参数： folder<span class="token punctuation">(</span>博客文件夹名字<span class="token punctuation">)</span> </code></pre>
+<p> 以上命令执行后，打开刚刚生成的文件夹，可以发现文件夹内已经放置好Hexo博客框架，接下来介绍各文件目录及其作用。</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// /joten</span>
+ ├── _config<span class="token punctuation">.</span>yml  <span class="token comment" spellcheck="true">//配置文件 </span>
+ ├── <span class="token keyword">package</span><span class="token punctuation">.</span>json <span class="token comment" spellcheck="true">//依赖文件</span>
+ ├── scaffolds    <span class="token comment" spellcheck="true">//模板文件夹</span>
+ ├── source       <span class="token comment" spellcheck="true">//文章文件夹</span>
+ <span class="token operator">|</span>   ├── _drafts  <span class="token comment" spellcheck="true">//草稿</span>
+ <span class="token operator">|</span>   └── _posts   <span class="token comment" spellcheck="true">//文章</span>
+ └── themes       <span class="token comment" spellcheck="true">//主题文件夹</span></code></pre>
+<p> _config.yml</p>
+<pre><code></code></pre></li>
+<li><p>创建博客文章</p>
+<pre><code> hexo new hello-jonten </code></pre></li>
+</ol>
+
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/html-1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="html">
+                        
+                        <span class="card-title">html</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            简介&nbsp;&nbsp;html,即超文本标记语言(Hytype Text Markup Language),一门描述文档内容结构的标记语言。区别于JavaScript，Java，C语言等语言，html并不是一门编程语言，而是一门标记语
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/Get-Started-With-Hexo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="博客框架Hexo简明教程">
+                        
+                        <span class="card-title">博客框架Hexo简明教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            [1]简介Hexo是一款静态博客框架，在无需数据库及后端语言的情况下，可通过Markdown格式生成静态页面。
+[2]安装Hexo依赖NodeJS(Javascript运行环境)及GIT(版本控制系统)，安装该两项后才可安装Hexo。
+
+N
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        Copyright &copy; 2019 绝弹博客 版权所有
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

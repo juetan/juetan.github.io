@@ -4,64 +4,468 @@
   
     
     <entry>
+      <title>脚本标签</title>
+      <link href="/html-8/"/>
+      <url>/html-8/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;!-- 表格标签(6)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;&lt;!-- 分类一 --&gt;&lt;iframe&gt;文档框架&lt;/iframe&gt;&lt;canvas&gt;图形脚本&lt;/canvas&gt;&lt;!-- 分类二 --&gt;&lt;object&gt;外部资源&lt;/object&gt;&lt;param&gt;资源参数&lt;/param&gt;&lt;embed&gt;外部内容&lt;/embed&gt;&lt;picture&gt;布局容器&lt;/picture&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>媒体标签</title>
+      <link href="/html-7/"/>
+      <url>/html-7/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;!-- 表格标签(7)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;&lt;!-- 图像标签 --&gt;&lt;img src=&quot;pic.jpg&quot;&gt;&lt;map&gt;图像映射&lt;/map&gt;&lt;area&gt;映射区域&lt;/area&gt;&lt;!-- 音频视频 --&gt;&lt;audio&gt;音频标签&lt;/audio&gt;&lt;video&gt;视频标签&lt;/video&gt;&lt;source&gt;数据来源&lt;/source&gt;&lt;track&gt;计时字幕&lt;/track&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>表单标签</title>
+      <link href="/html-6/"/>
+      <url>/html-6/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;!-- 表格标签(14)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;&lt;!-- 表单容器 --&gt;&lt;form&gt;表单容器&lt;/form&gt;&lt;fieldset&gt;分组容器&lt;/fieldset&gt;&lt;legend&gt;分组标题&lt;/legend&gt;&lt;!-- 选择控件 --&gt;&lt;select&gt;下拉选择&lt;/select&gt;&lt;optgroup&gt;选项分组&lt;/optgroup&gt;&lt;option&gt;下拉选项&lt;/option&gt;&lt;!-- 其他控件 --&gt;&lt;output&gt;输出结果&lt;/output&gt;&lt;meter&gt;标量分数&lt;/meter&gt;&lt;progress&gt;完成进度&lt;/progress&gt;&lt;!-- 补充控件 --&gt;&lt;textarea&gt;多行文本&lt;/textarea&gt;&lt;button&gt;点击按钮&lt;/button&gt;&lt;!-- 输入控件 --&gt;&lt;label&gt;项目标题&lt;/label&gt;&lt;datalist&gt;可选选择&lt;/datalist&gt;&lt;input&gt;输入控件&lt;/input&gt;</code></pre><p>##form标签</p><pre><code>  说明：定义一个表单容器，用户交互体验的重要途径。</code></pre><pre><code>属性：1.action属性定义提交地址:url值。2.target属性定义返回地址:_top,_parent,_self,_blank,iframename。3.name属性定义表单名字:文本值。4.method属性定义表单提交的方式:get,post5.accept-charset属性定义内容编码:字符编码(空格分离)6.entype属性定义表单内容类型(仅post时):  application/x-www-form-urlencoded(默认)  multipart/form-data(input的type为file)  text/plain7.autocomplete属性定义表单是否自动完成:off,on。8.novalidate属性定义表单是否验证:布尔值。</code></pre><p>##fieldset标签</p><pre><code>说明：定义一个元素分组。</code></pre><pre><code>属性：1.form属性定义所属表单:表单ID。2.name属性定义分组名字:文本值。3.disabled属性定义分组是否可用:布尔值。</code></pre><p>##legend标签</p><pre><code>说明：定义fieldset分组的标题。属性：暂无</code></pre><p>##select属性</p><pre><code>说明：定义一个选择列表。</code></pre><pre><code>属性：1.form属性定义所属表单:表单ID。2.name属性定义列表名字:文本值。3.disabled属性定义列表是否可用:布尔值。4.required属性定义是否必选:布尔值。5.autofucos属性定义是否自动聚焦:布尔值。6.size属性定义可见选项数目:数值。7.multiple属性定义是否多选:布尔值。</code></pre><p>##optgroup标签</p><pre><code>说明：定义一个列表选项组。</code></pre><pre><code>属性：1.label属性定义选项组的名字2.disabled属性定义选项组是否可用:布尔值。</code></pre><p>##option标签</p><pre><code>说明：定义选择列表的一个选项。</code></pre><pre><code>属性：1.label属性定义选项含义:文本值。2.disabled属性定义选项是否可用:布尔值。3.value属性定义选项的值:文本值。4.selected属性定义选项是否被选中:布尔值。</code></pre><p>##label标签</p><pre><code>说明：定义一个关联控件。</code></pre><pre><code>属性：1.form定义所属表单:表单ID。2.for属性定义关联的表单元素:元素ID。3.accesskey属性定义快捷键:键盘按键。</code></pre><p>##datalist标签</p><pre><code>说明：定义一个选项组，与option标签配合使用。属性：暂无</code></pre><p>##output标签</p><pre><code>说明：定义计算或用户操作的结果。</code></pre><pre><code>属性：1.form属性定义所属的表单:表单ID。2.name属性结果变量:js变量。3.for属性定义与之相关的元素:元素ID。</code></pre><p>##meter标签</p><pre><code>说明：定义一个标量值或分数值。</code></pre><pre><code>属性：1.form属性定义所属表单:表单ID。2.value属性定义当前值:数值。3.min属性定义初值：数值。4.low 属性定义低值：数值(比min大)。5.high属性定义高值：数值(比max小)。6.max 属性定义终值：数值。7.optimum属性最佳取值:lower,higher。</code></pre><p>##progress属性</p><pre><code>说明：定义任务完成进度。</code></pre><pre><code>属性：1.value属性定义当前进度:数值。2.max 属性定义最终进度:数值。</code></pre><p>##button标签</p><pre><code>说明：定义一个可点击按钮。</code></pre><pre><code>属性：1.form属性定义所属表单:表单ID。2.name属性定义列表名字:文本值。3.disabled属性定义列表是否可用:布尔值。4.type属性定义按钮的类型:button,submit,reset,menu。5.value属性定义按钮的值：文本值。6.formaction属性定义提交地址:url。7.formtarget属性定义返回地址:_top,_parent,_selft,_blank,iframename。8.formmethod属性定义提交方式:get,post。9.formentype属性定义表单内容类型(仅post时):  application/x-www-form-urlencoded(默认)  multipart/form-data(input的type为file)  text/plain10.formnovalidate属性定义是否验证:布尔值。11.autofucos属性定义是否自动聚焦:布尔值。</code></pre><p>##textarea标签</p><pre><code>说明：定义一个多行文本输入框。</code></pre><pre><code>属性：1.form属性定义所属表单:表单ID。2.name属性定义列表名字:文本值。3.disabled属性定义列表是否可用:布尔值。4.cols属性定义文本宽度。5.rows属性定义文本高度。6.minlength属性定义最小长度。7.maxlength属性定义最大宽度。8.selectStart属性定义开始选择的索引。9.selectEnd属性定义结束选择的索引。10.selectDirection属性定义选择的方向。11.required属性定义是否必填。12.readonly属性定义是否只读。13.placeholder属性定义预填字符。14.autofocus属性定义是否自动聚焦。15.autocomplete属性定义是否自动完成。16.spellcheck属性定义是否检查拼写。17.wrap定义是否换行方式:hard,soft。</code></pre><p>##input标签</p><pre><code>说明：定义一个输入框。</code></pre><pre><code>属性：</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>表格标签</title>
+      <link href="/html-5/"/>
+      <url>/html-5/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;!-- 表格标签(10)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;&lt;!-- 表格信息 --&gt;&lt;table&gt;表格容器&lt;/table&gt;&lt;caption&gt;表格标题&lt;/caption&gt;&lt;!-- 表格分组 --&gt;&lt;colgroup&gt;表格列祖&lt;/colgroupd&gt;&lt;col&gt;列祖单元&lt;/col&gt;&lt;!-- 表格语义 --&gt;&lt;thead&gt;表格列头&lt;/thead&gt;&lt;tbody&gt;表格主体&lt;/tbody&gt;&lt;tfooter&gt;表格总和&lt;/tfooter&gt;&lt;!-- 表格单元 --&gt;&lt;tr&gt;表格单行&lt;/tr&gt;&lt;th&gt;表头单元&lt;/th&gt;&lt;td&gt;表格单元&lt;/td&gt;</code></pre><p>##table标签</p><pre><code>说明：定义一个二维数据表格容器。属性：暂无(废弃的属性都可以通过CSS设置)</code></pre><p>##caption标签</p><pre><code>说明：定义表格容器的标题。属性：暂无(废弃的属性都可以通过CSS设置)</code></pre><p>##col标签</p><pre><code>说明：定义一个表格容器的列。属性：span属性定义横跨的列:正整数值。</code></pre><p>##colgroup标签</p><pre><code>说明：定义表格容器列的容器。属性：暂无</code></pre><p>##thead标签</p><pre><code>说明：定义表格容器的头部,一般放置表格头。属性：暂无</code></pre><p>##tbody标签</p><pre><code>说明：定义表格容器的头部,一般放置表格数据。属性：暂无</code></pre><p>##tfooter标签</p><pre><code>说明：定义表格容器的头部,一般放置表格总和。属性：暂无</code></pre><p>##tr标签</p><pre><code>说明：定义表格容器的一行数据。属性：暂无</code></pre><p>##th标签</p><pre><code>说明：定义表格容器头部单元数据。属性：暂无</code></pre><p>##td标签</p><pre><code>说明：定义表格单元数据。属性：暂无</code></pre><pre><code>用法：&lt;!-- 以上表格标签，可简单示例如下，具体应用视情况而定 --&gt;&lt;table&gt;  &lt;colgroup&gt;    &lt;col span=&quot;2&quot; style=&quot;background:red&quot;&gt;    &lt;col span=&quot;1&quot; style=&quot;background:green&quot;&gt;  &lt;/colgroup&gt;  &lt;thead&gt;    &lt;tr&gt;      &lt;th&gt;数据一&lt;/th&gt;      &lt;th&gt;数据二&lt;/th&gt;      &lt;th&gt;数据三&lt;/th&gt;    &lt;/tr&gt;  &lt;/thead&gt;  &lt;tbody&gt;    &lt;tr&gt;      &lt;td&gt;13&lt;/td&gt;      &lt;td&gt;22&lt;/td&gt;      &lt;td&gt;10&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;      &lt;td&gt;11&lt;/td&gt;      &lt;td&gt;25&lt;/td&gt;      &lt;td&gt;18&lt;/td&gt;    &lt;/tr&gt;  &lt;/tbody&gt;  &lt;tfooter&gt;    &lt;tr&gt;      &lt;td&gt;24&lt;/td&gt;      &lt;td&gt;47&lt;/td&gt;      &lt;td&gt;28&lt;/td&gt;    &lt;/tr&gt;  &lt;/tfooter&gt;&lt;/table&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>块级标签</title>
+      <link href="/html-4/"/>
+      <url>/html-4/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;!-- 块级标签(21)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;&lt;!-- 独立块级 --&gt;&lt;div&gt;典型块级&lt;/div&gt;&lt;p&gt;文本段落&lt;/p&gt;&lt;pre&gt;文本预格式段落&lt;/pre&gt;&lt;figure&gt;独立内容&lt;/figure&gt;&lt;figcaption&gt;内容标题&lt;/figcaption&gt;&lt;!-- 列表块级 --&gt;&lt;ul&gt;无序列表&lt;/ul&gt;&lt;ol&gt;有序列表&lt;/ol&gt; &lt;!-- 3属性 --&gt;&lt;li&gt;列表子项&lt;/li&gt; &lt;!-- 1属性 --&gt;&lt;dl&gt;定义列表&lt;/dl&gt;&lt;dt&gt;定义标题&lt;/dt&gt;&lt;dd&gt;定义内容&lt;/dd&gt;&lt;!-- 语义块级 --&gt;&lt;header&gt;头部部分&lt;/header&gt;&lt;nav&gt;导航部分&lt;/nav&gt;&lt;main&gt;主体部分&lt;/main&gt;&lt;section&gt;区域部分&lt;/section&gt;&lt;h1&gt;标题部分&lt;/h6&gt;&lt;hgroup&gt;标题分组&lt;/hgroup&gt;&lt;article&gt;独立部分&lt;/article&gt;&lt;aside&gt;旁边部分&lt;/aside&gt;&lt;footer&gt;尾部部分&lt;/footer&gt;&lt;adress&gt;联系信息&lt;/adress&gt;</code></pre><p>##div标签</p><pre><code>说明：典型的块级标签，一般作为样式容器，并无特别语义。属性：暂无</code></pre><pre><code>用法：&lt;!-- 作为样式容器，添加样式 --&gt;&lt;div  class=&quot;red-font&quot;&gt;青箬笠，绿蓑衣，斜风细雨不须归。&lt;/div&gt;</code></pre><p>##p标签</p><pre><code>说明：定义文本段落，忽略多余空白符，一般用于放置文本。属性：暂无</code></pre><pre><code>用法：&lt;!-- 示例 --&gt;&lt;p&gt;日暮酒醒人已远，满天风雨下西楼。&lt;/p&gt;</code></pre><p>##pre标签</p><pre><code>说明：定义预格式文本段落，保留所有空白符。属性：暂无</code></pre><pre><code>用法：&lt;!-- 怎么输入，怎么显示 --&gt;&lt;pre&gt;  西窗下，    风摇翠竹，      疑是故人来。&lt;/pre&gt;</code></pre><p>##figure标签</p><pre><code>说明：定义一段独立的内容,配合figcaption标签使用。属性：暂无</code></pre><p>##figcaption标签</p><pre><code>说明：定义figure标签内容的标题。属性：暂无</code></pre><pre><code>&lt;!-- 这段内容通常是独立的,与主体无关 --&gt;用法：&lt;figure&gt;  &lt;img src=&quot;source.jpg&quot;&gt;  &lt;figcaption&gt;Source&lt;/figcaption&gt;&lt;/figure&gt;</code></pre><p>##ul标签</p><pre><code>说明：定义无序列表,配合li标签使用。属性：暂无(样式修改请用CSS)</code></pre><pre><code>用法：&lt;!-- 不需排列顺序的内容 --&gt;&lt;ul&gt;  &lt;li&gt;广西&lt;/li&gt;  &lt;li&gt;广东&lt;/li&gt;&lt;/ul&gt;</code></pre><p>##ol标签</p><pre><code>说明：定义有序列表,配合li标签使用。属性：1.type属性定义序号类型:a(小写),A(大写),i(小写罗马),I(大写罗马),1(数字,默认)2.start属性定义开始序号:数值3.reversed属性定义序号倒置:布尔值</code></pre><pre><code>用法：&lt;!-- 一个大写字母排序,序号倒置的列表 --&gt;&lt;ol type=&quot;A&quot;  reversed&gt;  &lt;li&gt;第一&lt;/li&gt;  &lt;li&gt;第二&lt;/li&gt;&lt;ol&gt;</code></pre><p>##li标签</p><pre><code>说明：定义ol标签或ul标签的子项。属性:value属性定义当前项的序列值,仅在ol标签中有效。</code></pre><pre><code>用法：&lt;ol&gt;  &lt;li value=&quot;5&quot;&gt;从5开始&lt;/li&gt;  &lt;li&gt;这里是6&lt;/li&gt;&lt;/ol&gt;</code></pre><p>##dl标签</p><pre><code>说明：定义一个包含术语定义即术语描述的列表(配合dt,dd标签使用)。属性：暂无</code></pre><p>#dt标签</p><pre><code>说明：定义一个术语的定义(配合dl,dd标签使用)属性：暂无</code></pre><p>##dd标签</p><pre><code>说明：定义一个术语的描述(配合dl,dt标签使用)属性：暂无</code></pre><pre><code>用法：&lt;!-- 以上三个标签都不能单独使用,需要一起使用 --&gt;&lt;dl&gt;  &lt;dt&gt;虎牙直播&lt;/dt&gt;  &lt;dd&gt;技术驱动娱乐,弹幕式互动直播平台&lt;/dd&gt;  &lt;dt&gt;斗鱼直播&lt;/dt&gt;  &lt;dd&gt;每个人的直播平台&lt;/dd&gt;&lt;/dl&gt;</code></pre><p>##header标签</p><pre><code>说明：定义一个头部部分,语义标签。属性：暂无</code></pre><p>##nav标签</p><pre><code>说明：定义一个导航部分,语义标签。属性：暂无</code></pre><p>##main标签</p><pre><code>说明：定义一个主体部分,语义标签。属性：暂无</code></pre><p>##section标签</p><pre><code>说明：定义一个独立部分,语义标签,略微却别与article标签。属性：暂无</code></pre><p>##h1~h6标签</p><pre><code>说明：定义一个标题,语义标签,一般用于文章。属性：暂无</code></pre><p>##hgroup标签</p><pre><code>说明：定义一个标题容器,语义标签,当有多级标题时使用。属性：暂无</code></pre><p>##article标签</p><pre><code>说明：定义一个独立结构,语义标签,略微区别于section标签。属性：暂无</code></pre><p>##aside标签</p><pre><code>说明：定义一个无关部分,语义标签,如个人笔记,相关广告,个人资料等。属性：暂无</code></pre><p>##footer标签</p><pre><code>说明：定义一个尾部部分,语义标签,可放置友情链接,版权声明等。属性：暂无</code></pre><p>##adress标签</p><pre><code>说明：定义一个联系信息,语义标签,如文章作者,联系电话,联系邮箱等。属性：暂无</code></pre><pre><code>使用：&lt;!-- 以上10个语义标签,可简单示例如下,具体应用视情况而定 --&gt;&lt;body&gt;  &lt;!-- 头部导航部分 --&gt;  &lt;header&gt;    &lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;logo.jpg&quot;&gt;&lt;/a&gt;    &lt;nav&gt;      &lt;ul&gt;        &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;        &lt;li&gt;&lt;a href=&quot;article.html&quot;&gt;文章&lt;/a&gt;&lt;/li&gt;        &lt;li&gt;&lt;a href=&quot;product.html&quot;&gt;作品&lt;/a&gt;&lt;/li&gt;        &lt;li&gt;&lt;a href=&quot;about.html&quot;&gt;关于&lt;/a&gt;&lt;/li&gt;      &lt;/ul&gt;    &lt;/nav&gt;  &lt;/header&gt;  &lt;!-- 文档主体内容 --&gt;  &lt;main&gt;    &lt;section&gt;      &lt;h1&gt;大圣归来&lt;/h1&gt;      &lt;p&gt;作者:绝弹 发布时间:&lt;time datetime=&quot;2018-11-23&quot; pubdate&gt;2018-11-23&lt;/time&gt;&lt;/p&gt;    &lt;/section&gt;    &lt;article&gt;      &lt;p&gt;一花一世界，一叶一菩提，如是知 如是见，如是信解而已，         一切皆为虚幻，命由己造，相由心生，一  念愚即般若绝！      &lt;/p&gt;    &lt;/article&gt;    &lt;aside&gt;      标签:大圣,绝弹    &lt;/aside&gt;  &lt;/main&gt;  &lt;!-- 尾部部分一般声明版权,友情链接,链接信息等 --&gt;  &lt;footer&gt;    Copyright &amp;copy;绝弹版权所有 &lt;adress&gt;联系邮箱:952222@163.com&lt;/adress&gt;  &lt;/footer&gt;&lt;/body&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>行内标签</title>
+      <link href="/html-3/"/>
+      <url>/html-3/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;!-- 文字格式 (34个) ，以下标签分类，仅方便个人记忆，并非官方给出，暂时先列出标签，以后再慢慢补上 - --&gt;&lt;!-- 换行通用 - --&gt;&lt;hr&gt;  &lt;!-- 5属性 --&gt;&lt;br&gt;&lt;wbr&gt;&lt;span&gt;行内标签&lt;/span&gt;&lt;small&gt;小号标签&lt;/small&gt;&lt;!-- 文本方向- --&gt;&lt;bdo&gt;文字方向&lt;/bdo&gt;    &lt;!-- 1属性 --&gt;&lt;bdi&gt;文字方向&lt;/bdi&gt;    &lt;!-- 1属性 --&gt;&lt;sup&gt;上标标签&lt;/sup&gt;&lt;sub&gt;下标标签&lt;/sub&gt;&lt;!-- 文本效果- --&gt;&lt;time&gt;定义时间&lt;/time&gt;  &lt;!-- 2属性 --&gt;&lt;a&gt;文本连接&lt;/a&gt;        &lt;!-- 7属性 --&gt;&lt;abbr&gt;文本缩写&lt;/abbr&gt;  &lt;!-- 1属性 --&gt;&lt;dfn&gt;文本定义&lt;/dfn&gt;    &lt;!-- 1属性 --&gt;&lt;!-- 文字编辑 - --&gt;&lt;ins&gt;插入文本&lt;/ins&gt;    &lt;!-- 1属性 --&gt;&lt;del&gt;删除文本&lt;/del&gt;    &lt;!-- 1属性 --&gt;&lt;u&gt;标记文本&lt;/u&gt;&lt;s&gt;删除文本&lt;/s&gt;&lt;!-- 文字强调- --&gt;&lt;em&gt;强调标签&lt;/em&gt;&lt;strong&gt;强调标签&lt;/strong&gt;&lt;i&gt;斜体标签&lt;/i&gt;&lt;b&gt;粗体标签&lt;/b&gt;&lt;!-- 文本引用 - --&gt;&lt;blockquote&gt;块级引用&lt;/blockquote&gt;  &lt;!-- 1属性 --&gt;&lt;q&gt;内联引用&lt;/q&gt;                    &lt;!-- 1属性 --&gt;&lt;cite&gt;定义引用&lt;/cite&gt;&lt;mark&gt;内容标记&lt;/mark&gt;&lt;!-- 文本代码 --&gt;&lt;code&gt;计算机代码&lt;/code&gt;&lt;samp&gt;计算机程序&lt;/samp&gt;&lt;var&gt;定义变量&lt;/var&gt;&lt;kbd&gt;键盘输入&lt;/kbd&gt;&lt;!-- 文本发音 --&gt;&lt;ruby&gt;文本容器&lt;/ruby&gt;&lt;rb&gt;发音文字&lt;/rb&gt;&lt;rp&gt;不能展示&lt;/rp&gt;&lt;rt&gt;发音字符&lt;/rt&gt;&lt;rtc&gt;语义注解&lt;/rtc&gt;</code></pre><p>##hr标签(块级标签)</p><pre><code>说明：定义一条水平线，占据一行。</code></pre><pre><code>属性：(以下属性,已经过时,但依然可以使用)1.align属性定义水平线的排列方向(默认居中):left,center,right。2.color属性定义水平线的颜色:css支持的颜色写法。3.noshade属性定义是否去除阴影:布尔值。4.size属性定义水平线的高度:css支持的长度写法。2.width属性定义水平线的宽度:css支持的长度写法。</code></pre><pre><code>用法：&lt;!-- 一条宽200px,高5px,天蓝,居左,没有阴影的水平线 --&gt;&lt;hr width=&quot;200px&quot; size=&quot;5px&quot; color=&quot;sky-blue&quot; align=&quot;left&quot; noshade&gt; </code></pre><p>##br标签</p><pre><code>说明：定义一个换行符号，强制换行。属性：暂无</code></pre><pre><code>用法：&lt;!-- 通常,这段话显示在一行,加上&lt;br&gt;后,变成了两行 --&gt;&lt;p&gt;选择了路的方向&lt;br&gt;却未决定路途的终点&lt;/p&gt;</code></pre><p>##wbr标签</p><pre><code>说明：提供一个合适的换行地点，不强制换行。属性：暂无</code></pre><pre><code>用法：&lt;!-- 一般用在英语句子换行,又不想拆分单词在两行的时候 --&gt;&lt;p&gt;这是一段话，当它无法全部显示在一行的时候，它会&lt;wbr&gt;根据wbr标签，选择&lt;wbr&gt;合适&lt;wbr&gt;的&lt;wbr&gt;换行地点&lt;/p&gt;</code></pre><p>##span标签</p><pre><code>说明：定义一个典型的行内元素,没有任何语义。属性：暂无</code></pre><pre><code>用法：&lt;!-- 可以用来给行内某处地方设置特别的样式 --&gt;&lt;p&gt;一段话，没有什么&lt;span&gt;特别&lt;/span&gt;的地方。&lt;/p&gt;</code></pre><p>##a标签</p><pre><code>说明：定义一个超链接,可以链接页内元素或其他网页。</code></pre><pre><code>属性：1.download属性定义下载而不是导航url:文本值(下载文件名)。2.href属性定义超链接地址:#锚点(内部),协议地址(外部)。3.target属性定义何处打开超链接地址:_top,_parent,_self,_blank4.hreflang属性定义导航地址的语言,仅作为提供建议。5.ping属性定义PING POST请求,以空格分隔:url url url。6.rel属性定义当前文档与超链接地址的关系,空格分隔:参考之前。7.type属性定义超链接地址的类型:MIME类型。</code></pre><pre><code>用法：&lt;!-- 跳转到当前页面中id为main的元素 --&gt;&lt;a href=&quot;#main&quot;&gt;Jump to main&lt;/a&gt;&lt;!-- 空白页面打开一个网页 --&gt;&lt;a href=&quot;https://www.jianshu.com&quot;  target=&quot;_blank&quot;&gt;Jump to Jianshu&lt;/a&gt;&lt;!-- 创建邮箱链接 --&gt;&lt;a href=&quot;mailto:952222@163.com&quot;&gt;Sent me email&lt;/a&gt;&lt;!-- 创建电话链接 --&gt;&lt;a href=&quot;tel:+8615900000000&quot;&gt;Call me&lt;/a&gt;&lt;!-- 创建下载链接 --&gt;&lt;a download=&quot;demo.jpg&quot; href=&quot;download/demo.jpg&quot;&gt;Download Jpg&lt;/a&gt;</code></pre><p>##small标签</p><pre><code>说明：定义字体变小一号的文本(大-&gt;中-&gt;小)属性：暂无</code></pre><pre><code>用法：&lt;!-- 相较于行内元素的字体大小,small标签会自降一号 --&gt;&lt;p&gt;这是一段普通的文本,&lt;small&gt;这是一段小一号的文本&lt;/small&gt;&lt;/p&gt;</code></pre><p>##abbr标签</p><pre><code>说明：定义一个缩写,可以提供一个完整的描述,默认带点线。</code></pre><pre><code>属性：title属性以提示框的形式表现全写(全局属性的title在这里有特别意义)：文本值</code></pre><pre><code>用法：&lt;p&gt;准备参加十二月的&lt;abbr title=&quot;College English Test - 6&quot;&gt;CET-6&lt;/abbr&gt;考试&lt;/p&gt;</code></pre><p>##dfn标签</p><pre><code>说明：标记一个术语,值由内容,title属性,abbr标签title属性确定</code></pre><pre><code>属性：title属性以提示框的形式术语的值：文本值</code></pre><pre><code>用法：&lt;!-- 用法一:dnf带title --&gt;&lt;p&gt;世界由&lt;dfn title=&quot;world wide web&quot;&gt;www&lt;/dfn&gt;组成&lt;/p&gt;&lt;!-- 用法二:dnf带有title属性的abbr标签 --&gt;&lt;p&gt;世界由&lt;dfn&gt;&lt;abbr title=&quot;world wide web&quot;&gt;www&lt;/abbr&gt;&lt;/dfn&gt;组成&lt;/p&gt;</code></pre><p>##bdo标签</p><pre><code>说明：定义一段文字，双向覆盖文字排向。</code></pre><pre><code>属性：dir属性(其实也是全局属性)定义文本排列的方向:ltr,rtl。</code></pre><pre><code>用法：&lt;!-- 文字完全反着排列 --&gt;&lt;bdo dir=&quot;right&quot;&gt;这是一段从右往左排列的文字&lt;/bdo&gt;</code></pre><p>##bdi标签</p><pre><code>说明：定义一段文字，双向隔离文字拍向。</code></pre><pre><code>属性：dir属性(其实也是全局属性)定义文本排列的方向:ltr,rtl。</code></pre><pre><code>用法：&lt;!-- bdi内容会和p内容分开 --&gt;&lt;p dir=&quot;rtl&quot;&gt;一段从右往左的文字，但是&lt;bdi&gt;这句不是&lt;/bdi&gt;&lt;/p&gt;</code></pre><p>##sup标签</p><pre><code>说明：定义一段文字，以上标形式显示。属性：暂无</code></pre><pre><code>用法：&lt;!-- 可以作为算数的平方符号使用 --&gt;&lt;p&gt;1024&lt;sup&gt;2&lt;/sup&gt;+1024&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre><p>##sub标签</p><pre><code>说明：定义一段文字，以下标形式显示。属性：暂无</code></pre><pre><code>用法：&lt;!-- 可以作为算数的标记使用 --&gt;&lt;p&gt;1024&lt;sub&gt;2&lt;/sub&gt;+1024&lt;sub&gt;2&lt;/sub&gt;&lt;/p&gt;</code></pre><p>##ins标签</p><pre><code>说明：定义一段已经被插入的文本。</code></pre><pre><code>属性：1.datetime属性定义修改的时间:有效的日期时间。</code></pre><pre><code>用法：&lt;!-- 示例 --&gt;&lt;p&gt;烟锁池塘柳，&lt;ins datetime=&quot;2018-11-22&quot;&gt;炮镇海棠楼&lt;/ins&gt;&lt;/p&gt;</code></pre><p>##del标签</p><pre><code>说明：定义一段已经被删除的文本。</code></pre><pre><code>属性：1.datetime属性定义修改的时间:有效的日期时间。</code></pre><pre><code>用法：&lt;!-- 示例 --&gt;&lt;p&gt;烟锁池塘柳，&lt;del datetime=&quot;2018-11-22&quot;&gt;疱疹海棠喽&lt;/del&gt; 炮镇海棠楼&lt;/p&gt;</code></pre><p>##u标签</p><pre><code>说明：定义一段有下划线的文本,并无特别意义，推荐ins标签。属性：暂无</code></pre><pre><code>用法：&lt;!-- 示例 --&gt;&lt;p&gt;烟锁池塘柳，&lt;u&gt;炮镇海棠楼&lt;/u&gt;&lt;/p&gt;</code></pre><p>##s标签</p><pre><code>说明：定义一段有删除线的文本,并无特别意义,推荐del标签。属性：暂无</code></pre><pre><code>用法：&lt;!-- 示例 --&gt;&lt;p&gt;烟锁池塘柳，&lt;s&gt;疱疹海棠喽&lt;/s&gt; 炮镇海棠楼&lt;/p&gt;</code></pre><p>##em标签</p><pre><code>说明：定义一段强调文本，表明内容的着重点，显示效果与i标签相同。属性：暂无</code></pre><pre><code>用法：&lt;!-- 强调动作是敲,而不是推,踹,踢之类的动作--&gt;&lt;p&gt;鸟宿池边树，僧&lt;em&gt;敲&lt;/em&gt;月下门&lt;/p&gt;</code></pre><p>##strong标签</p><pre><code>说明：定义一段强调文本，表明内容的重要性，显示效果与b标签相同。属性：暂无</code></pre><pre><code>用法：&lt;!-- 强调章节的标题内容，非常强烈的强调--&gt;&lt;p&gt;章节一:&lt;strong&gt;如何学习html&lt;/strong&gt;&lt;/p&gt;</code></pre><p>##i标签</p><pre><code>说明：定义斜体文字。属性：暂无</code></pre><pre><code>用法：&lt;!-- 出于某些原因，需要和和其他内容区分开来 --&gt;&lt;p&gt;一段普通文字，&lt;i&gt;没有&lt;/i&gt;什么特别的地方&lt;/p&gt;</code></pre><p>##b标签</p><pre><code>说明：定义粗体文字。属性：暂无</code></pre><pre><code>用法：&lt;!-- 一般来说,加粗只是为了吸引用户的注意 --&gt;&lt;p&gt;一段普通文字，&lt;b&gt;没有&lt;/b&gt;什么特别的地方&lt;/p&gt;</code></pre><p>##blockquote标签(块级标签)</p><pre><code>说明：定义一段块级引用，一般有缩进。</code></pre><pre><code>属性：1.cite属性定义引用来源:url</code></pre><pre><code>用法：&lt;!-- 示例 --&gt;&lt;blockquote &gt;小楼昨夜又东风，故国不堪回首月明中。&lt;/blockquote&gt;</code></pre><p>##q标签(块级标签)</p><pre><code>说明：定义一段行内引用，一般没有缩进。</code></pre><pre><code>属性：1.cite属性定义引用来源:url</code></pre><pre><code>用法：&lt;!-- 示例 --&gt;&lt;p&gt;古人云,&lt;q&gt;好记性不如烂笔头&lt;/q&gt;&lt;/q&gt;</code></pre><p>##cite标签(块级标签)</p><pre><code>说明：定义引用的来源,一般是作品什么的,配合blockquote标签使用。属性：暂无</code></pre><pre><code>用法：&lt;!-- 示例 --&gt;&lt;blockquote &gt;春风得意马蹄疾，一日看尽长安花。 —— &lt;cite&gt;孟郊《登科后》&lt;cite&gt;&lt;/blockquote&gt;</code></pre><p>##mark标签</p><pre><code>说明：定义一段标记文本，用于高亮显示，自带黄色背景色。属性：暂无</code></pre><pre><code>用法：&lt;p&gt;谁念&lt;mark&gt;西风&lt;/mark&gt;独自凉，萧萧&lt;mark&gt;黄叶&lt;/mark&gt;闭疏窗，沉思往事立残阳。&lt;/p&gt;</code></pre><p>##code标签</p><pre><code>说明：定义一段计算机代码，等宽字体属性：暂无</code></pre><pre><code>用法&lt;!-- 简书的代码显示就是用的code标签 --&gt;&lt;code&gt;some example&lt;/code&gt;</code></pre><p>##samp标签</p><pre><code>说明：定义计算机程序的输出属性：暂无</code></pre><pre><code>用法&lt;!-- 暂时还没有什么例子 --&gt;&lt;samp&gt;some example&lt;/samp&gt;</code></pre><p>##var标签</p><pre><code>说明：定义变量的名称,或由用户提供的值,默认斜体属性：暂无</code></pre><pre><code>用法&lt;!-- 比如数学运算中x,y变量 --&gt;&lt;p&gt;&lt;var&gt;x&lt;/var&gt;=&lt;var&gt;y&lt;/var&gt;+2&lt;/p&gt;</code></pre><p>##kbd标签</p><pre><code>说明：定义用户的键盘输入,默认monospace字体属性：暂无</code></pre><pre><code>用法&lt;!-- 比如数学运算中x,y变量 --&gt;&lt;p&gt;按下以下键进入游戏:&lt;kbd&gt;enter&lt;/kbd&gt;&lt;/p&gt;</code></pre><p>##time标签</p><pre><code>说明：定义日期和时间(可包含时区)</code></pre><pre><code>属性：1.datetime属性定义时间:标准日期格式2.pubdate属性定义发布日期,一般表示文章发布日期:布尔值</code></pre><pre><code>用法&lt;!-- 在一篇文章中用pubdate表示该文章的发布时间 --&gt;&lt;p&gt;html学习之路(二)发布于&lt;time datetime=&quot;2018-11-22 19:28&quot; pubdate&gt;星期四&lt;/time&gt;&lt;/p&gt;</code></pre><p>##ruby标签</p><pre><code>说明：定义东亚字符发音的容器(配合以下标签使用)属性：暂无</code></pre><p>##rp标签</p><pre><code>说明：定义不能使用ruby的注释,通常为圆括号属性：暂无</code></pre><p>##rt标签</p><pre><code>说明：定义字符的发音,在ruby标签内使用属性：暂无</code></pre><p>##rb标签</p><pre><code>说明：定义ruby标签内字符发音的范围属性：暂无</code></pre><p>##rtc标签</p><pre><code>说明：定义字符的语义注解属性：暂无</code></pre><pre><code>用法：&lt;!-- 比如&quot;汉字&quot;的发音  --&gt;&lt;ruby&gt;  &lt;rb&gt;汉&lt;/rb&gt;   &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;han&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;  &lt;rb&gt;字&lt;/rb&gt;   &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;zi&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;  &lt;rtc&gt;Chinese&lt;/rtc&gt;&lt;/ruby&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>head</title>
+      <link href="/html-2/"/>
+      <url>/html-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>文档没有head里面的内容，也不会影响页面的布局。但head提供的内容对于整个文档来说，有着举足轻重的影响。例如有在head里正确声明文档的字符编码，可以确保页面不会乱码；声明样式，可以渲染绚丽的页面；声明脚本，可以让页面产生交互等。</p><h2 id="title标签-无属性"><a href="#title标签-无属性" class="headerlink" title="title标签(无属性)"></a>title标签(无属性)</h2><pre><code>说明：定义一个文档级别的标题，这个标题会在浏览器输入栏上方显示。属性：暂无</code></pre><pre><code>用法：&lt;title&gt;菜鸟教程 - 学的不仅是技术，更是梦想！&lt;/title&gt;</code></pre><h2 id="meta标签-4属性"><a href="#meta标签-4属性" class="headerlink" title="meta标签(4属性)"></a>meta标签(4属性)</h2><pre><code>说明：定义文档的元信息，不同的属性，标记着不同的元内容。</code></pre><pre><code>属性：1.charset属性定义文档的编码方式，未声明可能会出现乱码。  取值：UTF-8,GBK2.name属性定义关于SEO的元信息，配合content属性使用。  取值：冒号前为name属性的值,冒号后为content属性的值  1.description:文本值，  2.keywords:文本值，以逗号隔开  3.author:文本值(名字和邮箱，以逗号隔开)  4.robots:待补充  5.viewport:代补充3.http-equiv属性定义等同于http头部的元信息，配合content属性使用。  取值：冒号前为name属性的值,冒号后为content属性的值  1.content-type:UTF-8,GBK  2.X-UA-Campability:ie-edge,chrome-1  3.refresh:刷新间隔(秒)[,跳转地址(绝对地址或相对地址)]4.content属性不能单独使用，需和前面两个属性配合使用。</code></pre><pre><code>用法一：&lt;!-- 这是html5的写法，也有html4.0.1的写法，推荐这种写法 --&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre><pre><code>用法二：&lt;!-- 文档描述，会被搜索引擎显示在搜索页面中。 --&gt;&lt;meta name=&quot;description&quot; content=&quot;绝弹一个博客&quot;&gt;&lt;!-- 文档关键字，关键字之间以逗号隔开，搜索引擎根据该关键字分类收录。 --&gt;&lt;meta name=&quot;keywords&quot; content=&quot;html,css,javascript,个人博客&quot;&gt;&lt;!-- 文档作者，由名字与邮箱组成，中间以逗号隔开。--&gt;&lt;meta name=&quot;author&quot; content=&quot;juetan,952222@163.com&quot;&gt;&lt;!-- 搜索机器人的搜索权限，具体权限看这里: --&gt;&lt;meta name=&quot;robots&quot; content=&quot;index,flow&quot;&gt;&lt;!--  视图端口，主要针对移动端 --&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,inite-scale=1.0&quot;&gt;</code></pre><pre><code>用法三：&lt;!-- 文档编码，这是html4.0.1的写法，推荐上述html5的写法 --&gt;&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html,charset=UTF-8&quot;&gt;&lt;!-- 浏览器兼容，告诉浏览器选择什么样的版本渲染文档 --&gt;&lt;meta http-equiv=&quot;X-UA-campability&quot; content=&quot;IE=edge,chrome=1&quot;&gt;&lt;!-- 文档刷新，由间隔时间(秒)和跳转地址组成，中间以逗号隔开 --&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5,https://www.juetan.cn&quot;&gt;</code></pre><h2 id="link标签-3属性"><a href="#link标签-3属性" class="headerlink" title="link标签(3属性)"></a>link标签(3属性)</h2><pre><code>说明：定义文档所链接的外部资源，按属性值的不同，链接不同的资源。</code></pre><pre><code>属性：1.rel属性定义文档与外部资源的关系。  值：icon,stylesheet,author,alternate,archives,bookmark,external,first  last,help,license,next,nofollow,norefere,pingback,prefetch,prev,search  sidebar,tag,up2.media属性定义资源在什么设备上加载。  取值：以下组合  1.运算符：and not ,  2.设备：all,screen,handheld,aural,braile,projection,print,tty,tv  3.取值:width,height,device-width,device-height,orientation,aspect-ratio  device-aspect-ratio,color,color-index,monochrome,resolution,scan,grid3.src属性定义资源的地址，文本值。</code></pre><pre><code>&lt;!-- 引入一个文档图标，该图标与文档标题一同显示在浏览器输入栏上方 --&gt;&lt;link rel=&quot;shortcut icon&quot; src=&quot;favicon.ico&quot;&gt;&lt;!-- 引入一个外部样式表，可根据media属性在特定设备上引入该样式表 --&gt;&lt;link rel=&quot;stylesheet&quot; media=&quot;screen and width&gt;768px&quot; src=&quot;/style.css&quot;&gt;</code></pre><h2 id="style标签-无属性"><a href="#style标签-无属性" class="headerlink" title="style标签(无属性)"></a>style标签(无属性)</h2><pre><code>说明：定义一个内联样式表，作用在该文档之内。属性：暂无</code></pre><pre><code>用法：&lt;style&gt;  h1 {    color:red  }&lt;/style&gt;</code></pre><h2 id="script标签-4属性"><a href="#script标签-4属性" class="headerlink" title="script标签(4属性)"></a>script标签(4属性)</h2><pre><code>说明：定义脚本，作用在该文档之内。</code></pre><pre><code>属性：1.type属性定义脚本的类型，非以下值会被当做数据块。  值：text/[javascript,ecmascript],application[javascript,ecmascript],module2.src属性定义脚本的来源地址，文本值。3.defer属性定义脚本在文档解析后，DOMContentload前触发，布尔值。4.async属性定义是否异步执行脚本，布尔值。</code></pre><pre><code>用法：&lt;!-- 引入外部脚本 异步加载 --&gt;&lt;script scr=&quot;index.js&quot; async&gt;&lt;/script&gt;&lt;!-- 定义内部脚本 延迟解析 --&gt;&lt;script defer&gt;  alert(&quot;hello,world!&quot;);&lt;/script&gt;</code></pre><h2 id="附录："><a href="#附录：" class="headerlink" title="附录："></a>附录：</h2><pre><code>&lt;!DOCTYPE html&gt; &lt;!-- 头部标签(4个)，以下标签分类，仅方便个人记忆，并非官方给出，暂时先列出标签，以后再慢慢补上 --&gt;&lt;html lang=&quot;zh-cmn-Hans&quot;&gt; &lt;!-- 中文汉字 --&gt;    &lt;head&gt;        &lt;!-- 字符编码(html5写法) --&gt;        &lt;meta charset=&quot;UTF-8&quot;&gt;        &lt;!-- 字符编码(html4.0.1写法) --&gt;        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=UTF-8&quot;&gt;        &lt;!-- 页面标题 --&gt;        &lt;title&gt;Title of  this page&lt;/title&gt;        &lt;!-- 兼容模式 --&gt;        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;/&gt;        &lt;!-- 移动设备 --&gt;        &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no&quot;&gt;        &lt;!-- 页面描述 --&gt;        &lt;meta name=&quot;description&quot; content=&quot;绝弹小站 - 正在学习前端的个人博客&quot;/&gt;        &lt;!-- 页面关键词 --&gt;        &lt;meta name=&quot;keywords&quot; content=&quot;前端,Html学习,Css学习,Js学习,个人博客&quot;/&gt;        &lt;!-- 网页作者 --&gt;        &lt;meta name=&quot;author&quot; content=&quot;juetan, contact@juetan.cn&quot;/&gt;        &lt;!-- 搜索引擎 --&gt;        &lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;/&gt;        &lt;!-- 页面刷新 --&gt;        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;https://www.juetan.cn&quot;&gt;        &lt;!-- 网页图标 --&gt;        &lt;link rel=&quot;shortcut icon&quot;  href=&quot;/favicon.ico&quot;&gt;        &lt;!-- 外部样式表 --&gt;        &lt;link rel=&quot;stylesheet&quot; media=&quot;&quot;  href=&quot;/css/index.css&quot;&gt;        &lt;!-- 外部脚本 --&gt;        &lt;script src=&quot;/js/index.js&quot;&gt;&lt;/script&gt;        &lt;!-- 内部样式表 --&gt;        &lt;style&gt;div {background-color:red}&lt;/style&gt;        &lt;!-- 内部脚本 --&gt;        &lt;script&gt;document.ready(function(){alert(&quot;hello,world&quot;);});&lt;/script&gt;    &lt;/head&gt;    &lt;body&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>歌手页面(点击跳转+滑动联动)</title>
+      <link href="/music-10/"/>
+      <url>/music-10/</url>
+      
+        <content type="html"><![CDATA[<p>上一节完成了页面的展示及滚动效果，接下来实现歌手列表和歌手索引的联动效果，点击右侧的字母，中间跳转到相应的歌手位置，滑动歌手页面时，右侧的字母列表也随之改变。</p><ol><li><p>打开src/base/listview/index.vue(没有则创建),实现点击跳转</p><pre><code> //实现原理： 因为字母列表索引和歌手列表相对应，在触屏开始的时候，记录下开 //始索引index及当前元素位于浏览器器的 //Top偏移值y1；在触屏移动的时候，记录下当前top偏移值y2，根据(y2-y1)/元素高度 //得到偏移索引，开始索引index+偏移索引等于当前索引。把当前 //索引传递进_scrollTo， &lt;template&gt;     &lt;ul&gt;         &lt;li ref=&quot;grouplist&quot;&gt;             &lt;h2&gt; ... &lt;/h2&gt;             &lt;ul&gt;                 &lt;li ref=&quot;itemlist&quot;&gt;             &lt;/ul&gt;         &lt;/li&gt;     &lt;/ul&gt;     //添加两个事件监听，1.触屏开始 2.触屏移动     &lt;div class=&quot;list-shortcut&quot; @touchStart=&quot;onTS&quot; @touchMove.top.prevent=&quot;onTM&quot;&gt;     &lt;/div&gt; &lt;/template&gt; &lt;script&gt;     export default {         created() {             this.touch = {},         }         methods: {             //[1] 为索引列表添加触屏开始事件处理程序             onTS(e) {                 //获取开始li元素的data_index属性                 let index = getData(e.target,&#39;index&#39;)                 //获取开始li元素的偏移值                 this.touch.y1 = e.touchs[0].pageY                 //放置当前索引                 this.touch.index = index                 //[3] 歌手列表滚动到指定位置                 this._scrollTo(index)             },             //[2] 为索引列表添加触屏移动事件处理程序             onTM(e) {                 //保存当前li元素的偏移值                 this.touch.y2 = e.touchs[0].pageY                 //获取偏移索引                 let offset = (this.touch.y2-this.touch.y1) / 18 | 0                 //计算得出当前索引                 let index = parseInt(this.touch.index) + offset                 //[3] 歌手列表滚动到指定位置                 this._scrollTo(index)             },             //[方法] 歌手列表滚动到指定位置             _scrollTo(index) {                 //对index做预先处理 ps: heights最后两个高度是多余的                 if(!index &amp;&amp; index!=0) return                  if(index &lt; 0) {                     index = 0                 } else if(index &gt; this.heights.length - 2) {                     index = this.heights.length - 2                 }                 //滚动歌手列表  ps:方法scrollToElement在Scroll组件定义                 this.$refs.listview.scrollToElement(this.$refs.grouplist[index],0)             }         },     } &lt;/script&gt; //scr/base/scroll/index.vue,methods添加以下方法 scrollToElement() {     this.scroll &amp;&amp; this.scroll.scrollToElement.apply(this.scroll,arguments) } //scr/common/js/dom.js 添加以下内容 export function getData(el,name,value) {     const prefix = &#39;data-&#39;     name = prefix + name     if(value) {         return el.setAttribute(name,value)     } else {         return el.getAttribute(name)     } }</code></pre></li><li><p>实现两边联动效果</p><pre><code> &lt;template&gt;     //[2.1] 滚动时，添加监听函数     &lt;m-scroll @scroll=&quot;scroll&quot; &gt;         &lt;ul&gt;             &lt;li&gt;                 &lt;h2&gt; ... &lt;/h2&gt;                 &lt;ul&gt;                     //[3] 动态改变右侧字母索引的样式                     &lt;li :class=&quot;{&#39;current&#39;: currentIndex == index}&quot; &gt;                 &lt;/ul&gt;             &lt;/li&gt;         &lt;/ul&gt;         &lt;div&gt;         &lt;/div&gt;         //[fixed 1](共三步) 歌手列表固定栏 通过fixed变量动态改变         &lt;div class=&quot;list-fixed&quot; v-show=&quot;fixedTitle&quot; ref=&quot;fixed&quot;&gt;             &lt;div class=&quot;fixed-title&quot;&gt;{{fixedTitle}}&lt;/div&gt;         &lt;/div&gt;     &lt;/scroll&gt; &lt;/template&gt; &lt;script&gt;     export default {         computed: {             //[fixed 2] 计算是否固定             fixed() {                 if(this.scrollY &gt; 0) return undefined                 return this.data[this.currentIndex] ?                  this.data[this.currentIndex].title : undefined             }         },         methods: {             //如果手动点击，更新歌手列表的ScrollY值             scroll() {                ...                this.scrollY = -this.heightList[index]             }，             _calculateHeight() {                 var height = 0                 this.heightList.push(height)                 for(let i=0; i&lt;this.$refs.listgroup.length; i++) {                     height += this.$refs.listgroup[i].clientHeight                     this.heightList.push(height)                 }             },             //[2.2] 监听处理函数，赋值给scrollY             scroll(pos) {                 this.scrollY = pos.y             }         },         watch: {             data() {                 //[1]  获取歌手列表各分组高度                 this._calculateHeight()             },             //[3] scrollY变化时，处理得到currentIndex             scrollY(newValue) {                 if(newY &gt; 0) {                     this.currentIndex = 0                     return                 }                 for(let i=0; i&lt;this.heightList.length; i++) {                     let height1 = this.heightList[i]                     let height2 = this.heightList[i+1]                     if(-newY &gt;= height1 &amp;&amp; -newY &lt; height2) {                         this.currentIndex = i                         [fixed 3] 监听父组到顶部的距离，固定栏减少该段距离                         this.diff = height2 + newY                         return                     }                 }                 this.currentIndex = this.heightList.length - 2             }         },         //实现固定栏逐渐减少高度的动画，平滑过渡         diff(newVal) {             let fixedTop = (newVal&gt;0 &amp;&amp; newVal&lt;30) ? newVal - 30 : 0             if(this.fixedTop == fixedTop) return             this.fiexedTop = fixedTop             this.$refs.fixed.style.transform = `translate3d(0,${fixedTop}px,0)`         }     } &lt;/script&gt;</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>歌手页面(页面展示+滚动效果)</title>
+      <link href="/music-9/"/>
+      <url>/music-9/</url>
+      
+        <content type="html"><![CDATA[<p>上节获取并处理了数据，本节展示数据，展示数据的组件可以抽象出来单独做成一个组件</p><ol><li><p>打开src/base/listview/index.vue(没有的话创建一个)，敲写如下代码</p><pre><code> // listview/index.vue &lt;template&gt;     //[3] 使用组件     &lt;m-scroll&gt;         &lt;ul&gt;             //遍历第一层             &lt;li class=&quot;list-group&quot; v-for=&quot;(group,key) in data&quot; :key=&quot;key&quot; ref=&quot;listgroup&quot;&gt;                 //分组标题                 &lt;h2 class=&quot;list-group-title&quot;&gt;{{group.title}}&lt;/h2&gt;                 &lt;ul&gt;                     //遍历第二层                     &lt;li class=&quot;list-group-item&quot;                      v-for=&quot;(item,index) in group.data&quot; :key=&quot;index&quot;&gt;                         //歌手头像                         &lt;img class=&quot;avatar&quot; v-lazy=&quot;item.avatar&quot; alt=&quot;&quot;&gt;                         //歌手名字                         &lt;span class=&quot;name&quot;&gt;{{item.name}}&lt;/span&gt;                     &lt;/li&gt;                 &lt;/ul&gt;             &lt;/li&gt;         &lt;/ul&gt;         //右侧浮动(字母索引)         &lt;div class=&quot;list-shortcut&quot; &gt;             &lt;ul&gt;                 //遍历并输出title的第一个字，如‘热门’输出‘热’                 &lt;li class=&quot;item&quot;  v-for=&quot;(item,index) in menu&quot; :key=&quot;index&quot;&gt;                     {{item}}                 &lt;/li&gt;             &lt;/ul&gt;         &lt;/div&gt;     &lt;/m-scroll&gt; &lt;/template&gt; &lt;script&gt;     //[1] 导入组件     import scroll from &#39;base/scroll&#39;     export default {         data() {             return {                 //歌手数据                 data: null             }         },         computed: {             //歌手索引             menu() {                 return this.data.map((group)=&gt;{                     return group.title.substr(0,1)                 })             },         }         //[2] 注册组件         components: {             &#39;m-scroll&#39;: scroll         }     } &lt;/script&gt; &lt;style lang=&quot;stylus&quot; scoped&gt;   @import &quot;~common/stylus/variable&quot;   .listview     position: relative     width: 100%     height: 90vh     overflow: hidden     background: $color-background     //[1] 歌手列表     .list-group       padding-bottom: 30px       .list-group-title         height: 30px         line-height: 30px         padding-left: 20px         font-size: $font-size-small         //color: $color-text-l         color: #fff         background: $color-highlight-background       .list-group-item         display: flex         align-items: center         padding: 20px 0 0 30px         .avatar           width: 50px           height: 50px           border-radius: 50%         .name           margin-left: 20px           color: $color-text-l           font-size: $font-size-medium     //[2]歌手索引     .list-shortcut       position: absolute       z-index: 30       right: 0       top: 50%       transform: translateY(-50%)       width: 20px       padding: 20px 0       border-radius: 10px       text-align: center       background: $color-background-d       font-family: Helvetica       .item         padding: 3px         line-height: 1         color: $color-text-l         font-size: $font-size-small         &amp;.current           color: $color-theme     //[3] 固定字栏     .list-fixed       position: absolute       top: 0       left: 0       width: 100%       .fixed-title         height: 30px         line-height: 30px         padding-left: 20px         font-size: $font-size-small         //color: $color-text-l         color: #fff         background: $color-highlight-background     //[4]加载动画 ps:暂时用不到     .loading-container       position: absolute       width: 100%       top: 50%       transform: translateY(-50%) &lt;/style&gt;</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>歌手页面(数据获取+数据处理)</title>
+      <link href="/music-8/"/>
+      <url>/music-8/</url>
+      
+        <content type="html"><![CDATA[<p>歌手页面主要展示歌手列表，外加滚动效果，照例第一步还是要获取到数据。</p><ol><li><p>打开src/api/singer.js文件(没有的话创建该文件)，敲写以下代码</p><pre><code> //singer.js  //引入必要的文件 import jsonp from &#39;../common/js/jsonp&#39; import {commonParam,options} from &#39;./config&#39; export function getSingerList() {     //请求地址     const url = &#39;https://c.y.qq.com/v8/fcg-bin/v8.fcg&#39;     //请求参数     const data = Object.assign({}, commonParam, {       channel: &#39;singer&#39;,       page: &#39;list&#39;,       key: &#39;all_all_all&#39;,       pagesize: 100,       pagenum: 1,       hostUin: 0,       needNewCode: 0,       platform: &#39;yqq&#39;     })     //以promise形式返回请求结果     return jsonp(url, data, options) }</code></pre></li><li><p>打开scr/components/singer/index.vue文件，敲写以下代码</p><pre><code>  // singer/index.vue  &lt;template&gt;      ...  &lt;/template&gt;  &lt;script&gt;      //导入写好的函数      import {getSingerList} from &#39;api/singer&#39;      import {ERR_OK} from &#39;api/config&#39;      export default {          //实例创建后调用          created() {              this._getSingerList()          },          methods: {              _getSingerList() {                  //使用函数获取数据                  getSingerList().then((res)=&gt;{                      if(res.code == ERR_OK) {                          //this.singers = res.data.list                          console.log(res.data.list)                      }                  })              }          }      }  &lt;/script&gt;</code></pre></li><li><p>此时的数据还不能直接使用，还需要转换一下，在刚才的文件里继续敲写代码<br> ```<br> // singer/index.vue<br> 需要将类似下面的格式(原本100条)<br> {</p><pre><code> 0:{Findex:&#39;A&#39;,Fsinger_name:&#39;liuxing&#39;} 1:{Findex:&#39;B&#39;,Fsinger_name:&#39;liuxing&#39;} 2:{Findex:&#39;C&#39;,Fsinger_name:&#39;liuxing&#39;} ...</code></pre><p> }<br> 转换成类似这样的格式(最大27条)<br> [</p><pre><code> 0:{title:&#39;热门&#39;,data:[{id:2352,name::&#39;liuxing&#39;},...]} 1:{title:&#39;A&#39;,data:[{id:2352,name::&#39;liuxing&#39;},...]} 2:{title:&#39;B&#39;,data:[{id:2352,name::&#39;liuxing&#39;},...]} ...</code></pre><p> ]</p> <script>     export default {         methods: {             //数据处理函数             _normalize(list) {                 //临时变量                 let map = {                     //热门歌手                     hots:{                         title: '热门'                         data: []                     }                 }                 //[1]遍历list放入map中                 list.forEach((item,index)=>{                     //把前十个数据放入热门歌手                     if(index < 10) {                         map.hots.data.push({                             id: item.Fsinger_id,                             name: item.Fsinger_name,                             avatar: this.avatar = `https://y.gtimg.cn/music/photo_new/                              T001R150x150M000${item.Fsinger_mid}.jpg?max_age=2592000`                         })                     }                     //如果不存在字母索引，则创建对象                     if(!map[item.Findex])                          map[item.Findex] = {                             title: item.Findex                             data: []                     }                     //把对应的字母数据放入对应的对象                     map[item.Findex].data.push({                         id: item.Fsinger_id,                         name: item.Fsinger_name,                         avatar: this.avatar = `https://y.gtimg.cn/music/photo_new/                          T001R150x150M000${item.Fsinger_mid}.jpg?max_age=2592000`                     })                 })                 //[2]此时map只是对象，需要将对象转换成数组                 let hots = []                 let list = []                 //遍历map，放入上面两个数组里面                 for(let key in map) {                     if(/[z-aA-Z]/.test(map[key].title)) {                         list.push(map[key])                     } else if(map[key].title == '热门') {                         hots.push(map[key])                     }                 }                 //对list进行排序                 list.sort((a,b)=>{                     return a.title.charCodeAt(0) - b.title.charCodeAt(0)                 })                 //[3]返回组合后的数组                 return hots.concat(list)             }         }     } </scrip> ```歌手页面主要展示歌手列表，外加滚动效果，照例第一步还是要获取到数据。</li><li><p>打开src/api/singer.js文件(没有的话创建该文件)，敲写以下代码</p><pre><code> //singer.js  //引入必要的文件 import jsonp from &#39;../common/js/jsonp&#39; import {commonParam,options} from &#39;./config&#39; export function getSingerList() {     //请求地址     const url = &#39;https://c.y.qq.com/v8/fcg-bin/v8.fcg&#39;     //请求参数     const data = Object.assign({}, commonParam, {       channel: &#39;singer&#39;,       page: &#39;list&#39;,       key: &#39;all_all_all&#39;,       pagesize: 100,       pagenum: 1,       hostUin: 0,       needNewCode: 0,       platform: &#39;yqq&#39;     })     //以promise形式返回请求结果     return jsonp(url, data, options) }</code></pre></li><li><p>打开scr/components/singer/index.vue文件，敲写以下代码</p><pre><code>  // singer/index.vue  &lt;template&gt;      ...  &lt;/template&gt;  &lt;script&gt;      //导入写好的函数      import {getSingerList} from &#39;api/singer&#39;      import {ERR_OK} from &#39;api/config&#39;      export default {          //实例创建后调用          created() {              this._getSingerList()          },          methods: {              _getSingerList() {                  //使用函数获取数据                  getSingerList().then((res)=&gt;{                      if(res.code == ERR_OK) {                          //this.singers = res.data.list                          console.log(res.data.list)                      }                  })              }          }      }  &lt;/script&gt;</code></pre></li><li><p>此时的数据还不能直接使用，还需要转换一下，在刚才的文件里继续敲写代码</p><pre><code> // singer/index.vue 需要将类似下面的格式(原本100条) {     0:{Findex:&#39;A&#39;,Fsinger_name:&#39;liuxing&#39;}     1:{Findex:&#39;B&#39;,Fsinger_name:&#39;liuxing&#39;}     2:{Findex:&#39;C&#39;,Fsinger_name:&#39;liuxing&#39;}     ... } 转换成类似这样的格式(最大27条) [     0:{title:&#39;热门&#39;,data:[{id:2352,name::&#39;liuxing&#39;},...]}     1:{title:&#39;A&#39;,data:[{id:2352,name::&#39;liuxing&#39;},...]}     2:{title:&#39;B&#39;,data:[{id:2352,name::&#39;liuxing&#39;},...]}     ... ] &lt;script&gt;     export default {         methods: {             //数据处理函数             _normalize(list) {                 //临时变量                 let map = {                     //热门歌手                     hots:{                         title: &#39;热门&#39;                         data: []                     }                 }                 //[1]遍历list放入map中                 list.forEach((item,index)=&gt;{                     //把前十个数据放入热门歌手                     if(index &lt; 10) {                         map.hots.data.push({                             id: item.Fsinger_id,                             name: item.Fsinger_name,                             avatar: this.avatar = `https://y.gtimg.cn/music/photo_new/                              T001R150x150M000${item.Fsinger_mid}.jpg?max_age=2592000`                         })                     }                     //如果不存在字母索引，则创建对象                     if(!map[item.Findex])                          map[item.Findex] = {                             title: item.Findex                             data: []                     }                     //把对应的字母数据放入对应的对象                     map[item.Findex].data.push({                         id: item.Fsinger_id,                         name: item.Fsinger_name,                         avatar: this.avatar = `https://y.gtimg.cn/music/photo_new/                          T001R150x150M000${item.Fsinger_mid}.jpg?max_age=2592000`                     })                 })                 //[2]此时map只是对象，需要将对象转换成数组                 let hots = []                 let list = []                 //遍历map，放入上面两个数组里面                 for(let key in map) {                     if(/[z-aA-Z]/.test(map[key].title)) {                         list.push(map[key])                     } else if(map[key].title == &#39;热门&#39;) {                         hots.push(map[key])                     }                 }                 //对list进行排序                 list.sort((a,b)=&gt;{                     return a.title.charCodeAt(0) - b.title.charCodeAt(0)                 })                 //[3]返回组合后的数组                 return hots.concat(list)             }         }     } &lt;/scrip&gt;</code></pre></li></ol></script></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>歌单列表展示</title>
+      <link href="/music-7/"/>
+      <url>/music-7/</url>
+      
+        <content type="html"><![CDATA[<p>上节获取到歌单信息，本节遍历数据展示歌单列表，展示没有什么好写的不过是几行css样式的问题，为好的用户体验，添加上一些内容：滚动效果，懒加载及加载loading效果。</p><ol><li><p>打开src/componnents/recommend/index.vue文件,敲写以下代码</p><pre class=" language-html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">recommend</span><span class="token punctuation">></span></span>         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>m-slider</span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mslider</span><span class="token punctuation">></span></span>         //歌单列表容器         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>热门推荐歌单<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>                 //遍历歌单数据，显示出来                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(item,key) in list<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>key<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                     //歌单封面                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">v-lazy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item.imgurl<span class="token punctuation">"</span></span> <span class="token attr-name">@load</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>imgLoaded<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                     //歌单名字                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{item.creator.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>                     //歌单简介                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{item.dissname}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>     export default {         data() {             return {                 //歌单数据，在上一节的方法里获取到的数据                 list: null             }         }     } <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scrip</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylus<span class="token punctuation">"</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">></span></span><span class="token style language-css"> //导入css变量 @import <span class="token string">'~common/stylus/variable'</span> <span class="token number">.</span>recommend   //滚动效果的样式，提前写在这里，后面会用到   <span class="token number">.</span>scroll     <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">90</span>vh     <span class="token property">overflow</span><span class="token punctuation">:</span> hidden     //歌单容器      <span class="token number">.</span>list       //‘热门推荐歌单’标题       <span class="token number">.</span>title         <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">65</span>px         <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">65</span>px         <span class="token property">text-align</span><span class="token punctuation">:</span> center         <span class="token property">color</span><span class="token punctuation">:</span> $color-theme         <span class="token property">background</span><span class="token punctuation">:</span> $font-size-medium       //单个歌单       <span class="token number">.</span>item         <span class="token property">display</span><span class="token punctuation">:</span> flex         <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box         <span class="token property">align-items</span><span class="token punctuation">:</span> center         <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">20</span>px <span class="token number">20</span>px <span class="token number">20</span>px         //歌单封面         <span class="token number">.</span>icon           <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">60</span>px           <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">60</span>px           <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">20</span>px           <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">2</span>px           <span class="token property">overflow</span><span class="token punctuation">:</span> hidden         <span class="token number">.</span>text           <span class="token property">display</span><span class="token punctuation">:</span> flex           <span class="token property">flex-direction</span><span class="token punctuation">:</span> column           <span class="token property">justify-content</span><span class="token punctuation">:</span> center           <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span>           <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">20</span>px           <span class="token property">overflow</span><span class="token punctuation">:</span> hidden           <span class="token property">font-size</span><span class="token punctuation">:</span> $font-size-medium           //歌单名字           <span class="token number">.</span>name             <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">10</span>px             <span class="token property">color</span><span class="token punctuation">:</span> $color-text-d           //歌单简介           <span class="token number">.</span>description             <span class="token property">color</span><span class="token punctuation">:</span> $color-text-i </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre></li><li><p>打开src/base/scroll/index.vue(没有的话创建一个)，做个滚动组件</p><pre><code> // scroll/index.vue &lt;template&gt;     //滚动容器，固定高度并设置overflow：hidden     &lt;div ref=&quot;wrapper&quot;&gt;         //滚动内容，滚动容器下的唯一子元素，高度由内容撑开且大于父容器高度         &lt;div&gt; &lt;slot&gt;&lt;/slot&gt; &lt;/div&gt;     &lt;/div&gt; &lt;template&gt; &lt;script&gt; export default {     //接收父组件的数据     props: {         probeType: {             type: Number,             default: 1         },         click: {             type: Boolean,             default: true         },         data: {             type: Array,             default: null         }     },     //实例挂载后调用[1]     mounted() {         //避免获取不到高度的问题         this.$nextTick(()=&gt;{             this._initScroll()         })       },     methods: {         //创建滚动实例         _initScroll() {             if(!this.$refs.wrapper) return             this.scroll = new Scroll(this.$refs.wrapper,{                 probeType: this.probeType,                 click: this.click             })         },         //允许滚动         enable() {             this.scroll &amp;&amp; this.scroll.enable()         },         //禁止滚动         disable() {             this.scroll &amp;&amp; this.scroll.disable()         },         //更新滚动，主要是高度变化的时候重新刷新实例         refresh() {             this.scroll &amp;&amp; this.scroll.refresh()         },     },     watch: {         //监测父组件传的data数据，动态跟新滚动实例[2]         data() {             setTimeout(()=&gt;{                 this.refresh()             },20)         }     } } } &lt;script&gt;</code></pre></li><li><p>回到scr/componnents/recommend/index.vue文件，调用滚动组件</p><pre><code> &lt;template&gt;     &lt;div class=&quot;recommend&quot;&gt;         //使用滚动组件，包裹住轮播图和歌单列表[3]         &lt;m-scroll&gt;              //轮播图             &lt;m-slider&gt; ... &lt;/m-slider&gt;             //歌单列表             &lt;div class=&quot;list&gt; ... &lt;/div&gt;         &lt;/mscroll&gt;     &lt;div&gt; &lt;/template&gt; &lt;script&gt; //导入滚动组件[1] import &#39;scroll&#39; from &#39;base/scroll&#39; export default {     //注册滚动组件[2]     componnents: {         &#39;m-scroll&#39;: scroll     } } &lt;/script&gt;</code></pre></li><li><p>做完滚动组件，现在做一个懒加载的效果，数据未获取之前用某一图片代替</p><pre><code> //[1]打开该文件之前，先打开cmd命令行安装vue-lazyload插件 npm install vue-lazyload --save-dev //[2]打开src/main.js文件,敲写以下代码     //导入插件     import vueLazyLoad from &#39;vue-lazyload&#39;     //注册插件     Vue.use(vueLazyLoad,{         loading: required(&#39;comon/image/default.png&#39;)     }) //[3]打开src/componnents/recommend/index.vue，敲写以下代码      &lt;template&gt;         //找到该标签         &lt;img :src=&quot;item.imgurl&quot; width=&quot;60&quot; height=&quot;60&quot;&gt;         //改为如下 load钩子避免多次触发         &lt;img v-lazy=&quot;item.imgurl&quot; @load=&quot;imgLoaded&quot; width=&quot;60&quot; height=&quot;60&quot;&gt;     &lt;/template&gt;     &lt;script&gt;         ...     &lt;sript&gt;</code></pre></li><li><p>歌单列表从获取数据到渲染有过程间隙，可通过loading达到用户体验优化</p><pre><code> //[1] 打开src/base/loading/index.vue,敲写以下代码 &lt;template&gt;   &lt;div class=&quot;loading&quot;&gt;     //加载符号     &lt;img width=&quot;24&quot; height=&quot;24&quot; src=&quot;./loading.gif&quot;&gt;     //加载提示     &lt;p class=&quot;tip&quot;&gt;{{title}}&lt;/p&gt;   &lt;/div&gt; &lt;/template&gt; &lt;script type=&quot;text/ecmascript-6&quot;&gt;   export default {     props: {       //自定义加载提示，由父组件传入       title: {         type: String,         default: &#39;正在载入...&#39;       }     }   } &lt;/script&gt; &lt;style scoped lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;   @import &quot;~common/stylus/variable&quot;   //加载层   .loading      width: 100%     text-align: center     //加载提示     .tip       line-height: 20px       font-size: $font-size-small       color: $color-text-l &lt;/style&gt; //[2]打开src/componnents/recommend/index.vue，使用该加载组件 &lt;template&gt;     &lt;div class=&quot;recommend&gt;         &lt;m-srcoll&gt;             &lt;m-slider&gt; ... &lt;/m-slider&gt;             &lt;div class=&quot;list&quot;&gt;                 &lt;h1&gt; ... &lt;/h1&gt;                 &lt;li&gt; ... &lt;/li&gt;                 //[2.3]使用组件,数据未获取之前显示该loading                 &lt;m-loading v-if=&quot; !list &quot;&gt; &lt;/m-loading&gt;             &lt;div&gt;         &lt;/m-scroll&gt;     &lt;/div&gt; &lt;/template&gt; &lt;script&gt;     //[2.1]引入组件     import loading from &#39;base/loading&#39;     export default {         //[2.2]注册组件         componnents: {             &#39;m-loading&#39;: loading         }     } &lt;/script&gt;</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>服务器代理跨域</title>
+      <link href="/music-6/"/>
+      <url>/music-6/</url>
+      
+        <content type="html"><![CDATA[<p>获取轮播图数据使用jsonp没有什么什么，然而获取歌单列表时，需要带上请求头部信息，此时用jsonp是无法做到的，需要使用node提供的服务器代理来间接获取数据，而axios不仅支持ajax请求，也支持服务器代理请求，接下来完成一次代理请求。</p><ol><li><p>打开cmd命令行，敲写以下命令安装axios</p><pre><code> npm install axios --save-dev</code></pre></li><li><p>打开src/api/recommend/index.vue文件，敲写以下代码</p><pre><code> //recommend/index.vue //导入刚才安装好的axios import axios from &#39;axios&#39; ...... //函数声明,跟getRecommend超不多 function getDiscList() {     //本地请求地址，会被代理     var url = &#39;/api/getDiscList&#39;     //参数整合     var data = Object.assign({},commonParam,{         platform: &#39;yqq&#39;,         hostUin: 0,         sin: 0,         ein: 29,         sortId: 5,         needNewCode: 0,         categoryId: 10000000,         rnd: Math.random(),         format: &#39;json     })     //发起代理请求，以promise形式返回请求结果     return axios.get(url,{params:data},(res)=&gt;{         return Promise.resolve(res.data)     }) }</code></pre></li><li><p>打开根目录/config/index.js文件，敲写以下代码</p><pre><code> //config/index.js ... proxyTable: {    //本地请求地址   &#39;/api/getDiscList&#39;: {     //实际请求地址，即localhost:8080/api/getDiscList会请求下面的地址      target: &#39;https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg&#39;,     //发送请求前的处理函数，在这里加上必要的请求头部信息     bypass: function(req,res,proxyOptions) {       req.headers.referer = &#39;https://c.y.qq.com&#39;;       req.headers.host = &#39;c.y.qq.com&#39;;     },     //路径重写，可无     pathRewrite: {       &#39;^/api/getDiscList&#39;: &#39;&#39;     }   } }, ...</code></pre></li><li><p>打开src/components/recommend/index.vue文件，调用函数获取数据</p><pre><code> // recommend/index.vue //秉记先引用再使用的原则 import {gerDiscList} from &#39;api/recommend&#39; export default {     //在实例挂载后的钩子函数里调用     mounted() {         this._getRecommend()     }     methods: {         _getDiscList() {           //调用引入的函数           getDiscList().then((res)=&gt;{               if(res.code == ERR_OK) {                   //this.list = res.data.list                   console.log(this.list)               }           })         },     } }</code></pre></li></ol><pre><code>```</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>轮播图的使用</title>
+      <link href="/music-5/"/>
+      <url>/music-5/</url>
+      
+        <content type="html"><![CDATA[<p>既然上节已经获取到数据，那么本节将使用轮播图展示这些数据，轮播图属于常用组件，可以独立成一个公共组件。</p><ol><li>打开cmd命令行安装better-scroll(借助轮播图实现轮播图，后面也会用到) <pre><code> npm install better-scroll --save-dev</code></pre></li><li>在src/base目录下(没有的话先创建)创建slider目录，并在目录下创建slider.vue文件<pre><code> //slider.vue 先简写html文件 &lt;template&gt;     //轮播图容器，宽度一般为：轮播图宽度(或自定义宽度)     &lt;div class=&quot;slider&quot; ref=&quot;slider&quot;&gt; //第4步提前写[1]         //图片组容器，宽度一般为：轮播图宽度 * (轮播图数量+2)         &lt;div class=&quot;slider-group ref=&quot;sliderGroup&quot;&gt;  //第4步提前写[2]             //Vue插槽，由父组件放置轮播图             &lt;slot&gt;&lt;/slot&gt;         &lt;/div&gt;         //滚动点容器，显示当前图片的序号         &lt;div class=&quot;slider-dots&gt;             //当前图片对应的点会放大，滚动点的数量为轮播图的数量             &lt;span class=&quot;dot&quot; :class=&quot;active: current == index&quot;              v-for=&quot;(item,index) in dots&quot; :key=&quot;index&quot;&gt;             &lt;/span&gt;  第4步提前写[3]         &lt;/div&gt;     &lt;/div&gt; &lt;/template&gt; &lt;script&gt;     ... &lt;/script&gt; &lt;style scoped lang=&quot;stylus&quot;&gt;     .slider /* 轮播图样式提前写好 */         position: relative /* 设置相对定位，使得滚动点能够定位 */         min-height: 1px         .slider-group             position: relative /* 设置相对定位，使得能够滚动图片位置 */             overflow: hidden             white-space: nowrap             .slider-item  /* 这是插槽里单个轮播图的样式，需要动态添加 */                 float: left                 box-sizing: border-box                 overflow: hidden                 text-align: center                 img                      display: block                     width: 100%         .slider-dots             display: absolute  /* 绝对定位 */             left: 0     /* left + right 使得元素宽度为父元素宽度 */             right: 0              bottom: 12px             text-align: center /* text-align + font-size 使得子元素能够水平居中 */             font-size: 0             .dot                 display: inline-block                 width: 8px                 height: 8px                 border-radius: 50%  /* 宽高相等 + 50%圆角 = 圆点 */                 background-color: $color-text-l                 &amp;.active  /* 轮播图对应的滚动点，添加点特别的样式 */                     width: 20px;                     border-radius: 5px                     background-color: $color-text-ll</code></pre></li></ol><pre><code>&lt;/style&gt;```轮播图原理：首先定义一个轮播图容器，内含两个div，一个存放图片的容器(图片组容器)，另一个存放滚动点的容器(滚动点容器)。一般来说，轮播图容器宽度为设置好的轮播图宽度，而图片组宽度为轮播图宽度 * (轮播图数量+2)，多出来的两个宽度用于复制第一个及最后一个轮播图，使得轮播效果顺滑不突兀。轮播图的要点是，图片组容器必须比轮播图容器宽度长，这是使得轮播图能够轮播的真正要点。</code></pre><ol start="3"><li>打开src/componnents/recommend/index.vue文件，目前还没有图片显示，接下在父组件导入该组件并放置轮播图。<pre><code> //index.vue &lt;template&gt;   &lt;div class=&quot;recommend&quot;&gt;     &lt;div class=&quot;content&quot;&gt;         //第二步，使用轮播图组件         &lt;slider v-if=&quot;recommends&quot;&gt;             //这里编写的内容将放入轮播图的插槽里，也是.slider-item应用的元素             &lt;div v-for=&quot;(item,index) in recommends&quot; :key=&quot;index&quot;&gt;                 //遍历图片地址并放入img标签里                 &lt;img :src=&quot;item.picUrl&quot; alt=&quot;&quot;&gt;             &lt;/div&gt;         &lt;/slider&gt;         &lt;div class=&quot;list&quot;&gt;         &lt;!-- &lt;h1&gt;热门歌单推荐&lt;/h1&gt; --&gt;         &lt;/div&gt;     &lt;/div&gt;   &lt;/div&gt; &lt;/template &lt;script&gt;     //第一步，导入轮播图组件     import slider from &#39;base/slider&#39;     export default {         data() {             return {                 //存放的轮播图数据，由jsonp函数获得                 recommend: null             }         }     } &lt;/script&gt; &lt;style&gt;     .... &lt;style&gt;</code></pre></li><li>返回src/base/slider/index.vue文件，完成数据的填充后，开始编写逻辑代码让轮播图东起。<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">//index.vue</span> <span class="token operator">&lt;</span>template<span class="token operator">></span>     <span class="token operator">...</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span> <span class="token operator">&lt;</span>script<span class="token operator">></span>     <span class="token comment" spellcheck="true">//导入better-scroll插件</span>     <span class="token keyword">import</span> Srcoll <span class="token keyword">from</span> <span class="token string">'better-scroll'</span>     <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>         <span class="token comment" spellcheck="true">//选择在vue实例挂载后执行，避免宽度获取不到的问题</span>         <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>             <span class="token comment" spellcheck="true">//第一步 设置轮播图宽度</span>             <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_initSliderWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token comment" spellcheck="true">//第二步 初始化轮播点</span>             <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_initDots</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token comment" spellcheck="true">//第三步 启动轮播器，并监听其变化</span>             <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_initSlider</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token comment" spellcheck="true">//第四步 自动播放[2]</span>             <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>slider<span class="token punctuation">)</span> <span class="token punctuation">{</span>                 <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token punctuation">}</span>         <span class="token punctuation">}</span>，         methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>             <span class="token comment" spellcheck="true">//1.初始化轮播图容器，图片组容器，轮播图的宽度，并给轮播图添加样式</span>             <span class="token function">_initSliderWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                 <span class="token comment" spellcheck="true">//有轮播图的数组引用，用到第2步提前写的ref(reference,即引用，实际是dom对象) </span>                 <span class="token comment" spellcheck="true">//第1步提前写[1]</span>                 <span class="token keyword">this</span><span class="token punctuation">.</span>children <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>sliderGroup<span class="token punctuation">.</span>children                 <span class="token comment" spellcheck="true">//图片组容器的宽度</span>                 <span class="token keyword">var</span> width <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">//轮播图容器的宽度 第1步提前写[2]</span>                 <span class="token keyword">var</span> sliderWidth <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>slider<span class="token punctuation">.</span>clientWidth                 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token keyword">this</span><span class="token punctuation">.</span>children<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                     <span class="token comment" spellcheck="true">//给每个轮播图添加样式</span>                     <span class="token function">addClass</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'slider-item'</span><span class="token punctuation">)</span>                     <span class="token comment" spellcheck="true">//设置轮播图的宽度为轮播图容器的宽度</span>                     <span class="token keyword">this</span><span class="token punctuation">.</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> sliderWidth <span class="token operator">+</span> <span class="token string">'px'</span>                     <span class="token comment" spellcheck="true">//计算图片组容器的宽度</span>                     width <span class="token operator">+</span><span class="token operator">=</span> sliderWidth                 <span class="token punctuation">}</span>                 <span class="token comment" spellcheck="true">//循环播放的话，加上两个轮播图的宽度</span>                 <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>loop<span class="token punctuation">)</span> <span class="token punctuation">{</span>                     width <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>sliderWidth                 <span class="token punctuation">}</span>                 <span class="token comment" spellcheck="true">//给轮播图容器设置长度</span>                 <span class="token keyword">this</span><span class="token punctuation">.</span>$ref<span class="token punctuation">.</span>sliderGroup<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> width <span class="token operator">+</span> <span class="token string">'px'</span>             <span class="token punctuation">}</span>             <span class="token comment" spellcheck="true">//2.初始化滚动点</span>             <span class="token function">_initDots</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                 <span class="token keyword">this</span><span class="token punctuation">.</span>dots <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>children<span class="token punctuation">.</span>length<span class="token punctuation">)</span>             <span class="token punctuation">}</span>             <span class="token comment" spellcheck="true">//3.启动轮播图</span>             <span class="token function">_initSlider</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                 <span class="token comment" spellcheck="true">//3.1 实例化better-scroll</span>                 <span class="token keyword">this</span><span class="token punctuation">.</span>slider <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scroll</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>slider<span class="token punctuation">,</span><span class="token punctuation">{</span>                     scrollX<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//滚动x轴</span>                     scrollY<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>                     momentum<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>                     snap<span class="token punctuation">:</span> <span class="token punctuation">{</span>                         loop<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>loop<span class="token punctuation">,</span>                         threshold<span class="token punctuation">:</span> <span class="token number">0.3</span><span class="token punctuation">,</span>                         speed<span class="token punctuation">:</span> <span class="token number">400</span>                     <span class="token punctuation">}</span><span class="token punctuation">,</span>                     click<span class="token punctuation">:</span> <span class="token boolean">true</span>                 <span class="token punctuation">}</span><span class="token punctuation">)</span>                 <span class="token comment" spellcheck="true">//3.2 监听better-scroll，改变滚动点的样式 第1步提前写[3]</span>                 <span class="token keyword">this</span><span class="token punctuation">.</span>slider<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'srcollEnd'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>                     <span class="token comment" spellcheck="true">//更新当前图片索引</span>                     thish<span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>slider<span class="token punctuation">.</span><span class="token function">getCurrentPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>scrollX                     <span class="token comment" spellcheck="true">//自动播放[3]</span>                     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>autoplay<span class="token punctuation">)</span> <span class="token punctuation">{</span>                         <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>                         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>                     <span class="token punctuation">}</span>                 <span class="token punctuation">}</span><span class="token punctuation">)</span>             <span class="token punctuation">}</span>             <span class="token number">4</span><span class="token punctuation">.</span> 自动播放<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>             <span class="token function">_play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                 <span class="token comment" spellcheck="true">//获取下一张图片的索引</span>                 <span class="token keyword">var</span> next <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>current <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">4</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>current <span class="token operator">+</span> <span class="token number">1</span>                 <span class="token comment" spellcheck="true">//设置定时器 ps：使用timeout而不是interval</span>                 <span class="token keyword">this</span><span class="token punctuation">.</span>timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>                     <span class="token keyword">this</span><span class="token punctuation">.</span>slider<span class="token punctuation">.</span><span class="token function">goToPage</span><span class="token punctuation">(</span>next<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">)</span>                 <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>interval<span class="token punctuation">)</span>             <span class="token punctuation">}</span>         <span class="token punctuation">}</span><span class="token punctuation">,</span>         <span class="token function">destroyed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>             <span class="token comment" spellcheck="true">//自动播放[4] : 组件销毁时，清楚定时器</span>             <span class="token function">clearTimeout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>timer<span class="token punctuation">)</span>          <span class="token punctuation">}</span>     <span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span> <span class="token operator">&lt;</span>style<span class="token operator">></span>     <span class="token operator">...</span> <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span></code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>jsonp跨域</title>
+      <link href="/music-4/"/>
+      <url>/music-4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="jsonp获取数据"><a href="#jsonp获取数据" class="headerlink" title="jsonp获取数据"></a>jsonp获取数据</h2><p>为保证应用里的音乐数据是实时的，可以通过抓取QQ音乐的数据达到同步的目的。但是，因为同源策略的限制，不可以直接ajax请求QQ音乐的数据，一个委婉点的方法是通过jsonp获取数据。</p><ol><li><p>在cmd命令行输入以下命令安装jsonp</p><pre><code> npm install jsonp --save-dev</code></pre></li><li><p>在src/common/js文件夹里，创建jsonp.js文件，敲写如下代码</p><pre><code> //jsonp.js   ps:直接使用jsonp也是可以的，在这里只是对jsonp做进一步的封装，以适应项目的需要 //导入刚才安装好的jsonp import Ojsonp from &#39;jsonp&#39; //导出下面封装好的jsonp export default function(url,data,option) {     //替换之前直接拼接好参数的url，改为由url+参数再拼接成url     url += (url.indexOf(&#39;?&#39;) &lt; 0 ? &#39;?&#39; : &#39;&amp;&#39;) + encoded(data)     //返回promise，便于调用     return new Promise((resolve,reject)=&gt;{         Ojsonp(url,option,(err,data)=&gt;{             if(!err) {                 resolve(data)             } else {                 reject(err)             }         })     }) } //把查询参数编码为url function encoded(data) {     var url = &#39;&#39;     for(let key in data) {         let value = data[key] !== &#39;undefine&#39; ? data[key] : &#39;&#39;         url += `&amp;${key} = ${encodeURIComponent(value)}`     }     return url }</code></pre></li><li><p>再src/api文件夹里，创建recommend.js及config.js文件，敲写如下代码</p><pre><code> //1. recommend.js //导入封装好的jsonp import jsonp from &#39;../common/js/jsonp&#39; //导入配置文件(把可复用参数写成配置，放在config.js里，方便以后修改及调用) import {commonParam,options} from &#39;./config&#39; //导出获取推荐数据的函数 export function getRecommend () {     //获取数据的地址     const url = &#39;https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg&#39;     //整合参数     const data = Object.assign({},commonParam,{         platform: &#39;h5&#39;,         uin: 0,         neddNewCode: 1     })     //返回promise     return jsonp(url,data,options) } //2. config.js //公共查询参数 export const commonParam = {     g_tk: 5381,     format: &#39;jsonp&#39;,     inCharset: &#39;utf-8&#39;,     outCharset: &#39;utf-8&#39;,     notice: 0, } //公共配置选项 export const option = {     param: &#39;jsonpCallback&#39; } //数据成功返回状态码 export const ERR_OK = 0</code></pre></li><li><p>在scr/components/recommend/index.vue里，调用函数获取数据，敲写如下代码</p><pre><code> //index.vue &lt;template&gt;     ... &lt;template&gt; &lt;script&gt;     //导入函数     import {getRecommend} from &#39;api/recommend&#39;     //导入配置     import {ERR_OK} from &#39;api/config&#39;     export default {         //在Vue创建完毕后的钩子里调用，获取数据         created() {             //生命周期钩子里尽量只写过程，把实现放到methods里，便于清晰理解             this._getRecommend()         }，         methods: {             //在这里编写的函数会被挂载到实例里，在这里处理请求之类的问题很方便             _getRecommend() {                 //promise处理比回调处理看起来更清晰                 getRecommend().then((res)=&gt;{                     //配置里的ERR_OK在这里派上了用场，表示数据成功返回                     if(res.code == ERR_OK) {                         //这里只打印数据，下节对数据进行处理                         console.log(res.data)                     }                 })             }         }     } &lt;/script&gt; &lt;style&gt;     ... &lt;/style&gt;</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>页面分解</title>
+      <link href="/music-3/"/>
+      <url>/music-3/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>准备工作</title>
+      <link href="/music-2/"/>
+      <url>/music-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-重构src目录"><a href="#1-重构src目录" class="headerlink" title="1.重构src目录"></a>1.重构src目录</h2><p>&nbsp; &nbsp; 尽管官方提供的目录结构可以满足一定的开发需求，但不同的项目可能需要不同的目录结构使得便于管理和开发。以下是重构后的目录：</p><pre><code>\\src目录api --网络接口common --基础文件库，包括基础样式，图标，脚本等    fonts --字体文件    image --图片图标    stylus --样式文件        index.css --整合css        reset.css --重置css        base.css --基础css        icon.css --图标css        mixin.css --混入css        variable.css --css变量    js --脚本文件components --组件router --路由store --状态管理App.vue --根组件main.js --入口文件</code></pre><h2 id="2-图标字体"><a href="#2-图标字体" class="headerlink" title="2.图标字体"></a>2.图标字体</h2><p>下载或使用自己的图标字体，放入<code>src/common/fonts及src/common/stylus/icon.css</code>中。</p><h2 id="3-模块插件"><a href="#3-模块插件" class="headerlink" title="3.模块插件"></a>3.模块插件</h2><ol><li><p>打开cmd命令行，分别执行以下命令<br>```</p></li><li><p>npm install babel-runtime –save-dev</p></li><li><p>npm install babel-polyfill –save-dev</p></li><li><p>npm install fastclick –save-dev</p><pre><code></code></pre></li><li><p>在src/main.js 文件中引入babel-runtime和fastclick</p><pre><code>//src/main.js 添加以下内容import &#39;babel-runtime&#39;import fastclick from &#39;fastclick&#39;fastclick.attach(document.body)</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>环境搭建</title>
+      <link href="/music-1/"/>
+      <url>/music-1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-Node安装"><a href="#1-Node安装" class="headerlink" title="1.Node安装"></a>1.Node安装</h2><ol><li>登录<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a>，下载最新版本并安装；  </li><li>在我的电脑内，执行以下操作：<code>右键-&gt;属性-&gt;高级-&gt;环境变量-&gt;系统变量-&gt;path</code> 查看是否有node的安装路径，没有的话添加上node的安装路径；  </li><li><code>开始-&gt;运行-&gt;cmd</code> 输入<code>node -v</code> ，出现类似<code>v10.15.3</code>的字样说明安装成功。</li></ol><h2 id="2-vue-cli安装"><a href="#2-vue-cli安装" class="headerlink" title="2.vue-cli安装"></a>2.vue-cli安装</h2><ol><li>打开cmd命令行，输入<code>npm install vue-cli -g</code>，等待安装完成；</li><li>完成后，输入 <code>vue -V</code>，出现类似<code>2.9.6</code>的字样表明安装成功。</li></ol><h2 id="2-初始化项目"><a href="#2-初始化项目" class="headerlink" title="2.初始化项目"></a>2.初始化项目</h2><ol><li>在准备放置项目的文件夹里，打开cmd并输入<code>vue init webpack music</code>(music为项目目录名字，可自定义)，按照命令输入相应的内容；  </li><li>完成后，依次输入<code>cd music</code>(项目目录)，<code>npm run dev</code>命令，等待完成；</li><li>完成后，安装给出的地址，在浏览器输入<code>localhost:8080</code>，可访问表明初始化成功；</li><li>在安装文件夹里，music目录下包含如下内容：<pre><code> //music文件夹 build   --打包工具及开发配置 config  --配置目录 nodemodules --依赖模块 src --源代码目录     assets --静态文件     components --组件     App.vue --应用级组件     main.js --入口文件 static --静态文件 index.html --首页 //部分文件于项目关系不大，故此省略</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> music </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>html</title>
+      <link href="/html-1/"/>
+      <url>/html-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>&nbsp;&nbsp;html,即超文本标记语言(Hytype Text Markup Language),一门描述文档内容结构的标记语言。区别于JavaScript，Java，C语言等语言，html并不是一门编程语言，而是一门标记语言。编程语言，具备算法及数据结构，能够执行代码并产生结果，而标记语言既没有算法也没有数据结构，仅仅是对内容标记。所谓标记语言，就是用某个标签对文档中某段内容加以标记，使其包含某种语义。例如，‘绝弹博客’只是一段普通文本，而加上标签<code>&lt;h1&gt;</code>绝弹博客<code>&lt;/1h&gt;</code>，便赋予这段文本标题的含义(表示这是一个标题)。而超文本，意味着不仅可以标记文本，也可以标记文本之外的内容。没错，链接、图片、音频、视频都可以标记，只是与文本的标记略有区别。例如，显示一张图片，可以用<code>&lt;img src=&quot;./hello.jpg&quot;&gt;</code>表示。img是image的缩写，表示img标签里面的内容是一张图片。src是source的缩写，表示资源所在的地址。两者结合起来便是，从当前文档所在的目录下，加载名为hello的jpg图片，并在页面中显示。</p><h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p>&nbsp;&nbsp;打开浏览器，访问<code>www.google.com</code>，可以看到所呈现的页面。对于初学者，网页、页面、文档，三者可以初略视为等价。其实，文档有许多种类型，常见的有xml、html、xhtml等。但在网页中使用的，均为html类型的文档，其他类型的文档，因为某些原因都终将慢慢淡出历史舞台。对于浏览器来说，加载一份文档后，首先需要知道文档的类型，从而选择合适的引擎解析文档。因而，每一份文档都需要在文档的开头声明本身的文档类型。html有html 4.01和html 5两个流行的版本，两者有所不同(后面会将到),不过后者的光芒已经掩盖前者，终将一统html的天下。</p><pre><code>    声明html 4.01，使用&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;    声明html 5，   使用&lt;!DOCTYPE HTML&gt;</code></pre><p>没有对比就没有伤害，html 5的声明如此简洁清晰。不过，怎么看都好像是html 5对html 4.01做出某种不可描述的事情(不掐头只去尾的操作),然后跑出来自立门户的(事实的确是这样，不过后来重新回归)。相较来说，html 5支持的标签更多，语义化的支持也更好，html 4.01已是廉颇老矣(htmo 4.01 心理：当初叫人家小甜甜，现在居然嫌人家过时)，推荐大家使用 html 5的文档声明。</p><h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><p>&nbsp;&nbsp;在声明文档类型为html后，便可以使用html标签对文档内容进行操作。前面提到过标签，标签由左右括号和斜杠包裹标记而成，可分为开始标签和闭合标签，如<code>&lt;p&gt;</code>是开始标签，<code>&lt;/p&gt;</code>是闭合标签，有些标签没有只有开始标签没有闭合标签。不同的标签具有不同的语义。例如，<code>&lt;a&gt;</code>标签代表超链接(取anchor首字母，有闭合标签)，<code>&lt;p&gt;</code>标签代表段落(取paragraph首字母，有闭合标签),<code>&lt;img&gt;</code>标签代表图片(取image缩写，没有闭合标签)等。</p><h1 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h1><p>&nbsp;&nbsp;元素由标签延伸而来(标签包裹内容形成)，包含更多的信息和结构(如属性、闭合标签)。例如，<code>&lt;time datetime=&quot;2019-10-01&quot;&gt;国庆节&lt;/time&gt;</code>便是一个完整的元素，<code>&lt;time&gt;</code>和<code>&lt;/time&gt;</code>分别为开始标签和闭合标签，两者中间包裹的内容成为元素内容(<code>国庆节</code>为元素内容)；<code>datetime=&quot;2019-10-01&quot;</code>称之为属性，只出现在开始标签内，<code>datetime</code>是属性的名字，<code>2019-10-01</code>是属性的值(属性值要用双引号括起来，单引号也可以，不过更推荐双引号)，两者用<code>=</code>连接。<br>&nbsp;&nbsp;标签可以嵌套，元素也是嵌套的，例如<code>&lt;p&gt;注意:&lt;em&gt;小心地滑&lt;/em&gt;&lt;/p&gt;</code>。层层嵌套下来，文档的结构就像树状一样，既然是树状，总要有树根吧，文档的树根称之为根元素。根元素由<code>&lt;html&gt;``&lt;/html&gt;</code>标签及其内容组成，所有文档内所有元素都必须是根元素的子元素，也就是说树枝可以有很多，树根只能有一个。<br>&nbsp;&nbsp;根元素下，分别有head和body两个子元素，他们分别代表不同的结构。head元素的内容一般不在页面中显示，主要是声明文档的各种元数据，如字符编码，文章标题，加载样式，加载脚本等；而body元素的内容便是我们在浏览器窗口中看到的内容，不同的元素自带不同的默认样式(h1元素默认字体加粗加大，默认样式根据浏览器的不同而不同)，可以通过编写自定义样式使页面展示更加绚丽。</p><h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><p>&nbsp;&nbsp;简单了解一番后，心中不免有些躁动，迫不及待准备尝试一番，写点什么好呢，来首诗吧。</p><pre><code>&lt;!DOCTYPE HTML&gt; &lt;!-- 文档声明 --&gt;&lt;html&gt;  &lt;!-- 根元素 --&gt;    &lt;head&gt; &lt;!-- head元素 --&gt;        &lt;meta charset=&quot;USTF-8&quot;&gt; &lt;!-- 字符编码 --&gt;        &lt;title&gt;古诗&lt;/title&gt;   &lt;!-- 文档标题 --&gt;    &lt;/head&gt;    &lt;body&gt; &lt;!-- body元素 --&gt;        &lt;h1&gt;鹿柴&lt;/h1&gt;        &lt;p&gt;空山不见人，但闻人语响。&lt;/p&gt;        &lt;p&gt;返景入深林，复照青苔上。&lt;/p&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>博客框架Hexo简明教程</title>
-      <link href="/2019/09/07/Get-Started-With-Hexo/"/>
-      <url>/2019/09/07/Get-Started-With-Hexo/</url>
+      <link href="/Get-Started-With-Hexo/"/>
+      <url>/Get-Started-With-Hexo/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="[1]简介"></a>[1]简介</h1><p>Hexo是一款静态博客框架，在无需数据库及后端语言的情况下，可通过Markdown格式生成静态页面。</p><h1 id="2-安装"><a href="#2-安装" class="headerlink" title="[2]安装"></a>[2]安装</h1><p>Hexo依赖NodeJS(Javascript运行环境)及GIT(版本控制系统)，安装该两项后才可安装Hexo。<br>2.1 NodeJs的安装:打开<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a>，下载安装包，安装后打开cmd命令行，输入<code>node -v</code>,如正确输出版本号即代表安装成功。<br>2.2 GIT的安装:打开<a href="https://git-scm.com" target="_blank" rel="noopener">官网</a>，同样下载安装包，安装后打开cmd命令行，输入<code>git --version</code>,如正确输出版本号即代表安装成功。<br>2.3 Hexo的安装:安装以上软件后，打开cmd命令行，输入<code>npm install hexo-cli -g</code>,等待安装过程，安装后输入<code>hexo -v</code>，如有输出版本号即代表安装成功。</p><h1 id="3-使用"><a href="#3-使用" class="headerlink" title="[3]使用"></a>[3]使用</h1><p>Hexo的使用相对简单，初始化一个仓库，创建博客文章，然后再生成静态文件，通过启动本地服务即可在浏览器端看到博客内容。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo</title>
-      <link href="/2019/09/07/Hexo/"/>
-      <url>/2019/09/07/Hexo/</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="[1]简介"></a>[1]简介</h1><p>Hexo是一款静态博客框架，在无需数据库及后端语言的情况下，可通过Markdown格式生成静态页面。</p><h1 id="2-安装"><a href="#2-安装" class="headerlink" title="[2]安装"></a>[2]安装</h1><p>Hexo依赖NodeJS(Javascript运行环境)及GIT(版本控制系统)，安装该两项后才可安装Hexo。</p><ol><li>NodeJs的安装: 打开<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a>，下载并安装，输入<code>node -v</code>,如正确输出版本号即代表安装成功。</li><li>GIT的安装: 打开<a href="https://git-scm.com" target="_blank" rel="noopener">官网</a>，同样下载并安装，输入<code>git --version</code>,如正确输出版本号即代表安装成功。</li><li>Hexo的安装: 安装以上软件后，输入<code>npm install hexo-cli -g</code>，再输入<code>hexo -v</code>，如有输出版本号即代表安装成功。</li></ol><h1 id="3-使用"><a href="#3-使用" class="headerlink" title="[3]使用"></a>[3]使用</h1><p>Hexo的使用相对简单，初始化一个仓库，创建博客文章，然后再生成静态文件，通过启动本地服务即可在浏览器端看到博客内容。接下来，以本人博客为例，介绍从无到有的博客生成过程。</p><ol><li><p>初始化博客仓库<br> 在你想放置博客仓库的文件夹内，输入以下命令，会在当前文件夹内生成名为jonten的文件夹。</p><pre class=" language-bash"><code class="language-bash"> hexo init jonten  //格式： hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span> 参数： folder<span class="token punctuation">(</span>博客文件夹名字<span class="token punctuation">)</span> </code></pre><p> 以上命令执行后，打开刚刚生成的文件夹，可以发现文件夹内已经放置好Hexo博客框架，接下来介绍各文件目录及其作用。</p><pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// /joten</span> ├── _config<span class="token punctuation">.</span>yml  <span class="token comment" spellcheck="true">//配置文件 </span> ├── <span class="token keyword">package</span><span class="token punctuation">.</span>json <span class="token comment" spellcheck="true">//依赖文件</span> ├── scaffolds    <span class="token comment" spellcheck="true">//模板文件夹</span> ├── source       <span class="token comment" spellcheck="true">//文章文件夹</span> <span class="token operator">|</span>   ├── _drafts  <span class="token comment" spellcheck="true">//草稿</span> <span class="token operator">|</span>   └── _posts   <span class="token comment" spellcheck="true">//文章</span> └── themes       <span class="token comment" spellcheck="true">//主题文件夹</span></code></pre><p> _config.yml</p><pre><code></code></pre></li><li><p>创建博客文章</p><pre><code> hexo new hello-jonten </code></pre></li></ol>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>从入门到跑路</title>
-      <link href="/2019/09/07/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%B7%91%E8%B7%AF/"/>
-      <url>/2019/09/07/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%B7%91%E8%B7%AF/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>first article</title>
-      <link href="/2019/08/12/first-article/"/>
-      <url>/2019/08/12/first-article/</url>
-      
-        <content type="html"><![CDATA[<p>hello world ! first article - </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2019/08/10/hello-world/"/>
-      <url>/2019/08/10/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
       
       
     </entry>

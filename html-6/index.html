@@ -1,0 +1,590 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="表单标签, 绝弹博客">
+    <meta name="description" content="&amp;lt;!-- 表格标签(14)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&amp;gt;
+
+&amp;lt;!-- 表单容器 --&amp;gt;
+&amp;lt;form&amp;gt;表单容器&amp;lt;/form&amp;gt;
+&amp;lt;fie">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>表单标签 | 绝弹博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">绝弹博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">绝弹博客</div>
+        <div class="logo-desc">
+            
+            选择路途的方向，却未决定路途的终点
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        表单标签
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+
+<main class="container content">
+    
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <!-- <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/html/" target="_blank">
+                                <span class="chip bg-color">html</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                html
+                            </a>
+                        
+                    </div>
+                    
+                </div> -->
+                表单标签
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-23
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <!-- <hr class="clearfix"> -->
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <pre><code>&lt;!-- 表格标签(14)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
+
+&lt;!-- 表单容器 --&gt;
+&lt;form&gt;表单容器&lt;/form&gt;
+&lt;fieldset&gt;分组容器&lt;/fieldset&gt;
+&lt;legend&gt;分组标题&lt;/legend&gt;
+
+&lt;!-- 选择控件 --&gt;
+&lt;select&gt;下拉选择&lt;/select&gt;
+&lt;optgroup&gt;选项分组&lt;/optgroup&gt;
+&lt;option&gt;下拉选项&lt;/option&gt;
+
+&lt;!-- 其他控件 --&gt;
+&lt;output&gt;输出结果&lt;/output&gt;
+&lt;meter&gt;标量分数&lt;/meter&gt;
+&lt;progress&gt;完成进度&lt;/progress&gt;
+
+&lt;!-- 补充控件 --&gt;
+&lt;textarea&gt;多行文本&lt;/textarea&gt;
+&lt;button&gt;点击按钮&lt;/button&gt;
+
+&lt;!-- 输入控件 --&gt;
+&lt;label&gt;项目标题&lt;/label&gt;
+&lt;datalist&gt;可选选择&lt;/datalist&gt;
+&lt;input&gt;输入控件&lt;/input&gt;
+</code></pre><p>##form标签</p>
+<pre><code>  说明：定义一个表单容器，用户交互体验的重要途径。</code></pre><pre><code>属性：
+1.action属性定义提交地址:url值。
+2.target属性定义返回地址:_top,_parent,_self,_blank,iframename。
+3.name属性定义表单名字:文本值。
+4.method属性定义表单提交的方式:get,post
+5.accept-charset属性定义内容编码:字符编码(空格分离)
+6.entype属性定义表单内容类型(仅post时):
+  application/x-www-form-urlencoded(默认)
+  multipart/form-data(input的type为file)
+  text/plain
+7.autocomplete属性定义表单是否自动完成:off,on。
+8.novalidate属性定义表单是否验证:布尔值。</code></pre><p>##fieldset标签</p>
+<pre><code>说明：定义一个元素分组。</code></pre><pre><code>属性：
+1.form属性定义所属表单:表单ID。
+2.name属性定义分组名字:文本值。
+3.disabled属性定义分组是否可用:布尔值。</code></pre><p>##legend标签</p>
+<pre><code>说明：定义fieldset分组的标题。
+属性：暂无</code></pre><p>##select属性</p>
+<pre><code>说明：定义一个选择列表。</code></pre><pre><code>属性：
+1.form属性定义所属表单:表单ID。
+2.name属性定义列表名字:文本值。
+3.disabled属性定义列表是否可用:布尔值。
+4.required属性定义是否必选:布尔值。
+5.autofucos属性定义是否自动聚焦:布尔值。
+6.size属性定义可见选项数目:数值。
+7.multiple属性定义是否多选:布尔值。</code></pre><p>##optgroup标签</p>
+<pre><code>说明：定义一个列表选项组。</code></pre><pre><code>属性：
+1.label属性定义选项组的名字
+2.disabled属性定义选项组是否可用:布尔值。</code></pre><p>##option标签</p>
+<pre><code>说明：定义选择列表的一个选项。</code></pre><pre><code>属性：
+1.label属性定义选项含义:文本值。
+2.disabled属性定义选项是否可用:布尔值。
+3.value属性定义选项的值:文本值。
+4.selected属性定义选项是否被选中:布尔值。</code></pre><p>##label标签</p>
+<pre><code>说明：定义一个关联控件。</code></pre><pre><code>属性：
+1.form定义所属表单:表单ID。
+2.for属性定义关联的表单元素:元素ID。
+3.accesskey属性定义快捷键:键盘按键。</code></pre><p>##datalist标签</p>
+<pre><code>说明：定义一个选项组，与option标签配合使用。
+属性：暂无</code></pre><p>##output标签</p>
+<pre><code>说明：定义计算或用户操作的结果。</code></pre><pre><code>属性：
+1.form属性定义所属的表单:表单ID。
+2.name属性结果变量:js变量。
+3.for属性定义与之相关的元素:元素ID。</code></pre><p>##meter标签</p>
+<pre><code>说明：定义一个标量值或分数值。</code></pre><pre><code>属性：
+1.form属性定义所属表单:表单ID。
+2.value属性定义当前值:数值。
+3.min属性定义初值：数值。
+4.low 属性定义低值：数值(比min大)。
+5.high属性定义高值：数值(比max小)。
+6.max 属性定义终值：数值。
+7.optimum属性最佳取值:lower,higher。</code></pre><p>##progress属性</p>
+<pre><code>说明：定义任务完成进度。</code></pre><pre><code>属性：
+1.value属性定义当前进度:数值。
+2.max 属性定义最终进度:数值。</code></pre><p>##button标签</p>
+<pre><code>说明：定义一个可点击按钮。</code></pre><pre><code>属性：
+1.form属性定义所属表单:表单ID。
+2.name属性定义列表名字:文本值。
+3.disabled属性定义列表是否可用:布尔值。
+4.type属性定义按钮的类型:button,submit,reset,menu。
+5.value属性定义按钮的值：文本值。
+6.formaction属性定义提交地址:url。
+7.formtarget属性定义返回地址:_top,_parent,_selft,_blank,iframename。
+8.formmethod属性定义提交方式:get,post。
+9.formentype属性定义表单内容类型(仅post时):
+  application/x-www-form-urlencoded(默认)
+  multipart/form-data(input的type为file)
+  text/plain
+10.formnovalidate属性定义是否验证:布尔值。
+11.autofucos属性定义是否自动聚焦:布尔值。</code></pre><p>##textarea标签</p>
+<pre><code>说明：定义一个多行文本输入框。</code></pre><pre><code>属性：
+1.form属性定义所属表单:表单ID。
+2.name属性定义列表名字:文本值。
+3.disabled属性定义列表是否可用:布尔值。
+4.cols属性定义文本宽度。
+5.rows属性定义文本高度。
+6.minlength属性定义最小长度。
+7.maxlength属性定义最大宽度。
+8.selectStart属性定义开始选择的索引。
+9.selectEnd属性定义结束选择的索引。
+10.selectDirection属性定义选择的方向。
+11.required属性定义是否必填。
+12.readonly属性定义是否只读。
+13.placeholder属性定义预填字符。
+14.autofocus属性定义是否自动聚焦。
+15.autocomplete属性定义是否自动完成。
+16.spellcheck属性定义是否检查拼写。
+17.wrap定义是否换行方式:hard,soft。</code></pre><p>##input标签</p>
+<pre><code>说明：定义一个输入框。</code></pre><pre><code>属性：</code></pre>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/html-7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="媒体标签">
+                        
+                        <span class="card-title">媒体标签</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            &lt;!-- 表格标签(7)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
+
+&lt;!-- 图像标签 --&gt;
+&lt;img src=&quot;pic.jpg&quot;&gt;
+&l
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/html-5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="表格标签">
+                        
+                        <span class="card-title">表格标签</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            &lt;!-- 表格标签(10)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
+
+&lt;!-- 表格信息 --&gt;
+&lt;table&gt;表格容器&lt;/table&gt;
+&lt;c
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        Copyright &copy; 2019 绝弹博客 版权所有
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

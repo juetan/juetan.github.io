@@ -1,0 +1,725 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="歌单列表展示, 绝弹博客">
+    <meta name="description" content="上节获取到歌单信息，本节遍历数据展示歌单列表，展示没有什么好写的不过是几行css样式的问题，为好的用户体验，添加上一些内容：滚动效果，懒加载及加载loading效果。
+
+打开src/componnents/recommend/index.v">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>歌单列表展示 | 绝弹博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">绝弹博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">绝弹博客</div>
+        <div class="logo-desc">
+            
+            选择路途的方向，却未决定路途的终点
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        歌单列表展示
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+
+<main class="container content">
+    
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <!-- <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/music/" target="_blank">
+                                <span class="chip bg-color">music</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                music
+                            </a>
+                        
+                    </div>
+                    
+                </div> -->
+                歌单列表展示
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-23
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <!-- <hr class="clearfix"> -->
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>上节获取到歌单信息，本节遍历数据展示歌单列表，展示没有什么好写的不过是几行css样式的问题，为好的用户体验，添加上一些内容：滚动效果，懒加载及加载loading效果。</p>
+<ol>
+<li><p>打开src/componnents/recommend/index.vue文件,敲写以下代码</p>
+<pre class=" language-html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>    
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">recommend</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>m-slider</span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mslider</span><span class="token punctuation">></span></span>
+         //歌单列表容器
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>热门推荐歌单<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+                 //遍历歌单数据，显示出来
+                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(item,key) in list<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>key<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                     //歌单封面
+                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">v-lazy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item.imgurl<span class="token punctuation">"</span></span> <span class="token attr-name">@load</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>imgLoaded<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                     //歌单名字
+                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{item.creator.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+                     //歌单简介
+                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{item.dissname}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+     export default {
+         data() {
+             return {
+                 //歌单数据，在上一节的方法里获取到的数据
+                 list: null
+             }
+         }
+     }
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scrip</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylus<span class="token punctuation">"</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">></span></span><span class="token style language-css">
+ //导入css变量
+ @import <span class="token string">'~common/stylus/variable'</span>
+
+ <span class="token number">.</span>recommend
+   //滚动效果的样式，提前写在这里，后面会用到
+   <span class="token number">.</span>scroll
+     <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">90</span>vh
+     <span class="token property">overflow</span><span class="token punctuation">:</span> hidden
+     //歌单容器 
+     <span class="token number">.</span>list
+       //‘热门推荐歌单’标题
+       <span class="token number">.</span>title
+         <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">65</span>px
+         <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">65</span>px
+         <span class="token property">text-align</span><span class="token punctuation">:</span> center
+         <span class="token property">color</span><span class="token punctuation">:</span> $color-theme
+         <span class="token property">background</span><span class="token punctuation">:</span> $font-size-medium
+       //单个歌单
+       <span class="token number">.</span>item
+         <span class="token property">display</span><span class="token punctuation">:</span> flex
+         <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box
+         <span class="token property">align-items</span><span class="token punctuation">:</span> center
+         <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">20</span>px <span class="token number">20</span>px <span class="token number">20</span>px
+         //歌单封面
+         <span class="token number">.</span>icon
+           <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">60</span>px
+           <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">60</span>px
+           <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">20</span>px
+           <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">2</span>px
+           <span class="token property">overflow</span><span class="token punctuation">:</span> hidden
+         <span class="token number">.</span>text
+           <span class="token property">display</span><span class="token punctuation">:</span> flex
+           <span class="token property">flex-direction</span><span class="token punctuation">:</span> column
+           <span class="token property">justify-content</span><span class="token punctuation">:</span> center
+           <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span>
+           <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">20</span>px
+           <span class="token property">overflow</span><span class="token punctuation">:</span> hidden
+           <span class="token property">font-size</span><span class="token punctuation">:</span> $font-size-medium
+           //歌单名字
+           <span class="token number">.</span>name
+             <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">10</span>px
+             <span class="token property">color</span><span class="token punctuation">:</span> $color-text-d
+           //歌单简介
+           <span class="token number">.</span>description
+             <span class="token property">color</span><span class="token punctuation">:</span> $color-text-i
+ </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>打开src/base/scroll/index.vue(没有的话创建一个)，做个滚动组件</p>
+<pre><code> // scroll/index.vue
+ &lt;template&gt;
+     //滚动容器，固定高度并设置overflow：hidden
+     &lt;div ref=&quot;wrapper&quot;&gt;
+         //滚动内容，滚动容器下的唯一子元素，高度由内容撑开且大于父容器高度
+         &lt;div&gt; &lt;slot&gt;&lt;/slot&gt; &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;template&gt;
+ &lt;script&gt;
+ export default {
+     //接收父组件的数据
+     props: {
+         probeType: {
+             type: Number,
+             default: 1
+         },
+         click: {
+             type: Boolean,
+             default: true
+         },
+         data: {
+             type: Array,
+             default: null
+         }
+     },
+     //实例挂载后调用[1]
+     mounted() {
+         //避免获取不到高度的问题
+         this.$nextTick(()=&gt;{
+             this._initScroll()
+         })  
+     },
+     methods: {
+         //创建滚动实例
+         _initScroll() {
+             if(!this.$refs.wrapper) return
+             this.scroll = new Scroll(this.$refs.wrapper,{
+                 probeType: this.probeType,
+                 click: this.click
+             })
+         },
+         //允许滚动
+         enable() {
+             this.scroll &amp;&amp; this.scroll.enable()
+         },
+         //禁止滚动
+         disable() {
+             this.scroll &amp;&amp; this.scroll.disable()
+         },
+         //更新滚动，主要是高度变化的时候重新刷新实例
+         refresh() {
+             this.scroll &amp;&amp; this.scroll.refresh()
+         },
+     },
+     watch: {
+         //监测父组件传的data数据，动态跟新滚动实例[2]
+         data() {
+             setTimeout(()=&gt;{
+                 this.refresh()
+             },20)
+         }
+     }
+ }
+ }
+ &lt;script&gt;</code></pre></li>
+<li><p>回到scr/componnents/recommend/index.vue文件，调用滚动组件</p>
+<pre><code> &lt;template&gt;
+     &lt;div class=&quot;recommend&quot;&gt;
+         //使用滚动组件，包裹住轮播图和歌单列表[3]
+         &lt;m-scroll&gt; 
+             //轮播图
+             &lt;m-slider&gt; ... &lt;/m-slider&gt;
+             //歌单列表
+             &lt;div class=&quot;list&gt; ... &lt;/div&gt;
+         &lt;/mscroll&gt;
+     &lt;div&gt;
+ &lt;/template&gt;
+ &lt;script&gt;
+ //导入滚动组件[1]
+ import &#39;scroll&#39; from &#39;base/scroll&#39;
+ export default {
+     //注册滚动组件[2]
+     componnents: {
+         &#39;m-scroll&#39;: scroll
+     }
+ }
+ &lt;/script&gt;</code></pre></li>
+<li><p>做完滚动组件，现在做一个懒加载的效果，数据未获取之前用某一图片代替</p>
+<pre><code> //[1]打开该文件之前，先打开cmd命令行安装vue-lazyload插件
+ npm install vue-lazyload --save-dev
+
+ //[2]打开src/main.js文件,敲写以下代码
+     //导入插件
+     import vueLazyLoad from &#39;vue-lazyload&#39;
+     //注册插件
+     Vue.use(vueLazyLoad,{
+         loading: required(&#39;comon/image/default.png&#39;)
+     })
+
+ //[3]打开src/componnents/recommend/index.vue，敲写以下代码 
+     &lt;template&gt;
+         //找到该标签
+         &lt;img :src=&quot;item.imgurl&quot; width=&quot;60&quot; height=&quot;60&quot;&gt;
+         //改为如下 load钩子避免多次触发
+         &lt;img v-lazy=&quot;item.imgurl&quot; @load=&quot;imgLoaded&quot; width=&quot;60&quot; height=&quot;60&quot;&gt;
+     &lt;/template&gt;
+     &lt;script&gt;
+         ...
+     &lt;sript&gt;</code></pre></li>
+<li><p>歌单列表从获取数据到渲染有过程间隙，可通过loading达到用户体验优化</p>
+<pre><code> //[1] 打开src/base/loading/index.vue,敲写以下代码
+ &lt;template&gt;
+   &lt;div class=&quot;loading&quot;&gt;
+     //加载符号
+     &lt;img width=&quot;24&quot; height=&quot;24&quot; src=&quot;./loading.gif&quot;&gt;
+     //加载提示
+     &lt;p class=&quot;tip&quot;&gt;{{title}}&lt;/p&gt;
+   &lt;/div&gt;
+ &lt;/template&gt;
+ &lt;script type=&quot;text/ecmascript-6&quot;&gt;
+   export default {
+     props: {
+       //自定义加载提示，由父组件传入
+       title: {
+         type: String,
+         default: &#39;正在载入...&#39;
+       }
+     }
+   }
+ &lt;/script&gt;
+ &lt;style scoped lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;
+   @import &quot;~common/stylus/variable&quot;
+   //加载层
+   .loading 
+     width: 100%
+     text-align: center
+     //加载提示
+     .tip
+       line-height: 20px
+       font-size: $font-size-small
+       color: $color-text-l
+ &lt;/style&gt;
+
+ //[2]打开src/componnents/recommend/index.vue，使用该加载组件
+ &lt;template&gt;
+     &lt;div class=&quot;recommend&gt;
+         &lt;m-srcoll&gt;
+             &lt;m-slider&gt; ... &lt;/m-slider&gt;
+             &lt;div class=&quot;list&quot;&gt;
+                 &lt;h1&gt; ... &lt;/h1&gt;
+                 &lt;li&gt; ... &lt;/li&gt;
+                 //[2.3]使用组件,数据未获取之前显示该loading
+                 &lt;m-loading v-if=&quot; !list &quot;&gt; &lt;/m-loading&gt;
+             &lt;div&gt;
+         &lt;/m-scroll&gt;
+     &lt;/div&gt;
+ &lt;/template&gt;
+ &lt;script&gt;
+     //[2.1]引入组件
+     import loading from &#39;base/loading&#39;
+     export default {
+         //[2.2]注册组件
+         componnents: {
+             &#39;m-loading&#39;: loading
+         }
+     }
+ &lt;/script&gt;</code></pre></li>
+</ol>
+
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/music-8/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="歌手页面(数据获取+数据处理)">
+                        
+                        <span class="card-title">歌手页面(数据获取+数据处理)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            歌手页面主要展示歌手列表，外加滚动效果，照例第一步还是要获取到数据。
+
+打开src/api/singer.js文件(没有的话创建该文件)，敲写以下代码
+ //singer.js 
+ //引入必要的文件
+ import jsonp from 
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/music/" target="_blank">
+                        <span class="chip bg-color">music</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/music-6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="服务器代理跨域">
+                        
+                        <span class="card-title">服务器代理跨域</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            获取轮播图数据使用jsonp没有什么什么，然而获取歌单列表时，需要带上请求头部信息，此时用jsonp是无法做到的，需要使用node提供的服务器代理来间接获取数据，而axios不仅支持ajax请求，也支持服务器代理请求，接下来完成一次代理请求
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/music/" target="_blank">
+                        <span class="chip bg-color">music</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        Copyright &copy; 2019 绝弹博客 版权所有
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

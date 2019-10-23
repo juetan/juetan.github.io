@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="head, 绝弹博客">
+    <meta name="description" content="前言文档没有head里面的内容，也不会影响页面的布局。但head提供的内容对于整个文档来说，有着举足轻重的影响。例如有在head里正确声明文档的字符编码，可以确保页面不会乱码；声明样式，可以渲染绚丽的页面；声明脚本，可以让页面产生交互等。
+">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>head | 绝弹博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">绝弹博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">绝弹博客</div>
+        <div class="logo-desc">
+            
+            选择路途的方向，却未决定路途的终点
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        head
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+
+<main class="container content">
+    
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <!-- <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/html/" target="_blank">
+                                <span class="chip bg-color">html</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                html
+                            </a>
+                        
+                    </div>
+                    
+                </div> -->
+                head
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-23
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <!-- <hr class="clearfix"> -->
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>文档没有head里面的内容，也不会影响页面的布局。但head提供的内容对于整个文档来说，有着举足轻重的影响。例如有在head里正确声明文档的字符编码，可以确保页面不会乱码；声明样式，可以渲染绚丽的页面；声明脚本，可以让页面产生交互等。</p>
+<h2 id="title标签-无属性"><a href="#title标签-无属性" class="headerlink" title="title标签(无属性)"></a>title标签(无属性)</h2><pre><code>说明：定义一个文档级别的标题，这个标题会在浏览器输入栏上方显示。
+属性：暂无</code></pre><pre><code>用法：&lt;title&gt;菜鸟教程 - 学的不仅是技术，更是梦想！&lt;/title&gt;</code></pre><h2 id="meta标签-4属性"><a href="#meta标签-4属性" class="headerlink" title="meta标签(4属性)"></a>meta标签(4属性)</h2><pre><code>说明：定义文档的元信息，不同的属性，标记着不同的元内容。</code></pre><pre><code>属性：
+1.charset属性定义文档的编码方式，未声明可能会出现乱码。
+  取值：UTF-8,GBK
+2.name属性定义关于SEO的元信息，配合content属性使用。
+  取值：冒号前为name属性的值,冒号后为content属性的值
+  1.description:文本值，
+  2.keywords:文本值，以逗号隔开
+  3.author:文本值(名字和邮箱，以逗号隔开)
+  4.robots:待补充
+  5.viewport:代补充
+3.http-equiv属性定义等同于http头部的元信息，配合content属性使用。
+  取值：冒号前为name属性的值,冒号后为content属性的值
+  1.content-type:UTF-8,GBK
+  2.X-UA-Campability:ie-edge,chrome-1
+  3.refresh:刷新间隔(秒)[,跳转地址(绝对地址或相对地址)]
+4.content属性不能单独使用，需和前面两个属性配合使用。</code></pre><pre><code>用法一：
+&lt;!-- 这是html5的写法，也有html4.0.1的写法，推荐这种写法 --&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre><pre><code>用法二：
+&lt;!-- 文档描述，会被搜索引擎显示在搜索页面中。 --&gt;
+&lt;meta name=&quot;description&quot; content=&quot;绝弹一个博客&quot;&gt;
+&lt;!-- 文档关键字，关键字之间以逗号隔开，搜索引擎根据该关键字分类收录。 --&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;html,css,javascript,个人博客&quot;&gt;
+&lt;!-- 文档作者，由名字与邮箱组成，中间以逗号隔开。--&gt;
+&lt;meta name=&quot;author&quot; content=&quot;juetan,952222@163.com&quot;&gt;
+&lt;!-- 搜索机器人的搜索权限，具体权限看这里: --&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index,flow&quot;&gt;
+&lt;!--  视图端口，主要针对移动端 --&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,inite-scale=1.0&quot;&gt;</code></pre><pre><code>用法三：
+&lt;!-- 文档编码，这是html4.0.1的写法，推荐上述html5的写法 --&gt;
+&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html,charset=UTF-8&quot;&gt;
+&lt;!-- 浏览器兼容，告诉浏览器选择什么样的版本渲染文档 --&gt;
+&lt;meta http-equiv=&quot;X-UA-campability&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+&lt;!-- 文档刷新，由间隔时间(秒)和跳转地址组成，中间以逗号隔开 --&gt;
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5,https://www.juetan.cn&quot;&gt;</code></pre><h2 id="link标签-3属性"><a href="#link标签-3属性" class="headerlink" title="link标签(3属性)"></a>link标签(3属性)</h2><pre><code>说明：定义文档所链接的外部资源，按属性值的不同，链接不同的资源。</code></pre><pre><code>属性：
+1.rel属性定义文档与外部资源的关系。
+  值：icon,stylesheet,author,alternate,archives,bookmark,external,first
+  last,help,license,next,nofollow,norefere,pingback,prefetch,prev,search
+  sidebar,tag,up
+2.media属性定义资源在什么设备上加载。
+  取值：以下组合
+  1.运算符：and not ,
+  2.设备：all,screen,handheld,aural,braile,projection,print,tty,tv
+  3.取值:width,height,device-width,device-height,orientation,aspect-ratio
+  device-aspect-ratio,color,color-index,monochrome,resolution,scan,grid
+3.src属性定义资源的地址，文本值。</code></pre><pre><code>&lt;!-- 引入一个文档图标，该图标与文档标题一同显示在浏览器输入栏上方 --&gt;
+&lt;link rel=&quot;shortcut icon&quot; src=&quot;favicon.ico&quot;&gt;
+&lt;!-- 引入一个外部样式表，可根据media属性在特定设备上引入该样式表 --&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen and width&gt;768px&quot; src=&quot;/style.css&quot;&gt;</code></pre><h2 id="style标签-无属性"><a href="#style标签-无属性" class="headerlink" title="style标签(无属性)"></a>style标签(无属性)</h2><pre><code>说明：定义一个内联样式表，作用在该文档之内。
+属性：暂无</code></pre><pre><code>用法：
+&lt;style&gt;
+  h1 {
+    color:red
+  }
+&lt;/style&gt;</code></pre><h2 id="script标签-4属性"><a href="#script标签-4属性" class="headerlink" title="script标签(4属性)"></a>script标签(4属性)</h2><pre><code>说明：定义脚本，作用在该文档之内。</code></pre><pre><code>属性：
+1.type属性定义脚本的类型，非以下值会被当做数据块。
+  值：text/[javascript,ecmascript],application[javascript,ecmascript],module
+2.src属性定义脚本的来源地址，文本值。
+3.defer属性定义脚本在文档解析后，DOMContentload前触发，布尔值。
+4.async属性定义是否异步执行脚本，布尔值。</code></pre><pre><code>用法：
+&lt;!-- 引入外部脚本 异步加载 --&gt;
+&lt;script scr=&quot;index.js&quot; async&gt;&lt;/script&gt;
+&lt;!-- 定义内部脚本 延迟解析 --&gt;
+&lt;script defer&gt;
+  alert(&quot;hello,world!&quot;);
+&lt;/script&gt;</code></pre><h2 id="附录："><a href="#附录：" class="headerlink" title="附录："></a>附录：</h2><pre><code>&lt;!DOCTYPE html&gt; &lt;!-- 头部标签(4个)，以下标签分类，仅方便个人记忆，并非官方给出，暂时先列出标签，以后再慢慢补上 --&gt;
+&lt;html lang=&quot;zh-cmn-Hans&quot;&gt; &lt;!-- 中文汉字 --&gt;
+    &lt;head&gt;
+        &lt;!-- 字符编码(html5写法) --&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;!-- 字符编码(html4.0.1写法) --&gt;
+        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=UTF-8&quot;&gt;
+
+        &lt;!-- 页面标题 --&gt;
+        &lt;title&gt;Title of  this page&lt;/title&gt;
+
+        &lt;!-- 兼容模式 --&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;/&gt;
+        &lt;!-- 移动设备 --&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no&quot;&gt;
+
+        &lt;!-- 页面描述 --&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;绝弹小站 - 正在学习前端的个人博客&quot;/&gt;
+        &lt;!-- 页面关键词 --&gt;
+        &lt;meta name=&quot;keywords&quot; content=&quot;前端,Html学习,Css学习,Js学习,个人博客&quot;/&gt;
+        &lt;!-- 网页作者 --&gt;
+        &lt;meta name=&quot;author&quot; content=&quot;juetan, contact@juetan.cn&quot;/&gt;
+        &lt;!-- 搜索引擎 --&gt;
+        &lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;/&gt;
+
+
+        &lt;!-- 页面刷新 --&gt;
+        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;https://www.juetan.cn&quot;&gt;
+        &lt;!-- 网页图标 --&gt;
+        &lt;link rel=&quot;shortcut icon&quot;  href=&quot;/favicon.ico&quot;&gt;
+
+        &lt;!-- 外部样式表 --&gt;
+        &lt;link rel=&quot;stylesheet&quot; media=&quot;&quot;  href=&quot;/css/index.css&quot;&gt;
+        &lt;!-- 外部脚本 --&gt;
+        &lt;script src=&quot;/js/index.js&quot;&gt;&lt;/script&gt;
+        &lt;!-- 内部样式表 --&gt;
+        &lt;style&gt;div {background-color:red}&lt;/style&gt;
+        &lt;!-- 内部脚本 --&gt;
+        &lt;script&gt;document.ready(function(){alert(&quot;hello,world&quot;);});&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/html-3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="行内标签">
+                        
+                        <span class="card-title">行内标签</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            &lt;!-- 文字格式 (34个) ，以下标签分类，仅方便个人记忆，并非官方给出，暂时先列出标签，以后再慢慢补上 - --&gt;
+
+&lt;!-- 换行通用 - --&gt;
+&lt;hr&gt;  &lt;!-- 5属性 --&gt;
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/music-10/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="歌手页面(点击跳转+滑动联动)">
+                        
+                        <span class="card-title">歌手页面(点击跳转+滑动联动)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            上一节完成了页面的展示及滚动效果，接下来实现歌手列表和歌手索引的联动效果，点击右侧的字母，中间跳转到相应的歌手位置，滑动歌手页面时，右侧的字母列表也随之改变。
+
+打开src/base/listview/index.vue(没有则创建),实现
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/music/" class="post-category" target="_blank">
+                                    music
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/music/" target="_blank">
+                        <span class="chip bg-color">music</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        Copyright &copy; 2019 绝弹博客 版权所有
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

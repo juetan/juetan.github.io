@@ -1,0 +1,621 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="块级标签, 绝弹博客">
+    <meta name="description" content="&amp;lt;!-- 块级标签(21)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&amp;gt;
+
+&amp;lt;!-- 独立块级 --&amp;gt;
+&amp;lt;div&amp;gt;典型块级&amp;lt;/div&amp;gt;
+&amp;lt;p&amp;gt;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>块级标签 | 绝弹博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">绝弹博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">绝弹博客</div>
+        <div class="logo-desc">
+            
+            选择路途的方向，却未决定路途的终点
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        块级标签
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+
+<main class="container content">
+    
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <!-- <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/html/" target="_blank">
+                                <span class="chip bg-color">html</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                html
+                            </a>
+                        
+                    </div>
+                    
+                </div> -->
+                块级标签
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-23
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <!-- <hr class="clearfix"> -->
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <pre><code>&lt;!-- 块级标签(21)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
+
+&lt;!-- 独立块级 --&gt;
+&lt;div&gt;典型块级&lt;/div&gt;
+&lt;p&gt;文本段落&lt;/p&gt;
+&lt;pre&gt;文本预格式段落&lt;/pre&gt;
+&lt;figure&gt;独立内容&lt;/figure&gt;
+&lt;figcaption&gt;内容标题&lt;/figcaption&gt;
+
+&lt;!-- 列表块级 --&gt;
+&lt;ul&gt;无序列表&lt;/ul&gt;
+&lt;ol&gt;有序列表&lt;/ol&gt; &lt;!-- 3属性 --&gt;
+&lt;li&gt;列表子项&lt;/li&gt; &lt;!-- 1属性 --&gt;
+&lt;dl&gt;定义列表&lt;/dl&gt;
+&lt;dt&gt;定义标题&lt;/dt&gt;
+&lt;dd&gt;定义内容&lt;/dd&gt;
+
+&lt;!-- 语义块级 --&gt;
+&lt;header&gt;头部部分&lt;/header&gt;
+&lt;nav&gt;导航部分&lt;/nav&gt;
+&lt;main&gt;主体部分&lt;/main&gt;
+&lt;section&gt;区域部分&lt;/section&gt;
+&lt;h1&gt;标题部分&lt;/h6&gt;
+&lt;hgroup&gt;标题分组&lt;/hgroup&gt;
+&lt;article&gt;独立部分&lt;/article&gt;
+&lt;aside&gt;旁边部分&lt;/aside&gt;
+&lt;footer&gt;尾部部分&lt;/footer&gt;
+&lt;adress&gt;联系信息&lt;/adress&gt;</code></pre><p>##div标签</p>
+<pre><code>说明：典型的块级标签，一般作为样式容器，并无特别语义。
+属性：暂无</code></pre><pre><code>用法：
+&lt;!-- 作为样式容器，添加样式 --&gt;
+&lt;div  class=&quot;red-font&quot;&gt;青箬笠，绿蓑衣，斜风细雨不须归。&lt;/div&gt;</code></pre><p>##p标签</p>
+<pre><code>说明：定义文本段落，忽略多余空白符，一般用于放置文本。
+属性：暂无</code></pre><pre><code>用法：
+&lt;!-- 示例 --&gt;
+&lt;p&gt;日暮酒醒人已远，满天风雨下西楼。&lt;/p&gt;</code></pre><p>##pre标签</p>
+<pre><code>说明：定义预格式文本段落，保留所有空白符。
+属性：暂无</code></pre><pre><code>用法：
+&lt;!-- 怎么输入，怎么显示 --&gt;
+&lt;pre&gt;
+  西窗下，
+    风摇翠竹，
+      疑是故人来。
+&lt;/pre&gt;</code></pre><p>##figure标签</p>
+<pre><code>说明：定义一段独立的内容,配合figcaption标签使用。
+属性：暂无</code></pre><p>##figcaption标签</p>
+<pre><code>说明：定义figure标签内容的标题。
+属性：暂无</code></pre><pre><code>&lt;!-- 这段内容通常是独立的,与主体无关 --&gt;
+用法：
+&lt;figure&gt;
+  &lt;img src=&quot;source.jpg&quot;&gt;
+  &lt;figcaption&gt;Source&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre><p>##ul标签</p>
+<pre><code>说明：定义无序列表,配合li标签使用。
+属性：暂无(样式修改请用CSS)</code></pre><pre><code>用法：
+&lt;!-- 不需排列顺序的内容 --&gt;
+&lt;ul&gt;
+  &lt;li&gt;广西&lt;/li&gt;
+  &lt;li&gt;广东&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p>##ol标签</p>
+<pre><code>说明：定义有序列表,配合li标签使用。
+属性：
+1.type属性定义序号类型:a(小写),A(大写),i(小写罗马),I(大写罗马),1(数字,默认)
+2.start属性定义开始序号:数值
+3.reversed属性定义序号倒置:布尔值</code></pre><pre><code>用法：
+&lt;!-- 一个大写字母排序,序号倒置的列表 --&gt;
+&lt;ol type=&quot;A&quot;  reversed&gt;
+  &lt;li&gt;第一&lt;/li&gt;
+  &lt;li&gt;第二&lt;/li&gt;
+&lt;ol&gt;</code></pre><p>##li标签</p>
+<pre><code>说明：定义ol标签或ul标签的子项。
+属性:value属性定义当前项的序列值,仅在ol标签中有效。</code></pre><pre><code>用法：
+&lt;ol&gt;
+  &lt;li value=&quot;5&quot;&gt;从5开始&lt;/li&gt;
+  &lt;li&gt;这里是6&lt;/li&gt;
+&lt;/ol&gt;</code></pre><p>##dl标签</p>
+<pre><code>说明：定义一个包含术语定义即术语描述的列表(配合dt,dd标签使用)。
+属性：暂无</code></pre><p>#dt标签</p>
+<pre><code>说明：定义一个术语的定义(配合dl,dd标签使用)
+属性：暂无</code></pre><p>##dd标签</p>
+<pre><code>说明：定义一个术语的描述(配合dl,dt标签使用)
+属性：暂无</code></pre><pre><code>用法：
+&lt;!-- 以上三个标签都不能单独使用,需要一起使用 --&gt;
+&lt;dl&gt;
+  &lt;dt&gt;虎牙直播&lt;/dt&gt;
+  &lt;dd&gt;技术驱动娱乐,弹幕式互动直播平台&lt;/dd&gt;
+  &lt;dt&gt;斗鱼直播&lt;/dt&gt;
+  &lt;dd&gt;每个人的直播平台&lt;/dd&gt;
+&lt;/dl&gt;</code></pre><p>##header标签</p>
+<pre><code>说明：定义一个头部部分,语义标签。
+属性：暂无</code></pre><p>##nav标签</p>
+<pre><code>说明：定义一个导航部分,语义标签。
+属性：暂无</code></pre><p>##main标签</p>
+<pre><code>说明：定义一个主体部分,语义标签。
+属性：暂无</code></pre><p>##section标签</p>
+<pre><code>说明：定义一个独立部分,语义标签,略微却别与article标签。
+属性：暂无</code></pre><p>##h1~h6标签</p>
+<pre><code>说明：定义一个标题,语义标签,一般用于文章。
+属性：暂无</code></pre><p>##hgroup标签</p>
+<pre><code>说明：定义一个标题容器,语义标签,当有多级标题时使用。
+属性：暂无</code></pre><p>##article标签</p>
+<pre><code>说明：定义一个独立结构,语义标签,略微区别于section标签。
+属性：暂无</code></pre><p>##aside标签</p>
+<pre><code>说明：定义一个无关部分,语义标签,如个人笔记,相关广告,个人资料等。
+属性：暂无</code></pre><p>##footer标签</p>
+<pre><code>说明：定义一个尾部部分,语义标签,可放置友情链接,版权声明等。
+属性：暂无</code></pre><p>##adress标签</p>
+<pre><code>说明：定义一个联系信息,语义标签,如文章作者,联系电话,联系邮箱等。
+属性：暂无</code></pre><pre><code>使用：
+&lt;!-- 以上10个语义标签,可简单示例如下,具体应用视情况而定 --&gt;
+&lt;body&gt;
+
+  &lt;!-- 头部导航部分 --&gt;
+  &lt;header&gt;
+    &lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;logo.jpg&quot;&gt;&lt;/a&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;article.html&quot;&gt;文章&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;product.html&quot;&gt;作品&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;about.html&quot;&gt;关于&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;!-- 文档主体内容 --&gt;
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h1&gt;大圣归来&lt;/h1&gt;
+      &lt;p&gt;作者:绝弹 发布时间:&lt;time datetime=&quot;2018-11-23&quot; pubdate&gt;2018-11-23&lt;/time&gt;&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;article&gt;
+      &lt;p&gt;一花一世界，一叶一菩提，如是知 如是见，如是信解而已，
+         一切皆为虚幻，命由己造，相由心生，一  念愚即般若绝！
+      &lt;/p&gt;
+    &lt;/article&gt;
+    &lt;aside&gt;
+      标签:大圣,绝弹
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;!-- 尾部部分一般声明版权,友情链接,链接信息等 --&gt;
+  &lt;footer&gt;
+    Copyright &amp;copy;绝弹版权所有 &lt;adress&gt;联系邮箱:952222@163.com&lt;/adress&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;</code></pre>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/html-5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="表格标签">
+                        
+                        <span class="card-title">表格标签</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            &lt;!-- 表格标签(10)，以下标签分类，仅方便个人记忆，并非官方给出，暂时写列出标签，以后再慢慢补上 --&gt;
+
+&lt;!-- 表格信息 --&gt;
+&lt;table&gt;表格容器&lt;/table&gt;
+&lt;c
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/html-3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="行内标签">
+                        
+                        <span class="card-title">行内标签</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            &lt;!-- 文字格式 (34个) ，以下标签分类，仅方便个人记忆，并非官方给出，暂时先列出标签，以后再慢慢补上 - --&gt;
+
+&lt;!-- 换行通用 - --&gt;
+&lt;hr&gt;  &lt;!-- 5属性 --&gt;
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/html/" class="post-category" target="_blank">
+                                    html
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        Copyright &copy; 2019 绝弹博客 版权所有
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
