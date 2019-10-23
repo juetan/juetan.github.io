@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Get-Started-With-Hexo</title>
+      <title>博客框架Hexo简明教程</title>
       <link href="/2019/09/07/Get-Started-With-Hexo/"/>
       <url>/2019/09/07/Get-Started-With-Hexo/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="[1]简介"></a>[1]简介</h1><p>Hexo是一款静态博客框架，在无需数据库及后端语言的情况下，可通过Markdown格式生成静态页面。</p><h1 id="2-安装"><a href="#2-安装" class="headerlink" title="[2]安装"></a>[2]安装</h1><p>Hexo依赖NodeJS(Javascript运行环境)及GIT(版本控制系统)，安装该两项后才可安装Hexo。<br>2.1 NodeJs的安装:打开<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a>，下载安装包，安装后打开cmd命令行，输入<code>node -v</code>,如正确输出版本号即代表安装成功。<br>2.2 GIT的安装:打开<a href="https://git-scm.com" target="_blank" rel="noopener">官网</a>，同样下载安装包，安装后打开cmd命令行，输入<code>git --version</code>,如正确输出版本号即代表安装成功。<br>2.3 Hexo的安装:安装以上软件后，打开cmd命令行，输入<code>npm install hexo-cli -g</code>,等待安装过程，安装后输入<code>hexo -v</code>，如有输出版本号即代表安装成功。</p><h1 id="3-使用"><a href="#3-使用" class="headerlink" title="[3]使用"></a>[3]使用</h1><p>Hexo的使用相对简单，初始化一个仓库，创建博客文章，然后再生成静态文件，通过启动本地服务即可在浏览器端看到博客内容。</p>]]></content>
       
       
       
