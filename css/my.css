@@ -6,3 +6,6 @@
     float: none;
     display: inline-block;
 }
+html {
+    filter: grayscale(100%);
+}
