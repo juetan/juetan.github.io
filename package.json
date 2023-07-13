@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev doc",
+    "docs:build": "vitepress build doc",
+    "docs:preview": "vitepress preview doc"
+  },
+  "devDependencies": {
+    "@iconify-json/icon-park-outline": "^1.1.11",
+    "dayjs": "^1.11.9",
+    "unocss": "^0.53.5",
+    "vite": "^4.4.3",
+    "vitepress": "1.0.0-beta.5"
+  }
+}
