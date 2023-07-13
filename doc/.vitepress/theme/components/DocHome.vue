@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-base mb-3"><i class="icon-park-outline-bookshelf mr-1 verical-[-3px]"></i>最新文章</div>
+    <div class="text-base mb-2"><i class="icon-park-outline-bookshelf mr-1"></i>最新文章</div>
     <ul class="item-list">
       <li v-for="(post, index) in posts" :key="post.title" class="item flex justify-bewteen gap-2">
         <div class="flex-1 grid grid-rows-[auto_1fr_auto]">
@@ -30,7 +30,7 @@
             v-if="post.frontmatter.thumbnail"
             :src="post.frontmatter.thumbnail"
             :alt="post.frontmatter.title"
-            class="rounded h-full aspect-ratio w-[180px] max-w-initial"
+            class="rounded h-full aspect-ratio w-[180px] max-w-initial bg-slate-100 hover:opacity-80"
           />
         </div>
       </li>
@@ -75,5 +75,8 @@ import { dayjs } from "../dayjs";
 }
 .item-link:hover {
   text-decoration: none;
+}
+.icon-park-outline-bookshelf {
+  vertical-align: -3px;
 }
 </style>
