@@ -64,7 +64,7 @@ export const enum AuthEnum {
 
 1.  打开一个能编译 EJS 的在线网站， 例如 [OneCompiler](https://onecompiler.com/ejs)。
 
-![One Compiler转存失败，建议直接上传图片文件](./onecompiler-ejs.png)
+<Image src="./onecompiler-ejs.png" />
 
 2.  根据目标数据结构，编写一丢丢逻辑和模板代码，点击 `RUN` 按钮即可。
 
