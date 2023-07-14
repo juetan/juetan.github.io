@@ -6,20 +6,20 @@
       </div>
       <div class="text-center">
         <!-- <h2 class="text-3xl m-0 font-bold">页面不存在</h2> -->
-        <p class="mt-0">页面不存在，请检查访问的地址是否正确!</p>
+        <p class="mt-0">抱歉页面未找到，请检查访问的地址是否正确!</p>
         <div class="space-x-3 mt-5">
-          <a-button type="primary" @click="router.go()">
+          <Button type="primary" @click="onGoBack">
             <template #icon>
               <i class="icon-park-outline-back"></i>
             </template>
             返回上页
-          </a-button>
-          <a-button type="outline" @click="router.go('/')">
+          </Button>
+          <Button type="outline" @click="router.go('/')">
             <template #icon>
               <i class="icon-park-outline-home"></i>
             </template>
             返回首页
-          </a-button>
+          </Button>
         </div>
       </div>
     </div>
@@ -27,8 +27,13 @@
 </template>
 
 <script setup lang="ts">
+import { Button } from '@arco-design/web-vue';
 import { useRouter } from "vitepress";
+
 const router = useRouter();
+const onGoBack = () => {
+  window.history.back();
+}
 </script>
 
 <style scoped></style>

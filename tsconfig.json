@@ -15,9 +15,10 @@
     "baseUrl": ".",
     "allowImportingTsExtensions": true,
     "paths": {
-      "@app/*": [".vitepress/theme/*"],
+      "@app/*": [".vitepress/*"],
       "@theme/*": [".vitepress/theme/*"]
     }
   },
-  "include": [".vitepress/**/*", "src/**/*"]
+  "include": [".vitepress/**/*", "src/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,8 +1,8 @@
-import { defineConfig } from 'vitepress';
+import { readFileSync } from 'fs';
 import { presetIcons, presetUno, transformerCompileClass } from 'unocss';
 import Unocss from 'unocss/vite';
 import { fileURLToPath } from 'url';
-import { readFileSync } from 'fs';
+import { defineConfig } from 'vitepress';
 
 /**
  * 站点配置
@@ -103,34 +103,39 @@ export default defineConfig({
         link: '/',
       },
       {
-        text: '前端开发',
+        text: '前端',
         icon: 'icon-park-outline-html-five',
         link: '/frontend/',
       },
       {
-        text: '后端开发',
+        text: '后端',
         icon: 'icon-park-outline-server',
         link: '/backend',
       },
       {
-        text: '日常记录',
+        text: '日常',
         icon: 'icon-park-outline-coconut-tree',
         link: '/daily',
       },
       {
-        text: '开发工具',
+        text: '工具',
         icon: 'icon-park-outline-tool',
         link: '/tools',
       },
       {
-        text: '个人项目',
+        text: '归档',
+        icon: 'icon-park-outline-hourglass-null',
+        link: '/archive/',
+      },
+      {
+        text: '项目',
         icon: 'icon-park-outline-certificate',
         link: '/projects',
       },
       {
         text: '关于',
         icon: 'icon-park-outline-user',
-        link: '/about/index',
+        link: '/about/',
       },
     ] as any,
     sidebar: {
@@ -210,5 +215,13 @@ export default defineConfig({
   markdown: {
     theme: 'one-dark-pro',
     lineNumbers: true,
+    config(md) {
+      md.renderer.rules.image = (tokens, idx, options, env, self) => {
+        const token = tokens[idx];
+        const aIndex = token.attrIndex('src');
+        const src = token.attrs![aIndex][1];
+        return `<Image src="${src}" class="cursor-pointer hover:shadow shadow-blue-100"  />`;
+      };
+    },
   },
 });

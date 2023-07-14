@@ -6,7 +6,7 @@
           <i class="icon-park-outline-bookshelf mr-1"></i>最新文章
         </div>
         <ul class="item-list bounce-in-bottom">
-          <li v-for="(post, index) in posts" :key="post.title" class="item flex justify-bewteen gap-2">
+          <li v-for="(post, index) in state.data" :key="post.url" class="item flex justify-bewteen gap-2">
             <div class="flex-1 grid grid-rows-[auto_1fr_auto]">
               <a :href="post.url" class="item-link flex gap-2 overflow-hidden">
                 <h2 class="item-title hover:text-blue-600 truncate">
@@ -31,34 +31,18 @@
                 </div>
               </div>
             </div>
-            <div>
+            <div class="hidden md:block">
               <Image
                 v-if="post.frontmatter.thumbnail"
                 :src="post.frontmatter.thumbnail"
                 :alt="post.frontmatter.title"
-                class="hidden md:block rounded h-full aspect-video max-w-initial bg-slate-100 cursor-pointer opacity-80 hover:opacity-100 transition-opacity duration-200 ease-in-out"
+                class=" rounded h-full aspect-video max-w-initial bg-slate-100 cursor-pointer opacity-80 hover:opacity-100 transition-opacity duration-200 ease-in-out"
               />
             </div>
           </li>
         </ul>
         <div class="my-6 flex gap-2 justify-center">
-          <div class="w-8 h-8 flex items-center justify-center hover:bg-slate-100 rounded-sm cursor-pointer">
-            <span class="icon-park-outline-left"></span>
-          </div>
-          <div
-            class="w-8 h-8 flex items-center justify-center hover:bg-slate-100 rounded-sm cursor-pointer bg-blue-50 text-blue-500"
-          >
-            <span> 1 </span>
-          </div>
-          <div class="w-8 h-8 flex items-center justify-center hover:bg-slate-100 rounded cursor-pointer">
-            <span> 2 </span>
-          </div>
-          <div class="w-8 h-8 flex items-center justify-center hover:bg-slate-100 rounded cursor-pointer">
-            <span> 3 </span>
-          </div>
-          <div class="w-8 h-8 flex items-center justify-center hover:bg-slate-100 rounded cursor-pointer">
-            <span class="icon-park-outline-right"></span>
-          </div>
+          <Pagination :total="posts.length" @change="onPageSizeChange" />
         </div>
       </div>
     </div>
@@ -81,9 +65,23 @@
 
 <script setup lang="ts">
 import { data as posts } from '@app/data/posts.data.ts';
+import { Pagination } from '@arco-design/web-vue';
+import { reactive } from 'vue';
 import { dayjs } from '../dayjs';
 
-console.log(posts);
+const state = reactive({
+  page: 1,
+  pageSize: 10,
+  data: posts.slice(0, 10),
+});
+
+const onPageSizeChange = (page: number) => {
+  const start = (page - 1) * state.pageSize;
+  const end = page * state.pageSize;
+  state.data = posts.slice(start, end);
+  const box = document.querySelector('#VPContent');
+  window?.scrollTo({ top: 0, behavior: 'smooth' });
+};
 </script>
 
 <style scoped>

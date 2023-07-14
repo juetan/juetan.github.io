@@ -76,7 +76,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { data as posts } from '@app/data/posts.data.ts';
 import { dayjs } from '@theme/dayjs';
 </script>

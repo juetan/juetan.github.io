@@ -14,11 +14,11 @@ new Date.toISOString;
 ```
 运行结果如下：
 
-![](./new-()and-new.png)
+![运行结果](./new-()and-new.png)
 
 猜测是优先级的问题，然后在MDN找到了[答案](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_precedence#%E6%B1%87%E6%80%BB%E8%A1%A8)，它们确实是两个不同的优先级，如下图：
 
-![](./js-diff-new()-and-new.png)
+![MDN文档](./js-diff-new()-and-new.png)
 
 以上，方式一中的 `.` 优先级最高，但其左边需要先求值，因而先执行`new Date()`得到实例，再返回实例上的`toISOString`属性；而方式二中的 `. `优先级也是最高，但其左边不用求值，因而可以先执行`Date.toISOString`得到`toISOString`值(Date上不存在该属性，因此该值为undefined)，再尝试进行`new toISOString`操作时报错发生。
 
