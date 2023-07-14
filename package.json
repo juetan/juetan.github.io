@@ -1,8 +1,12 @@
 {
+  "name": "juetan",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "docs:dev": "vitepress dev doc",
-    "docs:build": "vitepress build doc",
-    "docs:preview": "vitepress preview doc"
+    "preinstall": "npx only-allow pnpm",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "devDependencies": {
     "@iconify-json/icon-park-outline": "^1.1.11",

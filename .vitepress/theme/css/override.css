@@ -1,0 +1,389 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+[class*=' icon-'],
+[class^='icon-'] {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  background: rgb(241, 245, 249);
+}
+
+/**
+  * Colors
+  * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-brand: #09f;
+  --vp-c-brand-light: #0099ffe0;
+  --vp-c-brand-lighter: #0099ffa0;
+  --vp-c-brand-lightest: #0099ffc0;
+  --vp-c-brand-dark: #535bf2;
+  --vp-c-brand-darker: #454ce1;
+  --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
+  --vp-sidebar-bg-color: transparent;
+  --vp-nav-height: 56px;
+  --vp-code-font-size: 14px;
+  --vp-icon-copy: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzg4ODg4OCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI0Ij48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIGQ9Ik0xMyAxMi40MzJ2LTQuNjJBMi44MTMgMi44MTMgMCAwIDEgMTUuODEzIDVoMjQuMzc0QTIuODEzIDIuODEzIDAgMCAxIDQzIDcuODEzdjI0LjM3NUEyLjgxMyAyLjgxMyAwIDAgMSA0MC4xODcgMzVoLTQuNjciLz48cGF0aCBkPSJNMzIuMTg4IDEzSDcuODExQTIuODEzIDIuODEzIDAgMCAwIDUgMTUuODEzdjI0LjM3NEEyLjgxMyAyLjgxMyAwIDAgMCA3LjgxMyA0M2gyNC4zNzVBMi44MTMgMi44MTMgMCAwIDAgMzUgNDAuMTg3VjE1LjgxNEEyLjgxMyAyLjgxMyAwIDAgMCAzMi4xODcgMTNaIi8+PC9nPjwvc3ZnPg==');
+}
+/* :root {
+   --vp-c-brand: #646cff;
+   --vp-c-brand-light: #747bff;
+   --vp-c-brand-lighter: #9499ff;
+   --vp-c-brand-lightest: #bcc0ff;
+   --vp-c-brand-dark: #535bf2;
+   --vp-c-brand-darker: #454ce1;
+   --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
+   --vp-sidebar-bg-color: transparent;
+ } */
+
+/**
+  * Component: Button
+  * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: var(--vp-c-brand-light);
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-border: var(--vp-c-brand-light);
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+  --vp-button-brand-active-border: var(--vp-c-brand-light);
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+}
+
+/**
+  * Component: Home
+  * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(72px);
+  }
+  .VPContent .VPDoc {
+    padding: 20px 0 40px;
+  }
+  .VPDoc .container > .content {
+    background: #fff;
+    padding: 28px 24px;
+    box-shadow: 0 0 8px #f1f3f5;
+    border: 1px solid #f1f3f5;
+    border-radius: 4px;
+  }
+}
+
+/**
+  * Component: Custom Block
+  * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+.dark {
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+/**
+  * Component: Algolia
+  * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand) !important;
+}
+
+.Layout {
+  height: 100%;
+  /* background-color: #f1f3f5; */
+}
+
+#VPContent .VPDoc.has-aside .content-container {
+  max-width: initial;
+  margin: 0;
+}
+
+.VPNav {
+  border-bottom: 1px solid #f1f3f5;
+  background: #fff;
+}
+
+.curtain,
+.aside-curtain {
+  display: none;
+}
+
+#VPContent .aside {
+  padding-left: 20px;
+}
+
+@media (min-width: 640px) {
+  .vp-doc div[class*='language-'] {
+    border-radius: 2px;
+  }
+}
+
+#VPSidebarNav {
+  margin-top: 20px;
+  background: #fff;
+  padding: 16px;
+}
+
+#VPSidebarNav .group {
+  padding-top: 0;
+  /* width: calc(var(--vp-sidebar-width) - 74px); */
+  border-top: none;
+}
+
+.level-0 > .item {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 4px 0 8px;
+}
+
+.VPSidebarItem.level-0 h2.text {
+  /* border-left: 3px solid #09f; */
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  /* padding-left: 4px; */
+}
+
+.VPSidebarItem.level-1.is-link:hover {
+  /* background: #f1f3f5; */
+  border-radius: 4px;
+}
+
+#app .VPSidebar {
+  width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 24px);
+  padding-right: 0;
+}
+
+#app .aside-container {
+  width: 256px;
+  padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + var(--vp-doc-top-height, 0px) + 20px);
+}
+
+#app .aside {
+  max-width: 256px;
+}
+
+#app .pager-link {
+  border-radius: 4px;
+  background: #f7fafa;
+  border: none;
+}
+#app .pager-link:hover {
+  background: #f1f1f1;
+}
+
+#app .VPNavBarTitle.has-sidebar .title {
+  border-bottom-color: transparent;
+}
+
+#app .VPMenu {
+  border-radius: 2px;
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #99999980;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #55555580;
+}
+
+.content img {
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.link {
+  width: 100%;
+}
+
+.text {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body {
+  font-size: 14px;
+}
+
+.items > .VPSidebarItem.level-1 {
+  margin-top: 4px;
+  /* padding: 0 8px; */
+}
+
+.items > .VPSidebarItem.level-1.is-active {
+  /* background: hsl(204 100% 95% / 1); */
+  /* padding: 0 8px; */
+  border-radius: 2px;
+}
+
+.vp-doc tr:nth-child(2n) {
+  background-color: transparent;
+}
+
+.vp-doc h2 {
+  margin: 32px 0 16px;
+  border-top: none;
+  padding-top: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 8px;
+  letter-spacing: -0.02em;
+  line-height: 32px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.header-anchor {
+  display: none;
+}
+.VPNavBarTitle .title {
+  font-weight: 400;
+}
+
+body .VPDocAsideOutline.has-outline {
+  background: #fff;
+  border-radius: 4px;
+}
+.VPDocAsideOutline .outline-title {
+  height: 42px;
+  line-height: 42px;
+  border-bottom: 1px solid #f3f3f3;
+  /* font-weight: 400; */
+}
+.VPDocAsideOutline ul {
+  margin: 8px 0;
+}
+.VPDocAsideOutline .nested {
+  margin: 0;
+  padding: 0;
+}
+.VPDocAsideOutline .nested .outline-link {
+  padding-left: 24px;
+}
+.VPDocAsideOutline .root li {
+  margin-top: 2px;
+}
+.VPDocAsideOutline li .outline-link {
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+.VPDocAsideOutline li .outline-link:hover,
+.VPDocAsideOutline li .outline-active {
+  background: #f3f3f5;
+}
+.VPDocAsideOutline .content {
+  padding: 0 12px;
+  border-left: none;
+  font-size: 14px;
+}
+.VPDocAsideOutline .outline-marker {
+  display: none;
+}
+
+.Layout .VPFooter {
+  border-top: none;
+  background: transparent;
+}
+@media (min-width: 1440px) {
+  .VPDoc:not(.has-sidebar) .container .content {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1440px) {
+  #VPContent .VPDoc:not(.has-sidebar) div.container {
+    max-width: 1280px;
+  }
+}
+#app .VPNav .VPNavBar {
+  border-bottom-color: transparent;
+}
+.VPNav {
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 1%);
+}
+.VPDoc .container > .content {
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%);
+  background: #fff;
+  padding: 24px;
+  border-radius: 4px;
+}
+.VPImage.logo {
+  border-radius: 4px;
+}
+#app .DocSearch-Button {
+  border-radius: 4px;
+  height: 32px;
+}
+#app .shell {
+  border-radius: 4px;
+}
+#app .vp-doc div[class*='language-'] {
+  margin: 0;
+  border-radius: 4px;
+}
+#app .VPDoc {
+  padding: 20px 24px 24px;
+}
+.vp-doc [class*='language-'] > button.copy.copied::before,
+.vp-doc [class*='language-'] > button.copy:hover.copied::before {
+  content: '已复制';
+}
