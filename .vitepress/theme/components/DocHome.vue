@@ -100,7 +100,6 @@ const onPageSizeChange = (page: number) => {
   border-bottom: none;
   margin: 0;
   padding: 0;
-  cursor: pointer;
   line-height: 24px;
 }
 .item-excerpt {

@@ -393,3 +393,9 @@ body .VPDocAsideOutline.has-outline {
 .vp-doc a {
   text-underline-offset: 2px;
 }
+#app pre,
+#app code,
+#app kbd,
+#app samp {
+  font-family: var(--vp-font-family-mono);
+}

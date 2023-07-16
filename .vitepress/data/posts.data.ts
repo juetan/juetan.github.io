@@ -22,8 +22,7 @@ export default createContentLoader(['src/**/*.md'], {
       }
       if (!item.frontmatter.thumbnail) {
         const index = Math.floor(Math.random() * 10) + 1;
-        const padIndex = index.toString().padStart(2, '0');
-        item.frontmatter.thumbnail = `./images/${padIndex}.jpg`;
+        item.frontmatter.thumbnail = `./images/${index}.jpg`;
       }
       if (ignores.some((i) => item.url.includes(i))) {
         return item;

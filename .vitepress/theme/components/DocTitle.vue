@@ -12,10 +12,10 @@
         <span class="icon-park-outline:tag-one" />
         前端
       </div>
-      <div>
+      <time :datetime="frontmatter.date">
         <span class="icon-park-outline-time" />
         {{ dayjs(frontmatter.date).format("YYYY年MM月DD日") }}
-      </div>
+      </time>
     </div>
   </div>
 </template>

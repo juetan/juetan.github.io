@@ -1,0 +1,24 @@
+* {
+  cursor: url(/cursor/Default.cur), auto;
+}
+
+img {
+  cursor: url(/cursor/zoomin.cur),zoom-in;
+}
+
+a, a > * {
+  cursor: url(/cursor/normal.cur), pointer;
+}
+
+
+p {
+  cursor: url(/cursor/text.cur), auto;
+}
+
+button {
+  cursor: url(/cursor/notallow.cur), auto;
+}
+
+body .cursor-pointer {
+  cursor: url(/cursor/normal.cur), pointer;
+}
