@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import { presetIcons, presetUno, transformerCompileClass } from 'unocss';
+import { presetUno } from 'unocss';
 import Unocss from 'unocss/vite';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitepress';
@@ -46,8 +46,12 @@ export default defineConfig({
           },
           filesystem: ['.vitepress/config.ts'],
         },
-        transformers: [transformerCompileClass()],
-        presets: [presetUno(), presetIcons({ prefix: '' })],
+        presets: [
+          presetUno(),
+          // presetIcons({
+          //   prefix: '',
+          // }),
+        ],
       }) as any,
       /**
        * 替换默认主题的部分组件
