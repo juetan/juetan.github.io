@@ -2,7 +2,6 @@
 title: 使用 EJS 生成代码提升开发效率
 date: 2023-07-13
 tags: 前端
-thumbnail: https://images.unsplash.com/photo-1661956601349-f61c959a8fd4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80
 ---
 
 <script lang="ts" setup>
@@ -64,7 +63,7 @@ export const enum AuthEnum {
 
 1.  打开一个能编译 EJS 的在线网站， 例如 [OneCompiler](https://onecompiler.com/ejs)。
 
-![OneCompiler](./onecompiler-ejs.png)
+![OneCompiler](./image-onecompiler.png)
 
 2.  根据目标数据结构，编写一丢丢逻辑和模板代码，点击 `RUN` 按钮即可。
 

@@ -54,6 +54,12 @@ export default defineConfig({
           find: '@theme/',
           replacement: `${fileURLToPath(import.meta.url)}/../theme`,
         },
+        // {
+        //   find: /^.*\/VPNavBar\.vue$/,
+        //   replacement: fileURLToPath(
+        //     new URL('./theme/override/VPNavBar.vue', import.meta.url)
+        //   )
+        // }
       ],
     },
     plugins: [

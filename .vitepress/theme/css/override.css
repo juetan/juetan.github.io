@@ -6,7 +6,7 @@
 [class*=' i-icon-'],
 [class^='i-icon-'] {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: -2px;
 }
 
 *,

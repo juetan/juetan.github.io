@@ -79,7 +79,6 @@ const onPageSizeChange = (page: number) => {
   const start = (page - 1) * state.pageSize;
   const end = page * state.pageSize;
   state.data = posts.slice(start, end);
-  const box = document.querySelector('#VPContent');
   window?.scrollTo({ top: 0, behavior: 'smooth' });
 };
 </script>
