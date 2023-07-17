@@ -48,6 +48,7 @@ html:not(.dark) {
 
 :root {
   --vp-c-brand: #3c9;
+  --vp-c-brand-1: #33cc9920;
   --vp-c-brand-light: #33cc99e0;
   --vp-c-brand-lighter: #33cc99a0;
   --vp-c-brand-lightest: #33cc99c0;
@@ -331,8 +332,9 @@ body .VPDocAsideOutline.has-outline {
   border-radius: 4px;
 }
 .VPDocAsideOutline li .outline-link:hover,
-.VPDocAsideOutline li .outline-active {
-  background: #f3f3f5;
+#app .VPDocAsideOutline li .outline-active {
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-brand);
 }
 .VPDocAsideOutline .content {
   padding: 0 12px;
@@ -388,7 +390,7 @@ body .VPDocAsideOutline.has-outline {
 }
 .vp-doc [class*='language-'] > button.copy.copied::before,
 .vp-doc [class*='language-'] > button.copy:hover.copied::before {
-  content: '已复制';
+  content: '';
 }
 .vp-doc a {
   text-underline-offset: 2px;
@@ -401,11 +403,18 @@ body .VPDocAsideOutline.has-outline {
 }
 
 body .vp-doc [class*='language-'] > button.copy {
-  width: 32px;
-  height: 32px;
-  opacity: .6;
+  width: 20px;
+  height: 20px;
 }
 
 body .vp-doc [class*='language-'] > span.lang {
   display: none;
+}
+
+.item .arco-image-img {
+  aspect-ratio: 16/9;
+}
+
+.title:hover {
+  color: var(--vp-c-brand);
 }

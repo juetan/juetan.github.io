@@ -11,6 +11,17 @@ export interface PostItem extends ContentData {
   };
 }
 
+function htmlToText(html?: string) {
+  if (!html) {
+    return '';
+  }
+  let text = html.replaceAll(/<code>.*?<\/code>/g, '');
+  text = text.replaceAll(/<\/?.*?>/g, '');
+  text = text.replaceAll(/\n|\s/g, '') || '';
+  text = text.replaceAll(/&.*?;/g, '');
+  return text;
+}
+
 export default createContentLoader(['src/**/*.md'], {
   excerpt: true,
   includeSrc: true,
@@ -20,7 +31,7 @@ export default createContentLoader(['src/**/*.md'], {
     const ignores = ['/about', '/public', '/index', '/archive', '/tags', '/404'];
     const data: PostItem[] = sorted.map((item) => {
       item.url = item.url.replace('/src', '');
-      const text = item.html?.replaceAll(/<\/?.*?>/g, '').replaceAll(/\n|\s/g, '') || '';
+      const text = htmlToText(item.html);
       const post: PostItem = {
         url: item.url,
         frontmatter: item.frontmatter,
@@ -29,7 +40,7 @@ export default createContentLoader(['src/**/*.md'], {
         html: '',
       };
       if (!post.excerpt) {
-        post.excerpt = text.slice(0, 100);
+        post.excerpt = text.slice(0, 140);
       }
       if (!post.frontmatter.thumbnail) {
         const index = Math.floor(Math.random() * 10) + 1;
@@ -43,8 +54,7 @@ export default createContentLoader(['src/**/*.md'], {
       }
       return post;
     });
-    const list = Array(10).fill(data.filter(Boolean));
-    return list.flat();
+    return data.filter(Boolean);
   },
 });
 

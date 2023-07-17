@@ -14,9 +14,9 @@
       </div>
       <div>
         <span class="i-icon-park-outline:text" />
-        约 {{ wordCount }} 字
+        {{ item?.frontmatter.wordCount || 0 }} 字
       </div>
-      <time :datetime="frontmatter.date">
+      <time :datetime="frontmatter.date" :title="frontmatter.date">
         <span class="i-icon-park-outline-time" />
         {{ dayjs(frontmatter.date).format('YYYY年MM月DD日') }}
       </time>
@@ -27,10 +27,10 @@
 <script setup lang="ts">
 import { useData } from 'vitepress';
 import { dayjs } from '../dayjs';
-import { PostItem } from '@app/data/posts.data.ts';
+import { PostItem, data } from '@app/data/posts.data.ts';
 
-const wordCount = window.__WORD_COUNT__ || 0;
-const { frontmatter } = useData<PostItem>();
+const { frontmatter, page } = useData<PostItem>();
+const item = data.find((i) => i.frontmatter.title === page.value.frontmatter.title);
 </script>
 
 <style scoped>

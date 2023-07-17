@@ -247,15 +247,8 @@ export default defineConfig({
         const token = tokens[idx];
         const aIndex = token.attrIndex('src');
         const src = token.attrs![aIndex][1];
-        return `<Image src="${src}" class="cursor-pointer hover:shadow shadow-blue-100"  />`;
+        return `<Image src="${src}" class="cursor-pointer"  />`;
       };
     },
-  },
-
-  transformHead(context) {
-    let html = context.content.replaceAll(/<code>[\s\S]*?<\/code>/g, '');
-    html = html.replaceAll(/<\/?.*?>/g, '');
-    html = html.replaceAll(/\n|\s/g, '');
-    return [['script', { id: 'customnode' }, `;var __WORD_COUNT__ = ${html.length};`]];
   },
 });

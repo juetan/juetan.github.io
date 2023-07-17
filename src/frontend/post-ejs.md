@@ -1,5 +1,6 @@
 ---
 title: 使用 EJS 生成代码提升开发效率
+description: 测试
 date: 2023-07-13
 tags: 前端
 ---
