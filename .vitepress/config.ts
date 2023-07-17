@@ -11,8 +11,8 @@ import { defineConfig } from 'vitepress';
  */
 export default defineConfig({
   lang: 'zh-CN',
-  title: '土豆淀粉',
-  titleTemplate: ':title | 土豆淀粉',
+  title: '绝弹博客',
+  titleTemplate: ':title | 绝弹博客',
   description: '一位前端开发者的博客',
   appearance: false,
   srcDir: 'src',

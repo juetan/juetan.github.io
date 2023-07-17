@@ -8,7 +8,7 @@
     </template>
     <template #layout-bottom>
       <BackTop>
-        <Button type="outline" size="large" shape="circle">UP</Button>
+        <Button type="dashed" size="large" shape="circle" class="hidden md:inline-block">UP</Button>
       </BackTop>
     </template>
   </Layout>

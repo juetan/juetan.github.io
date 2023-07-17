@@ -9,7 +9,7 @@
           <li v-for="(post, index) in state.data" :key="post.url" class="item flex justify-bewteen gap-2">
             <div class="flex-1 grid grid-rows-[auto_1fr_auto]">
               <a :href="post.url" class="item-link flex gap-2 overflow-hidden">
-                <h2 class="item-title hover:text-blue-600 truncate">
+                <h2 class="item-title truncate">
                   {{ post.frontmatter.title || '暂无标题' }}
                 </h2>
               </a>
@@ -17,11 +17,11 @@
                 {{ post.excerpt || '暂无简介' }}
               </p>
               <div class="text-gray-400 flex items-center gap-3">
-                <div class="cursor-pointer hover:text-blue-600">
+                <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
                   <span class="i-icon-park-outline-user" />
                   绝弹
                 </div>
-                <div class="cursor-pointer hover:text-blue-600">
+                <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
                   <span class="i-icon-park-outline:tag-one" />
                   前端
                 </div>
@@ -53,7 +53,7 @@
           站点导航
         </div>
         <div class="grid gap-1 py-2">
-          <a href="https://juetan.github.io/nav" target="_blank" class="h-8 leading-8 hover:text-[#09f] cursor-pointer">
+          <a href="https://juetan.github.io/nav" target="_blank" class="h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer">
             <i class="i-icon-park-outline-navigation mr-1"></i>
             前端导航
           </a>
@@ -96,7 +96,7 @@ const onPageSizeChange = (page: number) => {
 }
 .item-title {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   border-bottom: none;
   margin: 0;
   padding: 0;
@@ -111,6 +111,7 @@ const onPageSizeChange = (page: number) => {
   color: inherit;
 }
 .item-link:hover {
+  color: var(--vp-c-brand);
   text-decoration: none;
 }
 .i-icon-park-outline-bookshelf {
