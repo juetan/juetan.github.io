@@ -14,7 +14,7 @@
       </div>
       <div>
         <span class="i-icon-park-outline:text" />
-        {{ frontmatter.wordCount || 0 }} 字
+        约 {{ wordCount }} 字
       </div>
       <time :datetime="frontmatter.date">
         <span class="i-icon-park-outline-time" />
@@ -29,6 +29,7 @@ import { useData } from 'vitepress';
 import { dayjs } from '../dayjs';
 import { PostItem } from '@app/data/posts.data.ts';
 
+const wordCount = window.__WORD_COUNT__ || 0;
 const { frontmatter } = useData<PostItem>();
 </script>
 

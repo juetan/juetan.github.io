@@ -251,4 +251,11 @@ export default defineConfig({
       };
     },
   },
+
+  transformHead(context) {
+    let html = context.content.replaceAll(/<code>[\s\S]*?<\/code>/g, '');
+    html = html.replaceAll(/<\/?.*?>/g, '');
+    html = html.replaceAll(/\n|\s/g, '');
+    return [['script', { id: 'customnode' }, `;var __WORD_COUNT__ = ${html.length};`]];
+  },
 });
