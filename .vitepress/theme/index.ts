@@ -16,7 +16,6 @@ export default {
   ...Theme,
   Layout,
   enhanceApp({ app, router, siteData }: EnhanceAppContext) {
-    // ...
     app.component('Image', Image);
   },
 };

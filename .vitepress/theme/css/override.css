@@ -3,8 +3,8 @@
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
-[class*=' icon-'],
-[class^='icon-'] {
+[class*=' i-icon-'],
+[class^='i-icon-'] {
   display: inline-block;
   vertical-align: middle;
   width: 16px;
@@ -28,6 +28,12 @@ body,
 
 body h1 {
   margin: 0;
+}
+
+html:not(.dark) {
+  --vp-c-text-dark-3: #ccc;
+  --vp-code-block-bg: rgb(246, 248, 250);
+  --vp-code-line-highlight-color: rgba(238, 238, 238, 1);
 }
 
 /**

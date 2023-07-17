@@ -1,5 +1,6 @@
+// @ts-nocheck
 import { readFileSync } from 'fs';
-import { presetUno } from 'unocss';
+import { presetUno, presetIcons } from 'unocss';
 import Unocss from 'unocss/vite';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitepress';
@@ -19,7 +20,28 @@ export default defineConfig({
   cleanUrls: true,
 
   /**
+   * @vitejs/plugin-vue配置
+   * @see https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue
+   */
+  vue: {
+    /**
+     * vue/compiler-sfc配置
+     * @see https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#asset-url-handling
+     */
+    template: {
+      /**
+       * 默认只支持部分原生标签的src属性，例如img，video等
+       * 由于使用了Image组件，配置后才能生成正确的src
+       */
+      transformAssetUrls: {
+        Image: ['src'],
+      },
+    },
+  },
+
+  /**
    * vite配置
+   * @see https://cn.vitejs.dev/config/
    */
   vite: {
     resolve: {
@@ -46,13 +68,8 @@ export default defineConfig({
           },
           filesystem: ['.vitepress/config.ts'],
         },
-        presets: [
-          presetUno(),
-          // presetIcons({
-          //   prefix: '',
-          // }),
-        ],
-      }) as any,
+        presets: [presetUno(), presetIcons()],
+      }),
       /**
        * 替换默认主题的部分组件
        */
@@ -103,42 +120,42 @@ export default defineConfig({
     nav: [
       {
         text: '首页',
-        icon: 'icon-park-outline-home',
+        icon: 'i-icon-park-outline-home',
         link: '/',
       },
       {
         text: '前端',
-        icon: 'icon-park-outline-html-five',
+        icon: 'i-icon-park-outline-html-five',
         link: '/frontend/',
       },
       {
         text: '后端',
-        icon: 'icon-park-outline-server',
+        icon: 'i-icon-park-outline-server',
         link: '/backend',
       },
       {
         text: '日常',
-        icon: 'icon-park-outline-coconut-tree',
+        icon: 'i-icon-park-outline-coconut-tree',
         link: '/daily',
       },
       {
         text: '工具',
-        icon: 'icon-park-outline-tool',
+        icon: 'i-icon-park-outline-tool',
         link: '/tools',
       },
       {
         text: '归档',
-        icon: 'icon-park-outline-hourglass-null',
+        icon: 'i-icon-park-outline-hourglass-null',
         link: '/archive/',
       },
       {
         text: '项目',
-        icon: 'icon-park-outline-certificate',
+        icon: 'i-icon-park-outline-certificate',
         link: '/projects',
       },
       {
         text: '关于',
-        icon: 'icon-park-outline-user',
+        icon: 'i-icon-park-outline-user',
         link: '/about/',
       },
     ] as any,
@@ -208,7 +225,7 @@ export default defineConfig({
       next: '下一篇',
     },
     footer: {
-      message: '自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）',
+      message: '自由转载-非商用-非衍生-保持署名(创意共享3.0许可证)',
       copyright: 'Copyright © 2023 土豆淀粉，版权所有',
     },
   },
@@ -217,8 +234,8 @@ export default defineConfig({
    * markdown配置
    */
   markdown: {
-    theme: 'one-dark-pro',
-    lineNumbers: true,
+    theme: 'github-light',
+    lineNumbers: false,
     config(md) {
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
         const token = tokens[idx];

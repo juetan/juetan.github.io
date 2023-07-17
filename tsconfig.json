@@ -19,6 +19,5 @@
       "@theme/*": [".vitepress/theme/*"]
     }
   },
-  "include": [".vitepress/**/*", "src/**/*"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [".vitepress/**/*", "src/**/*"]
 }

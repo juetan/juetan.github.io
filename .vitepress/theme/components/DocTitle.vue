@@ -5,15 +5,15 @@
     </h1>
     <div class="mt-3 text-gray-400 flex items-center gap-3 border-b border-gray-100 pb-2 mb-6">
       <div class="cursor-pointer hover:text-blue-600">
-        <span class="icon-park-outline-user" />
+        <span class="i-icon-park-outline-user" />
         绝弹
       </div>
       <div class="cursor-pointer hover:text-blue-600">
-        <span class="icon-park-outline:tag-one" />
+        <span class="i-icon-park-outline:tag-one" />
         前端
       </div>
       <time :datetime="frontmatter.date">
-        <span class="icon-park-outline-time" />
+        <span class="i-icon-park-outline-time" />
         {{ dayjs(frontmatter.date).format("YYYY年MM月DD日") }}
       </time>
     </div>

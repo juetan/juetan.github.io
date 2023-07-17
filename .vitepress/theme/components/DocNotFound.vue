@@ -10,13 +10,13 @@
         <div class="space-x-3 mt-5">
           <Button type="primary" @click="onGoBack">
             <template #icon>
-              <i class="icon-park-outline-back"></i>
+              <i class="i-icon-park-outline-back"></i>
             </template>
             返回上页
           </Button>
           <Button type="outline" @click="router.go('/')">
             <template #icon>
-              <i class="icon-park-outline-home"></i>
+              <i class="i-icon-park-outline-home"></i>
             </template>
             返回首页
           </Button>

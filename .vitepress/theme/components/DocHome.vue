@@ -3,7 +3,7 @@
     <div class="flex-1 bg-white px-5">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">
-          <i class="icon-park-outline-bookshelf mr-1"></i>最新文章
+          <i class="i-icon-park-outline-bookshelf mr-1"></i>最新文章
         </div>
         <ul class="item-list bounce-in-bottom">
           <li v-for="(post, index) in state.data" :key="post.url" class="item flex justify-bewteen gap-2">
@@ -18,15 +18,15 @@
               </p>
               <div class="text-gray-400 flex items-center gap-3">
                 <div class="cursor-pointer hover:text-blue-600">
-                  <span class="icon-park-outline-user" />
+                  <span class="i-icon-park-outline-user" />
                   绝弹
                 </div>
                 <div class="cursor-pointer hover:text-blue-600">
-                  <span class="icon-park-outline:tag-one" />
+                  <span class="i-icon-park-outline:tag-one" />
                   前端
                 </div>
                 <div>
-                  <span class="icon-park-outline-time" />
+                  <span class="i-icon-park-outline-time" />
                   {{ dayjs(post.frontmatter.date).format('YYYY年MM月DD日') }}
                 </div>
               </div>
@@ -49,12 +49,12 @@
     <div class="hidden md:block w-[264px]">
       <div class="bg-white rounded px-4">
         <div class="h-13 flex items-center border-b border-slate-200">
-          <span class="icon-park-outline-all-application mr-1"></span>
+          <span class="i-icon-park-outline-all-application mr-1"></span>
           站点导航
         </div>
         <div class="grid gap-1 py-2">
           <a href="https://juetan.github.io/nav" target="_blank" class="h-8 leading-8 hover:text-[#09f] cursor-pointer">
-            <i class="icon-park-outline-navigation mr-1"></i>
+            <i class="i-icon-park-outline-navigation mr-1"></i>
             前端导航
           </a>
         </div>
@@ -113,7 +113,7 @@ const onPageSizeChange = (page: number) => {
 .item-link:hover {
   text-decoration: none;
 }
-.icon-park-outline-bookshelf {
+.i-icon-park-outline-bookshelf {
   vertical-align: -3px;
 }
 .bounce-in-bottom {
