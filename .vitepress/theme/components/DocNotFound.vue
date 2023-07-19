@@ -5,7 +5,6 @@
         <img src="/assets/404.svg" alt="404" class="w-[320px]" />
       </div>
       <div class="text-center">
-        <!-- <h2 class="text-3xl m-0 font-bold">页面不存在</h2> -->
         <p class="mt-0">抱歉页面未找到，请检查访问的地址是否正确!</p>
         <div class="space-x-3 mt-5">
           <Button type="primary" @click="onGoBack">

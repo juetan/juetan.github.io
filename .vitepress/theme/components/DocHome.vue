@@ -48,7 +48,7 @@
     </div>
     <div class="hidden md:block w-[264px]">
       <div class="bg-white rounded px-4">
-        <div class="h-13 flex items-center border-b border-slate-200">
+        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-all-application mr-1"></span>
           文章分类
         </div>
@@ -100,7 +100,7 @@
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4">
-        <div class="h-13 flex items-center border-b border-slate-200">
+        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-all-application mr-1"></span>
           标签列表
         </div>
@@ -114,7 +114,7 @@
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4">
-        <div class="h-13 flex items-center border-b border-slate-200">
+        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-ranking mr-1"></span>
           统计
         </div>
