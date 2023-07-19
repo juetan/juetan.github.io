@@ -4,6 +4,7 @@ import { presetUno, presetIcons } from 'unocss';
 import Unocss from 'unocss/vite';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitepress';
+import { createStyleImportPlugin } from 'vite-plugin-style-import';
 
 /**
  * 站点配置
@@ -18,6 +19,22 @@ export default defineConfig({
   srcDir: 'src',
   outDir: 'dist',
   cleanUrls: true,
+
+  /**
+   * markdown配置
+   */
+  markdown: {
+    theme: 'github-light',
+    lineNumbers: false,
+    config(md) {
+      md.renderer.rules.image = (tokens, idx, options, env, self) => {
+        const token = tokens[idx];
+        const aIndex = token.attrIndex('src');
+        const src = token.attrs![aIndex][1];
+        return `<Image src="${src}" class="cursor-pointer"  />`;
+      };
+    },
+  },
 
   /**
    * @vitejs/plugin-vue配置
@@ -54,13 +71,17 @@ export default defineConfig({
           find: '@theme/',
           replacement: `${fileURLToPath(import.meta.url)}/../theme`,
         },
-        // {
-        //   find: /^.*\/VPNavBar\.vue$/,
-        //   replacement: fileURLToPath(
-        //     new URL('./theme/override/VPNavBar.vue', import.meta.url)
-        //   )
-        // }
       ],
+    },
+    css: {
+      preprocessorOptions: {
+        less: {
+          modifyVars: {
+            'arcoblue-6': '#3c9',
+          },
+          javascriptEnabled: true,
+        },
+      },
     },
     plugins: [
       /**
@@ -77,10 +98,24 @@ export default defineConfig({
         presets: [presetUno(), presetIcons()],
       }),
       /**
+       * 组件样式加载
+       */
+      createStyleImportPlugin({
+        libs: [
+          {
+            libraryName: '@arco-design/web-vue',
+            esModule: true,
+            resolveStyle: (name) => {
+              return `@arco-design/web-vue/es/${name}/style/index.js`;
+            },
+          },
+        ],
+      }),
+      /**
        * 替换默认主题的部分组件
        */
       {
-        name: 'vite:pres',
+        name: 'vite:juetan',
         load(id) {
           const list = ['VPNavBarMenuLink.vue', 'VPDocOutlineItem.vue'];
           const path = (i: string) => fileURLToPath(new URL(`./theme/override/${i}`, import.meta.url));
@@ -228,22 +263,6 @@ export default defineConfig({
     footer: {
       message: '自由转载-非商用-非衍生-保持署名(创意共享3.0许可证)',
       copyright: 'Copyright © 2023 土豆淀粉，版权所有',
-    },
-  },
-
-  /**
-   * markdown配置
-   */
-  markdown: {
-    theme: 'github-light',
-    lineNumbers: false,
-    config(md) {
-      md.renderer.rules.image = (tokens, idx, options, env, self) => {
-        const token = tokens[idx];
-        const aIndex = token.attrIndex('src');
-        const src = token.attrs![aIndex][1];
-        return `<Image src="${src}" class="cursor-pointer"  />`;
-      };
     },
   },
 });

@@ -1,5 +1,4 @@
 import { Image } from '@arco-design/web-vue';
-import '@arco-design/web-vue/dist/arco.css';
 import 'uno.css';
 import { EnhanceAppContext } from 'vitepress';
 import Theme from 'vitepress/theme';
