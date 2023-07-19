@@ -155,11 +155,6 @@ export default defineConfig({
         link: '/archive/',
       },
       {
-        text: '项目',
-        icon: 'i-icon-park-outline-certificate',
-        link: '/projects',
-      },
-      {
         text: '关于',
         icon: 'i-icon-park-outline-user',
         link: '/about/',

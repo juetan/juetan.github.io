@@ -36,7 +36,7 @@
                 v-if="post.frontmatter.thumbnail"
                 :src="post.frontmatter.thumbnail"
                 :alt="post.frontmatter.title"
-                class=" rounded h-full aspect-video max-w-initial bg-slate-100 cursor-pointer opacity-80 hover:opacity-100 transition-opacity duration-200 ease-in-out"
+                class="rounded h-full aspect-video max-w-initial bg-slate-100 cursor-pointer opacity-80 hover:opacity-100 transition-opacity duration-200 ease-in-out"
               />
             </div>
           </li>
@@ -50,13 +50,119 @@
       <div class="bg-white rounded px-4">
         <div class="h-13 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-all-application mr-1"></span>
-          站点导航
+          文章分类
         </div>
         <div class="grid gap-1 py-2">
-          <a href="https://juetan.github.io/nav" target="_blank" class="h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer">
-            <i class="i-icon-park-outline-navigation mr-1"></i>
-            前端导航
+          <a
+            href="https://juetan.github.io/nav"
+            target="_blank"
+            class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
+          >
+            <div>
+              <i class="i-icon-park-outline-html-five mr-1"></i>
+              前端开发
+            </div>
+            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
           </a>
+          <a
+            href="https://juetan.github.io/nav"
+            target="_blank"
+            class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
+          >
+            <div>
+              <i class="i-icon-park-outline-html-five mr-1"></i>
+              后端开发
+            </div>
+            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
+          </a>
+          <a
+            href="https://juetan.github.io/nav"
+            target="_blank"
+            class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
+          >
+            <div>
+              <i class="i-icon-park-outline-html-five mr-1"></i>
+              浏览器
+            </div>
+            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
+          </a>
+          <a
+            href="https://juetan.github.io/nav"
+            target="_blank"
+            class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
+          >
+            <div>
+              <i class="i-icon-park-outline-html-five mr-1"></i>
+              构建工具
+            </div>
+            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
+          </a>
+        </div>
+      </div>
+      <div class="bg-white rounded px-4 mt-4">
+        <div class="h-13 flex items-center border-b border-slate-200">
+          <span class="i-icon-park-outline-all-application mr-1"></span>
+          标签列表
+        </div>
+        <div class="grid grid-cols-4 gap-x-1 gap-y-1 py-2">
+          <Tag
+            v-for="i in 26"
+            :key="i"
+            class="bg-slate-50 hover:bg-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-brand)]"
+            >前端</Tag
+          >
+        </div>
+      </div>
+      <div class="bg-white rounded px-4 mt-4">
+        <div class="h-13 flex items-center border-b border-slate-200">
+          <span class="i-icon-park-outline-ranking mr-1"></span>
+          统计
+        </div>
+        <div class="grid gap-1 py-2 text-gray-500">
+          <li
+            href="https://juetan.github.io/nav"
+            target="_blank"
+            class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
+          >
+            <div>
+              <i class="i-icon-park-outline-rss mr-1"></i>
+              文章数量
+            </div>
+            <div class="text-xs text-gray-400">118 篇</div>
+          </li>
+          <li
+            href="https://juetan.github.io/nav"
+            target="_blank"
+            class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
+          >
+            <div>
+              <i class="i-icon-park-outline-tag-one mr-1"></i>
+              标签数量
+            </div>
+            <div class="text-xs text-gray-400">18 个</div>
+          </li>
+          <li
+            href="https://juetan.github.io/nav"
+            target="_blank"
+            class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
+          >
+            <div>
+              <i class="i-icon-park-outline-hourglass-full mr-1"></i>
+              运行天数
+            </div>
+            <div class="text-xs text-gray-400">218 天</div>
+          </li>
+          <li
+            href="https://juetan.github.io/nav"
+            target="_blank"
+            class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
+          >
+            <div>
+              <i class="i-icon-park-outline-lightning mr-1"></i>
+              最近活跃
+            </div>
+            <div class="text-xs text-gray-400">2 天前</div>
+          </li>
         </div>
       </div>
     </div>
@@ -65,7 +171,7 @@
 
 <script setup lang="ts">
 import { data as posts } from '@app/data/posts.data.ts';
-import { Pagination } from '@arco-design/web-vue';
+import { Pagination, Tag } from '@arco-design/web-vue';
 import { reactive } from 'vue';
 import { dayjs } from '../dayjs';
 

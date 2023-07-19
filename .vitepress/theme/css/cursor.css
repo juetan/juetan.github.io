@@ -1,13 +1,9 @@
 * {
-  cursor: url(/cursor/Default.cur), auto;
+  cursor: url(/cursor/normal.cur), auto;
 }
 
-img {
-  cursor: url(/cursor/zoomin.cur),zoom-in;
-}
-
-a, a > * {
-  cursor: url(/cursor/normal.cur), pointer;
+a, a > *, .arco-image-img {
+  cursor: url(/cursor/link.cur), pointer;
 }
 
 
