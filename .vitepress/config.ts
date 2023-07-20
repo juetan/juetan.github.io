@@ -83,7 +83,7 @@ export default defineConfig({
       preprocessorOptions: {
         less: {
           modifyVars: {
-            'arcoblue-6': '#3c9',
+            'arcoblue-6': '#3b9',
           },
           javascriptEnabled: true,
         },
@@ -139,7 +139,7 @@ export default defineConfig({
    * @see https://vitepress.dev/reference/default-theme-config
    */
   themeConfig: {
-    logo: '/juetan.jpg',
+    logo: '/favicon.ico',
     search: {
       provider: 'local',
       options: {
