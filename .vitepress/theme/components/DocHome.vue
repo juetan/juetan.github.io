@@ -128,7 +128,7 @@
               <i class="i-icon-park-outline-rss mr-1"></i>
               文章数量
             </div>
-            <div class="text-xs text-gray-400">118 篇</div>
+            <div class="text-xs text-gray-400">{{ posts.length }} 篇</div>
           </li>
           <li
             href="https://juetan.github.io/nav"
@@ -139,7 +139,7 @@
               <i class="i-icon-park-outline-tag-one mr-1"></i>
               标签数量
             </div>
-            <div class="text-xs text-gray-400">18 个</div>
+            <div class="text-xs text-gray-400">0 个</div>
           </li>
           <li
             href="https://juetan.github.io/nav"
@@ -150,7 +150,7 @@
               <i class="i-icon-park-outline-hourglass-full mr-1"></i>
               运行天数
             </div>
-            <div class="text-xs text-gray-400">218 天</div>
+            <div class="text-xs text-gray-400">{{ founded }} 天</div>
           </li>
           <li
             href="https://juetan.github.io/nav"
@@ -161,7 +161,7 @@
               <i class="i-icon-park-outline-lightning mr-1"></i>
               最近活跃
             </div>
-            <div class="text-xs text-gray-400">2 天前</div>
+            <div class="text-xs text-gray-400">{{ lastModified }}</div>
           </li>
         </div>
       </div>
@@ -187,6 +187,9 @@ const onPageSizeChange = (page: number) => {
   state.data = posts.slice(start, end);
   window?.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+const founded = dayjs().diff(dayjs(import.meta.env.VITE_APP_FOUNDED), 'day');
+const lastModified = dayjs(__APP_LAST_MODIFIED__).fromNow();
 </script>
 
 <style scoped>

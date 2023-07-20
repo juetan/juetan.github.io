@@ -19,10 +19,16 @@ import { BackTop, Button } from '@arco-design/web-vue';
 import theme from 'vitepress/theme';
 import DocNotFound from '../components/DocNotFound.vue';
 import DocTitle from '../components/DocTitle.vue';
+import { onMounted } from 'vue';
+import { fairyDustCursor } from 'cursor-effects';
 
-const { Layout } = theme
+const { Layout } = theme;
+
+onMounted(() => {
+  new fairyDustCursor({
+    colors: ['#98EBC7', '#89E9E0', '#9FD4FD', '#C396ED', '#F08EE6', '#FCC59F', '#FFCF8B'],
+  });
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -20,8 +20,11 @@ export default defineConfig({
   outDir: 'dist',
   cleanUrls: true,
 
+  head: [['script', { src: 'https://unpkg.com/cursor-effects@latest/dist/browser.js' }]],
+
   /**
    * markdown配置
+   * @see https://github.com/markdown-it/markdown-it
    */
   markdown: {
     theme: 'github-light',
@@ -61,6 +64,9 @@ export default defineConfig({
    * @see https://cn.vitejs.dev/config/
    */
   vite: {
+    define: {
+      __APP_LAST_MODIFIED__: JSON.stringify(new Date().toISOString()),
+    },
     resolve: {
       alias: [
         {
