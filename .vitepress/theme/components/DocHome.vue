@@ -50,28 +50,28 @@
       <div class="bg-white rounded px-4">
         <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-all-application mr-1"></span>
-          文章分类
+          网址导航
         </div>
         <div class="grid gap-1 py-2">
           <a
-            href="https://juetan.github.io/nav"
+            href="https://juetan.cn/nav"
             target="_blank"
             class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
           >
             <div>
               <i class="i-icon-park-outline-html-five mr-1"></i>
-              前端开发
+              前端驿站
             </div>
             <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
           </a>
           <a
-            href="https://juetan.github.io/nav"
+            href="https://appnify.github.io/starter-vue"
             target="_blank"
             class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
           >
             <div>
               <i class="i-icon-park-outline-html-five mr-1"></i>
-              后端开发
+              后台模板
             </div>
             <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
           </a>
@@ -120,48 +120,17 @@
         </div>
         <div class="grid gap-1 py-2 text-gray-500">
           <li
-            href="https://juetan.github.io/nav"
-            target="_blank"
+            v-for="item in stat"
+            :key="item.title"
             class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
           >
             <div>
-              <i class="i-icon-park-outline-rss mr-1"></i>
-              文章数量
+              <i class="mr-1" :class="item.icon"></i>
+              {{ item.title }}
             </div>
-            <div class="text-xs text-gray-400">{{ posts.length }} 篇</div>
-          </li>
-          <li
-            href="https://juetan.github.io/nav"
-            target="_blank"
-            class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
-          >
-            <div>
-              <i class="i-icon-park-outline-tag-one mr-1"></i>
-              标签数量
+            <div class="text-xs text-gray-400">
+              {{ item.value }}
             </div>
-            <div class="text-xs text-gray-400">0 个</div>
-          </li>
-          <li
-            href="https://juetan.github.io/nav"
-            target="_blank"
-            class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
-          >
-            <div>
-              <i class="i-icon-park-outline-hourglass-full mr-1"></i>
-              运行天数
-            </div>
-            <div class="text-xs text-gray-400">{{ founded }} 天</div>
-          </li>
-          <li
-            href="https://juetan.github.io/nav"
-            target="_blank"
-            class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
-          >
-            <div>
-              <i class="i-icon-park-outline-lightning mr-1"></i>
-              最近活跃
-            </div>
-            <div class="text-xs text-gray-400">{{ lastModified }}</div>
           </li>
         </div>
       </div>
@@ -190,6 +159,29 @@ const onPageSizeChange = (page: number) => {
 
 const founded = dayjs().diff(dayjs(import.meta.env.VITE_APP_FOUNDED), 'day');
 const lastModified = dayjs(__APP_LAST_MODIFIED__).fromNow();
+
+const stat = [
+  {
+    icon: 'i-icon-park-outline-rss',
+    title: '文章数量',
+    value: posts.length,
+  },
+  {
+    icon: 'i-icon-park-outline-tag-one',
+    title: '标签数量',
+    value: 0,
+  },
+  {
+    icon: 'i-icon-park-outline-hourglass-full',
+    title: '运行天数',
+    value: `${founded} 天`,
+  },
+  {
+    icon: 'i-icon-park-outline-lightning',
+    title: '最近活跃',
+    value: lastModified,
+  },
+];
 </script>
 
 <style scoped>
