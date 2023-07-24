@@ -8,6 +8,11 @@ declare module 'cursor-effects' {
   export const fairyDustCursor;
 }
 
+declare module '@waline/client/component' {
+  const Waline: any;
+  export const Waline;
+}
+
 declare interface Window {
   __WORD_COUNT__: number;
 }
