@@ -31,11 +31,22 @@ const source = audioContext.createBuffSource();
 source.connect(audioContext.destination);
 ```
 
-其中，`AudioContext` 是处理音频的上下文，通常可以包含任意多个入口，任意多个出口，中间可以包含任意多个处理节点，每个节点都可以使用 `connect` 方法连接到下一个节点。
+其中，`AudioContext` 是处理音频的上下文，通常可以包含任意多个入口节点，任意多个出口节点，中间可以包含任意多个处理节点，每个节点都可以使用 `connect` 方法连接到下一个节点。
 
-`createBuffSource` 是创建入口的一种方法，表示从数据源创建入口，使用这种方法可以读取 .pcm 文件的数据，或者自己创建音频数据。一个读取本地pcm文件并播放的示例如下：
+### createBuffSource
+
+`createBuffSource` 是创建入口节点的一种方法，表示手动创建数据，其属性 `buff` 为从容器格式解码后的 PCM 数据。举个例子，用户选择 .mp3 或 .wav 文件后，使用 Audio API 解码后得到 PCM 数据，此时赋值给 buff 属性就可以播放了，完全不需要 `<audio>` 标签，示例如下：
 
 <demo src="./demo-createBufferSource.vue" ></demo>
 
-- `createMediaElementSource`: 从 HTML 元素中读取
-- `createMediaStreamSource`: 从数据流读取，例如麦克风
+
+### createMediaElementSource
+
+这也是创建入口节点的一种方法，其数据可以从 `<audio>` 标签获取，示例如下：
+
+
+
+### createMediaStreamSource
+
+
+创建入口节点的一种方法，表示从媒体流中获取数据，一个常见的例子是从麦克风/话筒获取音频流。
