@@ -20,5 +20,10 @@
     "vite-plugin-style-import": "^2.0.0",
     "vitepress": "1.0.0-beta.5",
     "vue": "^3.3.4"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@ruabick/md-demo-plugins@0.3.3": "patches/@ruabick__md-demo-plugins@0.3.3.patch"
+    }
   }
 }

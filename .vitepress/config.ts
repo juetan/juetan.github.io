@@ -107,7 +107,7 @@ export default defineConfig({
         presets: [presetUno(), presetIcons()],
       }),
       /**
-       * 组件样式加载
+       * 组件样式按需加载
        */
       createStyleImportPlugin({
         libs: [
