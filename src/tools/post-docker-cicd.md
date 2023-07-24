@@ -31,7 +31,7 @@ date: 2023-07-21 18:00:00
 
 Docker 的 Swarm 模式表示集群， 允许在一台主服务器上，管理多台子服务器的容器和状态。
 
-```
+```bash
 # 在主服务器上，初始化docker集群
 docker swarm init
 
@@ -43,13 +43,13 @@ docker swarm jorin --token xx ip:port
 ```
 
 ### 在主服务器上，创建必要的网络(`network`)。
-```
+```bash
 # 用于加入到外部访问的公共网络
 docker network create -d overlay network_public
 ```
 
 ### 在主服务器上，创建必要的数据卷(`volume`)。
-```
+```bash
 # 用于portainer的数据卷
 docker volume create volume_portainer
 
@@ -67,7 +67,7 @@ docker volume create volume_registry
 ```
 
 ### 在主服务器上，创建1个将分配给`droneci`使用的用户，用于远程更新容器
-```
+```bash
 # 创建用户
 useradd droneci -m -s /bin/bash
 
@@ -343,7 +343,7 @@ https://dbeaver.io/
 重定向地址：https://ci.dev.juetan.cn/login
 ```
 05. 复制客户端ID和客户端密钥，更新core.yml文件，然后重启服务
-```
+```yaml
 # core.yml
 services:
   drone-server:

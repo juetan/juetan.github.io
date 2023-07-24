@@ -5,6 +5,7 @@ import Unocss from 'unocss/vite';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitepress';
 import { createStyleImportPlugin } from 'vite-plugin-style-import';
+import { applyPlugins } from '@ruabick/md-demo-plugins';
 
 /**
  * 站点配置
@@ -20,8 +21,6 @@ export default defineConfig({
   outDir: 'dist',
   cleanUrls: true,
 
-  head: [['script', { src: 'https://unpkg.com/cursor-effects@latest/dist/browser.js' }]],
-
   /**
    * markdown配置
    * @see https://github.com/markdown-it/markdown-it
@@ -30,6 +29,7 @@ export default defineConfig({
     theme: 'github-light',
     lineNumbers: false,
     config(md) {
+      applyPlugins(md);
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
         const token = tokens[idx];
         const aIndex = token.attrIndex('src');
@@ -66,6 +66,9 @@ export default defineConfig({
   vite: {
     define: {
       __APP_LAST_MODIFIED__: JSON.stringify(new Date().toISOString()),
+    },
+    server: {
+      port: 6060,
     },
     resolve: {
       alias: [
