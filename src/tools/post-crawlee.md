@@ -23,5 +23,21 @@ date: 2023-07-22 11:00:00
 
 ## Crawlee
 
-Crawlee 是是从 Apify 里面独立出来的爬虫模块，支持 Cheerio 、Puppeteer 和 Playwright 的无缝集成。
+Crawlee 是是从 Apify 里面独立出来的爬虫模块，支持 Cheerio 、Puppeteer 和 Playwright 的无缝集成。其中，Cheerio 功能类似 JQuery，但可以在非浏览器环境中使用，这也是 Crawlee 内置的一种爬虫类型。Puppeteer 和 Playwright 是一种通过协议操作浏览器的上层库，可以在服务端运行，使用这两个库需要单独安装它们的依赖。
+
+我们的目标比较简单，因此使用 Cheerio 就足够。
+
+## 初始化项目
+
+1. 新建个项目
+
+```bash
+npm init -y
+```
+
+2. 安装 Crawlee
+
+```bash
+npm install crawlee
+```
 

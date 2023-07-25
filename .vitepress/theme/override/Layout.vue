@@ -11,8 +11,11 @@
         <Button type="dashed" size="large" shape="circle" class="hidden md:inline-block">UP</Button>
       </BackTop>
     </template>
-    <template #doc-after>
-      <Waline :serverURL="serverURL" :path="route.path" />
+    <template #doc-bottom>
+      <div class="flex mx-auto max-w-[1280px] mt-6">
+        <Waline class="flex-1" :serverURL="serverURL" :path="route.path" :copyright="false" />
+        <div class="hidden md:block w-[256px]"></div>
+      </div>
     </template>
   </Layout>
 </template>

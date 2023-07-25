@@ -47,7 +47,7 @@ html:not(.dark) {
   * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-brand: #3b9;
+  --vp-c-brand: #33bb99;
   --vp-c-brand-1: #33cc9920;
   --vp-c-brand-light: #33cc99e0;
   --vp-c-brand-lighter: #33cc99a0;
@@ -136,8 +136,18 @@ html:not(.dark) {
 }
 
 .Layout {
-  height: 100%;
-  /* background-color: #f1f3f5; */
+  /* height: 100%; */
+  background: linear-gradient(
+    90deg,
+    rgba(247, 149, 51, 0.1),
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1)
+  );
 }
 
 #VPContent .VPDoc.has-aside .content-container {
@@ -146,8 +156,8 @@ html:not(.dark) {
 }
 
 .VPNav {
-  border-bottom: 1px solid #f1f3f5;
   background: #fff;
+  box-shadow: 0 2px 8px rgb(242, 243, 245);
 }
 
 .curtain,
@@ -236,16 +246,22 @@ html:not(.dark) {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--vp-c-brand-1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #99999980;
+  background-color: var(--vp-c-brand);
+  background-image: linear-gradient(
+    45deg,
+    hsla(0, 0%, 100%, 0.4) 25%,
+    transparent 0,
+    transparent 50%,
+    hsla(0, 0%, 100%, 0.4) 0,
+    hsla(0, 0%, 100%, 0.4) 75%,
+    transparent 0,
+    transparent
+  );
   border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #55555580;
 }
 
 .content img {
@@ -331,7 +347,9 @@ body .VPDocAsideOutline.has-outline {
   padding: 0 8px;
   border-radius: 4px;
 }
-.VPDocAsideOutline li .outline-link:hover,
+#app .VPDocAsideOutline li .outline-link:hover {
+  background-color: #f5f5f7;
+}
 #app .VPDocAsideOutline li .outline-active {
   background: var(--vp-c-brand-1);
   color: var(--vp-c-brand);
@@ -361,9 +379,6 @@ body .VPDocAsideOutline.has-outline {
 }
 #app .VPNav .VPNavBar {
   border-bottom-color: transparent;
-}
-.VPNav {
-  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 1%);
 }
 .VPDoc .container > .content {
   box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%);
@@ -403,8 +418,11 @@ body .VPDocAsideOutline.has-outline {
 }
 
 body .vp-doc [class*='language-'] > button.copy {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  opacity: 0.5;
+  cursor: url(/cursor/link.cur), pointer;
 }
 
 body .vp-doc [class*='language-'] > span.lang {

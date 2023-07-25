@@ -4,7 +4,9 @@
 
 a,
 a > *,
-.arco-image-img {
+.arco-image-img,
+button,
+button > * {
   cursor: url(/cursor/link.cur), pointer;
 }
 
@@ -22,4 +24,26 @@ body .cursor-pointer {
 
 .title {
   letter-spacing: 1.5px;
+}
+
+body .wl-panel {
+  border-radius: 4px;
+  margin: 0;
+  border: none;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%);
+  background: #ffffff90;
+}
+
+.wl-cards, .wl-empty {
+  background: #ffffff80;
+  border-radius: 4px;
+  padding: 8px 4px 0;
+}
+
+.wl-cards:has(~ .wl-empty) {
+  padding-top: 0px;
+}
+
+#app h1 {
+  font-size: 28px;
 }
