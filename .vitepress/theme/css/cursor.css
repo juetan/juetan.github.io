@@ -31,13 +31,16 @@ body .wl-panel {
   margin: 0;
   border: none;
   box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%);
-  background: #ffffff90;
 }
 
 .wl-cards, .wl-empty {
-  background: #ffffff80;
+  background: #ffffff;
   border-radius: 4px;
   padding: 8px 4px 0;
+}
+
+.wl-sort li {
+  font-size: 14px;
 }
 
 .wl-cards:has(~ .wl-empty) {

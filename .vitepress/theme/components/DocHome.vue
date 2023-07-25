@@ -104,13 +104,15 @@
           <span class="i-icon-park-outline-all-application mr-1"></span>
           标签列表
         </div>
-        <div class="grid grid-cols-4 gap-x-1 gap-y-1 py-2">
+        <div class="flex gap-1.5 flex-wrap py-3">
           <Tag
             v-for="i in 26"
             :key="i"
             class="bg-slate-50 hover:bg-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-brand)]"
-            >前端</Tag
+            :color="colors[Math.floor(Math.random() * colors.length)]"
           >
+            前端
+          </Tag>
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4">
@@ -149,6 +151,22 @@ const state = reactive({
   pageSize: 10,
   data: posts.slice(0, 10),
 });
+
+const colors = [
+  'red',
+  'orangered',
+  'orange',
+  'gold',
+  'lime',
+  'green',
+  'cyan',
+  'blue',
+  'arcoblue',
+  'purple',
+  'pinkpurple',
+  'magenta',
+  'gray',
+];
 
 const onPageSizeChange = (page: number) => {
   const start = (page - 1) * state.pageSize;
