@@ -49,6 +49,16 @@
     <div class="hidden md:block w-[264px]">
       <div class="bg-white rounded px-4">
         <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
+          <span class="i-icon-park-outline-announcement mr-1"></span>
+          站点公告
+        </div>
+        <div class="grid gap-1 py-2">
+          本站使用 Vitepres 搭建，主题基于默认主题魔改，正在优化中敬请期待。
+          <li>地址：<a href="https://github.com/juetan/juetan.github.io" target="_blank" class="text-[#3b9]">Github 仓库</a></li>
+        </div>
+      </div>
+      <div class="bg-white rounded px-4 mt-4">
+        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-all-application mr-1"></span>
           网址导航
         </div>
