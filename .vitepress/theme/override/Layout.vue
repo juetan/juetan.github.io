@@ -8,7 +8,7 @@
     </template>
     <template #layout-bottom>
       <BackTop>
-        <Button type="primary" size="large" class="hidden md:inline-block">
+        <Button type="primary" class="!hidden !md:inline-block">
           <template #icon>
             <i class="i-icon-park-outline-up-small"></i>
           </template>
@@ -31,18 +31,33 @@ import '@waline/client/dist/waline.css';
 import { fairyDustCursor } from 'cursor-effects';
 import { useRoute } from 'vitepress';
 import theme from 'vitepress/theme';
-import { onMounted } from 'vue';
+import { nextTick, onMounted, onUnmounted, watch } from 'vue';
 import DocNotFound from '../components/DocNotFound.vue';
 import DocTitle from '../components/DocTitle.vue';
+import { useTocSync } from './state';
 
 const { Layout } = theme;
 const route = useRoute();
 const serverURL = 'https://jtwaline.vercel.app';
+const toc = useTocSync();
 
 onMounted(() => {
   new fairyDustCursor({
     colors: ['#98EBC7', '#89E9E0', '#9FD4FD', '#C396ED', '#F08EE6', '#FCC59F', '#FFCF8B'],
   });
+  toc.run();
+});
+
+watch(
+  () => route.path,
+  async () => {
+    await nextTick();
+    toc.run();
+  }
+);
+
+onUnmounted(() => {
+  toc.cancel();
 });
 </script>
 

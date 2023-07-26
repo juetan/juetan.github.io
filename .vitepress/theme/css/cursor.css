@@ -39,6 +39,10 @@ div.wl-meta-head {
   padding: 12px 16px;
 }
 
+div.wl-header {
+  border-bottom-width: 1px;
+}
+
 .wl-loading {
   background: #fff;
 }
@@ -66,5 +70,5 @@ textarea.wl-editor {
 }
 
 #app h1 {
-  font-size: 28px;
+  font-size: 24px;
 }

@@ -17,8 +17,13 @@
 }
 
 html,
-body {
+body,
+#app {
   width: 100%;
+  height: 100%;
+}
+
+.Layout {
   height: 100%;
 }
 
@@ -100,13 +105,17 @@ html:not(.dark) {
   .VPContent .VPDoc {
     padding: 20px 0 40px;
   }
-  .VPDoc .container > .content {
+  .VPDoc .container > div.content {
     background: #fff;
-    padding: 28px 24px;
+    padding: 18px 24px;
     box-shadow: 0 0 8px #f1f3f5;
     border: 1px solid #f1f3f5;
     border-radius: 4px;
   }
+  #app .VPDoc {
+    padding: 20px 24px 24px;
+  }
+
 }
 
 /**
@@ -140,7 +149,7 @@ html:not(.dark) {
 
 .VPNav {
   background: #fff;
-  box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.6);
+  box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.2);
 }
 
 .curtain,
@@ -373,7 +382,7 @@ body .VPDocAsideOutline.has-outline {
 .VPDoc .container > .content {
   box-shadow: none;
   background: #fff;
-  padding: 24px;
+  padding: 12px;
   border-radius: 4px;
 }
 .VPImage.logo {
@@ -391,7 +400,7 @@ body .VPDocAsideOutline.has-outline {
   border-radius: 4px;
 }
 #app .VPDoc {
-  padding: 20px 24px 24px;
+  padding: 20px 16px 24px;
 }
 .vp-doc [class*='language-'] > button.copy.copied::before,
 .vp-doc [class*='language-'] > button.copy:hover.copied::before {
@@ -428,8 +437,13 @@ body .vp-doc [class*='language-'] > span.lang {
 }
 
 body {
-  background-image: url(/assets/bg.jpg);
+  /* background-image: url(/assets/bg.jpg); */
+  background-color: #f2f4fb;
   background-size: 100% auto;
   background-attachment: fixed;
   overflow: overlay;
+}
+
+.vp-doc h3 {
+  font-size: 18px;
 }

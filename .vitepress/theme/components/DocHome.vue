@@ -126,7 +126,7 @@
           </Tag>
         </div>
       </div>
-      <div class="bg-white rounded px-4 mt-4">
+      <div class="bg-white rounded px-4 mt-4 select-none">
         <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-ranking mr-1"></span>
           站点统计
