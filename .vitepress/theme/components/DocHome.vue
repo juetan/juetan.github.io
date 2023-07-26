@@ -1,6 +1,6 @@
 <template>
   <div class="mx-4 md:mx-auto mt-5 flex gap-4 max-w-[1280px]">
-    <div class="flex-1 bg-white px-5">
+    <div class="flex-1 bg-white px-3 md:px-5">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">
           <i class="i-icon-park-outline-bookshelf mr-1"></i>最新文章
@@ -54,7 +54,7 @@
           站点公告
         </div>
         <div class="grid gap-1 py-2">
-          本站使用 Vitepres 搭建，主题基于默认主题魔改，正在优化中敬请期待。
+          本站使用 Vitepres 搭建，基于默认主题魔改，正在优化中。
           <li>地址：<a href="https://github.com/juetan/juetan.github.io" target="_blank" class="text-[#3b9]">Github 仓库</a></li>
         </div>
       </div>

@@ -17,7 +17,7 @@
     </template>
     <template #doc-bottom>
       <div class="flex mx-auto max-w-[1280px] mt-6">
-        <Waline class="flex-1" :serverURL="serverURL" :path="route.path" :copyright="false" />
+        <Waline class="flex-1" :serverURL="serverURL" :path="route.path" :copyright="false" lang="zh-CN" />
         <div class="hidden md:block w-[256px]"></div>
       </div>
     </template>
