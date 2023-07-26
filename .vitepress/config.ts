@@ -184,12 +184,7 @@ export default defineConfig({
         link: '/backend',
       },
       {
-        text: '日常',
-        icon: 'i-icon-park-outline-coconut-tree',
-        link: '/daily',
-      },
-      {
-        text: '工具',
+        text: '其他',
         icon: 'i-icon-park-outline-tool',
         link: '/tools',
       },

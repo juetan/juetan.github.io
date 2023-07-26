@@ -55,7 +55,11 @@
         </div>
         <div class="grid gap-1 py-2">
           本站使用 Vitepres 搭建，基于默认主题魔改，正在优化中。
-          <li>地址：<a href="https://github.com/juetan/juetan.github.io" target="_blank" class="text-[#3b9]">Github 仓库</a></li>
+          <li>
+            地址：<a href="https://github.com/juetan/juetan.github.io" target="_blank" class="text-[#3b9]"
+              >Github 仓库</a
+            >
+          </li>
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4">
@@ -117,12 +121,25 @@
         </div>
         <div class="flex gap-1.5 flex-wrap py-3">
           <Tag
-            v-for="i in 26"
+            v-for="i in [
+              '前端',
+              'JavaScript',
+              'CSS',
+              '工具',
+              '浏览器',
+              'HTML',
+              'NodeJS',
+              '框架',
+              'TypeScript',
+              'VUE',
+              '编辑器',
+            ]"
             :key="i"
-            class="bg-slate-50 hover:bg-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-brand)]"
-            :color="colors[Math.floor(Math.random() * colors.length)]"
+            class="hover:text-[var(--vp-c-brand)]"
+
+            size="small"
           >
-            前端
+            {{ i }}
           </Tag>
         </div>
       </div>
