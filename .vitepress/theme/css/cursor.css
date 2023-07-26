@@ -33,9 +33,27 @@ body .wl-panel {
   box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%);
 }
 
-.wl-cards, .wl-empty {
+div.wl-meta-head {
+  background: #fff;
+  border-radius: 4px 4px 0 0;
+  padding: 12px 16px;
+}
+
+.wl-loading {
+  background: #fff;
+}
+
+textarea.wl-editor {
+  margin: 0;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.wl-cards,
+.wl-empty {
   background: #ffffff;
-  border-radius: 4px;
+  border-radius: 0 0 4px 4px;
   padding: 8px 4px 0;
 }
 

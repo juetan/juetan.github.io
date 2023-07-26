@@ -17,11 +17,9 @@
 }
 
 html,
-body,
-#app {
+body {
   width: 100%;
   height: 100%;
-  background: rgb(241, 245, 249);
 }
 
 ::selection {
@@ -142,7 +140,7 @@ html:not(.dark) {
 
 .VPNav {
   background: #fff;
-  /* box-shadow: 0 2px 8px rgb(242, 243, 245); */
+  box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.6);
 }
 
 .curtain,
@@ -429,8 +427,9 @@ body .vp-doc [class*='language-'] > span.lang {
   color: var(--vp-c-brand);
 }
 
-#app {
+body {
   background-image: url(/assets/bg.jpg);
   background-size: 100% auto;
-  overflow: auto;
+  background-attachment: fixed;
+  overflow: overlay;
 }

@@ -8,7 +8,11 @@
     </template>
     <template #layout-bottom>
       <BackTop>
-        <Button type="dashed" size="large" shape="circle" class="hidden md:inline-block">UP</Button>
+        <Button type="primary" size="large" class="hidden md:inline-block">
+          <template #icon>
+            <i class="i-icon-park-outline-up-small"></i>
+          </template>
+        </Button>
       </BackTop>
     </template>
     <template #doc-bottom>
@@ -33,7 +37,7 @@ import DocTitle from '../components/DocTitle.vue';
 
 const { Layout } = theme;
 const route = useRoute();
-const serverURL = 'https://jtwaline.vercel.app'
+const serverURL = 'https://jtwaline.vercel.app';
 
 onMounted(() => {
   new fairyDustCursor({

@@ -36,6 +36,7 @@
                 v-if="post.frontmatter.thumbnail"
                 :src="post.frontmatter.thumbnail"
                 :alt="post.frontmatter.title"
+                :preview="false"
                 class="rounded h-full aspect-video max-w-initial bg-slate-100 cursor-pointer opacity-80 hover:opacity-100 transition-opacity duration-200 ease-in-out"
               />
             </div>
