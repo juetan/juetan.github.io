@@ -49,6 +49,16 @@
     <div class="hidden md:block w-[264px]">
       <div class="bg-white rounded px-4">
         <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
+          <span class="i-icon-park-outline-announcement mr-1"></span>
+          站点公告
+        </div>
+        <div class="grid gap-1 py-2">
+          本站使用 Vitepres 搭建，主题基于默认主题魔改，正在优化中敬请期待。
+          <li>地址：<a href="https://github.com/juetan/juetan.github.io" target="_blank" class="text-[#3b9]">Github 仓库</a></li>
+        </div>
+      </div>
+      <div class="bg-white rounded px-4 mt-4">
+        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-all-application mr-1"></span>
           网址导航
         </div>
@@ -62,7 +72,7 @@
               <i class="i-icon-park-outline-html-five mr-1"></i>
               前端驿站
             </div>
-            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
+            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]"></div>
           </a>
           <a
             href="https://appnify.github.io/starter-vue"
@@ -73,7 +83,7 @@
               <i class="i-icon-park-outline-html-five mr-1"></i>
               后台模板
             </div>
-            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
+            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]"></div>
           </a>
           <a
             href="https://juetan.github.io/nav"
@@ -84,7 +94,7 @@
               <i class="i-icon-park-outline-html-five mr-1"></i>
               浏览器
             </div>
-            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
+            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]"></div>
           </a>
           <a
             href="https://juetan.github.io/nav"
@@ -95,28 +105,30 @@
               <i class="i-icon-park-outline-html-five mr-1"></i>
               构建工具
             </div>
-            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]">18 篇</div>
+            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]"></div>
           </a>
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4">
         <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
-          <span class="i-icon-park-outline-all-application mr-1"></span>
+          <span class="i-icon-park-outline-tag-one mr-1"></span>
           标签列表
         </div>
-        <div class="grid grid-cols-4 gap-x-1 gap-y-1 py-2">
+        <div class="flex gap-1.5 flex-wrap py-3">
           <Tag
             v-for="i in 26"
             :key="i"
             class="bg-slate-50 hover:bg-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-brand)]"
-            >前端</Tag
+            :color="colors[Math.floor(Math.random() * colors.length)]"
           >
+            前端
+          </Tag>
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4">
         <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
           <span class="i-icon-park-outline-ranking mr-1"></span>
-          统计
+          站点统计
         </div>
         <div class="grid gap-1 py-2 text-gray-500">
           <li
@@ -150,6 +162,22 @@ const state = reactive({
   data: posts.slice(0, 10),
 });
 
+const colors = [
+  'red',
+  'orangered',
+  'orange',
+  'gold',
+  'lime',
+  'green',
+  'cyan',
+  'blue',
+  'arcoblue',
+  'purple',
+  'pinkpurple',
+  'magenta',
+  'gray',
+];
+
 const onPageSizeChange = (page: number) => {
   const start = (page - 1) * state.pageSize;
   const end = page * state.pageSize;
@@ -157,19 +185,19 @@ const onPageSizeChange = (page: number) => {
   window?.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-const founded = dayjs().diff(dayjs(import.meta.env.VITE_APP_FOUNDED), 'day');
+const founded = dayjs().diff(dayjs('2023-01-01 00:00:00'), 'day');
 const lastModified = dayjs(__APP_LAST_MODIFIED__).fromNow();
 
 const stat = [
   {
     icon: 'i-icon-park-outline-rss',
     title: '文章数量',
-    value: posts.length,
+    value: `${posts.length} 篇`,
   },
   {
     icon: 'i-icon-park-outline-tag-one',
     title: '标签数量',
-    value: 0,
+    value: `${posts.length} 个`,
   },
   {
     icon: 'i-icon-park-outline-hourglass-full',

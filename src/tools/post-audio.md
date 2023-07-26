@@ -42,9 +42,9 @@ source.connect(audioContext.destination);
 
 ### createMediaElementSource
 
-这也是创建入口节点的一种方法，其数据可以从 `<audio>` 标签获取，示例如下：
+这也是创建入口节点的一种方法，控制 `<audio>` 标签的播放，例如接入一个音量调节器：
 
-
+<demo src="./demo-createMediaElement.vue" />
 
 ### createMediaStreamSource
 
