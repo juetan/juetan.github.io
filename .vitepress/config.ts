@@ -1,11 +1,13 @@
 // @ts-nocheck
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { presetUno, presetIcons } from 'unocss';
+import { join, dirname, basename } from 'path';
 import Unocss from 'unocss/vite';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitepress';
 import { createStyleImportPlugin } from 'vite-plugin-style-import';
 import { applyPlugins } from '@ruabick/md-demo-plugins';
+import { ResolvedConfig } from 'vite';
 
 /**
  * 站点配置
@@ -55,6 +57,7 @@ export default defineConfig({
        */
       transformAssetUrls: {
         Image: ['src'],
+        audio: 'src',
       },
     },
   },
@@ -134,6 +137,57 @@ export default defineConfig({
           }
         },
       },
+      (() => {
+        const map = new Map();
+        const prefix = '__JT_VITE_ASSET__';
+        const reg = /^---[\s\S]*?\ncover:\s?([\s\S]*?)\r?\n/;
+        let config: ResolvedConfig;
+        return {
+          name: 'vite:cover',
+          apply: 'build',
+          enforce: 'pre',
+          configResolved(resolvedConfig) {
+            config = resolvedConfig;
+          },
+          load(id, options) {
+            if (/\.md$/.test(id)) {
+              const content = readFileSync(id, 'utf-8');
+              const assetVal = content.match(reg)?.[1].trim() || '';
+              const assetPath = join(dirname(id), assetVal);
+              const key = prefix + assetPath;
+              if (!assetVal) {
+                return;
+              }
+              if (map.has(key)) {
+                return;
+              }
+              if (assetVal.startsWith('http') || assetVal.startsWith('/')) {
+                return;
+              }
+              if (existsSync(assetPath)) {
+                const assetId = this.emitFile({
+                  type: 'asset',
+                  name: basename(assetVal),
+                  source: readFileSync(assetPath),
+                });
+                map.set(key, assetId);
+                return content.replace(assetVal, key);
+              }
+            }
+          },
+          renderChunk(code, chunk) {
+            if (code.includes(prefix)) {
+              [...map.keys()].forEach((key) => {
+                const assetId = map.get(key);
+                const assetUrl = this.getFileName(assetId);
+                const fileUrl = join(config.base, assetUrl);
+                code = code.replace(key, assetUrl);
+              });
+              return code;
+            }
+          },
+        };
+      })(),
     ],
   },
 
