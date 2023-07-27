@@ -1,13 +1,13 @@
 // @ts-nocheck
-import { readFileSync, existsSync } from 'fs';
-import { presetUno, presetIcons } from 'unocss';
-import { join, dirname, basename } from 'path';
+import { applyPlugins } from '@ruabick/md-demo-plugins';
+import { existsSync, readFileSync } from 'fs';
+import { basename, dirname, join } from 'path';
+import { presetIcons, presetUno } from 'unocss';
 import Unocss from 'unocss/vite';
 import { fileURLToPath } from 'url';
-import { defineConfig } from 'vitepress';
-import { createStyleImportPlugin } from 'vite-plugin-style-import';
-import { applyPlugins } from '@ruabick/md-demo-plugins';
 import { ResolvedConfig } from 'vite';
+import { createStyleImportPlugin } from 'vite-plugin-style-import';
+import { defineConfig } from 'vitepress';
 
 /**
  * 站点配置
@@ -140,7 +140,8 @@ export default defineConfig({
       (() => {
         const map = new Map();
         const prefix = '__JT_VITE_ASSET__';
-        const reg = /^---[\s\S]*?\ncover:\s?([\s\S]*?)\r?\n/;
+        const matchRE = /^---[\s\S]*?\ncover:\s(.*?)\r?\n/;
+        const replaceRE = /(?<=cover:\s)(.*?)(?=\r?\n)/;
         let config: ResolvedConfig;
         return {
           name: 'vite:cover',
@@ -149,16 +150,12 @@ export default defineConfig({
           configResolved(resolvedConfig) {
             config = resolvedConfig;
           },
-          load(id, options) {
+          load(id) {
             if (/\.md$/.test(id)) {
               const content = readFileSync(id, 'utf-8');
-              const assetVal = content.match(reg)?.[1].trim() || '';
+              const assetVal = content.match(matchRE)?.[1].trim() || '';
               const assetPath = join(dirname(id), assetVal);
-              const key = prefix + assetPath;
               if (!assetVal) {
-                return;
-              }
-              if (map.has(key)) {
                 return;
               }
               if (assetVal.startsWith('http') || assetVal.startsWith('/')) {
@@ -170,18 +167,19 @@ export default defineConfig({
                   name: basename(assetVal),
                   source: readFileSync(assetPath),
                 });
+                const key = prefix + assetId;
                 map.set(key, assetId);
-                return content.replace(assetVal, key);
+                return content.replace(replaceRE, key);
               }
             }
           },
-          renderChunk(code, chunk) {
+          renderChunk(code) {
             if (code.includes(prefix)) {
               [...map.keys()].forEach((key) => {
                 const assetId = map.get(key);
                 const assetUrl = this.getFileName(assetId);
-                const fileUrl = join(config.base, assetUrl);
-                code = code.replace(key, assetUrl);
+                const base = config.base.endsWith('/') ? config.base : config.base + '/';
+                code = code.replace(key, base + assetUrl);
               });
               return code;
             }
