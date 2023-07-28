@@ -126,17 +126,22 @@ export default defineConfig({
       /**
        * 替换默认主题的部分组件
        */
-      {
-        name: 'vite:juetan',
-        load(id) {
-          const list = ['VPNavBarMenuLink.vue', 'VPDocOutlineItem.vue'];
-          const path = (i: string) => fileURLToPath(new URL(`./theme/override/${i}`, import.meta.url));
-          const item = list.find((i) => id.includes(i) && !id.includes('?'));
-          if (item) {
-            return readFileSync(path(item), 'utf-8');
-          }
-        },
-      },
+      (() => {
+        return {
+          name: 'vite:override',
+          load(id) {
+            const list = ['VPNavBarMenuLink.vue', 'VPDocOutlineItem.vue'];
+            const path = (i: string) => fileURLToPath(new URL(`./theme/override/${i}`, import.meta.url));
+            const item = list.find((i) => id.includes(i) && !id.includes('?'));
+            if (item) {
+              return readFileSync(path(item), 'utf-8');
+            }
+          },
+        };
+      })(),
+      /**
+       * 支持.md文件中的cover字段包含图片的打包
+       */
       (() => {
         const map = new Map();
         const prefix = '__JT_VITE_ASSET__';

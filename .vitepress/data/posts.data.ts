@@ -28,7 +28,7 @@ export default createContentLoader(['src/**/*.md'], {
   render: true,
   transform(rawData) {
     const sorted = rawData.sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date));
-    const ignores = ['/about', '/public', '/index', '/archive', '/tags', '/404'];
+    const ignores = ['/about', '/public', '/index', '/archive', '/tags', '/404', '/draft'];
     const data: (PostItem | null)[] = sorted.map((item) => {
       item.url = item.url.replace('/src', '');
       if (item.frontmatter.layout) {
