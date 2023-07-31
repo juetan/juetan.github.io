@@ -14,10 +14,13 @@ devDependencies:
     version: 1.1.11
   '@ruabick/md-demo-plugins':
     specifier: ^0.3.3
-    version: 0.3.3(patch_hash=gwpubqs7zb6z5jsoaqozhthxni)(less@4.1.3)
+    version: 0.3.3(patch_hash=gwpubqs7zb6z5jsoaqozhthxni)(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0)
   '@ruabick/vitepress-demo-block':
     specifier: ^0.3.3
     version: 0.3.3
+  '@types/lodash-es':
+    specifier: ^4.17.8
+    version: 4.17.8
   '@waline/client':
     specifier: ^2.15.5
     version: 2.15.5
@@ -30,9 +33,12 @@ devDependencies:
   less:
     specifier: ^4.1.3
     version: 4.1.3
+  lodash-es:
+    specifier: ^4.17.21
+    version: 4.17.21
   unocss:
     specifier: ^0.53.5
-    version: 0.53.5(vite@4.4.3)
+    version: 0.53.5(postcss@8.4.25)(vite@4.4.3)
   vite:
     specifier: ^4.4.3
     version: 4.4.3(less@4.1.3)
@@ -41,51 +47,54 @@ devDependencies:
     version: 2.0.0(vite@4.4.3)
   vitepress:
     specifier: 1.0.0-beta.5
-    version: 1.0.0-beta.5(less@4.1.3)
+    version: 1.0.0-beta.5(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0)
   vue:
     specifier: ^3.3.4
     version: 3.3.4
 
 packages:
 
-  /@algolia/autocomplete-core@1.9.3(algoliasearch@4.18.0):
+  /@algolia/autocomplete-core@1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0)(search-insights@2.7.0):
     resolution: {integrity: sha512-009HdfugtGCdC4JdXUbVJClA0q0zh24yyePn+KUGk3rP7j8FEe/m5Yo/z65gn6nP/cM39PxpzqKrL7A6fP6PPw==}
     dependencies:
-      '@algolia/autocomplete-plugin-algolia-insights': 1.9.3(algoliasearch@4.18.0)
-      '@algolia/autocomplete-shared': 1.9.3(algoliasearch@4.18.0)
+      '@algolia/autocomplete-plugin-algolia-insights': 1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0)(search-insights@2.7.0)
+      '@algolia/autocomplete-shared': 1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - algoliasearch
       - search-insights
     dev: true
 
-  /@algolia/autocomplete-plugin-algolia-insights@1.9.3(algoliasearch@4.18.0):
+  /@algolia/autocomplete-plugin-algolia-insights@1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0)(search-insights@2.7.0):
     resolution: {integrity: sha512-a/yTUkcO/Vyy+JffmAnTWbr4/90cLzw+CC3bRbhnULr/EM0fGNvM13oQQ14f2moLMcVDyAx/leczLlAOovhSZg==}
     peerDependencies:
       search-insights: '>= 1 < 3'
     dependencies:
-      '@algolia/autocomplete-shared': 1.9.3(algoliasearch@4.18.0)
+      '@algolia/autocomplete-shared': 1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0)
+      search-insights: 2.7.0
     transitivePeerDependencies:
       - '@algolia/client-search'
       - algoliasearch
     dev: true
 
-  /@algolia/autocomplete-preset-algolia@1.9.3(algoliasearch@4.18.0):
+  /@algolia/autocomplete-preset-algolia@1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0):
     resolution: {integrity: sha512-d4qlt6YmrLMYy95n5TB52wtNDr6EgAIPH81dvvvW8UmuWRgxEtY0NJiPwl/h95JtG2vmRM804M0DSwMCNZlzRA==}
     peerDependencies:
       '@algolia/client-search': '>= 4.9.1 < 6'
       algoliasearch: '>= 4.9.1 < 6'
     dependencies:
-      '@algolia/autocomplete-shared': 1.9.3(algoliasearch@4.18.0)
+      '@algolia/autocomplete-shared': 1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0)
+      '@algolia/client-search': 4.18.0
       algoliasearch: 4.18.0
     dev: true
 
-  /@algolia/autocomplete-shared@1.9.3(algoliasearch@4.18.0):
+  /@algolia/autocomplete-shared@1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0):
     resolution: {integrity: sha512-Wnm9E4Ye6Rl6sTTqjoymD+l8DjSTHsHboVRYrKgEt8Q7UHm9nYbqhN/i0fhUYA3OAEH7WA8x3jfpnmJm3rKvaQ==}
     peerDependencies:
       '@algolia/client-search': '>= 4.9.1 < 6'
       algoliasearch: '>= 4.9.1 < 6'
     dependencies:
+      '@algolia/client-search': 4.18.0
       algoliasearch: 4.18.0
     dev: true
 
@@ -251,10 +260,10 @@ packages:
     resolution: {integrity: sha512-2Pu9HDg/uP/IT10rbQ+4OrTQuxIWdKVUEdcw9/w7kZJv9NeHS6skJx1xuRiFyoGKwAzcHXnLp7csE99sj+O1YA==}
     dev: true
 
-  /@docsearch/js@3.5.1:
+  /@docsearch/js@3.5.1(@algolia/client-search@4.18.0)(search-insights@2.7.0):
     resolution: {integrity: sha512-EXi8de5njxgP6TV3N9ytnGRLG9zmBNTEZjR4VzwPcpPLbZxxTLG2gaFyJyKiFVQxHW/DPlMrDJA3qoRRGEkgZw==}
     dependencies:
-      '@docsearch/react': 3.5.1
+      '@docsearch/react': 3.5.1(@algolia/client-search@4.18.0)(search-insights@2.7.0)
       preact: 10.16.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -264,7 +273,7 @@ packages:
       - search-insights
     dev: true
 
-  /@docsearch/react@3.5.1:
+  /@docsearch/react@3.5.1(@algolia/client-search@4.18.0)(search-insights@2.7.0):
     resolution: {integrity: sha512-t5mEODdLzZq4PTFAm/dvqcvZFdPDMdfPE5rJS5SC8OUq9mPzxEy6b+9THIqNM9P0ocCb4UC5jqBrxKclnuIbzQ==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 19.0.0'
@@ -278,8 +287,8 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@algolia/autocomplete-core': 1.9.3(algoliasearch@4.18.0)
-      '@algolia/autocomplete-preset-algolia': 1.9.3(algoliasearch@4.18.0)
+      '@algolia/autocomplete-core': 1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0)(search-insights@2.7.0)
+      '@algolia/autocomplete-preset-algolia': 1.9.3(@algolia/client-search@4.18.0)(algoliasearch@4.18.0)
       '@docsearch/css': 3.5.1
       algoliasearch: 4.18.0
     transitivePeerDependencies:
@@ -607,13 +616,13 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@ruabick/md-demo-plugins@0.3.3(patch_hash=gwpubqs7zb6z5jsoaqozhthxni)(less@4.1.3):
+  /@ruabick/md-demo-plugins@0.3.3(patch_hash=gwpubqs7zb6z5jsoaqozhthxni)(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0):
     resolution: {integrity: sha512-yTMHoDeF7H/jvfgPmqDY93xwxB2TJ9OTqWEnYyxG7NYPGiH+j4WXXSX1ZWDLw7xibdesfHFmRn8Ppsr/tStDDQ==}
     dependencies:
-      '@ruabick/utils': 0.3.3(less@4.1.3)
+      '@ruabick/utils': 0.3.3(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0)
       fs-extra: 10.1.0
       markdown-it: 13.0.1
-      vitepress: 1.0.0-alpha.29(less@4.1.3)
+      vitepress: 1.0.0-alpha.29(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/node'
@@ -630,11 +639,11 @@ packages:
     dev: true
     patched: true
 
-  /@ruabick/utils@0.3.3(less@4.1.3):
+  /@ruabick/utils@0.3.3(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0):
     resolution: {integrity: sha512-YvZHOjwE2FJ8PAXPPMGka9qp7Z513yEZNyDFshJNfvl8q2TNvKU34jtsWeTuKYfqZVFV8mOnFNdaFo/fuGDcEQ==}
     dependencies:
       '@vue/compiler-core': 3.3.4
-      vitepress: 1.0.0-alpha.29(less@4.1.3)
+      vitepress: 1.0.0-alpha.29(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/node'
@@ -656,6 +665,16 @@ packages:
 
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
+    dev: true
+
+  /@types/lodash-es@4.17.8:
+    resolution: {integrity: sha512-euY3XQcZmIzSy7YH5+Unb3b2X12Wtk54YWINBvvGQ5SmMvwb11JQskGsfkH/5HXK77Kr8GF0wkVDIxzAisWtog==}
+    dependencies:
+      '@types/lodash': 4.14.196
+    dev: true
+
+  /@types/lodash@4.14.196:
+    resolution: {integrity: sha512-22y3o88f4a94mKljsZcanlNWPzO0uBsBdzLAngf2tp533LzZcQzb6+eZPJ+vCTt+bqF2XnvT9gejTLsAcJAJyQ==}
     dev: true
 
   /@types/web-bluetooth@0.0.16:
@@ -724,9 +743,11 @@ packages:
       sirv: 2.0.3
     dev: true
 
-  /@unocss/postcss@0.53.5:
+  /@unocss/postcss@0.53.5(postcss@8.4.25):
     resolution: {integrity: sha512-IfZl4GxrpegP/861bp3e0X3VcQJ9/M3VxC9UQ7zzxkOz/E8R09iMpbnznVLrTiLp2r96p5k/ggXLoadFm1FxGA==}
     engines: {node: '>=14'}
+    peerDependencies:
+      postcss: ^8.4.21
     dependencies:
       '@unocss/config': 0.53.5
       '@unocss/core': 0.53.5
@@ -1820,6 +1841,10 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: true
+
   /lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
@@ -2149,6 +2174,11 @@ packages:
       compute-scroll-into-view: 1.0.20
     dev: true
 
+  /search-insights@2.7.0:
+    resolution: {integrity: sha512-GLbVaGgzYEKMvuJbHRhLi1qoBFnjXZGZ6l4LxOYPCp4lI2jDRB3jPU9/XNhMwv6kvnA9slTreq6pvK+b3o3aqg==}
+    engines: {node: '>=8.16.0'}
+    dev: true
+
   /semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
@@ -2291,7 +2321,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.53.5(vite@4.4.3):
+  /unocss@0.53.5(postcss@8.4.25)(vite@4.4.3):
     resolution: {integrity: sha512-LXAdtzAaH8iEDWxW4t9i6TvJNw0OSrgdN+jw8rAZAWb73Nx51ZLoKPUB1rFvQMr2Li7LcsUj5hYpOrQbhhafYg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2304,7 +2334,7 @@ packages:
       '@unocss/cli': 0.53.5
       '@unocss/core': 0.53.5
       '@unocss/extractor-arbitrary-variants': 0.53.5
-      '@unocss/postcss': 0.53.5
+      '@unocss/postcss': 0.53.5(postcss@8.4.25)
       '@unocss/preset-attributify': 0.53.5
       '@unocss/preset-icons': 0.53.5
       '@unocss/preset-mini': 0.53.5
@@ -2321,6 +2351,7 @@ packages:
       '@unocss/transformer-variant-group': 0.53.5
       '@unocss/vite': 0.53.5(vite@4.4.3)
     transitivePeerDependencies:
+      - postcss
       - rollup
       - supports-color
       - vite
@@ -2459,12 +2490,12 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress@1.0.0-alpha.29(less@4.1.3):
+  /vitepress@1.0.0-alpha.29(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0):
     resolution: {integrity: sha512-oaRaeMLcN9M3Bxz97fFVF6Gzm3Aqtb0CijTt5TOW0XPzNPuKA0YpFnsmS97gdKmA+VztM6itRJ8K7JJuU0VS3g==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.5.1
-      '@docsearch/js': 3.5.1
+      '@docsearch/js': 3.5.1(@algolia/client-search@4.18.0)(search-insights@2.7.0)
       '@vitejs/plugin-vue': 3.2.0(vite@3.2.7)(vue@3.3.4)
       '@vue/devtools-api': 6.5.0
       '@vueuse/core': 9.13.0(vue@3.3.4)
@@ -2487,12 +2518,12 @@ packages:
       - terser
     dev: true
 
-  /vitepress@1.0.0-beta.5(less@4.1.3):
+  /vitepress@1.0.0-beta.5(@algolia/client-search@4.18.0)(less@4.1.3)(search-insights@2.7.0):
     resolution: {integrity: sha512-/RjqqRsSEKkzF6HhK5e5Ij+bZ7ETb9jNCRRgIMm10gJ+ZLC3D1OqkE465lEqCeJUgt2HZ6jmWjDqIBfrJSpv7w==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.5.1
-      '@docsearch/js': 3.5.1
+      '@docsearch/js': 3.5.1(@algolia/client-search@4.18.0)(search-insights@2.7.0)
       '@vitejs/plugin-vue': 4.2.3(vite@4.4.0-beta.3)(vue@3.3.4)
       '@vue/devtools-api': 6.5.0
       '@vueuse/core': 10.2.1(vue@3.3.4)

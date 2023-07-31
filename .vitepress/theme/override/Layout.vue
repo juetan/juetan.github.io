@@ -34,30 +34,17 @@ import theme from 'vitepress/theme';
 import { nextTick, onMounted, onUnmounted, watch } from 'vue';
 import DocNotFound from '../components/DocNotFound.vue';
 import DocTitle from '../components/DocTitle.vue';
-import { useTocSync } from './state';
+import { useHeadScroll } from './state';
 
 const { Layout } = theme;
 const route = useRoute();
 const serverURL = 'https://jtwaline.vercel.app';
-const toc = useTocSync();
+const toc = useHeadScroll();
 
 onMounted(() => {
   new fairyDustCursor({
     colors: ['#98EBC7', '#89E9E0', '#9FD4FD', '#C396ED', '#F08EE6', '#FCC59F', '#FFCF8B'],
   });
-  toc.run();
-});
-
-watch(
-  () => route.path,
-  async () => {
-    await nextTick();
-    toc.run();
-  }
-);
-
-onUnmounted(() => {
-  toc.cancel();
 });
 </script>
 
