@@ -151,7 +151,7 @@ html:not(.dark) {
 }
 
 #VPContent .aside {
-  padding-left: 0;
+  padding-left: 16px;
 }
 
 @media (min-width: 640px) {
@@ -316,10 +316,13 @@ body .VPDocAsideOutline.has-outline {
   border-radius: 4px;
 }
 .VPDocAsideOutline .outline-title {
-  height: 42px;
-  line-height: 42px;
-  border-bottom: 1px solid #f3f3f3;
-  /* font-weight: 400; */
+  display: flex;
+  align-items: center;
+  height: 32px;
+  background: #f2f5f7;
+  border-radius: 4px;
+  padding: 0 8px;
+  color: #323243;
 }
 .VPDocAsideOutline ul {
   margin: 8px 0;
@@ -336,14 +339,14 @@ body .VPDocAsideOutline.has-outline {
 }
 .VPDocAsideOutline li .outline-link {
   height: 28px;
-  padding: 0 8px;
+  padding: 0 9px;
   border-radius: 4px;
 }
 #app .VPDocAsideOutline li .outline-link:hover {
   background-color: #f5f5f7;
 }
 #app .VPDocAsideOutline li .outline-active {
-  background: var(--vp-c-brand-1);
+  /* background: #f5f5f7; */
   color: var(--vp-c-brand);
 }
 .VPDocAsideOutline .content {
@@ -374,9 +377,8 @@ body .VPDocAsideOutline.has-outline {
 }
 .VPDoc .container > .content {
   box-shadow: none;
-  background: #fff;
-  padding: 12px;
-  border-radius: 4px;
+  padding: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 .VPImage.logo {
   border-radius: 4px;

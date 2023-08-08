@@ -30,13 +30,24 @@ body .wl-panel {
   border-radius: 4px;
   margin: 0;
   border: none;
-  border: 1px solid var(--vp-c-divider);
+  background: #f2f5f7;
+}
+
+body .wl-editor:focus, body .wl-input:focus {
+  background: transparent;
+}
+
+body .wl-btn {
+  border-radius: 4px;
+}
+
+body .wl-cards .wl-user {
+  padding-top: 8px;
 }
 
 div.wl-meta-head {
   border-radius: 4px 4px 0 0;
-  padding: 12px 16px;
-  border: 1px solid var(--vp-c-divider);
+  padding-top: 16px;
   border-bottom: none;
 }
 
@@ -58,8 +69,6 @@ textarea.wl-editor {
 .wl-cards,
 .wl-empty {
   border-radius: 0 0 4px 4px;
-  padding: 8px 4px 0;
-  border: 1px solid var(--vp-c-divider);
   border-top: none;
 }
 
