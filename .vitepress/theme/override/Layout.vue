@@ -16,7 +16,7 @@
       </BackTop>
     </template>
     <template #doc-bottom>
-      <div class="flex mx-auto max-w-[1280px] mt-6">
+      <div class="flex mx-auto max-w-[1200px] mt-6">
         <Waline class="flex-1" :serverURL="serverURL" :path="route.path" :copyright="false" lang="zh-CN" />
         <div class="hidden md:block w-[256px]"></div>
       </div>
@@ -42,9 +42,9 @@ const serverURL = 'https://jtwaline.vercel.app';
 const toc = useHeadScroll();
 
 onMounted(() => {
-  new fairyDustCursor({
-    colors: ['#98EBC7', '#89E9E0', '#9FD4FD', '#C396ED', '#F08EE6', '#FCC59F', '#FFCF8B'],
-  });
+  // new fairyDustCursor({
+  //   colors: ['#98EBC7', '#89E9E0', '#9FD4FD', '#C396ED', '#F08EE6', '#FCC59F', '#FFCF8B'],
+  // });
 });
 </script>
 

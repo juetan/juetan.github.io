@@ -1,6 +1,6 @@
 <template>
-  <div class="mx-4 md:mx-auto mt-5 flex gap-4 max-w-[1280px]">
-    <div class="flex-1 bg-white px-3 md:px-5">
+  <div class="mx-4 md:mx-auto mt-5 flex gap-4 max-w-[1200px]">
+    <div class="flex-1 bg-white px-3 md:px-0">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">
           <i class="i-icon-park-outline-bookshelf mr-1"></i>最新文章
@@ -16,7 +16,7 @@
               <p class="item-excerpt line-clamp-2 text-gray-500 h-13">
                 {{ post.excerpt || '暂无简介' }}
               </p>
-              <div class="text-gray-400 flex items-center gap-3">
+              <div class="text-gray-400 text-xs flex items-center gap-3">
                 <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
                   <span class="i-icon-park-outline-user" />
                   绝弹
@@ -49,11 +49,11 @@
     </div>
     <div class="hidden md:block w-[264px]">
       <div class="bg-white rounded px-4">
-        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
+        <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
           <span class="i-icon-park-outline-announcement mr-1"></span>
           站点公告
         </div>
-        <div class="grid gap-1 py-2">
+        <div class="grid gap-1 py-2 text-gray-500">
           本站使用 Vitepres 搭建，基于默认主题魔改，正在优化中。
           <li>
             地址：<a href="https://github.com/juetan/juetan.github.io" target="_blank" class="text-[#3b9]"
@@ -63,11 +63,11 @@
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4">
-        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
+        <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
           <span class="i-icon-park-outline-all-application mr-1"></span>
           网址导航
         </div>
-        <div class="grid gap-1 py-2">
+        <div class="grid gap-1 py-2 text-gray-500">
           <a
             href="https://juetan.cn/nav"
             target="_blank"
@@ -115,7 +115,7 @@
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4">
-        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
+        <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
           <span class="i-icon-park-outline-tag-one mr-1"></span>
           标签列表
         </div>
@@ -135,8 +135,7 @@
               '编辑器',
             ]"
             :key="i"
-            class="hover:text-[var(--vp-c-brand)]"
-
+            class="!bg-slate-50 !text-gray-500"
             size="small"
           >
             {{ i }}
@@ -144,7 +143,7 @@
         </div>
       </div>
       <div class="bg-white rounded px-4 mt-4 select-none">
-        <div class="h-10 pt-0.5 flex items-center border-b border-slate-200">
+        <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
           <span class="i-icon-park-outline-ranking mr-1"></span>
           站点统计
         </div>

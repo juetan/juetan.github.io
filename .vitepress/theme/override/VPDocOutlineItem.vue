@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { MenuItem } from '../composables/outline';
 import { ref, onMounted } from 'vue';
-import { state } from '@theme/override/state';
+import { state, formatNumber } from '@theme/override/state';
 
 function getId(link: string) {
   const id = link.split('#')?.[1];
@@ -29,13 +29,19 @@ function onClick({ target: el }: Event) {
   heading?.focus();
   updateActive();
 }
+
+function getOrder(index: number, root?: boolean) {
+  if(root) {
+    return formatNumber(index + 1) + '、';
+  }
+}
 </script>
 
 <template>
   <ul :class="root ? 'root' : 'nested'">
-    <li v-for="{ children, link, title } in headers">
+    <li v-for="({ children, link, title }, index) in headers">
       <a class="outline-link" :class="{ 'outline-active': isSame(link) }" :href="link" @click="onClick" :title="title">
-        {{ title }}
+        {{ getOrder(index, root) }}{{ title }}
       </a>
       <template v-if="children?.length">
         <VPDocOutlineItem :headers="children" />

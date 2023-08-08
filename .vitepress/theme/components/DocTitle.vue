@@ -3,7 +3,7 @@
     <h1 class="doc-title">
       {{ frontmatter.title }}
     </h1>
-    <div class="mt-3 text-gray-400 flex items-center gap-3 border-b border-[var(--vp-c-divider)] pb-2 mb-6">
+    <div class="mt-1.5 text-gray-400 text-xs flex items-center gap-3 border-b border-[var(--vp-c-divider)] pb-3 mb-6">
       <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
         <span class="i-icon-park-outline-user" />
         绝弹

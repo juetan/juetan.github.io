@@ -30,13 +30,14 @@ body .wl-panel {
   border-radius: 4px;
   margin: 0;
   border: none;
-  box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%);
+  border: 1px solid var(--vp-c-divider);
 }
 
 div.wl-meta-head {
-  background: #fff;
   border-radius: 4px 4px 0 0;
   padding: 12px 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-bottom: none;
 }
 
 div.wl-header {
@@ -56,9 +57,10 @@ textarea.wl-editor {
 
 .wl-cards,
 .wl-empty {
-  background: #ffffff;
   border-radius: 0 0 4px 4px;
   padding: 8px 4px 0;
+  border: 1px solid var(--vp-c-divider);
+  border-top: none;
 }
 
 .wl-sort li {

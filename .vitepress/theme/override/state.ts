@@ -6,34 +6,6 @@ export const state = reactive({
   hash: '',
 });
 
-export const useTocSync = () => {
-  let observer: IntersectionObserver;
-  const run = () => {
-    if (observer) {
-      observer.disconnect();
-    }
-    const tocList = Array.from(document.querySelectorAll('h2, h3'));
-    if (!tocList.length) {
-      return;
-    }
-    const onChange = (entries: IntersectionObserverEntry[]) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          state.hash = entry.target.id;
-        }
-      }
-    };
-    observer = new IntersectionObserver(onChange);
-    for (const el of tocList) {
-      observer.observe(el);
-    }
-  };
-  const cancel = () => {
-    observer?.disconnect();
-  };
-  return { run, cancel };
-};
-
 export const useHeadScroll = () => {
   const route = useRoute();
   const oldHash = state.hash;
@@ -79,4 +51,17 @@ export const useHeadScroll = () => {
       scollHandler();
     }
   );
+};
+
+export const formatNumber = (num: number) => {
+  const chars = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+  if (num < 11) {
+    return chars[num];
+  }
+  if (num < 20) {
+    return '十' + chars[num - 10];
+  }
+  if (num < 100) {
+    return chars[Math.floor(num / 10)] + '十' + chars[num % 10];
+  }
 };
