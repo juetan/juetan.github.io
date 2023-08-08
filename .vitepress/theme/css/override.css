@@ -395,7 +395,7 @@ body .VPDocAsideOutline.has-outline {
   border-radius: 4px;
 }
 #app .VPDoc {
-  padding: 20px 16px 24px;
+  padding: 32px 16px 24px;
 }
 .vp-doc [class*='language-'] > button.copy.copied::before,
 .vp-doc [class*='language-'] > button.copy:hover.copied::before {

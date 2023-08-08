@@ -30,7 +30,12 @@ body .wl-panel {
   border-radius: 4px;
   margin: 0;
   border: none;
-  background: #f2f5f7;
+  background: var(--vp-code-block-bg);
+}
+
+button.wl-btn.primary {
+  background: var(--vp-c-brand);
+  border-color: var(--vp-c-brand);
 }
 
 body .wl-editor:focus, body .wl-input:focus {
