@@ -7,6 +7,7 @@
       <DocNotFound></DocNotFound>
     </template>
     <template #layout-bottom>
+      <a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2021001859号</a>
       <BackTop>
         <Button type="primary" class="!hidden !md:inline-block">
           <template #icon>
