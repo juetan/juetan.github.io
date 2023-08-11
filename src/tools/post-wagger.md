@@ -32,7 +32,7 @@ export const initSwagger = (app: INestApplication) => {
     .addTag('upload', '文件上传')
     .addBearerAuth()
     .build();
-  const document = addResponseWrapper(SwaggerModule.createDocument(app, docConfig, options));
+  const document = SwaggerModule.createDocument(app, docConfig, options);
   SwaggerModule.setup(config.apiDocPrefix, app, document, {
     jsonDocumentUrl: `openapi.json`,
     yamlDocumentUrl: `openapi.yaml`,
@@ -41,11 +41,11 @@ export const initSwagger = (app: INestApplication) => {
   });
 };
 ```
-其中，`new DocumentBuilder` 是构建 OpenApi 文档对象的基本参数，基本的对应如下：
+上面包含两个部分，其中 `new DocumentBuilder` 是构建 OpenApi 文档对象的基本参数，上面设置的参数对应如下：
 
 ![](./image-swagger.png)
 
-在 `SwaggerModule.setup` 函数中，我们传入了一些自定义参数，主要是定义页面的一些样式和路径：
+在 `SwaggerModule.setup` 函数中，我们传入了一些自定义参数，主要是定义页面的路径，图标和标题等内容：
 
 - jsonDocumentUrl: 默认访问json格式数据的路径是 openapi-json, 这里修改为 openapi.json 更易于理解些
 - yamlDocumentUrl: 访问 YAML 格式数据的路径，同上
@@ -64,16 +64,21 @@ initSwagger(app);
 3. 在 `src/app.controller.ts` 中，使用装饰器试下
 
 ```ts
-TODO
+class UserController {
+  @ApiOperation("首页接口")
+  home() {
+    return 'Home Page'
+  }
+}
 ```
 
-4. 等待重启后，就能看到访问效果如下：
+4. 等待重启后，访问 [http://127.0.0.1:3000](http://127.0.0.1:3000) 应该能看到如下效果：
 
 ![](./image-swagger1.png)
 
 ## 命令行插件
 
-如果想用得好一点，基本都要在控制器方法周围写满 `@ApiXxx` 等装饰器，明明已经有 Typescript 类型，还要再写一遍，例如：
+以上就是基本用法，但一个接口通常包含很多很多内容，例如路径参数，查询参数，body参数、请求头和响应数据等类型定义，在控制器方法周围写满 `@ApiXxx` 等装饰器是比较麻烦的。另外，我们已经用 Typescript 定义类型，却还要用装饰器再写一遍，例如：
 
 ```ts
 class AppController {
@@ -84,16 +89,9 @@ class AppController {
 }
 ```
 
-`home` 方法已经用 Typescript 标注返回的是 string，我们还要用 `@ApiResponse` 再标注一遍，显然有点重复。
+`home` 方法已经用 Typescript 标注返回的是 string，我们还要用 `@ApiResponse` 再标注一遍，显然有点重复。基于以上，官方提供了一个脚手架插件，能在 typescript 编译为 JavaScript 时，根据 TypeScript 的元数据反射系统帮助我们收集这些类型数据，从而转为 swagger 文档的数据。话不多说，先来看下效果：
 
-好在官方提供了一个脚手架插件，能在 typescript 编译为 JavaScript 时，使用 TypeScript 的元数据反射系统帮助我们收集这些类型数据，从而转为 swagger 文档的数据。
-
-这个插件，大致提供了以下功能：
-
-- 自动搜集控制器/方法的 `@Query` 、 `@Body` 等装饰器目标的类型，需要注意的是，由于 typescript 会在编译后擦除类型，因此装饰目标不能使用 `type`/`interface` 等编译后不存在的类型，而需要使用基本类型(如 `string`/`number`)或类(`class`)。
-- 根据注释提取为某些字段的值，对于参数，目前注释只支持两部分：描述 和 `@example` 标签，对于控制器方法，目前支持描述。
-
-1. 编辑根目录下的 `nest-cli.json` 文件
+1. 编辑根目录下的 `nest-cli.json` 文件，将 `@nestjs/swagger` 作为插件传入编译选项中。
 
 ```json
 {
@@ -112,4 +110,10 @@ class AppController {
 
 ```
 
-2. 去掉 `src/app.controller.ts` 中的 `@ApiResponse`
+2. 回到 `src/app.controller.ts` 文件中，把 `@ApiResponse` 装饰器去掉。
+
+```
+xxx
+```
+
+3. 等待重新编译，再次访问效果是一样的。
