@@ -196,7 +196,7 @@ html:not(.dark) {
 }
 
 #app .aside-container {
-  width: 256px;
+  /* width: 256px; */
   padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + var(--vp-doc-top-height, 0px) + 20px);
 }
 
@@ -318,11 +318,10 @@ body .VPDocAsideOutline.has-outline {
 .VPDocAsideOutline .outline-title {
   display: flex;
   align-items: center;
-  height: 32px;
-  background: #f2f5f7;
-  border-radius: 4px;
-  padding: 0 8px;
-  color: #323243;
+  height: 40px;
+  /* background: #f2f5f7; */
+  padding: 0 6px;
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 .VPDocAsideOutline ul {
   margin: 8px 0;
@@ -364,12 +363,12 @@ body .VPDocAsideOutline.has-outline {
 }
 @media (min-width: 1440px) {
   .VPDoc:not(.has-sidebar) .container .content {
-    max-width: 1280px;
+    max-width: 1080px;
   }
 }
 @media (min-width: 1440px) {
   #VPContent .VPDoc:not(.has-sidebar) div.container {
-    max-width: 1200px;
+    max-width: 1080px;
   }
 }
 #app .VPNav .VPNavBar {
@@ -379,6 +378,9 @@ body .VPDocAsideOutline.has-outline {
   box-shadow: none;
   padding: 0;
   border-bottom: 1px solid var(--vp-c-divider);
+  background: #fff;
+  padding: 16px 24px;
+  border-radius: 6px;
 }
 .VPImage.logo {
   border-radius: 4px;
@@ -395,7 +397,7 @@ body .VPDocAsideOutline.has-outline {
   border-radius: 4px;
 }
 #app .VPDoc {
-  padding: 32px 16px 24px;
+  padding: 20px 16px 20px;
 }
 .vp-doc [class*='language-'] > button.copy.copied::before,
 .vp-doc [class*='language-'] > button.copy:hover.copied::before {
@@ -433,7 +435,7 @@ body .vp-doc [class*='language-'] > span.lang {
 
 body {
   /* background-image: url(/assets/bg.jpg); */
-  /* background-color: #f2f4fb; */
+  background-color: #f2f3f6;
   background-size: 100% auto;
   background-attachment: fixed;
   overflow: overlay;

@@ -1,6 +1,6 @@
 <template>
-  <div class="mx-4 md:mx-auto mt-5 flex gap-4 max-w-[1200px]">
-    <div class="flex-1 bg-white px-3 md:px-0">
+  <div class="mx-4 md:mx-auto mt-5 flex gap-4 max-w-[1080px]">
+    <div class="flex-1 bg-white px-3 md:px-5">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">
           <i class="i-icon-park-outline-bookshelf mr-1"></i>最新文章
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="hidden md:block w-[264px]">
+    <div class="hidden md:block w-[248px]">
       <div class="bg-white rounded px-4">
         <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
           <span class="i-icon-park-outline-announcement mr-1"></span>
