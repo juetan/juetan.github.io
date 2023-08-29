@@ -1,6 +1,8 @@
 ---
-title: RUST系列：安装和上手
+title: Rust系列[一]：安装和上手
 date: 2023-08-25 11:50:00
+categories: rust
+tags: rust
 ---
 
 Rust 是一门内存安全的语言。
@@ -83,9 +85,9 @@ fn main() {
 
 ## 包管理工具
 
-类似于 NodeJS 有 npm 工具，Rust 也有自己的包管理工具：`cargo`。别人写好并发布出来的代码包，通常叫第三方库，但在不同语言间也有不同叫法。例如，在 NodeJS 中第三方库称为 `package`，而在 Rust 中称为 `crate`。
+类似于 NodeJS 有 npm 工具，Rust 也有自己的包管理工具：`cargo`(直译为货物)。通常来说，别人写好并发布出来的代码包，叫第三方库，但在不同语言间也有不同叫法。例如，在 NodeJS 中第三方库称为 `package`，而在 Rust 中称为 `crate`(直译为运货用的大木箱)。
 
-接下来，写个小项目感受下：系统生成一个随机数，我们输入一个数，然后系统会提示我们大了、小了还是相等。在生成随机数时，会用到一个叫 `rand` 的第三方库(crate)
+接下来，写个小项目感受下：系统生成一个随机数，我们输入一个数，然后系统会提示我们大了、小了还是相等。在生成随机数时，会用到一个叫 `rand` 的 crate(第三方库)
 
 1. 运行 `cargo new <name>` 命令，此时会生成如下的目录和文件
 
@@ -93,11 +95,11 @@ fn main() {
 
 其中：
 
-- `cargo` 是 Rust 的包管理工具，同时也是构建工具，随 `rustup` 安装
+- `cargo` 是 Rust 的包管理命令，同时也是构建工具，这个命令是随 `rustup` 安装的
 - `Cargo.toml` 是 Cargo 的配置文件，类似于 NodeJS 中的 package.json 文件
 - `src/main.rs` 是 Cargo 项目的入口
 
-2. 打开 `Cargo.toml` 文件，添加 rand 依赖
+2. 打开 `Cargo.toml` 文件，添加 rand 依赖，toml 是一种类似于 json/yaml 的数据文件格式
 
 ```toml
 #...
@@ -113,6 +115,7 @@ rand = "0.8.5"
 ```rust
 use std::io;
 use rand::Rng;
+use std::cmp::Ordering;
 
 fn main() {
     println!("欢迎来到猜数游戏");
@@ -127,26 +130,29 @@ fn main() {
         .read_line(&mut guess)
         .expect("Failed to read line");
 
+    let guess: u32 = guess
+        .trim()
+        .parse()
+        .expect("请输入一个数字");
+
     match guess.cmp(&secret_number) {
-        Ordering::Less => println!("小了"),
-        Ordering::Greater => println!("大了"),
+        Ordering::Less => println!("小了, 数字是: {}", secret_number),
+        Ordering::Greater => println!("大了, 数字是: {}", secret_number),
         Ordering::Equal => println!("相等"),
     }
 }
 ```
 
-上面的代码，涉及的语法有点多，我们来慢慢看下:
-
-首先是顶部的声明：
+上面的代码，涉及的语法有点多，我们来慢慢看下，首先是顶部的声明：
 
 ```rust
 use std:io
 ```
 
-- `use` 表示使用某个模块，类似于 NodeJS 的 `import xx from xx`语法
+- `use` 表示使用某个模块，类似于 NodeJS 的 `import` 语法
 - `std` 表示内置的标准库，std 是 standard 的缩写
 - `::` 表示子成员，在对象上表示其静态成员
-- `io` 是输出输出相关的库，io 是 input/output 的缩写
+- `io` 是输出输出库，io 是 input/output 的缩写
 
 接下来是：
 
@@ -155,7 +161,7 @@ let secret_number = rand::thread_rng().gen_range(1..=100);
 let mut guess = String::new();
 ```
 
-- `let` 用于声明一个变量
+- `let` 用于声明一个变量，看起来是可变的，但默认是不可修改的，只是允许用 `mut` 标识为可变
 - `1..=100` 表示一个范围
 - `mut` 表示该变量可修改(默认不可修改)，mut 是 mutable 的缩写
 
@@ -166,7 +172,7 @@ io::stdin().read_line(&mut guess).expect("Failed to read line");
 ```
 
 - `&` 表示对某个变量的引用地址
-- `&mut` 表示传入一个可修改的变量
+- `&mut` 表示传入一个可修改的变量引用地址
 - `expect` 用于捕获异常
 
 最后是
@@ -180,5 +186,22 @@ match guess.cmp(&secret_number) {
 ```
 
 - `match` 用于匹配某个值，类似于 switch 语法
-- `cmp` 用于比对两个值，返回一个枚举(即 Ordering)。cmp 是 compare 的缩写
-- `Ordering` 是一个枚举值，Less/Greater/Equal 都是其成员
+- `cmp` 方法用于比对两个数字，返回一个枚举(即 Ordering)。cmp 是 compare 的缩写
+- `Ordering` 是一个枚举值，包含 Less/Greater/Equal 成员
+
+4. 运行 `cargo run` 命令，此时会先下载我们刚写入的 rand 依赖，然后再编译执行，如下：
+
+![](./image-cargo-run.png)
+
+5. 同时，当前目录下多个 `target` 目录，其中 `debug` 目录放着我们临时编译好的文件
+
+![](./image-cargo-target.png)
+
+## 结语
+
+以上简单了解了几个关于 Rust 的重要概念：
+
+- rustup 是 Rust 的版本管理工具，如同 NodeJS 中的 nvm。
+- rustc 是 Rust 的编译命令
+- cargo 是 Rust 的包管理和构建命令
+- crate 是 Rust 对于第三方库的叫法
