@@ -5,7 +5,26 @@ categories: rust
 tags: rust
 ---
 
-Rust 是一门内存安全的语言。
+Rust 是一门高性能、高安全性的系统级编程语言，最初旨在作为 C 和 C++ 的更安全替代品。Rust 的名字来自于一种特别健壮的真菌，这种真菌 "为了生存而过度设计"。
+
+## 学习资料
+- [Rust语言圣经](https://course.rs/about-book.html)
+- [Rusty Book-常用库和代码片段](https://rusty.course.rs/about.html)
+- [Cargo 官方文档](https://doc.rust-lang.org/cargo/index.html)
+
+## 历史
+
+- 2006 年
+  Rust 作为 Mozilla 开发者 Grayon Hoare 的个人项目开始，灵感来源于霍尔公寓楼里的一部坏电梯，这些设备的软件通常是 C 或 C++ 写的，这些语言需要手动管理大量内存，存在崩溃的可能，因此 Hoare 开始研究一种即紧凑又没有内存错误的语言。
+
+- 2009 年
+  Mozilla 赞助该项目。
+
+- 2010 年
+  Mozilla 正式宣布 Rust 项目。
+
+- 2015 年
+  Rust 1.0 发布。
 
 ## 安装 Rust
 
@@ -13,7 +32,7 @@ Rust 是一门内存安全的语言。
 
 ### 安装 C++ 依赖
 
-Rust 部分功能依赖于 c++，因此需要提前安装相关依赖，最便捷的办法就是通过 VS 安装。
+Rust 依赖于 c++ 环境，因此需要提前安装相关依赖，最便捷的办法就是通过 VS 安装。
 
 1. 通过 [官网](https://visualstudio.microsoft.com/zh-hans/downloads/) 下载 VS 社区版并安装。
 
