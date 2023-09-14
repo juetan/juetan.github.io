@@ -237,7 +237,7 @@ const stat = [
 .item {
   border-bottom: 1px solid #eee;
   padding: 16px 0;
-  height: 152px;
+  height: 134px;
 }
 .item-title {
   font-size: 16px;
@@ -249,7 +249,7 @@ const stat = [
 }
 .item-excerpt {
   font-size: 14px;
-  margin: 8px 0;
+  margin: 6px 0 0;
 }
 .item-link {
   text-decoration: none;

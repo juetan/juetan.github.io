@@ -5,25 +5,30 @@ categories: rust
 tags: rust
 ---
 
-Rust 是一门高性能、高安全性的系统级编程语言，最初旨在作为 C 和 C++ 的更安全替代品。Rust 的名字来自于一种特别健壮的真菌，这种真菌 "为了生存而过度设计"。
+Rust 是一门高性能、高安全性的系统级编程语言，最初旨在作为 C 和 C++ 的更安全替代品。Rust 直译为铁锈，起名来源于一种特别健壮的真菌，这种真菌 "为了生存而过度设计"。
 
-## 学习资料
-- [Rust语言圣经](https://course.rs/about-book.html)
-- [Rusty Book-常用库和代码片段](https://rusty.course.rs/about.html)
-- [Cargo 官方文档](https://doc.rust-lang.org/cargo/index.html)
+
+## 为什么学习
+
+要说理由的话，大概有以下几个：
+
+- 想学一门偏底层的语言
+- 部分概念跟NodeJS类似，let/const关键字，包管理器等
 
 ## 历史
 
-- 2006 年
-  Rust 作为 Mozilla 开发者 Grayon Hoare 的个人项目开始，灵感来源于霍尔公寓楼里的一部坏电梯，这些设备的软件通常是 C 或 C++ 写的，这些语言需要手动管理大量内存，存在崩溃的可能，因此 Hoare 开始研究一种即紧凑又没有内存错误的语言。
+Rust 算是一门比较年轻的语言，因而没什么历史包袱，学习到的概念不至于太模糊。
 
-- 2009 年
+- 2006 年：
+  作为 Mozilla 开发者 Grayon Hoare 的个人项目开始，灵感来源于霍尔公寓楼里的一部坏电梯，这些设备的软件通常是 C 或 C++ 写的，这些语言需要手动管理大量内存，存在崩溃的可能，因此 Hoare 开始研究一种即紧凑又没有内存错误的语言。
+
+- 2009 年：
   Mozilla 赞助该项目。
 
-- 2010 年
+- 2010 年：
   Mozilla 正式宣布 Rust 项目。
 
-- 2015 年
+- 2015 年：
   Rust 1.0 发布。
 
 ## 安装 Rust
@@ -32,7 +37,7 @@ Rust 是一门高性能、高安全性的系统级编程语言，最初旨在作
 
 ### 安装 C++ 依赖
 
-Rust 依赖于 c++ 环境，因此需要提前安装相关依赖，最便捷的办法就是通过 VS 安装。
+Rust 依赖于 c++ 环境，因此需要提前安装相关依赖，这里选择通过 VS 安装。
 
 1. 通过 [官网](https://visualstudio.microsoft.com/zh-hans/downloads/) 下载 VS 社区版并安装。
 
@@ -114,11 +119,11 @@ fn main() {
 
 其中：
 
-- `cargo` 是 Rust 的包管理命令，同时也是构建工具，这个命令是随 `rustup` 安装的
+- `cargo` 是 Rust 的包管理命令，同时也是构建命令，这个命令是随 `rustup` 安装的
 - `Cargo.toml` 是 Cargo 的配置文件，类似于 NodeJS 中的 package.json 文件
 - `src/main.rs` 是 Cargo 项目的入口
 
-2. 打开 `Cargo.toml` 文件，添加 rand 依赖，toml 是一种类似于 json/yaml 的数据文件格式
+2. 打开 `Cargo.toml` 文件，添加 rand 依赖，.toml 是一种类似于 json/yaml 的文件格式。
 
 ```toml
 #...
@@ -138,11 +143,8 @@ use std::cmp::Ordering;
 
 fn main() {
     println!("欢迎来到猜数游戏");
-
     let secret_number = rand::thread_rng().gen_range(1..=100);
-
     println!("请输入你的猜数：");
-
     let mut guess = String::new();
 
     io::stdin()
@@ -168,7 +170,7 @@ fn main() {
 use std:io
 ```
 
-- `use` 表示使用某个模块，类似于 NodeJS 的 `import` 语法
+- `use` 表示使用某个模块，类似于 NodeJS 的 import 语法
 - `std` 表示内置的标准库，std 是 standard 的缩写
 - `::` 表示子成员，在对象上表示其静态成员
 - `io` 是输出输出库，io 是 input/output 的缩写
@@ -180,9 +182,9 @@ let secret_number = rand::thread_rng().gen_range(1..=100);
 let mut guess = String::new();
 ```
 
-- `let` 用于声明一个变量，看起来是可变的，但默认是不可修改的，只是允许用 `mut` 标识为可变
-- `1..=100` 表示一个范围
-- `mut` 表示该变量可修改(默认不可修改)，mut 是 mutable 的缩写
+- `let` 用于声明一个变量，听起来可变但默认是不可变的，允许用 `mut` 标识为可变
+- `1..=100` 表示 1 到 100 范围(左闭右闭)，如果是 1..100 就是 1 到 99(左闭右开)。
+- `mut` 表示该可修改，mut 是 mutable 的缩写
 
 再接下来是
 
@@ -190,9 +192,9 @@ let mut guess = String::new();
 io::stdin().read_line(&mut guess).expect("Failed to read line");
 ```
 
-- `&` 表示对某个变量的引用地址
-- `&mut` 表示传入一个可修改的变量引用地址
-- `expect` 用于捕获异常
+- `&` 表示对某个变量的引用
+- `&mut` 表示可修改的变量引用
+- `expect` 表示期望有值，否则报错并将传入的参数设为异常消息
 
 最后是
 
@@ -212,9 +214,14 @@ match guess.cmp(&secret_number) {
 
 ![](./image-cargo-run.png)
 
-5. 同时，当前目录下多个 `target` 目录，其中 `debug` 目录放着我们临时编译好的文件
+5. 同时，当前目录下多个 `target` 目录，默认是debug模式，`debug` 目录放着我们刚才编译好的文件。可以通过 `--release` 参数指定为release模式，生成好的文件将在 `target/release` 目录下。
 
 ![](./image-cargo-target.png)
+
+## 学习资料
+- [Rust语言圣经](https://course.rs/about-book.html)
+- [Rusty Book-常用库和代码片段](https://rusty.course.rs/about.html)
+- [Cargo 官方文档](https://doc.rust-lang.org/cargo/index.html)
 
 ## 结语
 

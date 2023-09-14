@@ -1,4 +1,4 @@
-* {
+/* * {
   cursor: url(/cursor/normal.cur), auto;
 }
 
@@ -20,7 +20,7 @@ button {
 
 body .cursor-pointer {
   cursor: url(/cursor/normal.cur), pointer;
-}
+} */
 
 .title {
   letter-spacing: 1.5px;
@@ -89,5 +89,6 @@ textarea.wl-editor {
 }
 
 #app h1 {
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 400;
 }

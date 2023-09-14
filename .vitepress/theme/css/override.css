@@ -295,32 +295,45 @@ body {
 .vp-doc tr:nth-child(2n) {
   background-color: transparent;
 }
-
 .vp-doc h2 {
-  margin: 32px 0 16px;
+  margin: 16px 0 8px;
   border-top: none;
   padding-top: 0;
   border-bottom: 1px solid var(--vp-c-divider);
-  padding-bottom: 8px;
-  letter-spacing: -0.02em;
+  padding-bottom: 2px;
   line-height: 32px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
+}
+.vp-doc h3 {
+  margin-top: 20px;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 18px;
+}
+.vp-doc p {
+  line-height: 22px;
+  margin: 12px 0;
+}
+.vp-doc [class*='language-'] pre {
+  padding: 12px 0;
+}
+.vp-doc [class*='language-'] code {
+  padding: 0 16px;
 }
 .header-anchor {
   display: none;
 }
 
 body .VPDocAsideOutline.has-outline {
-  background: #fff;
+  background: var(--vp-code-block-bg);
   border-radius: 4px;
 }
 .VPDocAsideOutline .outline-title {
   display: flex;
   align-items: center;
   height: 40px;
-  /* background: #f2f5f7; */
-  padding: 0 6px;
+  font-weight: 400;
   border-bottom: 1px solid var(--vp-c-divider);
 }
 .VPDocAsideOutline ul {
@@ -338,11 +351,8 @@ body .VPDocAsideOutline.has-outline {
 }
 .VPDocAsideOutline li .outline-link {
   height: 28px;
-  padding: 0 9px;
+  /* padding: 0 9px; */
   border-radius: 4px;
-}
-#app .VPDocAsideOutline li .outline-link:hover {
-  background-color: #f5f5f7;
 }
 #app .VPDocAsideOutline li .outline-active {
   /* background: #f5f5f7; */
@@ -379,7 +389,7 @@ body .VPDocAsideOutline.has-outline {
   padding: 0;
   border-bottom: 1px solid var(--vp-c-divider);
   background: #fff;
-  padding: 16px 24px;
+  padding: 16px;
   border-radius: 6px;
 }
 .VPImage.logo {
@@ -417,8 +427,7 @@ body .vp-doc [class*='language-'] > button.copy {
   width: 16px;
   height: 16px;
   background-size: 16px;
-  opacity: 0.5;
-  cursor: url(/cursor/link.cur), pointer;
+  opacity: 0.3;
 }
 
 body .vp-doc [class*='language-'] > span.lang {
@@ -435,7 +444,7 @@ body .vp-doc [class*='language-'] > span.lang {
 
 body {
   /* background-image: url(/assets/bg.jpg); */
-  background-color: #f2f3f6;
+  /* background-color: #f2f3f6; */
   background-size: 100% auto;
   background-attachment: fixed;
   overflow: overlay;
@@ -443,4 +452,17 @@ body {
 
 .vp-doc h3 {
   font-size: 18px;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+}
+
+th,td {
+  width: auto;
+}
+
+.vp-doc .line-numbers-wrapper {
+  border-right: none;
 }
