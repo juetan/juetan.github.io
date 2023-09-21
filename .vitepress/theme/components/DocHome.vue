@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-4 md:mx-auto mt-5 flex gap-4 max-w-[880px]">
+  <div class="md:mx-auto mx-2 mt-5 flex gap-4 max-w-[880px]">
     <div class="flex-1 bg-white px-3 md:px-5">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">

@@ -413,7 +413,7 @@ body .VPDocAsideOutline.has-outline {
   border-radius: 4px;
 }
 #app .VPDoc {
-  padding: 20px 16px 20px;
+  padding: 20px 8px 20px;
 }
 .vp-doc [class*='language-'] > button.copy.copied::before,
 .vp-doc [class*='language-'] > button.copy:hover.copied::before {
@@ -449,8 +449,8 @@ body .vp-doc [class*='language-'] > span.lang {
 }
 
 body {
-  background-image: url(./bg.jpg);
-  background-color: #f2f3f6;
+  /* background-image: url(./bg.jpg); */
+  background-color: #eff1f5;
   background-size: 100% auto;
   background-attachment: fixed;
   overflow: overlay;
