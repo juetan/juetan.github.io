@@ -321,9 +321,5 @@ export default defineConfig({
       prev: '上一篇',
       next: '下一篇',
     },
-    footer: {
-      message: '自由转载-非商用-非衍生-保持署名(创意共享3.0许可证)',
-      copyright: 'Copyright © 2023 绝弹博客 <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-[var(--vp-c-brand)]">桂ICP备2021001859号-1</a>',
-    },
   },
 });

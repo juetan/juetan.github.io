@@ -42,32 +42,59 @@ docker swarm join-token worker
 docker swarm jorin --token xx ip:port
 ```
 
-### 创建网络
+### 管理面板
 
-在主服务器上，创建必要的网络(`network`)。
-```bash
-# 用于加入到外部访问的公共网络
-docker network create -d overlay network_public
-```
+```yaml
+version: "3"
 
-### 创建数据卷
+services:
+  agent:
+      image: portainer/agent:latest
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /var/lib/docker/volumes:/var/lib/docker/volumes
+      networks:
+        - network_portainer
+      deploy:
+        mode: global
+        placement:
+          constraints: [node.platform.os == linux]
 
-在主服务器上，创建必要的数据卷(`volume`)。
-```bash
-# 用于portainer的数据卷
-docker volume create volume_portainer
+  server:
+    image: portainer/portainer-ce:latest
+    command: -H tcp://tasks.agent:9001 --tlsskipverify
+    # [1] 使用裸端口访问
+    ports:
+      - "9443:9443"
+      - "9000:9000"
+      - "8000:8000"
+    volumes:
+      - valume_portainer:/data
+    networks:
+      - network_portainer
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      # [2] 使用Traefik代理访问
+      labels:
+        # 是否开启
+        - traefik.enable=true
+        # 路由匹配
+        - traefik.http.routers.server.rule=Host(`server.dev.juetan.cn`)
+        # 路由入口
+        - traefik.http.routers.server.entrypoints=web
+        # 监听口
+        - traefik.http.services.server-service.loadbalancer.server.port=9000
 
-# 用于mysql的数据卷
-docker volume create volume_myqsl
+networks:
+  network_portainer:
+    driver: overlay
+    attachable: true
 
-# 用于gitea的数据卷
-docker volume create volume_gitea
-
-# 用于droneci的数据卷
-docker volume create volume_drone
-
-# 用于docker registry的数据卷
-docker volume create volume_registry
+volumes:
+  valume_portainer:
 ```
 
 ### 创建用户

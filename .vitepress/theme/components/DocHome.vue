@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-4 md:mx-auto mt-5 flex gap-4 max-w-[1080px]">
+  <div class="mx-4 md:mx-auto mt-5 flex gap-4 max-w-[880px]">
     <div class="flex-1 bg-white px-3 md:px-5">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">
@@ -8,19 +8,19 @@
         <ul class="item-list bounce-in-bottom">
           <li v-for="(post, index) in state.data" :key="post.url" class="item flex justify-bewteen gap-2">
             <div class="flex-1 grid grid-rows-[auto_1fr_auto]">
-              <a :href="post.url" class="item-link flex gap-2 overflow-hidden">
+              <a :href="post.url" class="item-link text-slate-700 flex gap-2 overflow-hidden">
                 <h2 class="item-title truncate">
                   {{ post.frontmatter.title || '暂无标题' }}
                 </h2>
               </a>
-              <p class="item-excerpt line-clamp-2 text-gray-500 h-13">
+              <p class="item-excerpt line-clamp-2 text-slate-400 h-13">
                 {{ post.excerpt || '暂无简介' }}
               </p>
-              <div class="text-gray-400 text-xs flex items-center gap-3">
-                <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
+              <div class="text-slate-400 text-xs flex items-center gap-3">
+                <!-- <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
                   <span class="i-icon-park-outline-user" />
                   绝弹
-                </div>
+                </div> -->
                 <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
                   <span class="i-icon-park-outline:tag-one" />
                   前端
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="hidden md:block w-[248px]">
+    <div class="hidden w-[248px]">
       <div class="bg-white rounded px-4">
         <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
           <span class="i-icon-park-outline-announcement mr-1"></span>
@@ -253,7 +253,6 @@ const stat = [
 }
 .item-link {
   text-decoration: none;
-  color: inherit;
 }
 .item-link:hover {
   color: var(--vp-c-brand);

@@ -3,18 +3,14 @@
     <h1 class="doc-title">
       {{ frontmatter.title }}
     </h1>
-    <div class="mt-2 text-gray-400 text-xs flex items-center gap-3 border-b border-slate-200 pb-2 mb-2">
-      <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
-        <span class="i-icon-park-outline-user" />
-        绝弹
-      </div>
+    <div class="mt-2 text-slate-400 text-xs flex items-center gap-3 border-b border-slate-200 pb-2 mb-4">
       <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
         <span class="i-icon-park-outline:tag-one" />
         前端
       </div>
       <div>
         <span class="i-icon-park-outline:text" />
-        {{ item?.frontmatter.wordCount || 0 }} 字
+        约 {{ item?.frontmatter.wordCount || 0 }} 字
       </div>
       <time :datetime="frontmatter.date" :title="frontmatter.date">
         <span class="i-icon-park-outline-time" />

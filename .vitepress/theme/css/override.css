@@ -151,7 +151,7 @@ html:not(.dark) {
 }
 
 #VPContent .aside {
-  padding-left: 16px;
+  padding-left: 12px;
 }
 
 @media (min-width: 640px) {
@@ -302,18 +302,20 @@ body {
   border-bottom: 1px solid var(--vp-c-divider);
   padding-bottom: 2px;
   line-height: 32px;
+  /* color: rgba(51,65,85,1); */
   font-size: 20px;
   font-weight: 400;
 }
 .vp-doc h3 {
   margin-top: 20px;
   line-height: 1;
-  font-weight: 400;
+  /* color: rgba(51,65,85,1); */
   font-size: 18px;
+  font-weight: 400;
 }
 .vp-doc p {
-  line-height: 22px;
-  margin: 12px 0;
+  line-height: 24px;
+  margin: 16px 0;
 }
 .vp-doc [class*='language-'] pre {
   padding: 12px 0;
@@ -326,7 +328,7 @@ body {
 }
 
 body .VPDocAsideOutline.has-outline {
-  background: var(--vp-code-block-bg);
+  background-color: #fff;
   border-radius: 4px;
 }
 .VPDocAsideOutline .outline-title {
@@ -387,10 +389,9 @@ body .VPDocAsideOutline.has-outline {
 .VPDoc .container > .content {
   box-shadow: none;
   padding: 0;
-  border-bottom: 1px solid var(--vp-c-divider);
   background: #fff;
-  padding: 16px;
-  border-radius: 6px;
+  padding: 14px 18px;
+  border-radius: 4px;
 }
 .VPImage.logo {
   border-radius: 4px;
@@ -444,7 +445,7 @@ body .vp-doc [class*='language-'] > span.lang {
 
 body {
   /* background-image: url(/assets/bg.jpg); */
-  /* background-color: #f2f3f6; */
+  background-color: #f2f3f6;
   background-size: 100% auto;
   background-attachment: fixed;
   overflow: overlay;
