@@ -152,6 +152,8 @@ html:not(.dark) {
 
 #VPContent .aside {
   padding-left: 12px;
+  position: absolute;
+  /* right: -256px; */
 }
 
 @media (min-width: 640px) {
@@ -296,22 +298,20 @@ body {
   background-color: transparent;
 }
 .vp-doc h2 {
-  margin: 16px 0 8px;
+  margin: 28px 0 0;
   border-top: none;
   padding-top: 0;
-  border-bottom: 1px solid var(--vp-c-divider);
-  padding-bottom: 2px;
-  line-height: 32px;
-  /* color: rgba(51,65,85,1); */
+  border-bottom: none;
+  padding-bottom: 0;
+  line-height: 1;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
 }
 .vp-doc h3 {
-  margin-top: 20px;
+  margin-top: 24px;
   line-height: 1;
-  /* color: rgba(51,65,85,1); */
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
 }
 .vp-doc p {
   line-height: 24px;
@@ -331,7 +331,7 @@ body {
 }
 
 body .VPDocAsideOutline.has-outline {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 4px;
 }
 .VPDocAsideOutline .outline-title {
@@ -383,7 +383,8 @@ body .VPDocAsideOutline.has-outline {
 }
 @media (min-width: 1440px) {
   #VPContent .VPDoc:not(.has-sidebar) div.container {
-    max-width: 1080px;
+    max-width: 880px;
+    position: relative;
   }
 }
 #app .VPNav .VPNavBar {
@@ -393,8 +394,9 @@ body .VPDocAsideOutline.has-outline {
   box-shadow: none;
   padding: 0;
   background: #fff;
-  padding: 14px 18px;
+  padding: 16px 18px;
   border-radius: 4px;
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 .VPImage.logo {
   border-radius: 4px;
@@ -447,15 +449,11 @@ body .vp-doc [class*='language-'] > span.lang {
 }
 
 body {
-  /* background-image: url(/assets/bg.jpg); */
+  background-image: url(./bg.jpg);
   background-color: #f2f3f6;
   background-size: 100% auto;
   background-attachment: fixed;
   overflow: overlay;
-}
-
-.vp-doc h3 {
-  font-size: 18px;
 }
 
 table {

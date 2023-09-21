@@ -52,7 +52,7 @@ body .wl-cards .wl-user {
 
 div.wl-meta-head {
   border-radius: 4px 4px 0 0;
-  padding: 12px 20px;
+  padding: 0;
   border-bottom: none;
   background: #fff;
 }
@@ -67,7 +67,7 @@ div.wl-header {
 
 textarea.wl-editor {
   margin: 0;
-  padding: 8px 16px;
+  padding: 0;
   box-sizing: border-box;
   width: 100%;
 }
@@ -76,7 +76,7 @@ textarea.wl-editor {
 .wl-empty {
   border-radius: 0 0 4px 4px;
   border-top: none;
-  padding: 0 12px;
+  padding: 0 0px;
   background: #fff;
 }
 
@@ -90,5 +90,5 @@ textarea.wl-editor {
 
 #app h1 {
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 600;
 }

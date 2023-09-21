@@ -14,7 +14,7 @@
           </template>
         </Button>
       </BackTop>
-      <footer class="text-gray-500 text-sm text-center py-4 mt-6">
+      <footer class="text-gray-500 text-sm text-center py-4 mt-2">
         <div>
           已有 {{ posts.length }} 篇文章,  0 个分类 |
           已运行 {{ createdAt }} 天 |
@@ -28,11 +28,8 @@
         </div>
       </footer>
     </template>
-    <template #doc-bottom>
-      <div class="flex mx-auto max-w-[1080px] mt-6">
-        <Waline class="flex-1" :serverURL="serverURL" :path="route.path" :copyright="false" lang="zh-CN" />
-        <div class="hidden md:block w-[256px]"></div>
-      </div>
+    <template #doc-after>
+      <Waline class="flex-1" :serverURL="serverURL" :path="route.path" :copyright="true" lang="zh-CN" />
     </template>
   </Layout>
 </template>
