@@ -29,7 +29,7 @@ export default defineConfig({
    */
   markdown: {
     theme: 'github-light',
-    // lineNumbers: true,
+    lineNumbers: true,
     config(md) {
       applyPlugins(md);
       md.renderer.rules.image = (tokens, idx, options, env, self) => {

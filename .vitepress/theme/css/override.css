@@ -238,7 +238,7 @@ html:not(.dark) {
 ::-webkit-scrollbar-thumb {
   border: 4px solid transparent;
   border-radius: 8px;
-  background-color: var(--vp-c-brand);
+  background-color: #33bb9980;
   background-image: linear-gradient(
     45deg,
     hsla(0, 0%, 100%, 0.4) 25%,
@@ -321,7 +321,10 @@ body {
   padding: 12px 0;
 }
 .vp-doc [class*='language-'] code {
-  padding: 0 16px;
+  padding: 0 16px 0 4px;
+}
+.vp-doc .line-numbers-wrapper {
+  padding-top: 12px;
 }
 .header-anchor {
   display: none;

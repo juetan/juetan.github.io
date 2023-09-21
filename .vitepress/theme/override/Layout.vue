@@ -17,8 +17,8 @@
       <footer class="text-gray-500 text-sm text-center py-4 mt-6">
         <div>
           已有 {{ posts.length }} 篇文章,  0 个分类 |
-          已运行 {{ deployDay }} 天 |
-          最近更新于 {{ updateDay }}
+          已运行 {{ createdAt }} 天 |
+          最近更新于 {{ updatedAt }}
         </div>
         <div class="mt-0.5">
           Copyright © 2023 绝弹博客
@@ -52,8 +52,9 @@ const { Layout } = theme;
 const route = useRoute();
 const serverURL = 'https://jtwaline.vercel.app';
 
-const deployDay = dayjs().diff(dayjs('2023-01-01 00:00:00'), 'day');
-const updateDay = dayjs(__APP_LAST_MODIFIED__).fromNow();
+const created = import.meta.env.VITE_CREATED_AT ?? '2023-01-01 00:00:00'
+const createdAt = dayjs().diff(dayjs(created), 'day');
+const updatedAt = dayjs(__APP_LAST_MODIFIED__).fromNow();
 
 </script>
 
