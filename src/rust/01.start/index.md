@@ -3,6 +3,7 @@ title: Rust系列[一]：安装和上手
 date: 2023-08-25 11:50:00
 categories: rust
 tags: rust
+thumbnail: /assets/rust.webp
 ---
 
 Rust 是一门高性能、高安全性的系统级编程语言，最初旨在作为 C 和 C++ 的更安全替代品。Rust 直译为铁锈，起名来源于一种特别健壮的真菌，这种真菌 "为了生存而过度设计"。灵感来源于霍尔公寓楼里的一部坏电梯，这些设备的软件通常是 C 或 C++ 写的，这些语言需要手动管理大量内存，存在崩溃的可能，因此 Hoare 开始研究一种即紧凑又没有内存错误的语言。
@@ -51,7 +52,7 @@ Rust 依赖于 c++ 环境，为什么不在安装包内置而需要单独安装�
 
 ### 安装 Rustup
 
-Rustup 是 Rust 的版本管理和命令行工具。Rust 的安装有[很多方式](https://forge.rust-lang.org/infra/other-installation-methods.html)，这里以官方推荐的 Rustup 为例。
+Rustup 是 Rust 的版本管理和命令行工具，概念上与 NodeJS 的 nvm 相似。Rust 的安装有[很多方式](https://forge.rust-lang.org/infra/other-installation-methods.html)，这里以官方推荐的 Rustup 为例。
 
 1. 通过 [官网](https://www.rust-lang.org/tools/install) 下载 Rustup 并安装。
 

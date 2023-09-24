@@ -38,7 +38,7 @@ const item = data.find((i) => i.frontmatter.title === page.value.frontmatter.tit
 .doc-title {
   letter-spacing: -0.02em;
   line-height: 40px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
 }
 </style>

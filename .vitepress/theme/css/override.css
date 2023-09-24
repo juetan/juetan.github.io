@@ -299,25 +299,26 @@ body {
   background-color: transparent;
 }
 .vp-doc h2 {
-  margin: 28px 0 0;
+  margin: 16px 0 8px;
   border-top: none;
   padding-top: 0;
   border-bottom: none;
   padding-bottom: 0;
-  line-height: 1;
+  line-height: 24px;
   font-size: 17px;
   font-weight: 600;
 }
 .vp-doc h3 {
-  margin-top: 24px;
-  line-height: 1;
+  margin-top: 16px;
+  line-height: 24px;
+  margin-bottom: 8px;
   font-size: 15px;
   font-weight: 600;
 }
 .vp-doc p {
   line-height: 24px;
-  margin: 16px 0;
-  color: #333;
+  margin: 0 0 16px;
+  color: #334;
 }
 .vp-doc [class*='language-'] pre {
   padding: 12px 0;
@@ -411,7 +412,7 @@ body .VPDocAsideOutline.has-outline {
   border-radius: 4px;
 }
 #app .vp-doc div[class*='language-'] {
-  margin: 0;
+  margin: 0 0 16px;
   border-radius: 4px;
 }
 #app .VPDoc {

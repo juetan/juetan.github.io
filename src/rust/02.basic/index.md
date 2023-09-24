@@ -1,6 +1,7 @@
 ---
 title: Rust系列[二]：变量，数据类型，注释，控制结构
 date: 2023-08-29 09:12:00
+thumbnail: /assets/rust.webp
 ---
 
 跟其他高级语言一样，Rust 使用 unicode 字符集，这里过一下常见的编程概念在 Rust 中的使用。

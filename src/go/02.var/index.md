@@ -1,6 +1,7 @@
 ---
 title: Go系列[二]：变量声明和变量类型
 date: 2023-09-07 19:17:00
+thumbnail: /assets/golang.jpg
 ---
 
 Go 的语法跟其他语言类似

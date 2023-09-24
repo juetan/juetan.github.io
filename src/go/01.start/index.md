@@ -1,6 +1,7 @@
 ---
 title: Go系列[一]：安装，编译和运行
 date: 2023-09-07 18:13:00
+thumbnail: /assets/golang.jpg
 ---
 
 ## 下载安装
