@@ -39,6 +39,7 @@ body h1 {
 html:not(.dark) {
   --vp-c-text-dark-3: #ccc;
   --vp-code-block-bg: rgb(246, 248, 250);
+  /* --vp-code-block-bg: #50556b; */
   --vp-code-copy-code-bg: transparent;
   --vp-code-copy-code-hover-bg: transparent;
   --vp-code-copy-code-hover-border-color: transparent;
@@ -142,7 +143,7 @@ html:not(.dark) {
 
 .VPNav {
   background: #fff;
-  box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.2);
+  box-shadow: 0 2px 10px rgba(55,99,170,.06);
 }
 
 .curtain,
@@ -304,18 +305,19 @@ body {
   border-bottom: none;
   padding-bottom: 0;
   line-height: 1;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
 }
 .vp-doc h3 {
   margin-top: 24px;
   line-height: 1;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 .vp-doc p {
   line-height: 24px;
   margin: 16px 0;
+  color: #333;
 }
 .vp-doc [class*='language-'] pre {
   padding: 12px 0;
@@ -391,12 +393,12 @@ body .VPDocAsideOutline.has-outline {
   border-bottom-color: transparent;
 }
 .VPDoc .container > .content {
-  box-shadow: none;
   padding: 0;
   background: #fff;
-  padding: 16px 18px;
+  padding: 16px 20px;
   border-radius: 4px;
   border-bottom: 1px solid var(--vp-c-divider);
+  box-shadow: 0 2px 10px rgba(55,99,170,.06);
 }
 .VPImage.logo {
   border-radius: 4px;
@@ -450,7 +452,7 @@ body .vp-doc [class*='language-'] > span.lang {
 
 body {
   /* background-image: url(./bg.jpg); */
-  background-color: #eff1f5;
+  background-color: #f3f6f9;
   background-size: 100% auto;
   background-attachment: fixed;
   overflow: overlay;

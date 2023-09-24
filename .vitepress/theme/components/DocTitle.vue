@@ -3,7 +3,7 @@
     <h1 class="doc-title">
       {{ frontmatter.title }}
     </h1>
-    <div class="w-full text-slate-400 text-xs flex items-center gap-3 border-b border-slate-200 pb-2.5 mt-4 mb-4">
+    <div class="w-full text-slate-500 text-xs flex items-center gap-3 border-b border-slate-200 pb-2.5 mt-4 mb-4">
       <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
         <span class="i-icon-park-outline:tag-one" />
         前端
@@ -38,7 +38,7 @@ const item = data.find((i) => i.frontmatter.title === page.value.frontmatter.tit
 .doc-title {
   letter-spacing: -0.02em;
   line-height: 40px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 600;
 }
 </style>

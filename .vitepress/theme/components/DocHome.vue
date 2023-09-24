@@ -1,6 +1,6 @@
 <template>
   <div class="md:mx-auto mx-2 mt-5 flex gap-4 max-w-[880px]">
-    <div class="flex-1 bg-white px-3 md:px-5">
+    <div class="item-list-wrapper flex-1 bg-white px-3 md:px-5">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">
           <i class="i-icon-park-outline-bookshelf mr-1"></i>最新文章
@@ -47,129 +47,12 @@
         </div>
       </div>
     </div>
-    <div class="hidden w-[248px]">
-      <div class="bg-white rounded px-4">
-        <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
-          <span class="i-icon-park-outline-announcement mr-1"></span>
-          站点公告
-        </div>
-        <div class="grid gap-1 py-2 text-gray-500">
-          本站使用 Vitepres 搭建，基于默认主题魔改，正在优化中。
-          <li>
-            地址：<a href="https://github.com/juetan/juetan.github.io" target="_blank" class="text-[#3b9]"
-              >Github 仓库</a
-            >
-          </li>
-        </div>
-      </div>
-      <div class="bg-white rounded px-4 mt-4">
-        <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
-          <span class="i-icon-park-outline-all-application mr-1"></span>
-          网址导航
-        </div>
-        <div class="grid gap-1 py-2 text-gray-500">
-          <a
-            href="https://juetan.cn/nav"
-            target="_blank"
-            class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
-          >
-            <div>
-              <i class="i-icon-park-outline-html-five mr-1"></i>
-              前端驿站
-            </div>
-            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]"></div>
-          </a>
-          <a
-            href="https://appnify.github.io/starter-vue"
-            target="_blank"
-            class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
-          >
-            <div>
-              <i class="i-icon-park-outline-html-five mr-1"></i>
-              后台模板
-            </div>
-            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]"></div>
-          </a>
-          <a
-            href="https://juetan.github.io/nav"
-            target="_blank"
-            class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
-          >
-            <div>
-              <i class="i-icon-park-outline-html-five mr-1"></i>
-              浏览器
-            </div>
-            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]"></div>
-          </a>
-          <a
-            href="https://juetan.github.io/nav"
-            target="_blank"
-            class="flex gap-4 justify-between items-center group h-8 leading-8 hover:text-[var(--vp-c-brand)] cursor-pointer"
-          >
-            <div>
-              <i class="i-icon-park-outline-html-five mr-1"></i>
-              构建工具
-            </div>
-            <div class="text-xs text-gray-400 group-hover:text-[var(--vp-c-brand)]"></div>
-          </a>
-        </div>
-      </div>
-      <div class="bg-white rounded px-4 mt-4">
-        <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
-          <span class="i-icon-park-outline-tag-one mr-1"></span>
-          标签列表
-        </div>
-        <div class="flex gap-1.5 flex-wrap py-3">
-          <Tag
-            v-for="i in [
-              '前端',
-              'JavaScript',
-              'CSS',
-              '工具',
-              '浏览器',
-              'HTML',
-              'NodeJS',
-              '框架',
-              'TypeScript',
-              'VUE',
-              '编辑器',
-            ]"
-            :key="i"
-            class="!bg-slate-50 !text-gray-500"
-            size="small"
-          >
-            {{ i }}
-          </Tag>
-        </div>
-      </div>
-      <div class="bg-white rounded px-4 mt-4 select-none">
-        <div class="h-10 pt-0.5 flex items-center border-b border-[#eee]">
-          <span class="i-icon-park-outline-ranking mr-1"></span>
-          站点统计
-        </div>
-        <div class="grid gap-1 py-2 text-gray-500">
-          <li
-            v-for="item in stat"
-            :key="item.title"
-            class="flex gap-4 justify-between items-center group h-8 leading-8 cursor-pointer"
-          >
-            <div>
-              <i class="mr-1" :class="item.icon"></i>
-              {{ item.title }}
-            </div>
-            <div class="text-xs text-gray-400">
-              {{ item.value }}
-            </div>
-          </li>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { data as posts } from '@app/data/posts.data.ts';
-import { Pagination, Tag } from '@arco-design/web-vue';
+import { Pagination } from '@arco-design/web-vue';
 import { reactive } from 'vue';
 import { dayjs } from '../dayjs';
 
@@ -230,6 +113,9 @@ const stat = [
 </script>
 
 <style scoped>
+.item-list-wrapper {
+  box-shadow: 0 2px 10px rgba(55,99,170,.06);
+}
 .item-list {
   margin: 0;
   padding: 0;
