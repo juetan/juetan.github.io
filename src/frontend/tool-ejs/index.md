@@ -5,15 +5,6 @@ date: 2023-07-13
 tags: 前端
 ---
 
-<script lang="ts" setup>
-import { useData } from 'vitepress';
-import { dayjs } from '../.vitepress/theme/dayjs'
-import { data as posts } from '@app/data/posts.data.ts'
-
-const data = useData();
-console.log(data, posts, 1)
-</script>
-
 [EJS](https://ejs.bootcss.com/) 是一个 JavaScript 模板引擎，名字中的 E 可以指 Embedded(可嵌入)、Effective(高效)、Elegant(优雅) 或者是 Easy(简单)。 在如今的前端开发中，EJS 比不上 Vue 或 React 等框架强大，但在辅助开发方面还是有用处的。话不多说，接下来以一个例子来感受下。
 
 ## 例子

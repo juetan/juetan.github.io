@@ -471,3 +471,11 @@ th,td {
 .vp-doc .line-numbers-wrapper {
   border-right: none;
 }
+
+div.vp-doc table {
+  display: table;
+}
+
+div.vp-doc table th {
+  background-color: var(--vp-code-block-bg);
+}
