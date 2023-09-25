@@ -1,0 +1,1 @@
+import{_ as l,o as i,c as s,W as e}from"./chunks/framework.45d8ea02.js";const b=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"draft/bash.md","filePath":"draft/bash.md"}'),a={name:"draft/bash.md"},n=e("",15),o=[n];function p(t,r,c,d,h,u){return i(),s("div",null,o)}const _=l(a,[["render",p]]);export{b as __pageData,_ as default};
