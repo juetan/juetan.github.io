@@ -281,7 +281,8 @@ html:not(.dark) {
 }
 
 body {
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 黑体;
 }
 
 .items > .VPSidebarItem.level-1 {
@@ -307,6 +308,7 @@ body {
   line-height: 24px;
   font-size: 17px;
   font-weight: 600;
+  color: #000;
 }
 .vp-doc h3 {
   margin-top: 16px;
@@ -314,11 +316,12 @@ body {
   margin-bottom: 8px;
   font-size: 15px;
   font-weight: 600;
+  color: #000;
 }
 .vp-doc p {
   line-height: 24px;
   margin: 0 0 16px;
-  color: #334;
+  color: #374151;
 }
 .vp-doc [class*='language-'] pre {
   padding: 12px 0;

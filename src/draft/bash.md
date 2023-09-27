@@ -1,3 +1,9 @@
+---
+title: Bash工具的使用，以及日常使用。
+date: 2023-09-27 10:31:00
+---
+
+Bash，全名 B。本文主要参照阮一峰的 [Bash 脚本教程](https://wangdoc.com/bash/) 教程。
 
 - `echo $SHELL` 查看默认shell，但不一定是正在使用
 - `ps` 在ps前面的是正在使用的shell

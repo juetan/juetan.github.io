@@ -29,8 +29,6 @@ body .cursor-pointer {
 body .wl-panel {
   border-radius: 4px;
   margin: 0;
-  border: none;
-  background: #fff;
 }
 
 button.wl-btn.primary {
@@ -67,7 +65,7 @@ div.wl-header {
 
 textarea.wl-editor {
   margin: 0;
-  padding: 0;
+  padding: 4px 12px;
   box-sizing: border-box;
   width: 100%;
 }

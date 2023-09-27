@@ -241,7 +241,7 @@ export default defineConfig({
         link: '/backend',
       },
       {
-        text: '其他',
+        text: '工具',
         icon: 'i-icon-park-outline-tool',
         link: '/tools',
       },

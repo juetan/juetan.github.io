@@ -134,7 +134,7 @@ const stat = [
   line-height: 24px;
 }
 .item-excerpt {
-  font-size: 14px;
+  font-size: 15px;
   margin: 6px 0 0;
 }
 .item-link {

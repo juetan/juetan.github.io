@@ -29,7 +29,7 @@
       </footer>
     </template>
     <template #doc-after>
-      <Waline class="flex-1" :serverURL="serverURL" :path="route.path" :copyright="true" lang="zh-CN" />
+      <Waline class="flex-1 pt-8 border-t border-slate-200" :serverURL="serverURL" :path="route.path" :copyright="false" lang="zh-CN" />
     </template>
   </Layout>
 </template>
