@@ -8,7 +8,7 @@
     </template>
     <template #layout-bottom>
       <BackTop>
-        <Button type="primary" class="!hidden !md:inline-block">
+        <Button type="primary" shape="circle" class="!hidden !md:inline-block">
           <template #icon>
             <i class="i-icon-park-outline-up-small"></i>
           </template>

@@ -270,26 +270,31 @@ networks:
 ENABLED=true
 ```
 
-### 修改Stack配置
+### 复制令牌
 
-TODO
+重启后，应该能在管理后台界面多出名为 actions 的选项卡，进入点击创建Runner按钮即可看到加入令牌(如下)。
 
-### 跑个示例
+![](./image-actions-token.png)
 
-TODO
+### 更新配置
 
-## 使用Gitea事项
+返回 Portainer 的 Stacks 管理页面，修改我们刚才创建的配置，还记得我们方才提到的注释吗？此时，修改为我们上一步得到的令牌，保存后重启，代码如下：
 
-TODO
+```yaml
+services:
+  runner:
+    # ...
+    environment:
+      - GITEA_INSTANCE_URL=http://git.dev.juetan.cn/
+      - GITEA_RUNNER_REGISTRATION_TOKEN=7B3NLAz4aEDwIZDQx8dNEnLxToA8Fq81WSCjmSdI
+```
 
-### 访问Github满
+更新 stack 后，你应该能在管理后台的 actions 面板看到新加入的 Runner，如下：
 
-TODO
+![](./image-runner-joined.png)
 
-### 镜像问题
-
-TODO
+至此，我们的CI/CD环境已部署完成，其中 Portainer 用于管理 Docker 镜像和容器，Traefik 用于配置域名和代理，Gitea 用于管理 Git 代码，Gitea Actions 用来运行构建任务。
 
 ## 结语
 
-TODO
+以上，相比于原有实践，本次配置更简洁且更易于理解。在实践时，我翻阅了不少相关的官方文档，对于以上构成也有了更深一步的的了解，特别是某些组件的参数说明和功能。如果有不懂的，有时候查阅官方文档比搜索来得更快。篇幅有限，有空再写写如何使用这套系统。
