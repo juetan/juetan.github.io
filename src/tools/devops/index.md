@@ -295,6 +295,48 @@ services:
 
 至此，我们的CI/CD环境已部署完成，其中 Portainer 用于管理 Docker 镜像和容器，Traefik 用于配置域名和代理，Gitea 用于管理 Git 代码，Gitea Actions 用来运行构建任务。
 
+## 补充：HTTPS证书
+
+Traefik 内置有证书集成的功能，对于日常我们可以使用 Traefik 自动签发 let's encrypt 的证书进行使用，需注意目前 let's encrypt 限制每周只能对一个主域名签发 50 个整数，对于日常使用是完全足够的。要进行使用需配置静态参数和动态参数。
+
+1. 使用命令行或Portainer创建数据卷，用于存放证书等文件，避免容器重启后数据丢失导致重新请求证书。
+
+```bash
+docker volume create traefik
+```
+
+2. 修改之前 traefik 的 stack 配置，添加如下配置后重新部署。
+
+```yaml
+services:
+  traefik:
+    command:
+      # - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.myresolver.acme.httpchallenge=true
+      - --certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web
+      - --certificatesresolvers.myresolver.acme.email=contact@juetan.cn
+      - --certificatesresolvers.myresolver.acme.storage=/data/acme.json
+    volumes:
+      - traefik:/data
+
+volumes:
+  traefik:
+    external: true
+```
+
+3. 在需要使用 HTTPS 的服务上，添加以下额外的配置
+
+```yaml
+- traefik.http.routers.dashboard.entrypoints=websecure
+- traefik.http.routers.dashboard.tls=true
+- traefik.http.routers.dashboard.tls.certresolver=myresolver
+```
+
+4. 贴一个访问后的效果(如下)，注意：证书只有90天有效期(从图中10月9日到1月7日可以看出)，到期前10天 Traefik 会自动续签。
+
+![](./image-router-https.png)
+
 ## 结语
 
 以上，相比于原有实践，本次配置更简洁且更易于理解。在实践时，我翻阅了不少相关的官方文档，对于以上构成也有了更深一步的的了解，特别是某些组件的参数说明和功能。如果有不懂的，有时候查阅官方文档比搜索来得更快。篇幅有限，有空再写写如何使用这套系统。
