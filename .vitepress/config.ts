@@ -19,9 +19,9 @@ export default defineConfig({
   titleTemplate: ':title | 绝弹博客',
   description: '一位前端开发者的博客',
   appearance: false,
+  cleanUrls: true,
   srcDir: 'src',
   outDir: 'dist',
-  cleanUrls: true,
 
   /**
    * markdown配置
@@ -229,21 +229,6 @@ export default defineConfig({
         text: '首页',
         icon: 'i-icon-park-outline-home',
         link: '/',
-      },
-      {
-        text: '前端',
-        icon: 'i-icon-park-outline-html-five',
-        link: '/frontend/',
-      },
-      {
-        text: '后端',
-        icon: 'i-icon-park-outline-server',
-        link: '/backend',
-      },
-      {
-        text: '工具',
-        icon: 'i-icon-park-outline-tool',
-        link: '/tools',
       },
       {
         text: '归档',

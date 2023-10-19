@@ -16,7 +16,7 @@
       </BackTop>
       <footer class="text-gray-500 text-sm text-center py-4 mt-2">
         <div>
-          已有 {{ posts.length }} 篇文章,  0 个分类 |
+          已有 {{ posts.length }} 篇文章 |
           已运行 {{ createdAt }} 天 |
           最近更新于 {{ updatedAt }}
         </div>

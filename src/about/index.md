@@ -39,6 +39,10 @@ date: 2023-07-13 17:03:00
 - 邮箱：952222@163.com
 - Github: https://github.com/juetan
 
+## 博客主题
+
+博客基于 Vitepress 魔改，参见 https://juetan.cn/frontend/vitepress-blog/
+
 ## 最后
 
 本博客基于 vitepress 魔改，部分布局和样式还在探索中。
