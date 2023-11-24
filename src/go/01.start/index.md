@@ -65,3 +65,8 @@ func main() {
 - 语句末尾的分号可有可无，除非语义不明
 - 使用 var 声明变量
 - 使用 C 语言风格的注释，即 `// 注释内容` 格式
+
+## 备注
+- 根目录下的文件不能在main.go中直接调用，应 `go run .`或`go run main.go test.go`
+- go get 在项目中安装依赖
+- go install 全局安装命令

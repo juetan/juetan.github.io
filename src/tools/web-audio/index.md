@@ -8,46 +8,166 @@ cover: ./image-crawlee.png
 
 ## 声音的采集
 
-当我们说话时，录音设备是如何采集的呢？首先，录音设备根据声音产生震动采集到波形信号(即模拟信号)；然后，需要将模拟信息转为数字信号，常见的方法是 PCM（脉冲编码调制，Pulse-Code Modulation）。
+深的概念我们暂不讨论，先来说说：假如我们需要采集声音得到一个音频文件，这中间过程会发生什么呢？大致会如下：
 
-在 PCM 转换中，有几个重要概念：
+- 采集：声音产生震动，录音设备据此采集到波形信号(即模拟信号)
+- 编码：采集设备将波形转为数值(即数字信号)，常见的方法是 PCM，转换后得到 .pcm 或 .raw 等格式文件
+- 压缩：PCM 转换的数据体积比较大，不利于传输，通常会再进行压缩得到 .mp3 或 .ogg 等格式文件
 
-- 采样率，每秒采集多少个样本，常见的有 44.1KHz 即每秒钟采集 441000 个样本
-- 位深，声音的高低，常见的有 16 位
-- 声道，常见的有单声道、双声道
+PCM，即脉冲编码调制(Pulse-Code Modulation)，其中有 3 个比较重要的概念：
 
-PCM 是一种编码格式，将模拟信号格式转换位数字信号格式，其他的编码格式还有 ACC-LC 、 ACC-LD 等。转换后的数据通常比较大，此时需要通过另一种编码格式将其压缩，这种编码格式也称为容器格式，常见的有 wav、MP3、ogg 等。其中，wav 是最简单的，只在 pcm 数据的前面加了 44 位字符。
+| 参数   | 描述                                                            |
+| ------ | --------------------------------------------------------------- |
+| 采样率 | 每秒采集多少个样本，常见的有 44.1KHz 即每秒钟采集 441000 个样本 |
+| 位深   | 声音的高低，常见的有 16 位                                      |
+| 声道   | 常见的有单声道、双声道                                          |
+
+PCM 是一种编码格式，将模拟信号格式转换位数字信号格式，其他的编码格式还有 ACC-LC 、 ACC-LD 等。PCM 转换后的数据，通常称为裸数据(raw)，体积比较大因而会进行压缩。压缩格式也称为容器格式，常见的有 wav、MP3、ogg 等。
+
+其中，wav 是最简单的，只在 pcm 数据的前面加了 44 位字符(等于没压缩)，贴一张图如下：
 
 ![](./image-wav.webp)
 
-## Audio API
+## Web Audio API
 
-除了常见的 `<audio>` 和 `<video>` 标签可以播放音频外，使用 JS 播放也是可以的。这里就涉及到了 Audio API，示例如下：
+[Web API](https://developer.mozilla.org/zh-CN/docs/Web/API) 是一套关于Web的规范集，而 [Web Audio API](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API) 是关于如何控制音频的规范，其允许开发者选择不同的音频源，进行添加特效、可视乎音频等操作。
+
+在 Web Audio API 中，[AudioContext](https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext) 是处理音频的上下文。里面可以包含多个输入节点，多个中间节点和多个输出节点。每个节点使用 [connect](https://developer.mozilla.org/zh-CN/docs/Web/API/AudioNode/connect) 方法连接到下一个节点。示例如下：
 
 ```ts
+// 创建音频上下文
 const audioContext = new AudioContext();
-
+// 创建输入节点
 const source = audioContext.createBuffSource();
-
+// 连接到输出节点
 source.connect(audioContext.destination);
 ```
 
-其中，`AudioContext` 是处理音频的上下文，通常可以包含任意多个入口节点，任意多个出口节点，中间可以包含任意多个处理节点，每个节点都可以使用 `connect` 方法连接到下一个节点。
 
-### createBuffSource
 
-`createBuffSource` 是创建入口节点的一种方法，表示手动创建数据，其属性 `buff` 为从容器格式解码后的 PCM 数据。举个例子，用户选择 .mp3 或 .wav 文件后，使用 Audio API 解码后得到 PCM 数据，此时赋值给 buff 属性就可以播放了，完全不需要 `<audio>` 标签，示例如下：
+## 输入节点
+
+输入，即数据源。可以从页面元素获取，也可以手动生成，常见的方式有如下几种：
+
+### createBufferSource
+
+[createBufferSource](https://developer.mozilla.org/zh-CN/docs/Web/API/BaseAudioContext/createBufferSource) 方法，用于创建缓冲区数据源(手动)。其 `buff` 属性为音频数据([AudioBuffer](https://developer.mozilla.org/zh-CN/docs/Web/API/AudioBuffer) 类型)，该数据可以用 [createBuffer](https://developer.mozilla.org/zh-CN/docs/Web/API/BaseAudioContext/createBuffer) 创建或 [decodeAudioData](https://developer.mozilla.org/zh-CN/docs/Web/API/BaseAudioContext/decodeAudioData) 解码得到。
+
+AudioBuffer 是一个对象，包含一小段音频数据(缓存形式，因此不应太大，推荐是小于45秒)。每段音频具体点就是：32位(IEEE754格式)、-1 到 1之间的数组。如果AudioBuffer有不同的通道，他们通常被保存在不同的地方。
+
+手动创建难度比较大，更常见的例子是：用户选择 .mp3 或 .wav 文件后，使用 decodeAudioData 解码后得到 audioBuffer，赋值给 buff 属性播放，示例如下：
+
+```vue
+<template>
+  <div>
+    <input type="file" accept=".wav,.mp3" @change="onFileChange" />
+  </div>
+</template>
+
+<script setup lang="ts">
+const onFileChange = (e: Event) => {
+  const file = (e.target as HTMLInputElement)?.files?.[0];
+  if (!file) {
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const buffer = e.target?.result as ArrayBuffer;
+    const audioCtx = new AudioContext();
+    const source = audioCtx.createBufferSource();
+    audioCtx.decodeAudioData(buffer, (buffer) => {
+      source.buffer = buffer;
+      source.connect(audioCtx.destination);
+      source.start();
+    });
+  };
+  reader.readAsArrayBuffer(file);
+};
+</script>
+```
 
 <demo src="./demo-createBufferSource.vue" ></demo>
 
-
 ### createMediaElementSource
 
-这也是创建入口节点的一种方法，控制 `<audio>` 标签的播放，例如接入一个音量调节器：
+[createMediaElementSource](https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext/createMediaElementSource) 方法，创建媒体元素数据源，媒体元素指 `<audio>` 和 `<video>` 等HTML元素，示例如下：
+
+```vue
+<template>
+  <div class="flex gap-4 items-center">
+    <audio id="music" src="./NeverGonnaGiveYouUp.mp3" controls></audio>
+    <Button @click="onClick">播放</Button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { Button } from '@arco-design/web-vue';
+const onClick = () => {
+  const audio = document.querySelector('#music') as HTMLAudioElement;
+  const audioCtx = new AudioContext();
+  const source = audioCtx.createMediaElementSource(audio!);
+  source.connect(audioCtx.destination);
+};
+</script>
+```
 
 <demo src="./demo-createMediaElement.vue" />
 
 ### createMediaStreamSource
 
+[createMediaStreamSource](https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext/createMediaStreamSource) 方法，用于创建媒体流数据源，媒体流通常指的是从麦克风/话筒获取到的音频流。示例如下：
 
-创建入口节点的一种方法，表示从媒体流中获取数据，一个常见的例子是从麦克风/话筒获取音频流。
+```ts
+const audioContext = new AudioContext();
+const destination = audioContext.createMediaStreamDestination();
+const mediaRecorder = new MediaRecorder(destination.stream);
+
+audioArray.forEach(audio => {
+  let stream = audioContext.createMediaStreamSource(audio.captureStream());
+  stream.connect(destination);
+})
+
+mediaRecorder.start();
+```
+
+## 中间节点
+
+中间节点，主要对数据源进行加工。例如设置音量，添加背景音，常见的中间节点有如下：
+
+### createGain
+
+[createGain](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createGain) 方法，用于创建增益节点(控制音量大小)。
+
+```html
+<div>
+  <button class="mute">Mute button</button>
+</div>
+<script>
+const audioCtx = new AudioContext();
+const gainNode = audioCtx.createGain();
+let source;
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia(
+    {
+      audio: true,
+    },
+    (stream) => {
+      source = audioCtx.createMediaStreamSource(stream);
+    },
+    (err) => {
+      console.error(`麦克风异常: ${err}`);
+    },
+  );
+} else {
+  console.error("浏览器不支持!");
+}
+
+source.connect(gainNode);
+gainNode.connect(audioCtx.destination);
+</script>
+```
+
+## 输出节点
+
+通常指的是扬声器，播放处理过的音频。
