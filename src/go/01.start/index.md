@@ -4,19 +4,26 @@ date: 2023-09-07 18:13:00
 thumbnail: /assets/golang.jpg
 ---
 
-## 下载安装
+Go 语言是一门编译型语言，由 Google 创立于 2007 年，因此很容易联想到 Go 语言名字的由来。
 
-1. 打开 [官网](https://golang.google.cn/dl/) 下载，如下：
+## 历史
+
+- 2007年 创建
+- 2012年 发布 v1.0 版本
+
+## 安装
+
+1. 打开 [官网](https://golang.google.cn/dl/) 下载，如果需要版本管理，可以使用 [GVM](https://github.com/moovweb/gvm) 工具。
 
 ![](./image-go-dl.png)
 
-2. 按照指示安装，安装完打开CMD输入 `go version` 命令并回车，应该有如下输出：
+2. 按照指示操作即可，安装完打开CMD输入 go version 命令并回车，有如下输出即代表安装成功。
 
 ![](./image-go-version.png)
 
-## 上手运行
+## 上手
 
-Go 是一门编译型语言，需要先编译在运行，接下来写个小示例。
+Go 是一门编译型语言，需要先编译再运行，接下来写个小示例。
 
 1. 新建文件夹，以及一个 `main.go` 文件。
 

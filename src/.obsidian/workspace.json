@@ -1,0 +1,166 @@
+{
+  "main": {
+    "id": "d9ea345c7bea12fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a4b2e8ae2fcd54c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e8f54bb07f9a1639",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "vue/vue-load-from-url/index.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c82167eaf8241fe0",
+    "type": "split",
+    "children": [
+      {
+        "id": "3e0fc5ce0bf23027",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "add4142379e43978",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "72d2096a858bed7e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "64a6f99fd73bdff1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7d671558379d7e08",
+    "type": "split",
+    "children": [
+      {
+        "id": "bba62713553223fa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a8e5fab76c39801f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "vue/vue-load-from-url/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "16a20d858eb1dd29",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "vue/vue-load-from-url/index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5c17afc4acdd547e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ec7407db94a18b12",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "vue/vue-load-from-url/index.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "e8f54bb07f9a1639",
+  "lastOpenFiles": [
+    "未命名.canvas",
+    "未命名 1.canvas",
+    "vue/vue-load-from-url/index.md",
+    "index.md",
+    "tools/devops/index.md",
+    "tools/devops/image-docker-ubuntu.png",
+    "tools/devops/image-dns.png",
+    "tools/devops/image-core-status.png",
+    "tools/devops/image-core-deploy.png",
+    "tools/devops/image-actions-token.png",
+    "tools/cicd/index.md",
+    "draft/post-vite-loadup.md",
+    "draft/bash.md",
+    "about/index.md"
+  ]
+}
