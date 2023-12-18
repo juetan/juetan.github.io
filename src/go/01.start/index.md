@@ -77,3 +77,18 @@ func main() {
 - 根目录下的文件不能在main.go中直接调用，应 `go run .`或`go run main.go test.go`
 - go get 在项目中安装依赖
 - go install 全局安装命令
+
+## 命令
+
+- go mod
+- go get
+- go install 安装二进制命令：生成可执行文件，移动到GOPATH/bin目录下
+- go build
+- go test 执行 *_test.go 文件
+- go generate
+- go env
+- go list
+- go run
+- go version
+- go fmt
+- go clean

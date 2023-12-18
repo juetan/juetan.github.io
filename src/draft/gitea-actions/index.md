@@ -1,5 +1,5 @@
 ---
-title: 使用Gitea Actions自动部署前后端分离的WEB应用
+title: Docker：使用Gitea Actions自动部署前后端分离的WEB应用
 date: 2023-09-28 10:15:00
 ---
 
@@ -15,16 +15,16 @@ date: 2023-09-28 10:15:00
 
 ```bash
 # 创建用户
-useradd myname -m -s /bin/bash
+useradd <username> -m -s /bin/bash
 
 # 创建密码
-passwd myname
+passwd <username>
 
 # 加入docker用户组
-usermod -a -G docker myname
+usermod -a -G docker <username>
 
 # 切换到该用户
-su myname
+su <username>
 
 # 测试是否有docker的执行权限
 docker service ls
@@ -61,7 +61,9 @@ service ssh restart
 | https://ghproxy.com/https://github.com/actions/checkout
 | https://ghproxy.com/https://github.com/appleboy/ssh-action
 
-## 前端配置
+## 前端项目
+
+以上作为准备工作，接下来需要创建前端项目，并额外添加 2 个配置文件。
 
 ### 新建项目
 
@@ -71,11 +73,11 @@ service ssh restart
 npx create vite@latest
 ```
 
-### 使用后端接口
+### 请求后端
 
 修改 /src/App.vue 文件，写个请求调用下后端的接口，代码如下：
 
-```vue
+```html
 <template>
   <div>
     {{ message }}
@@ -97,7 +99,7 @@ onMounted(async () => {
 </script>
 ```
 
-### 任务配置
+### 部署配置
 
 新建 /.gitea/workflows/deploy.yaml 文件，看起来是不是跟 Github Actions 的配置差不多，实际上两个确实差不多，一个不开源另一个是开源实现。在文件中，添加配置如下：
 
@@ -190,11 +192,12 @@ jobs:
 
 - 只在推送到 master 分支时进行构建
 - 构建时使用 ubuntu 起一个容器进行构建
-- 构建完远程到部署环境执行更新脚本
+- 构建完推送到 gitea 的成品库中
+- 远程到部署环境执行更新脚本
 
-### 配置Dockerfile
+### 构建配置
 
-新建 /Dockerfile 文件，添加内容如下。上面有一个 docker build 的步骤，需要用到 Dockerfile 配置进行构建，我们配置如下，简单将 dist 目录下复制到 nginx:alpine 镜像里即可。
+上面有一个 docker build 的步骤，需要用到 Dockerfile 配置进行构建。在项目根目录下新建 Dockerfile 文件，添加内容如下。
 
 ```dockerfile
 FROM nginx:alpine
@@ -204,14 +207,22 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
+### 推送代码
+
+本地添加远程仓库地址，推送后应该可以在仓库面板看到部署信息
+
+### 启动容器
+
+
+
 ## 后端配置
 
 ### 创建项目
 
 ### 添加接口
 
-### 配置任务
+### 部署配置
 
-### 编写dockerfile
+### 构建配置
 
 ## 结语
