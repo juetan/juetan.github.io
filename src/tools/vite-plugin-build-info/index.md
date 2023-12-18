@@ -69,7 +69,7 @@ export default function plugin(): Plugin {
 
 以上代码会向 index.html 注入 script 标签，并输出相关信息，最终效果如下：
 
-![Alt text](image.png)
+![Alt text](./image.png)
 
 ## 按条件加载
 

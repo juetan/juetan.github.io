@@ -337,7 +337,7 @@ func throwsPanic(f func()) (b bool) {
 
 Go里面有两个保留的函数：init函数（能够应用于所有的package）和main函数（只能应用于package main）。程序的初始化和执行都起始于main包。如果main包还导入了其它的包，那么就会在编译时将它们依次导入。如下：
 
-![Alt text](image.png)
+![Alt text](./image.png)
 
 ### 指针
 
