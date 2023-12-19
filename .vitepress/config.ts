@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { applyPlugins } from '@ruabick/md-demo-plugins';
 import { existsSync, readFileSync } from 'fs';
 import { basename, dirname, join } from 'path';
@@ -18,6 +17,18 @@ export default defineConfig({
   title: '绝弹博客',
   titleTemplate: ':title | 绝弹博客',
   description: '一位前端开发者的博客',
+  head: [
+    [
+      'meta',
+      {
+        name: 'keywords',
+        content: '绝弹博客|绝弹|博客|前端开发|后端开发|技术|web|框架',
+      },
+    ],
+  ],
+  sitemap: {
+    hostname: 'https://www.juetan.cn',
+  },
   appearance: false,
   cleanUrls: true,
   srcDir: 'src',
@@ -31,11 +42,10 @@ export default defineConfig({
     theme: 'github-light',
     lineNumbers: true,
     config(md) {
-      applyPlugins(md);
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
         const token = tokens[idx];
         const aIndex = token.attrIndex('src');
-        const src = token.attrs![aIndex][1];
+        const src = token.attrs![aIndex][1] || '';
         return `<Image src="${src}" class="cursor-pointer"  />`;
       };
     },
@@ -57,7 +67,7 @@ export default defineConfig({
        */
       transformAssetUrls: {
         Image: ['src'],
-        audio: 'src',
+        audio: ['src'],
       },
     },
   },
@@ -108,7 +118,7 @@ export default defineConfig({
           filesystem: ['.vitepress/config.ts'],
         },
         presets: [presetUno(), presetIcons()],
-      }),
+      }) as any,
       /**
        * 组件样式按需加载
        */
@@ -153,7 +163,7 @@ export default defineConfig({
           apply: 'build',
           enforce: 'pre',
           configResolved(resolvedConfig) {
-            config = resolvedConfig;
+            config = resolvedConfig as any;
           },
           load(id) {
             if (/\.md$/.test(id)) {
@@ -232,7 +242,7 @@ export default defineConfig({
       },
       {
         text: '归档',
-        icon: 'i-icon-park-outline-hourglass-null',
+        icon: 'i-icon-park-outline-time',
         link: '/archive/',
       },
       {

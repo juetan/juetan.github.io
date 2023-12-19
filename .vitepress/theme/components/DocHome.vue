@@ -17,14 +17,14 @@
                 {{ post.excerpt || '暂无简介' }}
               </p>
               <div class="text-slate-400 text-xs flex items-center gap-3">
-                <!-- <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
+                <div>
                   <span class="i-icon-park-outline-user" />
                   绝弹
-                </div> -->
-                <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
+                </div>
+                <!-- <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
                   <span class="i-icon-park-outline:tag-one" />
                   前端
-                </div>
+                </div> -->
                 <div>
                   <span class="i-icon-park-outline-time" />
                   {{ dayjs(post.frontmatter.date).format('YYYY年MM月DD日') }}

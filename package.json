@@ -2,6 +2,7 @@
   "name": "juetan",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
@@ -21,7 +22,7 @@
     "unocss": "^0.53.5",
     "vite": "^4.4.3",
     "vite-plugin-style-import": "^2.0.0",
-    "vitepress": "1.0.0-beta.5",
+    "vitepress": "1.0.0-rc.32",
     "vue": "^3.3.4"
   },
   "pnpm": {
