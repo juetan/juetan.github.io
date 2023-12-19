@@ -28,6 +28,7 @@ export default defineConfig({
   ],
   sitemap: {
     hostname: 'https://www.juetan.cn',
+
   },
   appearance: false,
   cleanUrls: true,
@@ -46,7 +47,7 @@ export default defineConfig({
         const token = tokens[idx];
         const aIndex = token.attrIndex('src');
         const src = token.attrs![aIndex][1] || '';
-        return `<Image src="${src}" class="cursor-pointer"  />`;
+        return `<Image src="${src}" alt="image" class="cursor-pointer"  />`;
       };
     },
   },
