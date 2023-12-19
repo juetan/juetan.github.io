@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.doOmauVw.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"draft/goframe/index.md","filePath":"draft/goframe/index.md"}'),r={name:"draft/goframe/index.md"};function o(n,d,s,c,f,i){return t(),a("div")}const _=e(r,[["render",o]]);export{p as __pageData,_ as default};
