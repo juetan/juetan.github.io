@@ -14,7 +14,7 @@
           </template>
         </Button>
       </BackTop>
-      <footer class="text-gray-500 text-sm text-center py-4 mt-4">
+      <footer class="text-gray-500 text-sm text-center pt-6 pb-5">
         <div>
           <ul class="list-none flex gap-2 justify-center items-center">
             <li>已有 {{ posts.length }} 篇文章</li>
@@ -26,20 +26,20 @@
         </div>
         <div class="mt-1">
           Copyright © 2023 绝弹博客
-          <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-[var(--vp-c-brand)]">
+          <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-[var(--vp-c-brand)] hover:underline underline-offset-2">
             桂ICP备2021001859号-1
           </a>
         </div>
       </footer>
     </template>
     <template #doc-after>
-      <Waline
+      <!-- <Waline
         class="flex-1 pt-8 border-t border-slate-200"
         :serverURL="serverURL"
         :path="route.path"
         :copyright="false"
         lang="zh-CN"
-      />
+      /> -->
     </template>
   </Layout>
 </template>

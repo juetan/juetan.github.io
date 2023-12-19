@@ -10,6 +10,7 @@
           {{ post.frontmatter.title || '暂无标题' }}
         </a>
         <time class="block text-slate-400 text-xs mt-1">
+          <i class="i-icon-park-outline-time"></i>
           {{ dayjs(post.frontmatter.date).format('YYYY年MM月DD日') }}
         </time>
       </Timeline.Item>

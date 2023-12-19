@@ -39,6 +39,7 @@ body h1 {
 html:not(.dark) {
   --vp-c-text-dark-3: #ccc;
   --vp-code-block-bg: rgb(246, 248, 250);
+  --vp-code-color: var(--vp-c-brand);
   /* --vp-code-block-bg: #50556b; */
   --vp-code-copy-code-bg: transparent;
   --vp-code-copy-code-hover-bg: transparent;
@@ -281,7 +282,7 @@ html:not(.dark) {
 }
 
 body {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 黑体;
 }
 
@@ -300,38 +301,25 @@ body {
   background-color: transparent;
 }
 .vp-doc h2 {
-  margin: 16px 0 8px;
-  border-top: none;
-  padding-top: 0;
-  border-bottom: none;
-  padding-bottom: 0;
-  line-height: 24px;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 400;
   color: #000;
+  padding-top: 20px;
 }
 .vp-doc h3 {
-  margin-top: 16px;
-  line-height: 24px;
-  margin-bottom: 8px;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
   color: #000;
 }
-.vp-doc p {
-  line-height: 24px;
-  margin: 0 0 16px;
-  color: #374151;
-}
-.vp-doc [class*='language-'] pre {
+/* .vp-doc [class*='language-'] pre {
   padding: 12px 0;
 }
 .vp-doc [class*='language-'] code {
   padding: 0 16px 0 4px;
-}
-.vp-doc .line-numbers-wrapper {
+} */
+/* .vp-doc .line-numbers-wrapper {
   padding-top: 12px;
-}
+} */
 .header-anchor {
   display: none;
 }
@@ -426,7 +414,13 @@ body .VPDocAsideOutline.has-outline {
   content: '';
 }
 .vp-doc a {
+  color: var(--vp-c-brand);
+  text-decoration: none;
   text-underline-offset: 2px;
+}
+.vp-doc a:hover {
+  color: var(--vp-c-brand);
+  text-decoration: underline;
 }
 #app pre,
 #app code,
@@ -450,6 +444,10 @@ body .vp-doc [class*='language-'] > span.lang {
   aspect-ratio: 16/9;
 }
 
+.VPNavBarTitle .title {
+  font-size: 18px;
+  font-weight: 400;
+}
 .title:hover {
   color: var(--vp-c-brand);
 }
@@ -481,4 +479,8 @@ div.vp-doc table {
 
 div.vp-doc table th {
   background-color: var(--vp-code-block-bg);
+}
+
+a {
+  text-decoration: none;
 }
