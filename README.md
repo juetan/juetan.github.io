@@ -1,13 +1,8 @@
 绝弹博客
 
-- link: https://juetan.cn.
+- 地址: https://www.juetan.cn
 
-## 预览
-
-![](./.github/home.png)
-
-
-## 功能
+## 主题
 
 - 支持文章搜索和查询
 - 支持文章内图片预览缩放
