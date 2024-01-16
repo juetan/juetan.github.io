@@ -42,7 +42,7 @@ make && make install
 
 6. 浏览器访问 IP 地址，能看到以下页面即表示安装成功。
 
-![Alt text](image-1.png)
+![Alt text](./image-1.png)
 
 ## 目录结构
 
@@ -190,7 +190,7 @@ server {
 
 以下实践均在 Windows 系统下进行，为了区分不同域名访问，先修改下 hosts 文件，添加 2 个自定义域名：a.com 和 b.com。这 2 个域名尚未启用，不用担心有啥问题。如下：
 
-![Alt text](image-2.png)
+![Alt text](./image-2.png)
 
 ### 域名匹配
 
@@ -198,7 +198,7 @@ server {
 
 这依赖于一个 HTTP 请求头：Host，该字段由浏览器自动携带，表明当前域名或IP，如下：
 
-![Alt text](image.png)
+![Alt text](./image.png)
 
 在 Nginx 配置中，可以配置 2 个监听同一端口的服务，Nginx 会根据 server_name 对应的域名或IP进行匹配，如下：
 
@@ -220,19 +220,19 @@ server {
 
 在 html 目录下，创建如下文件：
 
-![Alt text](image-3.png)
+![Alt text](./image-3.png)
 
 重启 Nginx 后，分别访问 a.com 和 b.com ，效果如下：
 
-![Alt text](image-7.png)
+![Alt text](./image-7.png)
 
 以上是在浏览器访问的情况，我们在 Postman 等工具下测试下 Nginx 是不是根据 Host 请求头来区分，以下是正常访问：
 
-![Alt text](image-8.png)
+![Alt text](./image-8.png)
 
 修改 Host 为任意值再访问，如下：
 
-![Alt text](image-9.png)
+![Alt text](./image-9.png)
 
 可以看到修改后不再返回 b.com 字样而是 a.com 字样，证明 Host 对 Nginx 的服务匹配是有影响的。
 
@@ -252,7 +252,7 @@ https://b.com/code.html => html/b/code.html
 
 以上，我们指定了 root 属性，那么可以在查找时 URL 中的 https://b.com 会被替换为 html，再把 URL 中的 code.html 拼接上，最终也就是 nginx-path/html/b/code.html 这个路径。访问效果如下：
 
-![Alt text](image-12.png)
+![Alt text](./image-12.png)
 
 ### 目录匹配
 
@@ -266,11 +266,11 @@ location / {
 
 访问效果如下：
 
-![Alt text](image-13.png)
+![Alt text](./image-13.png)
 
 此外，当 URL 不以斜杠结尾时，没有这个文件却有这个目录时，会自动 301 重定向到带斜杠结尾的 URL，如下：
 
-![Alt text](image-11.png)
+![Alt text](./image-11.png)
 
 ### 单页应用
 
@@ -284,11 +284,11 @@ location / {
 
 以上，访问时会先尝试匹配文件，然后是目录，最后是 index.html 文件。例如，存在的情况下：
 
-![Alt text](image-15.png)
+![Alt text](./image-15.png)
 
 不存在的情况下(如下)，访问 /xxx (不存在)，返回 /index.html 的内容：
 
-![Alt text](image-16.png)
+![Alt text](./image-16.png)
 
 ### 反向代理
 
