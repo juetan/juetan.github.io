@@ -11,7 +11,7 @@ date: 2024-01-09 14:12:00
 
 1. 下载 [Mkcert](https://github.com/FiloSottile/mkcert/releases/tag/v1.4.4) 工具，下面均称呼为 mkcert.exe。
 
-![Alt text](image.png)
+![Alt text](./image.png)
 
 2. 使用以下命令安装根证书到本系统
 
