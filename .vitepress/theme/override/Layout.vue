@@ -25,7 +25,7 @@
           </ul>
         </div>
         <div class="mt-1">
-          Copyright © 2023 绝弹博客
+          Copyright © 2023 绝弹笔记
           <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-[var(--vp-c-brand)] hover:underline underline-offset-2">
             桂ICP备2021001859号-1
           </a>

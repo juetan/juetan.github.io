@@ -40,9 +40,7 @@ XPath 采用路径式的查找方法，整个 XML 作为树级结构从根节点
 
 ## 在浏览器
 
-在浏览器可以使用 `document.evaluate` 方法根据 XPath 选择元素，具体用法可查阅 MDN 的 [文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/evaluate)。
-
-此外，还可以安装 [XPath Helper](https://chromewebstore.google.com/detail/xpath-helper/hgimnogjllphhhkhlmebbmlgjoejdpjl) 插件，有了此插件基本上可以不用上面的方法。安装好后，使用效果如下：
+在浏览器可以使用 `document.evaluate` 方法根据 XPath 选择元素，具体用法可查阅 MDN 的 [文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/evaluate)。此外，还可以安装 [XPath Helper](https://chromewebstore.google.com/detail/xpath-helper/hgimnogjllphhhkhlmebbmlgjoejdpjl) 插件，有了此插件基本上可以不用上面的方法。安装好后，使用效果如下：
 
 ![Alt text](./image.png)
 

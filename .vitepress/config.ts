@@ -14,15 +14,15 @@ import { defineConfig } from 'vitepress';
  */
 export default defineConfig({
   lang: 'zh-CN',
-  title: '绝弹博客',
-  titleTemplate: ':title | 绝弹博客',
-  description: '一位前端开发者的博客',
+  title: '绝弹笔记',
+  titleTemplate: ':title | 绝弹笔记',
+  description: '一位前端开发者的笔记',
   head: [
     [
       'meta',
       {
         name: 'keywords',
-        content: '绝弹博客|绝弹|博客|前端开发|后端开发|技术|web|框架',
+        content: '绝弹博客|绝弹笔记|绝弹|博客|前端开发|后端开发|技术|web|框架',
       },
     ],
   ],
