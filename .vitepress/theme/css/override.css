@@ -53,7 +53,7 @@ html:not(.dark) {
 
 :root {
   --vp-c-brand: #33bb99;
-  --vp-c-brand-1: #33cc9920;
+  --vp-c-brand-1: #33cc99;
   --vp-c-brand-light: #33cc99e0;
   --vp-c-brand-lighter: #33cc99a0;
   --vp-c-brand-lightest: #33cc99c0;
@@ -301,7 +301,7 @@ body {
   background-color: transparent;
 }
 .vp-doc h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   color: #000;
   margin-top: 32px;
@@ -430,7 +430,8 @@ body .VPDocAsideOutline.has-outline {
 #app code,
 #app kbd,
 #app samp {
-  font-family: var(--vp-font-family-mono);
+  /* font-family: var(--vp-font-family-mono); */
+  font-family: cascadia;
 }
 
 body .vp-doc [class*='language-'] > button.copy {
@@ -487,4 +488,8 @@ div.vp-doc table th {
 
 a {
   text-decoration: none;
+}
+
+.line [style*="#6A737D"] {
+  font-style: italic;
 }

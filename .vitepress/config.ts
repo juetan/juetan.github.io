@@ -25,10 +25,31 @@ export default defineConfig({
         content: '绝弹博客|绝弹笔记|绝弹|博客|前端开发|后端开发|技术|web|框架',
       },
     ],
+    [
+      'link',
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'true',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap',
+      },
+    ],
   ],
   sitemap: {
     hostname: 'https://www.juetan.cn',
-
   },
   appearance: false,
   cleanUrls: true,
@@ -41,7 +62,7 @@ export default defineConfig({
    */
   markdown: {
     theme: 'github-light',
-    lineNumbers: true,
+    lineNumbers: false,
     config(md) {
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
         const token = tokens[idx];

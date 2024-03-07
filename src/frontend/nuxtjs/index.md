@@ -3,11 +3,7 @@ title: NuxtJS：基于 VueJS 的全栈式框架，简明笔记
 date: 2024-01-30 18:00:00
 ---
 
-[NuxtJS](https://nuxt.com/) 是基于 VueJS 的全栈式框架，不仅支持 CSR/SSR/SSG/SWR/ISR 等渲染模式，还支持文件路由/自动导入/布局管理等额外功能。
-
-> 注意：[NextJS](https://nextjs.org/) 是基于 ReactJS 的全栈式框架，[NestJS](https://nestjs.com/) 是基于 NodeJS 的后端框架，切勿混淆。
-
-粗略翻过一遍官方文档，总结一些我比较关注的点。
+[NuxtJS](https://nuxt.com/) 是基于 VueJS 的全栈式框架，不仅支持 CSR/SSR/SSG/SWR/ISR 等渲染模式，还支持文件路由/自动导入/布局管理等额外功能。注意：[NextJS](https://nextjs.org/) 是基于 ReactJS 的全栈式框架，[NestJS](https://nestjs.com/) 是基于 NodeJS 的后端框架，切勿混淆。粗略翻过一遍官方文档，总结一些我比较关注的点。
 
 ## 快速上手
 

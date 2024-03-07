@@ -21,6 +21,9 @@ button {
 body .cursor-pointer {
   cursor: url(/cursor/normal.cur), pointer;
 } */
+/* body {
+  font-family: "Noto Sans SC", sans-serif;
+} */
 
 .title {
   letter-spacing: 1.5px;
@@ -36,7 +39,8 @@ button.wl-btn.primary {
   border-color: var(--vp-c-brand);
 }
 
-body .wl-editor:focus, body .wl-input:focus {
+body .wl-editor:focus,
+body .wl-input:focus {
   background: transparent;
 }
 
@@ -78,7 +82,7 @@ textarea.wl-editor {
   background: #fff;
 }
 
-.wl-sort li {
+.wl-sort ul li {
   font-size: 14px;
 }
 
@@ -94,5 +98,14 @@ div.wl-empty {
 #app h1 {
   color: #000;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 26px;
+}
+
+@font-face {
+  font-family: cascadia;
+  src: url('/fonts/CascadiaCodePL-Light.ttf');
+}
+
+.vp-doc li {
+  list-style-type: circle;
 }
