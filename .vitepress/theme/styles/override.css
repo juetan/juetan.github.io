@@ -329,15 +329,14 @@ body {
 }
 
 body .VPDocAsideOutline.has-outline {
-  background-color: #ffffff;
-  border-radius: 4px;
+  background-color: transparent;
 }
 .VPDocAsideOutline .outline-title {
   display: flex;
   align-items: center;
-  height: 40px;
   font-weight: 400;
-  border-bottom: 1px solid var(--vp-c-divider);
+  line-height: 1;
+  margin-top: 4px;
 }
 .VPDocAsideOutline ul {
   margin: 8px 0;

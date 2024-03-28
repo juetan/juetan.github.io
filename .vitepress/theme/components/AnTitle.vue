@@ -12,23 +12,14 @@
         <span class="i-icon-park-outline-time" />
         {{ dayjs(frontmatter.date).format('YYYY年MM月DD日') }}
       </time>
-      <!-- <div>
-        <span class="i-icon-park-outline:text" />
-        约 {{ item?.frontmatter.wordCount || 0 }} 字
-      </div> -->
-      <!-- <div class="flex-1 flex justify-end items-center">
-        <span class="cursor-pointer">
-          <i class="i-icon-park-outline-expand-left mr-1"></i>目录
-        </span>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { PostItem, data } from '@app/data/posts.data.ts';
+import { dayjs } from '@theme/utils/dayjs';
 import { useData } from 'vitepress';
-import { dayjs } from '../dayjs';
 
 const { frontmatter, page } = useData<PostItem>();
 const item = data.find((i) => i.frontmatter.title === page.value.frontmatter.title);
@@ -42,3 +33,4 @@ const item = data.find((i) => i.frontmatter.title === page.value.frontmatter.tit
   font-weight: 600;
 }
 </style>
+../utils

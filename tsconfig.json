@@ -12,12 +12,13 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
-    "baseUrl": ".",
     "allowImportingTsExtensions": true,
+    "baseUrl": ".",
     "paths": {
       "@app/*": [".vitepress/*"],
       "@theme/*": [".vitepress/theme/*"]
     }
   },
-  "include": [".vitepress/**/*", "src/**/*"]
+  "include": ["**/*", ".vitepress/**/*"],
+  "exclude": ["dist", ".obsidian", ".github"]
 }

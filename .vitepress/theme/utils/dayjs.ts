@@ -3,6 +3,21 @@ import "dayjs/locale/zh-cn";
 import localData from "dayjs/plugin/localeData";
 import relativeTime from "dayjs/plugin/relativeTime";
 
+declare module 'dayjs' {
+  /**
+   * 默认日期时间格式
+   */
+  export var DATETIME: 'YYYY-MM-DD HH:mm:ss';
+
+  export var DATE: 'YYYY-MM-DD';
+
+  export var TIME: 'HH:mm:ss';
+
+  interface Dayjs {
+    _format: Dayjs['format'];
+  }
+}
+
 /**
  *
  * 默认日期时间格式
@@ -63,5 +78,5 @@ dayjs.prototype.format = function (format?: string) {
   return this._format(dayjs.DATETIME);
 };
 
-export { dayjs, DATETIME, DATE, TIME };
+export { DATE, DATETIME, TIME, dayjs };
 

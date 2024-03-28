@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { formatNumber, state } from '@theme/utils/state';
+import { onMounted } from 'vue';
 import type { MenuItem } from '../composables/outline';
-import { ref, onMounted } from 'vue';
-import { state, formatNumber } from '@theme/override/state';
 
 function getId(link: string) {
   const id = link.split('#')?.[1];

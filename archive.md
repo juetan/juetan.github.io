@@ -4,7 +4,7 @@ date: 2023-07-14 21:03:00
 ---
 
 <script lang="ts" setup>
-import Archive from './Archive.vue'
+import Archive from '@theme/components/AnArchive.vue'
 </script>
 
 <Archive />

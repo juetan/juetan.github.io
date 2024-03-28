@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { data as posts } from '@app/data/posts.data.ts';
 import { Timeline } from '@arco-design/web-vue';
-import { dayjs } from '@theme/dayjs';
+import { dayjs } from '@theme/utils/dayjs';
 </script>
 
 <style scoped></style>

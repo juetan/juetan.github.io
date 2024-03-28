@@ -103,7 +103,7 @@ div.wl-empty {
 
 @font-face {
   font-family: cascadia;
-  src: url('/fonts/CascadiaCodePL-Light.ttf');
+  src: url('/assets/fonts/CascadiaCodePL-Light.ttf');
 }
 
 .vp-doc li {

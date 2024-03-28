@@ -1,18 +1,5 @@
 /// <reference types="vite/client" />
 
-declare module 'cursor-effects' {
-  interface Options {
-    colors?: string[];
-  }
-  const fairyDustCursor: new (options?: Options) => any;
-  export const fairyDustCursor;
-}
-
-declare module '@waline/client/component' {
-  const Waline: any;
-  export const Waline;
-}
-
 declare interface Window {
   __WORD_COUNT__: number;
 }

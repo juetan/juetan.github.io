@@ -1,5 +1,5 @@
 <template>
-  <div class="md:mx-auto mx-2 mt-5 flex gap-4 max-w-[880px]">
+  <main class="md:mx-auto mx-2 mt-5 flex gap-4 max-w-[880px]">
     <div class="item-list-wrapper flex-1 bg-white px-3 md:px-5">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">
@@ -16,15 +16,11 @@
               <p class="item-excerpt line-clamp-2 text-gray-400 h-13">
                 {{ post.excerpt || '暂无简介' }}
               </p>
-              <div class="text-slate-400 text-xs flex items-center gap-3">
+              <div class="text-gray-400 text-xs flex items-center gap-3">
                 <div>
                   <span class="i-icon-park-outline-user" />
                   绝弹
                 </div>
-                <!-- <div class="cursor-pointer hover:text-[var(--vp-c-brand)]">
-                  <span class="i-icon-park-outline:tag-one" />
-                  前端
-                </div> -->
                 <div>
                   <span class="i-icon-park-outline-time" />
                   {{ dayjs(post.frontmatter.date).format('YYYY年MM月DD日') }}
@@ -47,36 +43,20 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">
 import { data as posts } from '@app/data/posts.data.ts';
 import { Pagination } from '@arco-design/web-vue';
+import { dayjs } from '@theme/utils/dayjs';
 import { reactive } from 'vue';
-import { dayjs } from '../dayjs';
 
 const state = reactive({
   page: 1,
   pageSize: 10,
   data: posts.slice(0, 10),
 });
-
-const colors = [
-  'red',
-  'orangered',
-  'orange',
-  'gold',
-  'lime',
-  'green',
-  'cyan',
-  'blue',
-  'arcoblue',
-  'purple',
-  'pinkpurple',
-  'magenta',
-  'gray',
-];
 
 const onPageSizeChange = (page: number) => {
   const start = (page - 1) * state.pageSize;
@@ -86,7 +66,7 @@ const onPageSizeChange = (page: number) => {
 };
 
 const founded = dayjs().diff(dayjs('2023-01-01 00:00:00'), 'day');
-const lastModified = dayjs(__APP_LAST_MODIFIED__).fromNow();
+const lastModified = dayjs('2023-01-01 00:00:00').fromNow();
 
 const stat = [
   {
@@ -114,7 +94,7 @@ const stat = [
 
 <style scoped>
 .item-list-wrapper {
-  box-shadow: 0 2px 10px rgba(55,99,170,.06);
+  box-shadow: 0 2px 10px rgba(55, 99, 170, 0.06);
 }
 .item-list {
   margin: 0;
@@ -146,44 +126,5 @@ const stat = [
 }
 .i-icon-park-outline-bookshelf {
   vertical-align: -3px;
-}
-.bounce-in-bottom {
-  animation: bounce-in-bottom 1.1s both;
-}
-@keyframes bounce-in-bottom {
-  0% {
-    transform: translateY(500px);
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    transform: translateY(0);
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    transform: translateY(65px);
-    animation-timing-function: ease-in;
-  }
-  72% {
-    transform: translateY(0);
-    animation-timing-function: ease-out;
-  }
-  81% {
-    transform: translateY(28px);
-    animation-timing-function: ease-in;
-  }
-  90% {
-    transform: translateY(0);
-    animation-timing-function: ease-out;
-  }
-  95% {
-    transform: translateY(8px);
-    animation-timing-function: ease-in;
-  }
-  100% {
-    transform: translateY(0);
-    animation-timing-function: ease-out;
-  }
 }
 </style>

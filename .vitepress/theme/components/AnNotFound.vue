@@ -11,13 +11,13 @@
             <template #icon>
               <i class="i-icon-park-outline-back"></i>
             </template>
-            返回上页
+            返回
           </Button>
           <Button type="outline" @click="router.go('/')">
             <template #icon>
               <i class="i-icon-park-outline-home"></i>
             </template>
-            返回首页
+            首页
           </Button>
         </div>
       </div>

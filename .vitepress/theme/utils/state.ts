@@ -1,6 +1,6 @@
+import { throttle } from 'lodash-es';
 import { useRoute } from 'vitepress';
 import { nextTick, onMounted, onUnmounted, reactive, watch } from 'vue';
-import { throttle } from 'lodash-es';
 
 export const state = reactive({
   hash: '',

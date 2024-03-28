@@ -1,13 +1,10 @@
 import { Image } from '@arco-design/web-vue';
+import AnLayout from '@theme/components/AnLayout.vue';
+import '@theme/styles/cursor.css';
+import '@theme/styles/override.css';
 import 'uno.css';
 import { EnhanceAppContext } from 'vitepress';
 import Theme from 'vitepress/theme';
-import './css/animation.css';
-import './css/cursor.css';
-import './css/override.css';
-import Layout from './override/Layout.vue';
-import DemoBlock from '@ruabick/vitepress-demo-block';
-import '@ruabick/vitepress-demo-block/dist/style.css';
 
 /**
  * 自定义主题
@@ -15,9 +12,8 @@ import '@ruabick/vitepress-demo-block/dist/style.css';
  */
 export default {
   ...Theme,
-  Layout,
-  enhanceApp({ app, router, siteData }: EnhanceAppContext) {
+  Layout: AnLayout,
+  enhanceApp({ app }: EnhanceAppContext) {
     app.component('Image', Image);
-    app.component('demo', DemoBlock);
   },
 };

@@ -48,7 +48,7 @@ make && make install
 
 在 Nginx 安装目录下包含很多子目录和文件，作为新手我们需要关注以下几个重点文件：
 
-```tree
+```
 # /usr/local/nginx
 
 ├── client_body_temp

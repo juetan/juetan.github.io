@@ -22,13 +22,13 @@ function htmlToText(html?: string) {
   return text;
 }
 
-export default createContentLoader(['src/**/*.md'], {
+export default createContentLoader(['**/*.md', '/!(README.md)'], {
   excerpt: true,
   includeSrc: true,
   render: true,
   transform(rawData) {
     const sorted = rawData.sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date));
-    const ignores = ['/about', '/public', '/index', '/archive', '/tags', '/404', '/draft'];
+    const ignores = ['/README', '/public', '/index', '/archive', '/tags', '/404', '/draft'];
     const data: (PostItem | null)[] = sorted.map((item) => {
       item.url = item.url.replace('/src', '');
       if (item.frontmatter.layout) {
@@ -47,7 +47,7 @@ export default createContentLoader(['src/**/*.md'], {
       }
       if (!post.frontmatter.thumbnail) {
         const index = Math.floor(Math.random() * 10) + 1;
-        post.frontmatter.thumbnail = `./images/${index}.jpg`;
+        post.frontmatter.thumbnail = `./assets/covers/${index}.jpg`;
       }
       if (ignores.some((i) => item.url.startsWith(i))) {
         return null;
