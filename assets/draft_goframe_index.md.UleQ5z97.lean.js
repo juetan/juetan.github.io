@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.3EKbrk2Y.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"draft/goframe/index.md","filePath":"draft/goframe/index.md"}'),r={name:"draft/goframe/index.md"};function o(n,d,s,c,f,i){return a(),t("div")}const _=e(r,[["render",o]]);export{p as __pageData,_ as default};
