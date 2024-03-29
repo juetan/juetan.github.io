@@ -216,7 +216,7 @@ app.listen(3000, () => {
 
 在项目根目录下，运行 `npx tsx ./server.ts` 命令后，浏览器打开即可。贴一张运行效果和具体网络请求吧，如下：
 
-![](./image-overview.png)
+![](/images/vue-load-from-url.png)
 
 ## 最后
 

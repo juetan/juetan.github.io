@@ -13,7 +13,7 @@ Rust 是一门高性能、高安全性的系统级编程语言，最初旨在作
 要说理由的话，大概有以下几个：
 
 - 想学一门偏底层的语言
-- 部分概念跟NodeJS类似，let/const关键字，包管理器等
+- 部分概念跟 NodeJS 类似，let/const 关键字，包管理器等
 
 ## 历史
 
@@ -82,7 +82,7 @@ fn main() {
 
 以上代码中：
 
-- `fn` 是 function 的缩写，表示声明一个函数
+- `fn` 是 function 的缩写，声明一个函数
 - `main` 是函数名，当名字为 main 时作为命令行程序的入口
 - `println` 用于打印带换行符的字符串，`!` 表示这是个编译宏。
 
@@ -94,7 +94,7 @@ fn main() {
 
 - `rustc` 是 Rust 的编译命令，类似于 javac，其中的 c 是 compile 的缩写，这个命令是跟随 rustup 安装的。
 - `.exe` 是 Windows 平台下可执行文件的后缀名
-- `.pdb` 是一个包含调试信息的文件
+- `.pdb` 是一个由 Microsoft 开发的文件格式，用于存储程序（或通常是程序模块，如 DLL 或 EXE）的调试信息。
 
 3. 运行 ./main.exe 命令，不出意外的话能看到如下的输出
 
@@ -102,7 +102,7 @@ fn main() {
 
 ## 包管理工具
 
-类似于 NodeJS 有 npm 工具，Rust 也有自己的包管理工具：`cargo`(直译为货物)。通常来说，别人写好并发布出来的代码包，叫第三方库，但在不同语言间也有不同叫法。例如，在 NodeJS 中第三方库称为 package，而在 Rust 中称为 crate(直译为运货用的大木箱)。
+NodeJS 有 npm 工具，Rust 也有自己的包管理工具：`cargo`(直译为货物)。通常来说，别人写好并发布出来的代码包，叫第三方库，但在不同语言间也有不同叫法。例如，在 NodeJS 中第三方库称为 package，而在 Rust 中称为 crate(直译为运货用的大木箱)。
 
 接下来，写个小项目感受下：系统生成一个随机数，我们输入一个数，然后系统会提示我们大了、小了还是相等。在生成随机数时，会用到一个叫 rand 的 crate(第三方库)
 
@@ -160,17 +160,18 @@ fn main() {
 上面的代码，涉及的语法有点多，我们来慢慢看下，首先是顶部的声明：
 
 ```rust
-use std:io
+use std::io
 ```
 
 - `use` 表示使用某个模块，类似于 NodeJS 的 import 语法
 - `std` 表示内置的标准库，std 是 standard 的缩写
-- `::` 表示子成员，在对象上表示其静态成员
+- `::` 表示子成员，在对象上表示其静态成员，
 - `io` 是输出输出库，io 是 input/output 的缩写
 
 接下来是：
 
 ```rust
+// 生成随机数
 let secret_number = rand::thread_rng().gen_range(1..=100);
 let mut guess = String::new();
 ```
@@ -182,16 +183,18 @@ let mut guess = String::new();
 再接下来是
 
 ```rust
+// 读取用户输入
 io::stdin().read_line(&mut guess).expect("Failed to read line");
 ```
 
 - `&` 表示对某个变量的引用
 - `&mut` 表示可修改的变量引用
-- `expect` 表示期望有值，否则报错并将传入的参数设为异常消息
+- `expect` 表示期望有返回值，否则报错并将传入的参数设为异常消息
 
 最后是
 
 ```rust
+// 比较大小
 match guess.cmp(&secret_number) {
   Ordering::Less => println!("小了"),
   Ordering::Greater => println!("大了"),
@@ -207,12 +210,13 @@ match guess.cmp(&secret_number) {
 
 ![](./image-cargo-run.png)
 
-5. 同时，当前目录下多个 `target` 目录，默认是debug模式，`debug` 目录放着我们刚才编译好的文件。可以通过 `--release` 参数指定为release模式，生成好的文件将在 `target/release` 目录下。
+5. 同时，当前目录下多个 `target` 目录，默认是 debug 模式，`debug` 目录放着我们刚才编译好的文件。可以通过 `--release` 参数指定为 release 模式，生成好的文件将在 `target/release` 目录下。
 
 ![](./image-cargo-target.png)
 
 ## 学习资料
-- [Rust语言圣经](https://course.rs/about-book.html)
+
+- [Rust 语言圣经](https://course.rs/about-book.html)
 - [Rusty Book-常用库和代码片段](https://rusty.course.rs/about.html)
 - [Cargo 官方文档](https://doc.rust-lang.org/cargo/index.html)
 

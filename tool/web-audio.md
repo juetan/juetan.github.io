@@ -26,7 +26,7 @@ PCM 是一种编码格式，将模拟信号格式转换位数字信号格式，�
 
 其中，wav 是最简单的，只在 pcm 数据的前面加了 44 位字符(等于没压缩)，贴一张图如下：
 
-![](./image-wav.webp)
+![](/images/web-wav-head.webp)
 
 ## Web Audio API
 
@@ -86,8 +86,6 @@ const onFileChange = (e: Event) => {
 </script>
 ```
 
-<demo src="./demo-createBufferSource.vue" ></demo>
-
 ### createMediaElementSource
 
 [createMediaElementSource](https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext/createMediaElementSource) 方法，创建媒体元素数据源，媒体元素指 `<audio>` 和 `<video>` 等HTML元素，示例如下：
@@ -110,8 +108,6 @@ const onClick = () => {
 };
 </script>
 ```
-
-<demo src="./demo-createMediaElement.vue" />
 
 ### createMediaStreamSource
 

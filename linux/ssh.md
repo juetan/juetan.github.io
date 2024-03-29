@@ -11,15 +11,24 @@ date: 2023-09-25 10:34:00
 
 - 使用密钥进行登陆
 
-使用密钥的好处是，安全且不用担心暴力侵入(除非你的密钥暴露)，但缺点是你只能使用特定电脑登陆，不能随时随地登陆。
+使用密钥的好处是，安全且不用担心暴力侵入(除非你的密钥暴露)，但缺点是密钥不好携带，不能随时随地登陆。
 
-## 使用账号密码登陆
+## 准备工作
 
-部分服务器，默认是不允许使用账号密码进行登陆的，那么在使用前需要修改 Sshd 的配置文件来允许使用账号密码登陆，步骤如下：
+在开始之前，我们先来创建一个专门用来登陆的用户，使用 root 用户不推荐，容易触发危险操作。使用以下命令，创建一个用户并设置其密码，其中 -a 表示 append(追加)，-G 表示 group(用户组)，连起来就是给新用户追加 root 用户组(即 SUDO 的权限)。
+
+```bash
+useradd -a -G root demo
+passwd demo
+```
+
+## 密码登陆
+
+部分服务器，默认是不允许使用账号密码进行登陆的，那么在使用前需要确认 Sshd 的配置文件是否允许使用账号密码登陆，步骤如下：
 
 ### 修改配置
 
-执行 vim /etc/ssh/sshd_config 命令，找到 PasswordAuthentication 配置并设置为 yes，如下：
+使用 vim /etc/ssh/sshd_config 命令打开配置文件，找到 PasswordAuthentication 配置并设置为 yes，如下：
 
 ```ini
 PasswordAuthentication yes
@@ -39,21 +48,12 @@ service ssh restart
 systemctl restart sshd
 ```
 
-### 添加用户
-
-使用以下命令，创建一个用户并设置其密码，其中 -a 表示 append(追加)，-G 表示 group(用户组)，连起来就是给新用户 SUDO 的权限。
-
-```bash
-useradd -a -G root demo
-passwd demo
-```
-
 ### 本地连接
 
-在本地打开 CMD，执行以下命令应该能访问上服务器，其中账号和 IP 使用 @ 分隔，回车后会让你输入密码，默认端口是 22。
+在本地打开 CMD，执行以下命令进行登陆，其中用户名和服务器 IP 使用 @ 分隔，默认端口是 22，按下回车后会让你输入密码。注意：输入密码时不会显示，所以请输入密码后回车。
 
 ```bash
-ssh demo@<ip>
+ssh <username>@<ip>[:port]
 ```
 
 ### 添加别名
@@ -69,9 +69,9 @@ Host server
 
 以上，其中：
 
-- Host 定义服务器的别名
-- HostName 定义主机名，可以是服务器的 IP 或域名
-- Port 定义服务器的端口，默认是 22
+- Host 定义新的服务器主机，server 是起的名字
+- HostName 定义主机名，填服务器 IP 或域名
+- Port 定义端口，默认是 22
 - User 定义要登陆的账号，注意这里不能定义密码，每次登陆还是要手动输入密码的。
 
 ### 再次登陆
@@ -82,25 +82,33 @@ Host server
 ssh server
 ```
 
-## 使用密钥进行登陆
+## 密钥登陆
 
 使用密钥的好处是安全，对于生产环境来说是至关重要的，毕竟你也不想第二天醒来发现，数据被人加密，服务器被用来挖矿吧。
 
 ### 创建密钥
 
-在本地执行以下命令，会在 ~/.ssh 目录下生成 id_rsa 和 id_rsa_pub 文件。其中 id_rsa 是密钥文件，id_rsa_pub 是公钥文件。
+在本地执行以下命令，会在 ~/.ssh 目录下生成 id_rsa 和 id_rsa_pub 文件。其中 id_rsa 是私钥，id_rsa_pub 是公钥。
 
 ```bash
 ssh-keygen -t rsa
 ```
 
+以上，ssh-keygen 是随 ssh 安装的命令，用来生成密钥对。-t 参数指定密钥类型，可以是 rsa/dsa/ecdsa/ed25519 之一，这里指定为 rsa。
+
 ### 添加公钥
 
-将公钥内容复制到服务器的 ~/.ssh/authorized_keys 文件末尾，方式很多种，这里介绍下 Windows 下没有 ssh-copy-id 命令是如何进行复制的，命令如下：
+将公钥内容复制到服务器的 ~/.ssh/authorized_keys 文件末尾，方式很多种，这里介绍下 Windows 下没有 ssh-copy-id 命令是如何进行复制的，在 powershell 中使用如下命令：
 
 ```bash
 type $env:USERPROFILE\.ssh\id_rsa.pub | ssh user@hostname "cat >> ~/.ssh/authorized_keys"
 ```
+
+上面，`type`、 `$env:xxx`、 和 `|` 均是 powershell 命令，其中：
+
+- `$env:USERPROFILE` 是 powershell 中的一个变量，表示当前用户的用户目录。
+- `type` 命令是 powershell 中的一个命令，用于显示文件的内容，类似于 Linux 中的 `cat` 命令。
+- `|` 是 powershell 中的一个管道符，用于将上一个命令的输出作为下一个命令的输入。
 
 ### 进行登陆
 
@@ -131,4 +139,4 @@ ssh server1
 
 ## 结语
 
-以上，介绍两种使用 SSH 登陆服务器的方式：账号密码和密钥登陆。此外，如果有编辑文件或敲代码的需求，可以配合 VS Code 的 SSH 插件进行使用，体验上非常友好且接近于本地使用。
+以上，介绍两种使用 SSH 登陆服务器的方式：密码登陆和密钥登陆。此外，如果有编辑文件或敲代码的需求，可以配合 VS Code 的 SSH 插件进行使用，体验上非常友好且接近于本地使用。

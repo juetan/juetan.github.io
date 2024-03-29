@@ -282,8 +282,7 @@ html:not(.dark) {
 }
 
 body {
-  font-size: 14px;
-  font-weight: 黑体;
+  font-size: 16px;
 }
 
 .items > .VPSidebarItem.level-1 {
@@ -424,13 +423,6 @@ body .VPDocAsideOutline.has-outline {
 .vp-doc a:hover {
   color: var(--vp-c-brand);
   text-decoration: underline;
-}
-#app pre,
-#app code,
-#app kbd,
-#app samp {
-  /* font-family: var(--vp-font-family-mono); */
-  font-family: cascadia;
 }
 
 body .vp-doc [class*='language-'] > button.copy {

@@ -3,23 +3,54 @@ title: 浏览器对二进制内容的下载处理机制
 date: 2023-07-19 11:05:00
 ---
 
-从服务端下载内容是很常见的操作，例如从服务器下载一个 .exe 文件，一个 .zip 文件或 .png 文件等。但在浏览器进行下载，是有一点门道的，接下来从两个方面聊下如何在浏览器下载内容。
+当你在浏览器地址栏输入一个地址，有时会在页面中渲染，有时会弹出下载窗口，浏览器是怎么对待不同内容的呢？答案是：浏览器会先识别链接返回的内容是什么类型，如何是支持的类型，则会渲染，否则会下载。
 
-## 利用浏览器进行下载
+## 内容类型
 
-这里的意思是指，不使用JS操作二进制数据，直接给让浏览器打开一个链接，利用浏览器的内置规则进行下载。例如，使用 `<a>` 标签打开一个 .zip 文件的链接，浏览器会弹出一个下载弹窗，代码如下：
+浏览器识别内容并不是靠后缀，而是通过 HTTP 头部中的 Content-Type 字段来判断。这个字段的值是 MIME 类型，比如：text/html、application/pdf、image/jpeg、application/zip等。来看下面这个例子：
 
-```html
-<a href="https://www.abc.com/abc.zip" />
+```bash
+# 请求地址
+https//juetan.cn/index.txt
+# 响应头
+content-type: image/jpeg
 ```
 
-上面的代码可以正常工作，但换成 .png 文件的链接，就会直接在浏览器打开而不是下载，这是为啥呢？
+以上，文件的类型是 txt 还是 jpeg 呢？答案是 jpeg。
 
-### 内容类型
+## MIME 类型
 
-主要在于，对于一个链接是否打开还是下载，取决于浏览器对 `Content-Type` 响应头的识别，有点区别文件后缀的识别方式。当浏览器支持 `Content-Type` 对应的类型时，浏览器会直接打开，反之会弹窗下载让用户自行处理。
+MIME 类型，即 Multipurpose Internet Mail Extensions(多用途网络邮件扩展)，最早是在邮件中用来表示附件的类型，如今广泛用于表示网络资源的类型，比如文件类型，网页类型，图片类型等等。MIME 主要分为 2 大类型和若干子类型：
 
-如果想让浏览器直接下载而非打开支持的类型，可不可以呢？也是可以的，但这里也分两种情况：
+### 单文件类型
+
+表示内容只由一种类型组成，包括：
+
+- text：包括 text/html、text/css等
+- image：包括 image/jpeg、image/png等
+- audio：包括 audio/mpeg、audio/ogg等
+- video：包括 video/mp4、video/ogg等
+- application：包括 application/pdf、application/msword等
+
+### 多文件类型
+
+表示内容可有由多种类型组成，包括：
+
+- multipart：包括 multipart/form-data、multipart/mixed等，通过表单上传多个不同类型的文件。
+
+### 浏览器
+
+浏览器对常见类型进行了支持，例如 png、jpg、gif、bmp、webp、svg 等，也有一些不支持的，例如 zip、avi、excel、ppt 等。
+
+## 浏览器支持的类型
+
+对于支持的类型，浏览器默认会渲染，如果我们不想渲染而是想下载呢，这有没有办法呢？例如：
+
+```html
+<a href="https://www.abc.com/abc.png" >下载图片</a>
+```
+
+以上，点击后会弹出图片，而不是下载。
 
 ### 文件链接同源
 

@@ -8,7 +8,7 @@ Rust 中的包称为 crate，包管理器称为 cargo，这两者的存在让我
 
 ## cargo 的使用
 
-cargo 既是一个包管理器，同时也是一个构建工具。作为包管理器时，主要从 [crates.io](https://crates.io) 源下载，国内可以使用字节跳动的 [rsproxy](https://rsproxy.cn) 镜像源。依赖会下载到一个全局目录，也就是说依赖是全局的，不像 NodeJS 每个项目都有单独的目录。
+cargo 既是一个包管理器，同时也是一个构建工具。作为包管理器时，主要从 [crates.io](https://crates.io) 源下载依赖，国内可以使用字节跳动的 [rsproxy](https://rsproxy.cn) 镜像源。依赖会下载到一个全局目录，也就是说依赖是全局的，不像 NodeJS 每个项目都有单独的目录。
 
 ### 安装依赖
 
@@ -18,7 +18,6 @@ cargo 既是一个包管理器，同时也是一个构建工具。作为包管�
 cargo add <crate-name>
 ```
 
-
 ### 卸载依赖
 
 类似于安装依赖，卸载比较简单。
@@ -26,8 +25,6 @@ cargo add <crate-name>
 ```bash
 cargo remove <crate-name>
 ```
-
-
 
 ## 创建项目
 
