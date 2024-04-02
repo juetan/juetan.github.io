@@ -3,14 +3,10 @@
     <h1 class="doc-title">
       {{ frontmatter.title }}
     </h1>
-    <div class="w-full text-gray-500 text-xs flex items-center gap-3 border-b border-slate-200 pb-4 mt-4 mb-6">
-      <div>
-        <span class="i-icon-park-outline-user" />
-        绝弹
-      </div>
+    <div class="w-full text-gray-500 text-xs flex items-center gap-3 pb-4 mt-2 mb-6">
+      <span>作者：绝弹</span>
       <time :datetime="frontmatter.date" :title="frontmatter.date">
-        <span class="i-icon-park-outline-time" />
-        {{ dayjs(frontmatter.date).format('YYYY年MM月DD日') }}
+        发布时间：{{ dayjs(frontmatter.date).format('YYYY年MM月DD日') }}
       </time>
     </div>
   </div>

@@ -303,7 +303,7 @@ fn main() {
 
 6. 运行结果如下：
 
-![](./image-attr-run.png)
+![](/images/rust-macro-attr-run.png)
 
 ### 函数宏
 

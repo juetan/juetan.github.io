@@ -10,7 +10,7 @@
       <BackTop>
         <Button type="primary" shape="round" size="large" class="!hidden !md:inline-block">
           <template #icon>
-            <i class="i-icon-park-outline-up-small text-lg"></i>
+            <i class="i-icon-park-outline-up-small text-xl"></i>
           </template>
         </Button>
       </BackTop>

@@ -34,19 +34,19 @@ Rust 依赖于 c++ 环境，为什么不在安装包内置而需要单独安装�
 
 1. 通过 [官网](https://visualstudio.microsoft.com/zh-hans/downloads/) 下载 VS 社区版并安装。
 
-![](./image-vs-dl.png)
+![](/images/rust-start-vs-dl.png)
 
 2. 选择 `使用C++的桌面开发` 选项
 
-![](./image-vs-cpp.png)
+![](/images/rust-start-vs-cpp.png)
 
 3. 选择对应操作系统的开发组件
 
-![](./image-vs-comp.png)
+![](/images/rust-start-vs-comp.png)
 
 4. 选择英文语言包及其他语言包
 
-![](./image-vs-lang.png)
+![](/images/rust-start-vs-lang.png)
 
 点击 `安装` 按钮等待下载和安装，我所选的依赖有 2G+大小，网速不好的话估计得等好一会。安装后之后，就可以接下来下一步的安装了。
 
@@ -56,15 +56,15 @@ Rustup 是 Rust 的版本管理和命令行工具，概念上与 NodeJS 的 nvm 
 
 1. 通过 [官网](https://www.rust-lang.org/tools/install) 下载 Rustup 并安装。
 
-![](./image-rustup-dl.png)
+![](/images/rust-start-rustup-dl.png)
 
 2. 选择默认方式即可，等待依赖下载和安装.
 
-![](./image-rustup-install.png)
+![](/images/rust-start-rustup-install.png)
 
 3. 安装完重新打开命令行，输入 `rustc --version` 应该有输出，代表安装成功。
 
-![](./image-rustup-ver.png)
+![](/images/rust-start-rustup-ver.png)
 
 至此，Rust 安装已完成。
 
@@ -88,7 +88,7 @@ fn main() {
 
 2. 运行 rustc ./main.ts 命令，然后你应该能看到当前目录下多出两个文件：main.exe 和 main.pdb
 
-![](./image-rust-compile.png)
+![](/images/rust-start-rust-compile.png)
 
 其中：
 
@@ -98,7 +98,7 @@ fn main() {
 
 3. 运行 ./main.exe 命令，不出意外的话能看到如下的输出
 
-![](./image-rust-exec.png)
+![](/images/rust-start-rust-exec.png)
 
 ## 包管理工具
 
@@ -108,7 +108,7 @@ NodeJS 有 npm 工具，Rust 也有自己的包管理工具：`cargo`(直译为�
 
 1. 运行 `cargo new <name>` 命令，此时会生成如下的目录和文件
 
-![](./image-cargo-new.png)
+![](/images/rust-start-cargo-new.png)
 
 其中：
 
@@ -208,11 +208,11 @@ match guess.cmp(&secret_number) {
 
 4. 运行 `cargo run` 命令，此时会先下载我们刚写入的 rand 依赖，然后再编译执行，如下：
 
-![](./image-cargo-run.png)
+![](/images/rust-start-cargo-run.png)
 
 5. 同时，当前目录下多个 `target` 目录，默认是 debug 模式，`debug` 目录放着我们刚才编译好的文件。可以通过 `--release` 参数指定为 release 模式，生成好的文件将在 `target/release` 目录下。
 
-![](./image-cargo-target.png)
+![](/images/rust-start-cargo-target.png)
 
 ## 学习资料
 

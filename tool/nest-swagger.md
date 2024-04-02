@@ -85,7 +85,7 @@ SwaggerModule.setup('/openapi', app, document, {
 
 4. 启动应用后，访问 [http://127.0.0.1:3000/openapi](http://127.0.0.1:3000/openapi)， 此时你应该能看到如下效果：
 
-![](./image-swagger1.png)
+![](/images/nest-swagger1.png)
 
 ## 命令行插件
 

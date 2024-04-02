@@ -1,6 +1,6 @@
 <template>
   <main class="md:mx-auto mx-2 mt-5 flex gap-4 max-w-[880px]">
-    <div class="item-list-wrapper flex-1 bg-white px-3 md:px-5">
+    <div class="item-list-wrapper flex-1 bg-white px-3 md:px-0">
       <div>
         <div class="text-base h-13 flex items-center border-b border-[#eee]">
           <i class="i-icon-park-outline-bookshelf mr-1"></i>最新文章
@@ -9,7 +9,7 @@
           <li v-for="(post, index) in state.data" :key="post.url" class="item flex justify-bewteen gap-2">
             <div class="flex-1 grid grid-rows-[auto_1fr_auto]">
               <a :href="post.url" class="item-link text-slate-700 flex gap-2 overflow-hidden">
-                <h2 class="item-title hover:underline underline-offset-4 truncate">
+                <h2 class="item-title truncate">
                   {{ post.frontmatter.title || '暂无标题' }}
                 </h2>
               </a>
@@ -93,9 +93,6 @@ const stat = [
 </script>
 
 <style scoped>
-.item-list-wrapper {
-  box-shadow: 0 2px 10px rgba(55, 99, 170, 0.06);
-}
 .item-list {
   margin: 0;
   padding: 0;
@@ -122,7 +119,7 @@ const stat = [
 }
 .item-link:hover {
   color: var(--vp-c-brand);
-  text-decoration: none;
+  text-decoration: underline;
 }
 .i-icon-park-outline-bookshelf {
   vertical-align: -3px;

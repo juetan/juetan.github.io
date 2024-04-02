@@ -67,19 +67,19 @@ Nuxt 采用约定式的目录结构，特定目录会自动加载，先来看一
 
 即 Client Side Render(客户端渲染)，HTML 在客户端动态生成，典型的就是 VueJS 单页面应用。如下：
 
-![alt text](./image.png)
+![alt text](/images/nuxt.png)
 
 ### SSG
 
 即 Server Side Generate(服务端生成)，HTML 在服务端已生成好，加载 JS 后会自动注水(Hydrate)，完成静态到动态的转换，典型的就是 Vitepres 静态应用。SSG 算是 SSR 的一种，即 HTML 不是在客户端生成的。
 
-![alt text](./image-1.png)
+![alt text](/images/nuxt-1.png)
 
 ### SSR
 
 即 Server Side Render(服务端渲染)，HTML 在服务端动态生成，页面加载 JS 后自动注水，典型的就是官网首页等需要 SEO 的地方。
 
-![alt text](./image-2.png)
+![alt text](/images/nuxt-2.png)
 
 ### SWR
 
@@ -99,13 +99,13 @@ Nuxt 采用约定式的目录结构，特定目录会自动加载，先来看一
 
 执行源码转服务端代码的过程，可使用 Nuxt 模块参与过程。
 
-![alt text](./image-3.png)
+![alt text](/images/nuxt-3.png)
 
 ### 服务端
 
 执行服务端代码，并生成客户端代码的过程，可使用 Nuxt 插件或 Nuxt 中间件参与过程。
 
-![alt text](./image-4.png)
+![alt text](/images/nuxt-4.png)
 
 ### 客户端
 

@@ -9,7 +9,7 @@ date: 2023-09-27 08:53:00
 
 出问题后首先去查了下 sqlite3 的官方文档，发现 sqlite3 有个二进制依赖，但这个二进制是不随着包下载的，而是下载后包后，在本地打包成对应平台的二进制文件。猜测这样做的原因，是减少安装时的依赖，毕竟把每个操作系统对应的二进制编译文件都放在一起体积会非常大，官方给出的类型如下：
 
-![](./image-sqlite3-bin.png)
+![](/images/node-alpine-sqlite3-bin.png)
 
 如此多的编译类型，果然还是单独编译比较划算。但编译需要 node-gyp 和 gcc 等依赖，哪个镜像有这些东西呢？
 
@@ -19,11 +19,11 @@ date: 2023-09-27 08:53:00
 
 以下是 node:18 打包出来的镜像，可以看到 sqlite3 构建出来的二进制文件名是 napi-v6-linux-glibc-x64 。
 
-![](./image-sqlite3-18.png)
+![](/images/node-alpine-sqlite3-18.png)
 
 以下是 node:18-alpine 打包出来的镜像，可以看到 sqlite3 构建出来的二进制文件名是 napi-v6-linux-musl-x64 。
 
-![](./image-sqlite3-alpine.png)
+![](/images/node-alpine-sqlite3-alpine.png)
 
 以上，两个架构不同导致打包出来的二进制名也不同，不能兼容也在情理之中。
 
@@ -49,11 +49,11 @@ CMD [ "node", "./dist/main.js" ]
 
 吐槽一下，国内服务器似乎也逃不过墙的命运，不光 Github 访问受限，连从 alpinelinux 下载依赖也受限，首次构建光这个阶段就足足耗费一个小时的时间(如下)。
 
-![](./image-build-gcc.png)
+![](/images/node-alpine-build-gcc.png)
 
 不过还好 Docker 有缓存机制，第二次构建使用缓存很快就构建了(如下)。
 
-![](./image-build-cache.png)
+![](/images/node-alpine-build-cache.png)
 
 ## 前后体积对比
 
@@ -61,11 +61,11 @@ CMD [ "node", "./dist/main.js" ]
 
 首先是使用 node:18 打包出来的镜像，基础镜像 1G 左右(大概?)，配合 node_modules 等未优化内容，体积是惊人的 1.4 G(如下)，看到的时候吓我一跳。
 
-![](./image-18-size.png)
+![](/images/node-alpine-18-size.png)
 
 然后是使用 node:18-alpine 打包出来的镜像，基础镜像 60M 左右，加上 node_modules 等文件体积也才 300 多M，可以说是非常理想。
 
-![](./image-alpine-size.png)
+![](/images/node-alpine-alpine-size.png)
 
 以上，合理使用镜像带来的效果非常不错。不过还是要吐槽下，这个镜像体积也不太小，普通的 vue 前端配合 nginx:alpine 打包出来也就 40M 左右，这 300M 属于大体积了。当然了，如果没有二进制和路径等其他要求，打包成单文件应用也是可以的，但这样容易产生其他问题。
 

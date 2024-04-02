@@ -25,25 +25,25 @@ date: 2023-09-22 10:03:00
 
 一个开源的容器平台，可以将程序及依赖打包到一个轻量级、可移植的容器中运行。内置有 Swarm 集群模式，可以理解为 K8S 的简单版(官方实现)，可以同时管理和调度多台服务器上的资源。
 
-![](./image-docker.png)
+![](/images/devops-docker.png)
 
 ### Portainer
 
 一个可视化的docker容器管理工具，手动管理 docker 是非常麻烦的，通过 portainer 可以很方便地管理容器/镜像/网络/数据卷等内容，且支持 docker swarm 模式。
 
-![](./image-portainer.png)
+![](/images/devops-portainer.png)
 
 ### Traefik
 
 一个类似于 nginx 但更适用于容器的反向代理工具，支持域名和证书的动态配置，同时支持 docker swarm 模式。
 
-![](./image-traefik.png)
+![](/images/devops-traefik.png)
 
 ### Gitea
 
 一个git 管理平台，有两个很关键地功能：Gitea Actions 可以让我们运行等价于 Github Actions地自动化任务，例如构建产物/构建镜像等；软件包可以让我们管理上传内容，例如npm包，docker镜像等。
 
-![](./image-gitea.png)
+![](/images/devops-gitea.png)
 
 ## 准备工作
 
@@ -53,13 +53,13 @@ date: 2023-09-22 10:03:00
 
 推荐 2核4G 配置，理论上 1核2G 也能勉强跑得动。以我个人为例，我这里选择的是腾讯云、带容器镜像的 ubuntu 系统，后续将不再描述 docker 的描述。
 
-![](./image-docker-ubuntu.png)
+![](/images/devops-docker-ubuntu.png)
 
 ### 域名解析
 
 登陆你的域名管理平台，解析名为 *.dev 的 A 记录到你的云服务器IP上，以我个人为例如下。注意：如果域名解析的是国内服务器那么域名是要备案的，备案内容自行查阅这里不再描述。
 
-![](./image-dns.png)
+![](/images/devops-dns.png)
 
 ## 安装Portainer
 
@@ -69,19 +69,19 @@ date: 2023-09-22 10:03:00
 
  执行 docker swarm init 命令启用 swarm 模式，会输出加入令牌和加入命令，只有单台服务器的话可以忽略这些输出。
 
-![](./image-swarm-init.png)
+![](/images/devops-swarm-init.png)
 
 ### 创建公共网络
 
 执行 docker network create -d overlay public 命令创建一个名为 public 的公共网络，其中 overlay 类型可以让我们与其他服务器的容器在一个内部网络内通信。
 
-![](./image-network-public.png)
+![](/images/devops-network-public.png)
 
 ### 创建数据卷
 
 执行 docker volume create portainer 命令创建一个名为 portainer 的数据卷，保存你在运行 portainer 时产生的数据，避免容器重启后数据丢失的问题。
 
-![](./image-volume-portainer.png)
+![](/images/devops-volume-portainer.png)
 
 ### 编写配置文件
 
@@ -137,13 +137,13 @@ volumes:
 
 执行 docker stack deploy -c /docker/portainer.yaml portainer 命令启动服务，其中使用 -c 指定配置文件的位置，最后的 portainer 为名字。
 
-![](./image-stack-portainer.png)
+![](/images/devops-stack-portainer.png)
 
 ### 访问页面
 
 在浏览器输入 http://ip:9000 并回车，页面中是以下安装页面即代表安装成功。注意：尽快安装完，否则2分钟后 Portainer 会出于安全考虑禁止安装，那时便要重启才能再操作。
 
-![](./image-portainer-page.png)
+![](/images/devops-portainer-page.png)
 
 ## 安装Traefik和Gitea
 
@@ -153,13 +153,13 @@ volumes:
 
 进入 Volumes 面板，分别创建 gitea 和 gitea_runner 数据卷，用于保存 gitea 和 gitea runner 在运行时产生的数据，创建时其他配置保持默认即可。
 
-![](./image-gitea-runner.png)
+![](/images/devops-gitea-runner.png)
 
 ### 添加配置
 
 进入 Stacks 面板，新建名为 core 的 Stack 并编写如下配置(具体请根据自身情况修改)，配置包含 3 个部分：Traefik + Gitea + Gitea Runner。
 
-![](./image-stack-core.png)
+![](/images/devops-stack-core.png)
 
 配置如下，注意注释的内容，我们尚未登陆 Gitea 没有注册令牌所以暂时留空。
 
@@ -249,7 +249,7 @@ networks:
 
 点击底部的 Deploy the action 按钮，稍等片刻便可以从列表中点进去查看运行状态。如果出现异常，可点击查看具体运行日志，或返回去检查下语法或配置有没有问题。
 
-![](./image-core-status.png)
+![](/images/devops-core-status.png)
 
 ## 配置Gitea Actions
 
@@ -259,7 +259,7 @@ networks:
 
 在 Portainer 面板中，提供有进入容器中执行命令的功能，对于日常操作非常方便。当然，对于复杂的修改还是通过直接操作数据卷更方便。在 Portainer 中进入容器步骤如下：
 
-![](./image-portainer-exec.png)
+![](/images/devops-portainer-exec.png)
 
 ### 添加配置
 
@@ -274,7 +274,7 @@ ENABLED=true
 
 重启后，应该能在管理后台界面多出名为 actions 的选项卡，进入点击创建Runner按钮即可看到加入令牌(如下)。
 
-![](./image-actions-token.png)
+![](/images/devops-actions-token.png)
 
 ### 更新配置
 
@@ -291,7 +291,7 @@ services:
 
 更新 stack 后，你应该能在管理后台的 actions 面板看到新加入的 Runner，如下：
 
-![](./image-runner-joined.png)
+![](/images/devops-runner-joined.png)
 
 至此，我们的CI/CD环境已部署完成，其中 Portainer 用于管理 Docker 镜像和容器，Traefik 用于配置域名和代理，Gitea 用于管理 Git 代码，Gitea Actions 用来运行构建任务。
 
@@ -335,7 +335,7 @@ volumes:
 
 4. 贴一个访问后的效果(如下)，注意：证书只有90天有效期(从图中10月9日到1月7日可以看出)，到期前10天 Traefik 会自动续签。
 
-![](./image-router-https.png)
+![](/images/devops-router-https.png)
 
 ## 结语
 

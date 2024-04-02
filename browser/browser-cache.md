@@ -19,7 +19,7 @@ date: 2023-07-20 11:49:00
 
 最早可以通过 `expires` 响应头，指定过期时间, 如下：
 
-![expires响应头](./image-expires.png)
+![expires响应头](/images/browser-cache-expires.png)
 
 由于 expires 字段是个绝对值，有时候会导致缓存提早或延后失效，为什么呢？
 
@@ -29,7 +29,7 @@ date: 2023-07-20 11:49:00
 
 后来就有了 `cache-control` 字段，这是个相对时间，如下：
 
-![cache-control响应头](./image-cache-control.png)
+![cache-control响应头](/images/browser-cache-cache-control.png)
 
 通过 `max-age=xxx` 值，可以指定多少秒后过期，这里的 31536000 秒即为一年。相对于 expires 的绝对时间，cache-control 的相对时间显得非常友好。同时，当两者同时出现时，后者的优先级更高。
 
@@ -45,7 +45,7 @@ date: 2023-07-20 11:49:00
 
 当请求资源时，服务器会返回 `Last-Modified` 响应头，告知该资源最近的修改时间，如下：
 
-![](./image-last-modified.png)
+![](/images/browser-cache-last-modified.png)
 
 当下次访问时，浏览器会通过 `If-Modified-Since` 请求头携带上一次返回的 Last-Modified 值，服务器收到后会比对是否修改过。如果没修改的话，通常会通过 `304` HTTP 状态码告知自上次以来没有修改过，反之则返回新的资源。
 
@@ -53,7 +53,7 @@ date: 2023-07-20 11:49:00
 
 除了这个，`Etag` 也是用来进行协商缓存的，如下：
 
-![](./image-etag.png)
+![](/images/browser-cache-etag.png)
 
 这是一个哈希值，通常是根据文件内容计算得到的。当下次访问时，浏览器会通过 `If-None-Matched` 请求头携带这个值，服务器收到后会比对是否一样。如果没修改的话，通常会通过 `304` HTTP 状态码告知自上次以来没有修改过，反之则返回新的资源。
 
@@ -65,7 +65,7 @@ date: 2023-07-20 11:49:00
 
 `Local Storage`直译为本地存储，提供一个持久化的存储控件，大小约为5MB，不主动删除的话不会过期。在浏览器开发者工具中，可通过 `Application` 面板看到，如下：
 
-![](./image-local-storage.png)
+![](/images/browser-cache-local-storage.png)
 
 常用的API调用如下：
 
@@ -85,7 +85,7 @@ localStorage.clear();
 
 `Session Storage` 直译为会话存储，跟上面差不多，但存储周期只在当前浏览器选项卡内。也就是说，你在浏览器打开一个页面，再新开一个选项卡打开同样的页面是访问不到上一个选项卡的值的。换句话说，新建一个选项卡就会跟着新建一个`Session Storage` 实例，同时在浏览器关闭的时候他们就会被清空。
 
-![](./image-session-storage.png)
+![](/images/browser-cache-session-storage.png)
 
 相关API如下：
 
@@ -119,7 +119,7 @@ sessionStorage.clear();
 
 在浏览器中，可查看存储的 Cookies
 
-![](./image-cookies.png)
+![](/images/browser-cache-cookies.png)
 
 ## 结语
 

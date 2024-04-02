@@ -58,7 +58,7 @@ Tampermonkey(油猴，最近插件的名字好像改为篡改猴)，是一款浏
 
 此外，在浏览器中打开任意以 .user.js 结尾的 URL(当然，格式要符合) 都会自动跳转到油猴的安装页面。而 vite-plugin-monkey 也正是利用这点来启动开发，截个图如下：
 
-![](./image-auto-install.png)
+![](/images/browser-tampermonkey-auto-install.png)
 
 ## 创建项目
 
@@ -152,11 +152,11 @@ const exportJSON = (json) => {
 
 以上，就是主要逻辑，目的是将当前项目的图标导出为符合 Unocss presetIocns 自定义图标集的JSON文件。其他边缘细节就不具体展示了，最后贴个效果图如下：
 
-![](./image-export-json.png)
+![](/images/browser-tampermonkey-export-json.png)
 
 除以上外，也可以根据自身喜好进行扩展，例如做个内置的管理弹窗，方便整合不同项目间的图标集，以下示例作参考：
 
-![](./image-manage.png)
+![](/images/browser-tampermonkey-manage.png)
 
 ## 最后
 

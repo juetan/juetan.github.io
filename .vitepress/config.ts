@@ -17,7 +17,7 @@ export default defineConfig({
   titleTemplate: ':title | 绝弹笔记',
   description: '一位前端开发者的笔记',
   appearance: false,
-  cleanUrls: false,
+  cleanUrls: true,
   srcDir: '.',
   outDir: '.vitepress/dist',
   sitemap: { hostname: 'https://www.juetan.cn' },
@@ -46,22 +46,22 @@ export default defineConfig({
     nav: [
       {
         text: '首页',
-        icon: 'i-icon-park-outline-home',
+        // icon: 'i-icon-park-outline-home',
         link: '/',
       },
       {
         text: '归档',
-        icon: 'i-icon-park-outline-time',
+        // icon: 'i-icon-park-outline-time',
         link: '/archive',
       },
       {
         text: '导航',
-        icon: 'i-icon-park-outline-lightning',
+        // icon: 'i-icon-park-outline-lightning',
         link: '/go',
       },
       {
         text: '关于',
-        icon: 'i-icon-park-outline-user',
+        // icon: 'i-icon-park-outline-user',
         link: '/about',
       },
     ] as any,

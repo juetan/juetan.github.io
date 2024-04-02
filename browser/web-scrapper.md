@@ -13,31 +13,31 @@ date: 2023-12-25 17:16:00
 
 创建任务，即创建 SiteMap(这词不常用，还是用我们熟悉的词吧，意思大致一样就行)。打开 [百度首页](https://baidu.com)，再打开开发者面板如下操作，其中URL可以使用特殊语法，这个后面再谈。
 
-![Alt text](./image-3.png)
+![Alt text](/images/browser-web-scrapper-3.png)
 
 ### 选择内容
 
 使用选择器，选择网页中的内容，我们此次只提取文本，如下。值得注意的是，插件的选择不一定准确，有时需要手动调整。
 
-![Alt text](./image-4.png)
+![Alt text](/images/browser-web-scrapper-4.png)
 
 ### 开始抓取
 
 抓取时有 2 个参数，一个是指定页面加载多少毫秒后开始抓取，如果数据是ajax返回的话需要注意这点；另一个是请求间隔，如果页面跳转到新地址会用到这个。
 
-![Alt text](./image-5.png)
+![Alt text](/images/browser-web-scrapper-5.png)
 
 ### 浏览数据
 
 抓取完肯定要确认数据是否正确，格式不正确需要重新调整选择器，浏览数据的步骤如下：
 
-![Alt text](./image-6.png)
+![Alt text](/images/browser-web-scrapper-6.png)
 
 ### 保存数据
 
 确认无误后，就可以进行保存(如下)。目前只能导出 excel 或 csv 格式，json 需要充值(会员)，不过也不是啥大问题，随便找个在线网站转一下就行。
 
-![Alt text](./image-7.png)
+![Alt text](/images/browser-web-scrapper-7.png)
 
 ### 小结
 
@@ -67,81 +67,81 @@ Scraper 的选择器类似于 CSS 选择器，但添加有额外功能，例如�
 
 提取文本，相当于 innerText 的值，以 [百度首页](https://baidu.com) 为例， 如下：
 
-![Alt text](./image.png)
+![Alt text](/images/browser-web-scrapper.png)
 
 ### 图片选择器
 
 提取图片地址，以 [百度首页](https://baidu.com) 为例， 如下：
 
-![Alt text](./image-1.png)
+![Alt text](/images/browser-web-scrapper-1.png)
 
 ### 表格选择器
 
 提取表格数据，以 [IANA的域名列表](https://www.iana.org/domains/root/db) 为例，如下：
 
-![Alt text](./image-2.png)
+![Alt text](/images/browser-web-scrapper-2.png)
 
 ### 链接选择器
 
 提取链接名字和地址，以 [百度首页](https://baidu.com) 为例， 如下：
 
-![Alt text](./image-8.png)
+![Alt text](/images/browser-web-scrapper-8.png)
 
 ### 属性选择器
 
 提取属性值，以 [百度首页](https://baidu.com) 为例， 如下：
 
-![Alt text](./image-9.png)
+![Alt text](/images/browser-web-scrapper-9.png)
 
 ### HTML选择器
 
 提取HTML代码(即innerHTML)，以 [百度首页](https://baidu.com) 为例， 如下：
 
-![Alt text](./image-10.png)
+![Alt text](/images/browser-web-scrapper-10.png)
 
 ### 元素选择器
 
 提取元素，实际是个分组功能。例如，有个列表，每个子项都有名字、链接地址等属性，元素就是包裹这些属性的盒子，可以理解 JS 中的对象。以 [百度首页](https://baidu.com) 为例，首先创建一个元素选择器：
 
-![Alt text](./image-11.png)
+![Alt text](/images/browser-web-scrapper-11.png)
 
 以上只是选择元素，还没有选择里面的内容，接下来选择里面的内容：
 
-![Alt text](./image-12.png)
+![Alt text](/images/browser-web-scrapper-12.png)
 
 元素和子选择器创建好就可以了，以下是预览到的数据：
 
-![Alt text](./image-13.png)
+![Alt text](/images/browser-web-scrapper-13.png)
 
 ### 元素滚动选择器
 
 一种特殊的元素选择器，附带滚动功能，适用于滚动加载数据的页面。当页面当前内容抓取完毕后，会自动滚动到底部，等待新的数据加载，然后按前面步骤抓取。以 [掘金首页](https://juejin.cn/) 为例，如下会抓取50条数据：
 
-![Alt text](./image-14.png)
+![Alt text](/images/browser-web-scrapper-14.png)
 
 ### 元素点击选择器
 
 另一种特殊的元素选择器，附带点击加载的功能，适用于点击按钮加载更多的页面。当页面当前内容抓取完毕后，会自动点击特定按钮，等待新的数据加载，然后按前面步骤抓取。以 [博客园WEB分类页](https://www.cnblogs.com/cate/web/#p2) 为例，如下：
 
-![Alt text](./image-15.png)
+![Alt text](/images/browser-web-scrapper-15.png)
 
 ### 分组选择器
 
 相比于元素选择器会平铺成多个属性，分组会把数据序列化只赋值给 1 个属性，如下：
 
-![Alt text](./image-17.png)
+![Alt text](/images/browser-web-scrapper-17.png)
 
 ### 分页选择器
 
 分页查询数据，支持多种类型，比元素滚动选择器、元素点击选择器更强大。值得注意的是，子选择器需放在分页选择器内部。以 [博客园WEB分页](https://www.cnblogs.com/cate/web/#p2) 为例，模拟上面元素点击选择器的效果，如下：
 
-![Alt text](./image-18.png)
+![Alt text](/images/browser-web-scrapper-18.png)
 
 ### 站点地图选择器
 
 这几个比较简单，输入 sitemap.xml 的地址即可，如下：
 
-![Alt text](./image-16.png)
+![Alt text](/images/browser-web-scrapper-16.png)
 
 ## 结语
 

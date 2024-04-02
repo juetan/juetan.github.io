@@ -11,7 +11,7 @@ date: 2024-01-09 18:12:00
 
 1. 下载 [Mkcert](https://github.com/FiloSottile/mkcert/releases/tag/v1.4.4) 工具，下面均称呼为 mkcert.exe。
 
-![Alt text](./image.png)
+![Alt text](/images/mkcert.png)
 
 2. 使用以下命令安装根证书到本系统
 
@@ -133,15 +133,15 @@ server {
 
 以上完成后，已经可以访问页面，但通常都会告警使用的是未信任的证书，如下：
 
-![Alt text](./image-2.png)
+![Alt text](/images/mkcert-2.png)
 
 这需要将前面保存好的 rootCA.crt 文件复制到客户端电脑，双击打开安装根证书，如下：
 
-![Alt text](./image-1.png)
+![Alt text](/images/mkcert-1.png)
 
 清理下浏览器缓存或使用无痕模式打开，再访问页面即可：
 
-![Alt text](./image-3.png)
+![Alt text](/images/mkcert-3.png)
 
 ## 结语
 

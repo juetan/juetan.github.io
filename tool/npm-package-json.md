@@ -31,13 +31,13 @@ date: 2023-07-21 19:00:00
 
 描述信息，比较常见的用处是在 npm 上搜索时，可以很好地辅助描述包的功能，如下：
 
-![](./image-package-description.png)
+![](/images/npm-package-description.png)
 
 ### keywords
 
 关键字，光靠名字可能不是很容易传播出去，但可以让别人根据关键字搜索时传播出去，在 npm 上搜索时的效果如下：
 
-![](./image-package-keywords.png)
+![](/images/npm-package-keywords.png)
 
 ### files
 
@@ -53,7 +53,7 @@ date: 2023-07-21 19:00:00
 
 举个例子，@vitejs/plugin-vue 只指定了 dist 目录，因此 src 目录没有被上传，如下：
 
-![](./image-package-files.png)
+![](/images/npm-package-files.png)
 
 ## 联系相关
 

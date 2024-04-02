@@ -5,7 +5,7 @@ date: 2023-06-17 11:42:00
 
 作为一名程序员，写日记是常有的事，日常我都是写在有道云笔记里面，可以看下我在有道上的记录：
 
-![](./image-youdao.png)
+![](/images/vitepress-youdao.png)
 
 但最近搞了不少小工具，遇到不少问题并想记录下来，各种方案搜下来最终决定使用 Vitepress 以静态博客形式写日记。
 
@@ -106,13 +106,13 @@ export default defineConfig({
 
 4. 最后贴一个图标的效果图
 
-![图标生成效果图](./image-icon.png)
+![图标生成效果图](/images/vitepress-icon.png)
 
 ## 添加图片预览组件
 
 默认生成的页面中，图片是不能放大的，这不太符合我的需求。研究了一下文档，绕了一些弯路，最终找到了一个理想的方案。
 
-1. 预览组件使用的是 Arco Design 的 [图片组件](https://arco.design/vue/component/image)，这是考虑后面其他地方也会用到这个组件库。
+1. 预览组件使用的是 Arco Design 的 [图片组件](https://arco.design/vue/component/images)，这是考虑后面其他地方也会用到这个组件库。
 
 ```bash
 pnpm install @arco-design/web-vue -D
@@ -163,7 +163,7 @@ export default defineConfig({
 
 5. 最终效果如下：
 
-![图片预览效果](./image-preview.png)
+![图片预览效果](/images/vitepress-preview.png)
 
 ## 替换默认主题的部分组件
 
@@ -171,7 +171,7 @@ export default defineConfig({
 
 官方提供有一个[解决方案](https://vitepress.dev/guide/extending-default-theme#overriding-internal-components), 通过设置别名进行替换。但试过之后，我发现包含有相对路径的引用就会报错，如下：
 
-![引用相对路径报错](./image-alias.png)
+![引用相对路径报错](/images/vitepress-alias.png)
 
 问题在于打包的时候，两个文件不在一个目录下，相对引用就会报错。这个也不是不能解决，可以自己写个 vite 插件，在加载的时候加载当前目录下的文件，这样路径就能保持了。
 
@@ -199,7 +199,7 @@ export default defineConfig({
 
 2. 下面贴一个示例，原来的页内导航是没有任何选中标记，我改造了一下加入了选中类。
 
-![加入选中类](./image-replace.png)
+![加入选中类](/images/vitepress-replace.png)
 
 ## 自定义样式和一些风格偏好
 
@@ -321,19 +321,19 @@ jobs:
 
 2. 上面的推送有可能失败，因为 `secrets.GITHUB_TOKEN` 是需要权限才能使用的，可以更改为如下的配置：
 
-![添加读写权限](./image-permission.png)
+![添加读写权限](/images/vitepress-permission.png)
 
 3. 写完配置就可以这个推送了，可以在这里看到运行状态。
 
-![运行状态](./image-actions.png)
+![运行状态](/images/vitepress-actions.png)
 
 4. 构建后应该能看到多出来一个 gh-pages 分支，此时还需要配置该分支作为部署分支即可。
 
-![选择 gh-pages 作为部署分支](./image-branch.png)
+![选择 gh-pages 作为部署分支](/images/vitepress-branch.png)
 
 5. 通常需要等待一会才生效，下面贴一张部署完的页面效果图。
 
-![部署完的效果图](./image-site.png)
+![部署完的效果图](/images/vitepress-site.png)
 
 ## 组件演示功能
 

@@ -9,7 +9,7 @@ date: 2023-10-20 17:59:00
 
 新建个项目，安装 rollup 和 tsx 作为开发依赖即可，其中 tsx 是个命令行工具(类似ts-node)，可以运行 .ts 文件。此外，创建目录结构如下：
 
-![](./image-dir.png)
+![](/images/rollup-static-dir.png)
 
 其中：
 
@@ -26,7 +26,7 @@ date: 2023-10-20 17:59:00
 
 ```ts
 // @ts-ignore
-import AImage from './image.png';
+import AImage from '/images/rollup-static.png';
 
 const run = () => {
   console.log(AImage);
@@ -94,7 +94,7 @@ run();
 
 运行 `npx tsx ./index.ts` 命令，不出意外的话会能看到生成产物和执行结果如下：
 
-![](./image-dist.png)
+![](/images/rollup-static-dist.png)
 
 ## 钩子：resolveFileUrl
 
@@ -113,7 +113,7 @@ export const assetPlugin = (): Plugin => {
 
 重新打包，最终产物如下：
 
-![](./image-file-url.png)
+![](/images/rollup-static-file-url.png)
 
 ## 钩子：resolveImportMeta
 
@@ -136,7 +136,7 @@ export const assetPlugin = (): Plugin => {
 
 ```js
 // @ts-ignore
-import AImage from './image.png';
+import AImage from '/images/rollup-static.png';
 // @ts-ignore
 const demo = import.meta.demo;
 
@@ -150,7 +150,7 @@ run();
 
 重新打包，最终如下：
 
-![](./image-import-meta.png)
+![](/images/rollup-static-import-meta.png)
 
 ## 最后
 

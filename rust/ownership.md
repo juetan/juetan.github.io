@@ -85,7 +85,7 @@ fn change(some_string: &mut String) {
 
 以上，引用指向变量，变量指向变量值，关系链如下：
 
-![](./image-reference.png)
+![](/images/rust-ownership-reference.png)
 
 ## 借用
 
