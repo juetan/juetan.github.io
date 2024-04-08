@@ -383,6 +383,12 @@ body .VPDocAsideOutline.has-outline {
     /* max-width: 880px; */
     position: relative;
   }
+  #app .VPContent.has-sidebar {
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width) - 24px);
+  }
+}
+.VPSidebarItem .text {
+  padding: 0;
 }
 #app .VPNav .VPNavBar {
   border-bottom-color: transparent;

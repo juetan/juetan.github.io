@@ -1,0 +1,101 @@
+---
+title: Go系列[一]：安装，编译和运行
+date: 2023-09-07 18:13:00
+thumbnail: /assets/golang.jpg
+---
+
+Go 是由 Google 创立于 2007 年的一门编译型语言，因此很容易联想到 Go 语言名字的由来。
+
+## 历史
+
+- 2007年 创建
+- 2012年 发布 v1.0 版本
+
+## 安装
+
+1. 打开 [官网](https://golang.google.cn/dl/) 下载，如果需要版本管理，可以使用 [GVM](https://github.com/moovweb/gvm) 工具。
+
+```
+https://golang.google.cn/dl/)
+```
+
+2. 按照指示操作即可，安装完打开CMD输入 go version 命令并回车，有如下输出即代表安装成功。
+
+```bash
+# 输出： go version go1.21.0 windows/amd64
+go version
+```
+
+## 上手
+
+Go 是一门编译型语言，需要先编译再运行，接下来写个小示例。
+
+1. 新建文件夹，以及一个 `main.go` 文件。
+
+```bash
+mkdir go-01
+cd go-01
+touch main.go
+```
+
+2. 修改 `main.go` 文件，写个hello, world。
+
+```go
+package main;
+
+import "fmt";
+
+func main() {
+  var msg string = "hello, world";
+  fmt.Println(msg);
+}
+```
+
+以上代码中：
+
+- 使用 `package` 语法声明包的名字，每个文件都是单独的包，层级类似文件目录
+- 使用 `import` 语法导入包，fmt 是 format 的简写
+- 使用 `func` 语法声明函数，当函数名为 main 时作为命令行程序的入口，func 是 function 的简写
+- 使用 `var` 声明变量，var 是 variable 的简写
+- 类型 `string` 跟在变量名后面，以空格分隔
+- 使用 `Println` 打印字符串，并在字符串末尾添加换行符，ln 是 line 的简写
+
+3. 运行以下命令，没有意外的话会输出：hello, world。
+
+```bash
+go run main.go
+```
+
+命令 `go` 是 Go 语言的管理命令，执行编译、运行等任务，其中：
+
+- 命令 `build` 将代码构建成可执行文件，在 Windows 上会打包成 `.exe` 文件
+- 命令 `run` 会临时构建并运行代码
+
+## 基本概念
+
+不用语言之间有很多共同概念，这里简单过一下 Go 的一些特点，如下：
+
+- 使用 unicode 作为字符集
+- 语句末尾的分号可有可无，除非语义不明
+- 使用 var 声明变量
+- 使用 C 语言风格的注释，即 `// 注释内容` 格式
+
+## 备注
+- 根目录下的文件不能在main.go中直接调用，应 `go run .`或`go run main.go test.go`
+- go get 在项目中安装依赖
+- go install 全局安装命令
+
+## 命令
+
+- go mod
+- go get
+- go install 安装二进制命令：生成可执行文件，移动到GOPATH/bin目录下
+- go build
+- go test 执行 *_test.go 文件
+- go generate
+- go env
+- go list
+- go run
+- go version
+- go fmt
+- go clean

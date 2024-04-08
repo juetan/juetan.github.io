@@ -22,7 +22,6 @@ export default defineConfig({
   outDir: '.vitepress/dist',
   sitemap: { hostname: 'https://www.juetan.cn' },
   srcExclude: ['draft', 'dist', '.github', '.vitepress', '.vscode', 'node_modules', '**/README.md'],
-
   head: [
     [
       'meta',
@@ -57,7 +56,7 @@ export default defineConfig({
       {
         text: '后端',
         // icon: 'i-icon-park-outline-home',
-        link: '/frontend/ecmascript/basic-syntax2',
+        link: '/backend/rust/basic',
       },
       {
         text: '网络',
@@ -96,6 +95,50 @@ export default defineConfig({
           ],
         },
       ],
+      '/backend/': [
+        {
+          text: 'Rust',
+          items: [
+            {
+              text: '1. 安装和上手',
+              link: '/backend/rust/basic',
+            },
+            {
+              text: '2. 变量，数据类型，注释，控制结构',
+              link: '/front-end/b',
+            },
+            {
+              text: '3. 所有权，借用和引用',
+              link: '/front-end/b',
+            },
+            {
+              text: '4. 包、模块和命名空间',
+              link: '/front-end/b',
+            },
+          ],
+        },
+        {
+          text: 'Go',
+          items: [
+            {
+              text: '1. 安装，编译和运行',
+              link: '/backend/go/basic',
+            },
+            {
+              text: '2. 标识符、关键字、预定义标识符和自定义标识符',
+              link: '/front-end/b',
+            },
+            {
+              text: '3. 注释、变量、常量、简单类型和复杂类型',
+              link: '/front-end/b',
+            },
+            {
+              text: '4. 项目、包依赖、第三方类库和可执行命令的管理',
+              link: '/front-end/b',
+            },
+          ],
+        },
+      ],
     },
     docFooter: {
       prev: '上一篇',
@@ -129,7 +172,7 @@ export default defineConfig({
    */
   markdown: {
     theme: 'github-light',
-    lineNumbers: false,
+    lineNumbers: true,
     config(md) {
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
         const token = tokens[idx];
