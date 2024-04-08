@@ -1,18 +1,18 @@
 <template>
   <div>
-    <div class="text-gray-400 mb-4">
-      统计：共 {{ posts.length }} 篇文章
-    </div>
+    <div class="text-gray-400 mb-4">统计：共 {{ posts.length }} 篇文章</div>
     <Timeline>
       <Timeline.Item v-for="post in posts" :key="post.url">
         <template #label> </template>
-        <a :href="post.url" class="!text-slate-700 underline-offset-4">
-          {{ post.frontmatter.title || '暂无标题' }}
-        </a>
-        <time class="block text-slate-400 text-xs mt-1">
-          <i class="i-icon-park-outline-time"></i>
-          {{ dayjs(post.frontmatter.date).format('YYYY年MM月DD日') }}
-        </time>
+        <div class="flex items-center justify-between gap-4">
+          <a :href="post.url" class="!text-slate-700 underline-offset-4">
+            {{ post.frontmatter.title || '暂无标题' }}
+          </a>
+          <time class="block text-slate-400 text-xs mt-1">
+            <i class="i-icon-park-outline-time"></i>
+            {{ dayjs(post.frontmatter.date).format('YYYY年MM月DD日') }}
+          </time>
+        </div>
       </Timeline.Item>
     </Timeline>
   </div>

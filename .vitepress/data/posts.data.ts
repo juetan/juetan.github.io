@@ -22,13 +22,14 @@ function htmlToText(html?: string) {
   return text;
 }
 
+const ignorePaths = ['/README', '/public', '/index', '/archive', '/tags', '/404', '/draft', '/go'];
+
 export default createContentLoader(['**/*.md', '/!(README.md)'], {
   excerpt: true,
   includeSrc: true,
   render: true,
   transform(rawData) {
     const sorted = rawData.sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date));
-    const ignores = ['/README', '/public', '/index', '/archive', '/tags', '/404', '/draft'];
     const data: (PostItem | null)[] = sorted.map((item) => {
       item.url = item.url.replace('/src', '');
       if (item.frontmatter.layout) {
@@ -49,7 +50,7 @@ export default createContentLoader(['**/*.md', '/!(README.md)'], {
         const index = Math.floor(Math.random() * 10) + 1;
         post.frontmatter.thumbnail = `./assets/covers/${index}.jpg`;
       }
-      if (ignores.some((i) => item.url.startsWith(i))) {
+      if (ignorePaths.some((i) => item.url.startsWith(i))) {
         return null;
       }
       if (text) {

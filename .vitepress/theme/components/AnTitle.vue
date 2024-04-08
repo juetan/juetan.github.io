@@ -3,7 +3,7 @@
     <h1 class="doc-title">
       {{ frontmatter.title }}
     </h1>
-    <div class="w-full text-gray-500 text-xs flex items-center gap-3 pb-4 mt-2 mb-6">
+    <div class="w-full text-gray-500 text-xs flex items-center gap-3 mt-2 mb-6">
       <span>作者：绝弹</span>
       <time :datetime="frontmatter.date" :title="frontmatter.date">
         发布时间：{{ dayjs(frontmatter.date).format('YYYY年MM月DD日') }}

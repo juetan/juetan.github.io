@@ -50,14 +50,29 @@ export default defineConfig({
         link: '/',
       },
       {
+        text: '前端',
+        // icon: 'i-icon-park-outline-home',
+        link: '/frontend/ecmascript/basic-syntax',
+      },
+      {
+        text: '后端',
+        // icon: 'i-icon-park-outline-home',
+        link: '/frontend/ecmascript/basic-syntax2',
+      },
+      {
+        text: '网络',
+        // icon: 'i-icon-park-outline-home',
+        link: '/frontend/ecmascript/basic-syntax22',
+      },
+      {
+        text: '工具',
+        // icon: 'i-icon-park-outline-home',
+        link: '/frontend/ecmascript/basic-syntax3',
+      },
+      {
         text: '归档',
         // icon: 'i-icon-park-outline-time',
         link: '/archive',
-      },
-      {
-        text: '导航',
-        // icon: 'i-icon-park-outline-lightning',
-        link: '/go',
       },
       {
         text: '关于',
@@ -66,13 +81,13 @@ export default defineConfig({
       },
     ] as any,
     sidebar: {
-      '/frontend/1': [
+      '/frontend/': [
         {
-          text: '基础知识',
+          text: 'EcmaScript',
           items: [
             {
-              text: 'HTML中的标签有多少个?',
-              link: '/front-end/a',
+              text: '基础语法',
+              link: '/frontend/ecmascript/basic-syntax',
             },
             {
               text: 'Runtime API示例',

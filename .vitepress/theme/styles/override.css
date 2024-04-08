@@ -161,9 +161,7 @@ html:not(.dark) {
 }
 
 #VPSidebarNav {
-  margin-top: 20px;
-  background: #fff;
-  padding: 16px;
+  padding: 16px 4px;
 }
 
 #VPSidebarNav .group {
@@ -173,7 +171,7 @@ html:not(.dark) {
 }
 
 .level-0 > .item {
-  border-bottom: 1px solid #f1f1f1;
+  /* border-bottom: 1px solid #f1f1f1; */
   padding: 4px 0 8px;
 }
 
@@ -201,7 +199,13 @@ html:not(.dark) {
 }
 
 #app .aside {
-  max-width: 256px;
+  max-width: 264px;
+}
+
+#app .has-sidebar .aside {
+  position: relative;
+  width: initial;
+  right: 0;
 }
 
 #app .pager-link {
@@ -228,7 +232,7 @@ html:not(.dark) {
 ::-webkit-scrollbar {
   width: 16px;
   height: 6px;
-  background: transparent;
+  background: #eee;
 }
 
 ::-webkit-scrollbar-track {
@@ -278,7 +282,7 @@ html:not(.dark) {
 }
 
 body {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .items > .VPSidebarItem.level-1 {
@@ -376,7 +380,7 @@ body .VPDocAsideOutline.has-outline {
 }
 @media (min-width: 1440px) {
   #VPContent .VPDoc:not(.has-sidebar) div.container {
-    max-width: 880px;
+    /* max-width: 880px; */
     position: relative;
   }
 }
@@ -386,7 +390,7 @@ body .VPDocAsideOutline.has-outline {
 .VPDoc .container > .content {
   padding: 0;
   /* background: #fff; */
-  padding: 16px 20px;
+  /* padding: 16px 20px; */
   /* border-radius: 4px; */
   /* border-bottom: 1px solid var(--vp-c-divider); */
   /* box-shadow: 0 2px 10px rgba(55,99,170,.06); */
@@ -483,4 +487,8 @@ a {
 
 .line [style*="#6A737D"] {
   font-style: italic;
+}
+
+.VPNavBar .divider {
+  padding-left: 0!important;
 }

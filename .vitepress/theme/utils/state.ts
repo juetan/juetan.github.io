@@ -54,6 +54,7 @@ export const useHeadScroll = () => {
 };
 
 export const formatNumber = (num: number) => {
+  // return String(num).padStart(2, '0')
   const chars = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
   if (num < 11) {
     return chars[num];

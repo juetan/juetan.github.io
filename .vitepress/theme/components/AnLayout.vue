@@ -7,13 +7,23 @@
       <AnNotFound></AnNotFound>
     </template>
     <template #layout-bottom>
-      <BackTop>
-        <Button type="primary" shape="round" size="large" class="!hidden !md:inline-block">
+      <BackTop class="bottom-26! right-8!">
+        <Button shape="round" size="large" class="!hidden !md:inline-block">
           <template #icon>
             <i class="i-icon-park-outline-up-small text-xl"></i>
           </template>
         </Button>
       </BackTop>
+      <Button shape="round" size="large" class="!hidden !md:inline-block fixed! right-8 bottom-16" >
+        <template #icon>
+          <i class="i-icon-park-outline-arrow-down"></i>
+        </template>
+      </Button>
+      <Button shape="round" size="large" class="!hidden !md:inline-block fixed! right-8 bottom-6" >
+        <template #icon>
+          <i class="i-icon-park-outline-moon"></i>
+        </template>
+      </Button>
       <footer class="text-gray-500 text-sm text-center pt-6 pb-5">
         <div>
           <ul class="list-none flex gap-2 justify-center items-center">
@@ -29,7 +39,7 @@
           <a
             href="https://beian.miit.gov.cn/"
             target="_blank"
-            class="hover:text-[var(--vp-c-brand)] hover:underline underline-offset-2"
+            class="hover:text-[var(--vp-c-brand)] hover:underline"
           >
             桂ICP备2021001859号-1
           </a>
