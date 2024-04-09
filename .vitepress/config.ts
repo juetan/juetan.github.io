@@ -66,7 +66,7 @@ export default defineConfig({
       {
         text: '工具',
         // icon: 'i-icon-park-outline-home',
-        link: '/frontend/ecmascript/basic-syntax3',
+        link: '/tool/xpath',
       },
       {
         text: '归档',
@@ -89,8 +89,31 @@ export default defineConfig({
               link: '/frontend/ecmascript/basic-syntax',
             },
             {
-              text: 'Runtime API示例',
-              link: '/front-end/b',
+              text: '事件循环',
+              link: '/frontend/ecmascript/event-loop',
+            },
+            {
+              text: '实现继承',
+              link: '/frontend/ecmascript/inherit',
+            },
+          ],
+        },
+      ],
+      '/tool/': [
+        {
+          text: '浏览器相关',
+          items: [
+            {
+              text: 'XPath',
+              link: '/tool/xpath',
+            },
+            {
+              text: 'Git',
+              link: '/tool/git',
+            },
+            {
+              text: '实现继承',
+              link: '/frontend/ecmascript/inherit',
             },
           ],
         },

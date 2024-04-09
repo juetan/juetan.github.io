@@ -3,17 +3,25 @@ title: XPath：选择 XML 元素和 HTML 元素，CSS 选择器之外的另一�
 date: 2024-01-19 12:20:20
 ---
 
-XPath，全称 XML Path Language，是一种用于在 XML 文档中选择节点或节点集的表达式语言。HTML 与 XML 格式相似，因此 XPath 也能作用在 HTML 上。相比于 CSS 选择器，XPath 可以执行更复杂的选择，例如根据元素是否包含文本，属性值是否大于特定值等等。以下，记录下学习到的一些语法。
+[XPath](https://developer.mozilla.org/zh-CN/docs/Web/XPath)，全称 XML Path Language，是一种类似于 CSS 的HTML 选择器。两者的区别在于：
+
+- CSS 定位主要是通过元素的类名等来定位元素，语法简单，定位更快
+- XPath 定位主要是通过元素的路径来定位元素，语法复杂，但定位能力更强，例如能通过文本内容来定位
 
 ## 基本语法
 
-XPath 采用路径式的查找方法，整个 XML 作为树级结构从根节点往下查找，示例如下：
+XPath 采用路径式的查找方法，整个 XML 作为树级结构从根节点往下查找，以下 xpath 语法：
 
 ```
-/div/a[@target="_blank"]
+//*[@id="app"]/div
 ```
 
-以上表示：查找根元素下的直接子元素 div 下，属性 target 为 \_blank 的直接子元素 a。其中开头的 / 表示从根元素开始查找，后面的 / 表示直接子元素，而 div 和 a 则为标签名。
+等效于以下 css 语法：
+
+```css
+#app > div
+```
+
 
 ## 路径过滤
 

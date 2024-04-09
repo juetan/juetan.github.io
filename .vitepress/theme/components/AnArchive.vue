@@ -5,11 +5,10 @@
       <Timeline.Item v-for="post in posts" :key="post.url">
         <template #label> </template>
         <div class="flex items-center justify-between gap-4">
-          <a :href="post.url" class="!text-slate-700 underline-offset-4">
+          <a :href="post.url" class="!text-slate-700 ">
             {{ post.frontmatter.title || '暂无标题' }}
           </a>
-          <time class="block text-slate-400 text-xs mt-1">
-            <i class="i-icon-park-outline-time"></i>
+          <time class="block text-slate-400 text-sm mt-1">
             {{ dayjs(post.frontmatter.date).format('YYYY年MM月DD日') }}
           </time>
         </div>

@@ -1,200 +1,422 @@
 ---
-title: NuxtJS：基于 VueJS 的全栈式框架，简明笔记
-date: 2024-01-30 18:00:00
+title: 基本语法
+date: 2024-04-07 12:00:00
 ---
 
-[NuxtJS](https://nuxt.com/) 是基于 VueJS 的全栈式框架，不仅支持 CSR/SSR/SSG/SWR/ISR 等渲染模式，还支持文件路由/自动导入/布局管理等额外功能。注意：[NextJS](https://nextjs.org/) 是基于 ReactJS 的全栈式框架，[NestJS](https://nestjs.com/) 是基于 NodeJS 的后端框架，切勿混淆。粗略翻过一遍官方文档，总结一些我比较关注的点。
+## 标识符
 
-## 快速上手
+标识符由多个字符组成，表示某个编程元素，如变量、函数、类等。不同类型的标识符，需要遵顼不同的规则。
 
-### 创建项目
+### 字符集
 
-Nuxi 是 Nuxt 提供的命令行工具，用来初始化项目，按如下操作快速上手：
+字符集是一门编程语言的基础，决定了你能使用的字符数量。目前主流的语言都使用 Unicode 字符集，JS 亦是如此，这个字符集包含有世界上大部分国家的语言字符，最多可包含一百多万个字符。Unicode 字符集兼容 ASCII 字符集，一些常见于的字符集如下：
 
-```bash
-# 创建目录并拉取模板文件
-npx nuxi@latest init nuxt-demo
+- unicode 统一码或万国码，目前最常用的
+- ascii 美国标准信息交换码，包含 10 个阿拉伯数字，26 个英文字母，以及 32 个特殊符号
+- gb/gbk 国标码，我们国家的中文字符编码标准，目前用得比较少
+- big5 大五码，台湾地区使用
 
-# 进入目录
-cd nuxt-demo
+### 保留字
 
-# 安装依赖
-pnpm install
+保留字，或者说关键字，是特殊含义的标识符，不能用作其他用途。目前的保留字有：
 
-# 启动开发并自动打开浏览器
-pnpm dev --open
-```
-
-### 项目结构
-
-Nuxt 采用约定式的目录结构，特定目录会自动加载，先来看一眼官方推荐的目录结构：
+已使用的保留字：
 
 ```bash
-.
-├── .nuxt
-├── .output
-├── assets
-├── components
-├── composables
-├── content
-├── layouts
-├── middleware       # Nuxt中间件
-├── modules          # Nuxt模块
-├── node_modules
-├── pages
-├── plugins          # Nuxt插件
-├── public
-├── server           # 接口服务
-├── utils
-├── .env
-├── .gitignore
-├── .nuxtignore
-├── app.config.ts
-├── app.vue
-├── error.vue
-├── nuxt.config.ts
-├── package.json
-└── tsconfig.json
+break      do         instanceof  typeof
+case       else       new         var
+catch      finally    return      void
+continue   for        switch      while
+debugger   function   this        with
+default    if         throw       delete
+in         try        class       extends
+const      export     import
 ```
 
-当基于 Vite 打包时，Vite 的配置可以在 nuxt.config.ts 进行添加。此外，index.html 在 Nuxt 中不存在，但提供了很多方法添加/修改其中的标签；src 目录存在，采用扁平化的结构。
+待使用的保留字：
 
-## 渲染模式
+```bash
+abstract    boolean     byte        char
+constdouble enum        final       float
+goto        implements  int         interfacelong
+native      package     private     protected
+public      short       static      super
+throw       transient   volatile    synchronized
+```
 
-渲染，主要指的是 HTML 的渲染，这关系到 SEO 收录和首屏加载等内容。随着前端框架的繁荣，如今已出现很多花里胡哨的渲染模式，这里简单了解下：
+### 预定义标识符
 
-### CSR
+预定义标识符是特殊的标识符，大部分是内置变量，允许用作变量名但不建议使用，如：
 
-即 Client Side Render(客户端渲染)，HTML 在客户端动态生成，典型的就是 VueJS 单页面应用。如下：
+```bash
+String      Number      Boolean      Array
+Date        Function    Math         Object
+RegExp      Error       EvalError    JSON
+Infinity    NaN         isNaN        isFinite
+undefined   arguments   parseInt     parseFloat
+eval        decodeURI   encodeURI    decodeURIComponent
+encodeURIComponent      RangeError   ReferenceError
+TypeError   URIError    SyntaxError
+```
 
-![alt text](/images/nuxt.png)
+### 自定义标识符
 
-### SSG
+剩余的标识符，大部分用作变量名或变量值字面量。当自定义标识符用作变量名时，需要遵顼一定的命名规则：
 
-即 Server Side Generate(服务端生成)，HTML 在服务端已生成好，加载 JS 后会自动注水(Hydrate)，完成静态到动态的转换，典型的就是 Vitepres 静态应用。SSG 算是 SSR 的一种，即 HTML 不是在客户端生成的。
+- 首字符：以字母、$或\_开头，不能以数字开头
+- 区分大小写，name 和 Name 使用不同的变量
 
-![alt text](/images/nuxt-1.png)
+除了以上的强制要求，还有一些约定熟成的命名方式：
 
-### SSR
+- 变量名使用小驼峰命名法，首字母小写，后续单词的首字母大写，例如 myName，maxNumberInArray。
+- 常量名全部大写，例如 PI = 3.14
+- 类名使用大驼峰命名法，首字母大写，例如 MyClass
 
-即 Server Side Render(服务端渲染)，HTML 在服务端动态生成，页面加载 JS 后自动注水，典型的就是官网首页等需要 SEO 的地方。
+## 注释
 
-![alt text](/images/nuxt-2.png)
+注释是对代码的补充，用于解释代码的含义，让代码更易读。JS 使用 C 语言风格的注释。
 
-### SWR
+### 单行注释
 
-即 Stable-Whilte-Revalidate(返回过时内容同时重新生成)。实际上，这是一种缓存策略：设置一个缓存时间，用户首次访问时返回新内容，用户在缓存期访问时返回缓存，用户在缓存期后访问时返回缓存并在后台更新缓存，再下次访问时就可以获取到最新内容。
+单行注释以双斜杠开头，可以单独一行也可放在行末尾，示例：
 
-### ISR
+```js
+// 这是单行注释
+console.log('Hello World'); // 语句末尾也行
+```
 
-类似于 SWR，但可以配合 CDN 和边缘计算实现不错的缓存效果。目前只有少数云服务商支持，例如 vercel。此外，本地开发时是看不到效果的，需部署到 vercel 等平台才能看到效果。
+### 多行注释
 
-在 NuxtJS 中，SSR 是默认的渲染模式，可以在 nuxt.config.ts 中通过 ssr: false 配置为 CSR 模式。此外，还可以指定部分页面使用 CSR 模式，部分页面使用 SSR 模式。
+多行注释以斜杠+星号开头，并以星号+斜杠结尾，示例：
 
-## 运行环境
+```js
+/*
+这是多行注释
+*/
+console.log('Hello World');
+```
 
-从源码到浏览器代码，Nuxt 会在不同地方运行，在不同地方能使用的资源和可访问的环境也不同。已 SSR 为例，大体分类以下几种：
+## 变量声明
 
-### 构建端
+变量由变量名和变量值组成，无需声明变量值类型(运行时自动识别)，变量名遵顼前面说到的命名规则，变量值有字面量形式和引用形式。此外，变量有作用域，在顶部创建的变量会成为全局变量，其余变量的作用域范围根据其声明关键字而有不同。
 
-执行源码转服务端代码的过程，可使用 Nuxt 模块参与过程。
+### var
 
-![alt text](/images/nuxt-3.png)
+使用 var 关键字声明一个函数范围内的变量，示例如下：
 
-### 服务端
+```js
+var name = '绝弹';
+var toString = Object.prototype.toString;
+```
 
-执行服务端代码，并生成客户端代码的过程，可使用 Nuxt 插件或 Nuxt 中间件参与过程。
+以上， var 是 variable(变量) 的缩写，`'绝弹'` 是字面量形式，`Object.prototype.toString` 是引用形式：
 
-![alt text](/images/nuxt-4.png)
+```js
+// 全局作用域
+var name = '绝弹1';
 
-### 客户端
+// 函数作用域
+function test() {
+  var name = '绝弹2';
+  // 输出 绝弹2
+  console.log(name);
+}
+```
 
-执行客户端代码，可使用 Nuxt 插件参与过程。
+以上代码中，引用变量时会从最近的作用域开始向上查找，直到全局作用域，如果找不到就报错。
 
-## 开发区别
+### let
 
-在同样使用 vite 作为构建工具的情况下，Nuxt 要比 Vue 复杂得多，毕竟同时涉及服务端和客户端。正式开始前，了解开发模式上的一些区别：
+使用 let 关键字声明一个块级作用域内的变量，示例：
 
-### 打包配置
+```js
+let name = '绝弹';
+```
 
-Vue:
+以上，let 的意思让 xx 的值为 xx，这是 ES6 中新增的声明变量的方式，相比 var 较宽的函数作用域，let 使用较窄的块级作用域，这允许我们更细粒度地控制变量的作用域，避免不符合预期的结果。例如：
 
-- vite.config.ts
+```js
+// 输出：3 3 3
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
 
-Nuxt:
+// 输出：0 1 2
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+```
 
-- nuxt.config.ts： 取代 vite.config.ts，但还可以在里面配置 vite。
-- app.config.ts：应用配置，通常在编译时使用
+以上代码，var 没有块级作用域，相当于声明全局变量，而 let 声明的是块级作用，得以保存下来。
 
-### 首页模板
+### const
 
-Vue：
+使用 const 关键字声明一个块级作用域内的常量，示例：
 
-- index.html
+```js
+const PI = 3.1415926;
+```
 
-Nuxt
+以上，const 是 constant(不变的) 的缩写。声明时必须指定值，且不能修改，作用域与 let 一致。此外，不变指的是内存位置不变，如果值是复杂类型，还是可以修改内部值的，如下：
 
-- 无，可使用 Nuxt 模块和其他方法修改
+```js
+// 报错
+const name = '绝弹';
+name = '绝弹2';
 
-### 入口文件
+// 不报错
+const juetan = {
+  name: '绝弹',
+};
+juetan.name = '绝弹2';
+```
 
-Vue：
+### function
 
-- src/main.ts
+使用 function 关键字声明一个函数作用域内的函数，示例：
 
-Nuxt：
+```js
+function add(x, y) {
+  return x + y;
+}
+add(1, 2);
+```
 
-- 无，如果要修改 vue 实例，需要使用 Nuxt 插件
+完整的函数签名，包括形参和返回值，以上代码中：
 
-### 根组件
+- 函数名为 add
+- 形参为 x, y，默认值为 undefined
+- 实参为 1, 2
+- 函数体为 3(number类型)，默认为 undefined
 
-Vue：
+### arrow function
 
-- src/App.vue
+使用 => 符号声明一个块级作用域内的箭头函数，示例：
 
-Nuxt:
+```js
+const add = (x, y) => {
+  const total = x + y;
+  return total;
+};
+```
 
-- app.vue 这点到是没多大区别
+以上，箭头函数没有函数名，包含一个名为 content 的参数，没有返回值。至于箭头函数与普通函数的区别，后面会详细介绍。
 
-### 构建命令
+### class
 
-Vue：
+使用 class 关键字声明一个块级作用域内的类，示例：
 
-- vite build
+```js
+class Person {
+  // 实例属性，使用 = 语法
+  name = '绝弹';
+  // 原型方法，不能声明原型属性，只能声明方法
+  getName() {
+    return this.name;
+  }
+}
+```
 
-Nuxt：
+以上，类名为 Person，包含一个名为 name 的属性。
 
-- nuxt generate：SSG 模式，生成的是纯静态文件，丢到 nginx 就能跑
-- nuxt build：SSR 模式，生成的是 NodeJS 文件，需丢到 NodeJS 环境里跑
+## 简单类型
 
-### 构建产物
+变量分为简单变量和复杂变量，简单变量存储的是值的本身，而复杂变量存储的是值的地址，其内容在另一个地方。
 
-Vue：
+### string
 
-- dist：纯静态
+不区分字符和字符串，统一都是字符串，可使用单引号`'`、双引号`"`或反引号`&#96;`包裹，示例：
 
-Nuxt：
+```js
+const name = '绝弹';
+const age = "18";
+const desc = `${name}今年${age}岁`;
+```
 
-- .output 实际内容取决于 generate 还是 build 命令，
+以上，使用单引号或双引号没有区别，但习惯上使用单引号与 HTML 用的双引号区分，反引号是 ES6 新增的，可以使用 `${xx}` 引用变量。
 
-## 配置文件
+字符串可以视为对象，编译器会自动包裹为 String 对象，此时可以 String 上的方法进行操作。
 
-### 环境变量
+```js
+const name = 'juetan';
 
-环境变量，本事是 Vite 支持的，但 Nuxt 额外添加到 runtimeConfig 配置中
+// JUETAN
+name.toUpperCase();
 
-| 功能                 | runtimeConfig | app.config |
-| -------------------- | ------------- | ---------- |
-| 客户端是否可用       | Hydrated      | Bundled    |
-| 包含环境变量         | ✅ Yes        | ❌ No      |
-| 响应式               | ✅ Yes        | ✅ Yes     |
-| 类型提示             | ✅ Partial    | ✅ Yes     |
-| 每次请求都配置       | ❌ No         | ✅ Yes     |
-| 热更新               | ❌ No         | ✅ Yes     |
-| 支持复杂类型(如函数) | ❌ No         | ✅ Yes     |
+// jue
+name.substring(0, 3);
+```
 
-总的来说，runtimeConfig 适用于 JSON 对象，appConfig 适用于 JS 对象。
+### symbol
 
-## 结语
+Symbol 是 ES6 新增的类型，表示一个独一无二的值，主要目的是替代字符串作为对象的属性名避免重名冲突，示例：
 
-体验下来，Nuxt 是非常不错的全栈式框架，有很多优秀的改良。特别是打包后的 node_modules 目录，经过 treeshaking 和优化后，只有几 M 大小，令人非常惊喜。此外，发现不少与 serverless 相关的类库，例如 nitro 和 zod 等，不仅构建产物小，还与 vercel 等平台集成非常好。
+```js
+const name = Symbol('name');
+
+class Person {
+  [name] = '绝弹';
+}
+
+const person = new Person();
+console.log(person[name]);
+```
+
+此外，Symbol 也是一个对象，保存某些语言内部的常量属性，例如：
+
+- Symbol.iterator: 通过 Symbol.iterator 属性，实现可遍历对象
+- Symbol.toStringTag: 通过 Symbol.toStringTag 属性，实现对象的字符串描述
+- Symbol.hasInstance: 通过 Symbol.hasInstance 属性，实现 instanceof
+- Symbol.species: 通过 Symbol.species 属性，实现子类继承
+
+### number
+
+不区分整数和浮点数，统一按 64 位浮点数存储，示例
+
+```js
+const a = 1;
+const b = 1.1;
+```
+
+存储遵循 IEEE 754 标准，因而会有一些意想不到的精度丢失问题，例如：
+
+```js
+// false
+0.1 + 0.2 === 0.3;
+```
+
+以上，0.1 在转为二进制时是个无限不循环的数，但由于存储为 64 位浮点数，所以会丢失精度。
+
+此外，还有几个特殊的值：
+
+- NaN: Not a Number，表示这不是一个数字，常用作转换失败结果的表示，例如 Number('abc')
+- Infinity: 无穷大，例如 Math.pow(2, 10000)
+- -Infinity: 无穷小
+
+### boolean
+
+布尔值有两个值，true 和 false。在 JS 中，只有 6 个值会被视为 false，其余的值都视为 true，这 6 个值如下：
+
+- ""
+- 0
+- NaN
+- false
+- undefined
+- null
+
+### undefined
+
+undefined 是特殊类型，只有一个值 undefined，表示一个变量没有赋值，例如：
+
+```js
+// 声明但没有初始化的变量，输出 undefined
+let name;
+console.log(name);
+```
+
+转换：
+
+- 在转为字符串时，输出 "undefined"
+- 在转为数值时，输出 NaN
+- 在转为布尔值时，输出 false
+
+此外，这个类型某些场景是有特殊意义，例如：
+
+- 在函数中，如果参数没有传递，则默认为 undefined，此时参数默认值会生效，例如 (name = '绝弹') => console.log(name)
+- 函数默认返回值为 undefined
+- 在旧版本中，undefined 是可以作为变量名使用的，可以用 void 0 得到真正的 undefined
+- 在 JSON 序列化中，值为 undefined 的属性会被忽略
+
+### null
+
+null 是特殊类型，只有一个值 null，表示一个变量已赋值但值为空，例如：
+
+```js
+let name = null;
+console.log(name);
+```
+
+同时，它也是原型链的终点，常常被 typeof 视为对象：
+
+```js
+// 输出 object
+typeof null;
+
+// 输出 true
+Object.prototype === null;
+```
+
+转换：
+
+- 在转为字符串时，输出 "null"
+- 在转为数值时，输出 0
+- 在转为布尔值时，输出 false
+
+此外，这个类型某些场景是有特殊意义，例如：
+
+- 作为函数参数值时，默认参数值不会生效，例如 (name = 'juetan') => console.log(name)
+- 在 JSON 序列化时，值为 null 的属性会保留
+
+
+## 复杂类型
+
+复杂类型实际上只有一种：Object，其他类型都是 Object 的子类型，例如 Array、Function、Date、RegExp 等。嗯，function 也是一种 Object。
+
+### object
+
+创建对象通常使用字面量形式，其构造函数为 Object，其构造函数没有参数，例如：
+
+```js
+const value = ""
+const person = {
+  // 属性
+  name: 'Juetan',
+  // 方法
+  sayHello: function () {
+    return 'Hello, ' + this.name
+  }
+  // 简写，相当于 value: value
+  value,
+}
+```
+
+举几个常见的示例：
+
+- Array
+
+数组，是个可变数组，提供了二十几个方法操作，示例：
+
+```js
+const values = [1, 2, 3]
+
+// 末尾插入元素 [1, 2, 3, 4]
+values.push(4)
+
+// 移除首位元素 [2, 3, 4]
+values.shift()
+```
+
+- Set
+
+集合，是数组的子集，集合不允许有重复元素，集合提供了一些方法操作，示例：
+
+```js
+const values = new Set([1, 2, 3])
+
+// 添加重复元素 [1, 2, 3]
+values.add(1)
+
+// true
+values.has(2)
+```
+
+- Map
+
+字典映射，包含键值对，相比于普通对象只能用string/number/symbol做键名，Map 的键名可以是任意值，示例：
+
+```js
+const values = new Map()
+
+const key = { name: 'key' }
+values.set(key, 'value')
+```
