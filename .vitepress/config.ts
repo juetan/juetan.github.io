@@ -39,43 +39,43 @@ export default defineConfig({
   themeConfig: {
     logo: '/favicon.ico',
     outline: {
-      label: '本篇目录',
+      label: '页面导航',
       level: [2, 3],
     },
     nav: [
       {
         text: '首页',
-        // icon: 'i-icon-park-outline-home',
+        icon: 'i-icon-park-outline-home',
         link: '/',
       },
       {
         text: '前端',
-        // icon: 'i-icon-park-outline-home',
+        icon: 'i-icon-park-outline-home',
         link: '/frontend/ecmascript/basic-syntax',
       },
       {
         text: '后端',
-        // icon: 'i-icon-park-outline-home',
+        icon: 'i-icon-park-outline-home',
         link: '/backend/rust/basic',
       },
       {
         text: '网络',
-        // icon: 'i-icon-park-outline-home',
+        icon: 'i-icon-park-outline-home',
         link: '/frontend/ecmascript/basic-syntax22',
       },
       {
         text: '工具',
-        // icon: 'i-icon-park-outline-home',
+        icon: 'i-icon-park-outline-home',
         link: '/tool/xpath',
       },
       {
         text: '归档',
-        // icon: 'i-icon-park-outline-time',
+        icon: 'i-icon-park-outline-time',
         link: '/archive',
       },
       {
         text: '关于',
-        // icon: 'i-icon-park-outline-user',
+        icon: 'i-icon-park-outline-user',
         link: '/about',
       },
     ] as any,
@@ -195,7 +195,7 @@ export default defineConfig({
    */
   markdown: {
     theme: 'github-light',
-    lineNumbers: true,
+    lineNumbers: false,
     config(md) {
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
         const token = tokens[idx];
@@ -292,10 +292,10 @@ export default defineConfig({
        * 替换默认主题的部分组件
        */
       (() => {
+        const list = ['VPNavBarMenuLink.vue', 'VPDocOutlineItem.vue'];
         return {
           name: 'vite:override',
           load(id) {
-            const list = ['VPNavBarMenuLink.vue', 'VPDocOutlineItem.vue'];
             const path = (i: string) => fileURLToPath(new URL(`./theme/components/${i}`, import.meta.url));
             const item = list.find((i) => id.includes(i) && !id.includes('?'));
             if (item) {

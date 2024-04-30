@@ -111,7 +111,9 @@ html:not(.dark) {
   #app .VPDoc {
     padding: 20px 24px 24px;
   }
-
+  #app .group {
+    width: initial;
+  }
 }
 
 /**
@@ -186,6 +188,19 @@ html:not(.dark) {
 .VPSidebarItem.level-1.is-link:hover {
   /* background: #f1f3f5; */
   border-radius: 4px;
+}
+
+.VPSidebarItem  {
+  padding: 0 8px;
+}
+
+.VPSidebarItem .text {
+  line-height: 32px;
+  /* height: 32px; */
+}
+
+.items > .VPSidebarItem:hover {
+  background-color: #eee;
 }
 
 #app .VPSidebar {
@@ -385,6 +400,25 @@ body .VPDocAsideOutline.has-outline {
   }
   #app .VPContent.has-sidebar {
     padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width) - 24px);
+  }
+  #app .wrapper {
+    padding: 0;
+  }
+  #app .container {
+    margin: 0;
+    max-width: initial;
+  }
+  #app .VPNavBar .title {
+    padding-left: 16px;
+  }
+  #app .VPNavBar .content {
+    padding-left: 140px;
+    padding-right: 16px;
+  }
+  #app .VPSidebar {
+    padding-left: 0;
+    width: 256px;
+    border-right: 1px solid #dde;
   }
 }
 .VPSidebarItem .text {
