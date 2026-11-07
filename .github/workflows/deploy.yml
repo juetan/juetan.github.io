@@ -11,8 +11,8 @@ jobs:
       - name: build
         run: |
           corepack enable
-          pnpm install
-          pnpm build
+          npm install
+          npm build
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
