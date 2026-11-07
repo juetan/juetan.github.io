@@ -55,9 +55,9 @@ export default defineConfig({
         link: '/archive',
       },
       {
-        text: '绝弹导航',
+        text: '友情链接',
         icon: 'i-icon-park-outline-lightning',
-        link: 'https://nav.juetan.cn',
+        link: '/friends',
       },
       {
         text: '关于作者',

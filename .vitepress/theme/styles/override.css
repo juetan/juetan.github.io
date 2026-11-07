@@ -314,9 +314,7 @@ body {
   font-weight: 400;
   color: #000;
 }
-div.vp-doc ul {
-  padding-left: 2.5rem;
-}
+
 /* .vp-doc [class*='language-'] pre {
   padding: 12px 0;
 }
