@@ -1,6 +1,4 @@
-绝弹博客
-
-- 地址: https://www.juetan.cn
+绝弹博客 https://www.juetan.cn
 
 ## 主题
 

@@ -52,37 +52,37 @@ date: 2023-07-13 17:03:00
 
 日常工作以地铁运维系统开发为主。业余时间会持续研究新技术，并通过小项目进行验证与实践。这些项目多围绕工程效率、可视化与基础设施展开，既用于沉淀技术方案，也用于解决实际使用中的问题。目前的主要项目如下。
 
-**管理后台模板**
+### 管理后台模板
 
 地址：https://appnify.github.io/starter-vue/#/login
 
 基于 Arco Design 组件库，采用 Vue 3 + Vite + TypeScript 搭建的前端起始模板，内置自动路由生成、接口生成与 CRUD 组件等能力，用于快速初始化中后台项目。
 
-**NestJS 模板**
+### NestJS 模板
 
 地址：https://github.com/appnify/starter-nest
 
 基于 Nest + TypeORM + MySQL + Redis 的后端起始模板，集成统一参数校验、异常拦截、响应包装、分页与条件查询、Swagger 文档、JWT 鉴权、日志与邮件等通用能力，可作为服务端项目的基础脚手架。
 
-**前端驿站**
+### 前端驿站
 
 地址：https://nav.juetan.cn 或 https://juetan.github.io/nav
 
 基于 NuxtJS 开发，前端技术导航站点，收录 170+ 前端相关的技术、类库与框架资源。内容基于个人日常使用总结，覆盖语言、构建、跨端、社区、设计、命令行、后端框架与在线工具等方向。
 
-**地图编辑**
+### 地图编辑
 
 地址：https://github.com/juetan/mapeditor
 
 基于 ECharts 实现的线点编辑器，支持拖拽、缩放与配置化编辑，可实现类似百度地铁线路图的交互效果，并支持状态显示与动态更新。
 
-**appnify**
+### appnify
 
 地址：https://github.com/appnify/appnify
 
 命令行脚手架工具，用于快速初始化项目与安装常用依赖。支持从 GitHub 仓库拉取模板，并可一键集成 eslint、prettier、husky、commitlint、lint-staged、release-it 等工程化工具。
 
-**持续集成**
+### 持续集成
 
 地址：https://github.com/juetan/devops-practice
 
