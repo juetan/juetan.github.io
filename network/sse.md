@@ -132,7 +132,7 @@ content 需为 utf8 格式的文本。代码中，我们将包含 num 和 messag
 
 使用 `node ./server.js` 启动服务后，访问效果如下：
 
-![Alt text](./image.png)
+![Alt text](/images/sse-run.png)
 
 ## 结语
 

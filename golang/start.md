@@ -15,11 +15,11 @@ Go 是由 Google 创立于 2007 年的一门编译型语言，因此很容易联
 
 1. 打开 [官网](https://golang.google.cn/dl/) 下载，如果需要版本管理，可以使用 [GVM](https://github.com/moovweb/gvm) 工具。
 
-![](./images/go-download-page.png)
+![](/images/go-download-page.png)
 
 2. 按照指示操作即可，安装完打开CMD输入 go version 命令并回车，有如下输出即代表安装成功。
 
-![](./images/go-run-version.png)
+![](/images/go-run-version.png)
 
 ## 上手
 
@@ -57,7 +57,7 @@ func main() {
 
 3. 运行 `go run main.go` 命令，没有意外的话输出如下：
 
-![](./images/go-run-main-go.png)
+![](/images/go-run-main-go.png)
 
 命令 `go` 是 Go 语言的管理命令，执行编译、运行等任务，其中：
 
