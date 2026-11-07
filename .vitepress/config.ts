@@ -50,17 +50,17 @@ export default defineConfig({
         link: '/',
       },
       {
-        text: '归档',
+        text: '文章归档',
         icon: 'i-icon-park-outline-time',
         link: '/archive',
       },
       {
-        text: '导航',
+        text: '绝弹导航',
         icon: 'i-icon-park-outline-lightning',
-        link: '/go',
+        link: 'https://nav.juetan.cn',
       },
       {
-        text: '关于',
+        text: '关于作者',
         icon: 'i-icon-park-outline-user',
         link: '/about',
       },
@@ -114,7 +114,7 @@ export default defineConfig({
    */
   markdown: {
     theme: 'github-light',
-    lineNumbers: false,
+    lineNumbers: true,
     config(md) {
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
         const token = tokens[idx];
@@ -254,7 +254,7 @@ export default defineConfig({
                 const assetId = this.emitFile({
                   type: 'asset',
                   name: basename(assetVal),
-                  source: readFileSync(assetPath),
+                  source: readFileSync(assetPath) as unknown as string,
                 });
                 const key = prefix + assetId;
                 map.set(key, assetId);

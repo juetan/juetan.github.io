@@ -3,23 +3,94 @@ title: 关于
 date: 2023-07-13 17:03:00
 ---
 
+欢迎访问我的个人站点，我是绝弹。本科毕业于信息工程学院，目前从事软件开发工作多年，主要方向为前端工程化与 Node.js 全栈开发。
+
+## 工作经历
+
+### 地铁运维系统开发 · 前端负责人
+
+时间：2021 – 2024
+
+担任前端主要负责人，负责运维平台前端体系从零搭建到多项目交付的全过程，覆盖技术选型、基础架构、组件规范与团队协作。
+
+- 主导技术选型与工程架构设计，建立项目目录规范、构建配置、代码规范与协作流程，为后续多项目开发奠定统一基础。
+- 统筹前端排期与任务拆分，带领团队完成多个业务模块的按期交付，保障系统稳定上线。
+- 封装 Form、Table 等高频业务组件，统一交互与校验规范，减少重复开发，显著提升团队开发效率。
+- 独立完成基于 ECharts 的日志统计等图形化模块，支撑运维数据的直观呈现与分析。
+- 基于 ECharts 独立实现可拖拽、可缩放、可配置的地图站点编辑器，支持站点状态显示与动态更新。
+- 基于 Web Audio API 实现话筒广播能力，完成音频采集、处理与播放链路。
+- 独立完成面向地铁广播场景的可拖拽编辑器，支持广播内容的可视化编排。
+
+### 工厂内部管理系统维护 · 开发人员
+
+时间：2019 – 2021
+
+参与工厂内部管理系统的日常维护与功能迭代，承担部分独立功能模块的设计与实现。
+
+- 负责多个独立功能模块的开发与实现，按需求完成从设计到上线的完整闭环。
+- 参与系统日常维护与问题排查，保障内部业务系统的稳定运行。
+
+## 技术栈
+
+**前端开发**
+
+- 熟练掌握 HTML、CSS、JavaScript、TypeScript，具备扎实的 Web 基础与类型化开发能力
+- 熟练使用 Vue.js 全家桶进行中大型应用开发，能基于 Nuxt.js 完成全栈项目搭建
+- 熟悉 Vite 构建工具及其插件机制，具备自定义插件开发经验
+
+**后端开发**
+
+- 熟练使用 Node.js，能基于 NestJS 进行模块化、分层化的后端开发
+- 熟悉 TypeORM、MySQL、Redis 等常用数据层与缓存组件，能独立完成接口设计与数据建模
+
+**工程化与 DevOps**
+
+- 熟悉 Docker、Swarm、Traefik、Portainer、Gitea 等工具，能独立搭建并维护 CI/CD 流水线
+- 了解 Linux、Vim、Nginx、SSH 等服务器相关操作，能承担日常部署与运维工作
+
 ## 个人项目
 
-日常做地铁运维系统开发，但业余时间会研究些新知识，同时也会鼓捣些小项目和工具。做这些小工具主要是验证和实践某个新知识或是方便平时使用，目前的小项目有如下：
+日常工作以地铁运维系统开发为主。业余时间会持续研究新技术，并通过小项目进行验证与实践。这些项目多围绕工程效率、可视化与基础设施展开，既用于沉淀技术方案，也用于解决实际使用中的问题。目前的主要项目如下。
 
-| 名称                                                         | 描述                                                               |
-| ------------------------------------------------------------ | ------------------------------------------------------------------ |
-| [前端驿站](https://juetan.github.io/nav)                     | 前端相关的导航网站，包含 170+前端相关的技术、类库和框架等网站，基于个人日常使用总结而来，涵盖语语言 + 构建 + 跨端 + 社区 + 设计 + 命令行 + 后端框架 + 在线工具等内容。                |
-| [地图编辑](https://juetan.github.io/mapeditor)             | 基于 Echarts， 一个可拖拽、可缩放和可配置的线点编辑器，可实现类似百度地铁线路图的效果，支持状态显示、动态更新等功能。                   |
-| [starter-vue](https://appnify.github.io/starter-vue/#/login) | 基于 Arco Design 组件库，使用 vue3 + vite + typescript 搭建的快速起始模板，支持自动路由生成，接口生成和CRUD组件等功能。 |
-| [starter-nest](https://github.com/appnify/starter-nest) | 基于 Nest + typeorm + mysql + redis 实现的后端起始模板，包含同一参数校验 + 异常拦截 + 响应包装 + 分页/条件查询 + Swagger 文档 + JWT验证 + 日志/邮件等功能
-| [appnify](https://github.com/appnify/appnify)                | 命令行工具，可快速初始化项目和安装常用依赖。支持从 Github 仓库创建项目，支持一键安装 eslint + prettier + husky + commintlint + lint-staged + release-it等常用工具。                        |
-| [devops](https://github.com/juetan/devops-practice)          | 基于 docker + portainer + traefik + gitea 的CI/CD持续构建流系统，支持提交代码后自动构建，发布版本，推送镜像，更新服务，配置域名等功能。     |
-| [electron-tool](https://github.com/juetan/electron-tool)     | 使用 Eelectron + vue3 编写的桌面小工具，暂时没有特别的功能，目前仅实现批量文件重命名功能。后续可能会切到 Tauri 进行学习。                             |
+**管理后台模板**
 
-## 活跃社区
+地址：https://appnify.github.io/starter-vue/#/login
 
-最早在博客园写笔记，不过很多笔记都没有搬过来。知乎是个大佬云集的地方，常常在上面看到有意思的文章。掘金是个非常活跃的前端社区，我个人办了会员也买了很多课程，经常能看到很多业内新科技和前沿知识。
+基于 Arco Design 组件库，采用 Vue 3 + Vite + TypeScript 搭建的前端起始模板，内置自动路由生成、接口生成与 CRUD 组件等能力，用于快速初始化中后台项目。
+
+**NestJS 模板**
+
+地址：https://github.com/appnify/starter-nest
+
+基于 Nest + TypeORM + MySQL + Redis 的后端起始模板，集成统一参数校验、异常拦截、响应包装、分页与条件查询、Swagger 文档、JWT 鉴权、日志与邮件等通用能力，可作为服务端项目的基础脚手架。
+
+**前端驿站**
+
+地址：https://nav.juetan.cn 或 https://juetan.github.io/nav
+
+基于 NuxtJS 开发，前端技术导航站点，收录 170+ 前端相关的技术、类库与框架资源。内容基于个人日常使用总结，覆盖语言、构建、跨端、社区、设计、命令行、后端框架与在线工具等方向。
+
+**地图编辑**
+
+地址：https://github.com/juetan/mapeditor
+
+基于 ECharts 实现的线点编辑器，支持拖拽、缩放与配置化编辑，可实现类似百度地铁线路图的交互效果，并支持状态显示与动态更新。
+
+**appnify**
+
+地址：https://github.com/appnify/appnify
+
+命令行脚手架工具，用于快速初始化项目与安装常用依赖。支持从 GitHub 仓库拉取模板，并可一键集成 eslint、prettier、husky、commitlint、lint-staged、release-it 等工程化工具。
+
+**持续集成**
+
+地址：https://github.com/juetan/devops-practice
+
+基于 Docker + Portainer + Traefik + Gitea 的 CI/CD 实践系统，单台机器即可部署，支持代码提交后自动构建、发布版本、推送镜像、更新服务与配置域名，用于验证完整的持续交付流程。
+
+## 社区参与
+
+早期在博客园记录学习笔记，部分内容尚未迁移。知乎社区内容质量较高，常能读到有深度的技术文章；掘金前端氛围活跃，我长期关注其中的新技术与工程实践，也购买了不少课程用于系统学习。
 
 - 掘金社区：https://juejin.cn/user/3861140566979143
 - 博客园：https://www.cnblogs.com/juetan/
@@ -27,10 +98,12 @@ date: 2023-07-13 17:03:00
 
 ## 联系方式
 
+欢迎就代码交流与技术合作与我联系。
+
 - 微信：QQLLEE
 - 邮箱：952222@163.com
-- Github: https://github.com/juetan
+- GitHub：https://github.com/juetan
 
-## 主题
+## 关于本站
 
-基于 Vitepress 魔改，参见 https://juetan.cn/frontend/vitepress-blog/
+本站基于 VitePress 深度定制，主题实现与相关说明参见：https://juetan.cn/frontend/vitepress-blog/
