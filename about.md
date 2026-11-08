@@ -9,7 +9,7 @@ date: 2023-07-13 17:03:00
 
 ### 地铁运维系统开发 · 前端负责人
 
-时间：2021 – 2024
+时间：2021 – 2024 深圳市北海轨道交通技术有限公司
 
 担任前端主要负责人，负责运维平台前端体系从零搭建到多项目交付的全过程，覆盖技术选型、基础架构、组件规范与团队协作。
 
@@ -23,7 +23,7 @@ date: 2023-07-13 17:03:00
 
 ### 工厂内部管理系统维护 · 开发人员
 
-时间：2019 – 2021
+时间：2019 – 2021 深圳市克莱沃电子有限公司
 
 参与工厂内部管理系统的日常维护与功能迭代，承担部分独立功能模块的设计与实现。
 
@@ -32,18 +32,18 @@ date: 2023-07-13 17:03:00
 
 ## 技术栈
 
-**前端开发**
+### 前端开发
 
 - 熟练掌握 HTML、CSS、JavaScript、TypeScript，具备扎实的 Web 基础与类型化开发能力
 - 熟练使用 Vue.js 全家桶进行中大型应用开发，能基于 Nuxt.js 完成全栈项目搭建
 - 熟悉 Vite 构建工具及其插件机制，具备自定义插件开发经验
 
-**后端开发**
+### 后端开发
 
 - 熟练使用 Node.js，能基于 NestJS 进行模块化、分层化的后端开发
 - 熟悉 TypeORM、MySQL、Redis 等常用数据层与缓存组件，能独立完成接口设计与数据建模
 
-**工程化与 DevOps**
+### 工程化与 DevOps
 
 - 熟悉 Docker、Swarm、Traefik、Portainer、Gitea 等工具，能独立搭建并维护 CI/CD 流水线
 - 了解 Linux、Vim、Nginx、SSH 等服务器相关操作，能承担日常部署与运维工作
@@ -52,25 +52,25 @@ date: 2023-07-13 17:03:00
 
 日常工作以地铁运维系统开发为主。业余时间会持续研究新技术，并通过小项目进行验证与实践。这些项目多围绕工程效率、可视化与基础设施展开，既用于沉淀技术方案，也用于解决实际使用中的问题。目前的主要项目如下。
 
-### 管理后台模板
+### vuestarter
 
 地址：https://appnify.github.io/starter-vue/#/login
 
 基于 Arco Design 组件库，采用 Vue 3 + Vite + TypeScript 搭建的前端起始模板，内置自动路由生成、接口生成与 CRUD 组件等能力，用于快速初始化中后台项目。
 
-### NestJS 模板
+### neststarter
 
 地址：https://github.com/appnify/starter-nest
 
 基于 Nest + TypeORM + MySQL + Redis 的后端起始模板，集成统一参数校验、异常拦截、响应包装、分页与条件查询、Swagger 文档、JWT 鉴权、日志与邮件等通用能力，可作为服务端项目的基础脚手架。
 
-### 前端驿站
+### frontendnav
 
 地址：https://nav.juetan.cn 或 https://juetan.github.io/nav
 
 基于 NuxtJS 开发，前端技术导航站点，收录 170+ 前端相关的技术、类库与框架资源。内容基于个人日常使用总结，覆盖语言、构建、跨端、社区、设计、命令行、后端框架与在线工具等方向。
 
-### 地图编辑
+### mapeditor
 
 地址：https://github.com/juetan/mapeditor
 
@@ -82,7 +82,7 @@ date: 2023-07-13 17:03:00
 
 命令行脚手架工具，用于快速初始化项目与安装常用依赖。支持从 GitHub 仓库拉取模板，并可一键集成 eslint、prettier、husky、commitlint、lint-staged、release-it 等工程化工具。
 
-### 持续集成
+### devops
 
 地址：https://github.com/juetan/devops-practice
 
