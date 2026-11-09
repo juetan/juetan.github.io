@@ -2,7 +2,7 @@
   {
     "name": "Vue.js",
     "description": "渐进式 JavaScript 框架，易用、灵活、高性能的前端框架。",
-    "avatar": "https://vitepress.dev/vitepress-logo-mini.svg",
+    "avatar": "https://cn.vuejs.org/logo.svg",
     "url": "https://cn.vuejs.org",
     "status": "active"
   },
