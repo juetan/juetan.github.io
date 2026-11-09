@@ -17,7 +17,7 @@ export default defineConfig({
   titleTemplate: ':title | 绝弹笔记',
   description: '一位前端开发者的笔记',
   appearance: false,
-  cleanUrls: true,
+  cleanUrls: false,
   srcDir: '.',
   outDir: '.vitepress/dist',
   sitemap: { hostname: 'https://www.juetan.cn' },
