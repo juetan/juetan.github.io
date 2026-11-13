@@ -1,4 +1,4 @@
-绝弹博客 https://www.juetan.cn
+绝弹博客 地址: https://www.juetan.cn
 
 ## 主题
 
@@ -13,4 +13,4 @@
 
 ## 最后
 
-主题正在优化中，有问题欢迎在issue中提问。
+基于 vitepress 默认主题深度定制，有问题欢迎在issue中提问。
